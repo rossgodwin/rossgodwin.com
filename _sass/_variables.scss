@@ -1,0 +1,15 @@
+
+$page-header-min-width: 280px;
+
+$theme-color-primary: #5FCB71;
+
+$theme-text-color-primary: #292929;
+$theme-text-color-secondary: lighten($theme-text-color-primary, 15%);
+$theme-text-color-light: lighten($theme-text-color-primary, 40%);
+$theme-bg-light: #fafafa;
+$theme-border-color:  lighten($theme-text-color-primary, 60%);
+
+$theme-colors: (
+	"primary":  $theme-color-primary, 
+	"secondary":  $theme-text-color-secondary, 
+);

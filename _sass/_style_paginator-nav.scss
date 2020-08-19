@@ -1,0 +1,30 @@
+.paginator-nav {
+	display: flex;
+	justify-content: center;
+	
+	.nav-item {
+		background: $theme-color-primary;
+		color: $white;
+		font-size: 1rem;
+		padding: 1rem;
+		font-weight:bold;
+		margin-right: .5rem;
+		&:hover {
+			background: darken($theme-color-primary, 10%);
+		}
+	}
+	
+	.nav-selected {
+		text-decoration: underline;
+	}
+	
+	.nav-arrow-prev {
+		color: $white;
+		padding-right: 1rem;
+	}
+	
+	.nav-arrow-next {
+		color: $white;
+		padding-left: 1rem;
+	}
+}

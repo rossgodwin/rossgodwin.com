@@ -1,0 +1,58 @@
+<header class="page-header">
+	<nav class="page-header-menu" >
+		<button class="page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+			<span class="page-header-menu-toggler-icon"></span>
+		</button>
+		
+		<h1 class="page-header-menu-title mb-0"><a href="index.html">Ross Godwin</a></h1>
+	</nav>
+	
+	<div class="page-header-content text-center" >
+		<div class="profile-section">
+			{%- include snippets/prepend-images-url.html file_name='me/headshot.png' -%}
+			<img class="profile-image mb-3 rounded-circle mx-auto" src="{{ __return }}" alt="image" >			
+			
+			<div class="bio mb-3">
+				Hi, my name is Ross.
+				I work for a small civil consulting and engineering firm that specializes in land planning and land development design. My roles are project manager, civil designer, and IT administrator.
+				I'm also interested in freelance software development and tech hardware configuration projects.
+				Check out my professional <a href="#">sitemap</a>.
+			</div>
+			
+			<ul class="social-list list-inline mx-auto">
+				<li class="list-inline-item"><a href="{{ site.linkedin.url }}" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+				<li class="list-inline-item"><a href="{{ site.github.url }}" target="_blank"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			</ul>
+		</div>
+		
+		<hr>
+		
+		<ul class="navbar-nav flex-column text-left">
+			<li class="nav-item{% if page.url contains 'cv' %} active{% endif %}">
+				{%- include snippets/prepend-baseurl.html path='/cv' -%}
+			    <a class="nav-link" href="{{ __return }}"><i class="fas fa-chevron-right fa-fw mr-2"></i>Resume</a>
+			</li>
+			<li class="nav-item{% if page.url contains 'portfolio' %} active{% endif %}">
+				{%- include snippets/prepend-baseurl.html path='/portfolio' -%}
+			    <a class="nav-link" href="{{ __return }}"><i class="fas fa-chevron-right fa-fw mr-2"></i>Portfolio</a>
+			</li>
+		</ul>
+		
+		<hr>
+		
+		<ul class="navbar-nav flex-column text-left">
+			<li class="nav-item{% if page.url contains 'howtos' %} active{% endif %}">
+				{%- include snippets/prepend-baseurl.html path='/howtos' -%}
+			    <a class="nav-link" href="{{ __return }}"><i class="fas fa-chevron-right fa-fw mr-2"></i>How Tos</a>
+			</li>
+			<li class="nav-item{% if page.url contains 'notes' %} active{% endif %}">
+				{%- include snippets/prepend-baseurl.html path='/notes' -%}
+			    <a class="nav-link" href="{{ __return }}"><i class="fas fa-chevron-right fa-fw mr-2"></i>Notes</a>
+			</li>
+			<li class="nav-item{% if page.url contains 'projects' %} active{% endif %}">
+				{%- include snippets/prepend-baseurl.html path='/projects' -%}
+			    <a class="nav-link" href="{{ __return }}"><i class="fas fa-chevron-right fa-fw mr-2"></i>Projects</a>
+			</li>
+		</ul>
+	</div>
+</header>

@@ -1,0 +1,39 @@
+.article {
+}
+
+.article-header {
+}
+
+.article-header-meta {
+	color: $theme-text-color-light;
+	font-size: 0.8125rem;
+}
+
+.article-body {
+	.image-caption {
+		color: $theme-text-color-light;
+		font-size: 0.875rem;
+		a {
+			color: $theme-text-color-light;
+			text-decoration: underline;
+			&:hover {
+				color: $theme-text-color-secondary;
+			}
+		}
+	}
+	
+	.blockquote {
+		font-family: Georgia,"Times New Roman",Times,serif;
+		border-left: 2px solid $theme-text-color-primary;
+		font-size: 1.5rem;
+		p {
+			font-size: 1.5rem;
+		}
+		
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		@extend .heading;
+		@extend .heading-leading-vertical-bar;
+	}
+}

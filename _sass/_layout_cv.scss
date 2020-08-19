@@ -1,0 +1,99 @@
+.resume-header {
+	display: grid;
+	grid-template-areas:
+		// t = title
+		// c = content
+		"t t t t t t t t t t t t"
+		"c c c c c c c c c c c c";
+}
+
+.resume-header-title {
+	grid-area: t;
+}
+
+.resume-header-contact {
+	grid-area: c;
+}
+
+.resume-body {
+	display: grid;
+	grid-template-areas:
+		// m = main
+		// s = side
+		"m m m m m m m m m m m m"
+		"s s s s s s s s s s s s";
+}
+
+.resume-body-main {
+	grid-area: m;
+}
+
+.resume-body-aside {
+	grid-area: s;
+}
+
+.resume-work-heading {
+	display: grid;
+	grid-template-areas:
+		// wt = work title
+		// wm = work meta
+		"wt wt wt wt wt wt wt wt wt wt wt wt"
+		"wm wm wm wm wm wm wm wm wm wm wm wm";
+}
+
+.resume-work-heading-title {
+	grid-area: wt;
+}
+
+.resume-work-heading-meta {
+	grid-area: wm;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t c c c c c c";
+	}
+	
+	.resume-work-heading {
+		grid-template-areas:
+			"wt wt wt wt wt wt wm wm wm wm wm wm";
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t t t c c c c";
+	}
+	
+	.resume-body {
+		grid-template-areas:
+			"m m m m m m m m s s s s";
+	}
+	
+	.resume-work-heading {
+		grid-template-areas:
+			"wt wt wt wt wt wt wt wt wm wm wm wm";
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t t t t c c c";
+	}
+	
+	.resume-body {
+		grid-template-areas:
+			"m m m m m m m m m s s s";
+	}
+}

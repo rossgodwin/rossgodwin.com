@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="page-content">
+	{% capture _header_content %}
+		These are just a listing of notes of mine.
+	{% endcapture %}
+	{% include page-content-header.html title='Projects' content=_header_content %}
+	
+	<section class="page-content-main">
+		<section class="articles py-5">
+			{% include snippets/prepend-baseurl.html path="projects/" %}
+			{% assign _projects_url = __return %}
+			<div class="article-list-item mb-3">
+				<h4 class="heading mb-1"><a href="{{ _projects_url }}cheapthycable">Cheapthycable.com</a></h4>
+				<div>
+					A write up about a personal project that I worked on in late 2016 developing a web application. 
+					Learn more about the project, technologies used, reference to source code and a link to the demo.
+				</div>
+				<a class="see-more" href="{{ _projects_url }}cheapthycable">Read more</a>
+			</div>
+			<div class="article-list-item mb-3">
+				<h4 class="heading mb-1"><a href="{{ _projects_url }}tsd-network">Office Network Upgrade</a></h4>
+				<div>
+					Check out a network upgrade that I performed for my employer at the time, Triangle Site Design. 
+					Learning more about the existing setup, equipment upgrades and see pictures.
+				</div>
+				<a class="see-more" href="{{ _projects_url }}tsd-network">Read more</a>
+			</div>
+		</section>
+		
+		
+		
+		
+	</section>
+</div>

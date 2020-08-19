@@ -1,0 +1,32 @@
+{% assign filterCategory = page.pagination.category | default: page.category %}
+{% assign sortedTags = site.tags | sort_natural %}
+
+<div class="popular-topics">
+	<h6 class="heading heading-leading-vertical-bar">Browse by Topic</h6>
+	<ul>
+		{% assign tagLimiter = 0 %}
+		{% for tag in sortedTags %}
+			{% assign postsInCategory = "" | split: "/" %}
+			{% for post in tag[1] %}
+				{% if post.categories contains filterCategory %}
+					{% assign postsInCategory = postsInCategory | push: post %}
+				{% endif %}
+			{% endfor %}
+			
+			{% if postsInCategory.size >= 5 and tagLimiter < 9 %}
+				{% assign tagLimiter = tagLimiter | plus: 1 %}
+				<li><a href="/tag/{{ tag[0] | replace:' ','-' | downcase }}/"><strong>{{ tag[0] | replace:' ','&nbsp;' }}</strong> <span class="count">{{ tag[1] | size }}</span></a></li>
+			{% endif %}
+		{% endfor %}
+		
+		<li><a href="#">jekyll</a></li>
+		<li><a href="#">howto</a></li>
+		<li><a href="#">software</a></li>
+		<li><a href="#">peanuts</a></li>
+		<li><a href="#">okra</a></li>
+		<li><a href="#">pencils</a></li>
+		<li><a href="#">red</a></li>
+		<li><a href="#">plates</a></li>
+		<li><a href="#">art</a></li>
+	</ul>
+</div>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="page-content">
+	{% capture _header_content %}
+		{% include snippets/prepend-assets-url.html file_name='cv/cv.pdf' %}
+		<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
+		{% include snippets/prepend-assets-url.html file_name='cv/cv.txt' %}
+		<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
+	{% endcapture %}
+	{% include page-content-header.html title='Resume' content=_header_content %}
+	
+	<section class="page-content-main">
+		{{ content }}
+	</section>
+</div>

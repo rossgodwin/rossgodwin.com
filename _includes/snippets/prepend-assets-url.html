@@ -1,0 +1,5 @@
+{% assign _assets_path = include.file_name | prepend: '/assets/' %}
+{% include snippets/prepend-path.html
+	path = _assets_path
+	prepend_path = site.baseurl
+%}

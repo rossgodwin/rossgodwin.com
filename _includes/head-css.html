@@ -1,0 +1,5 @@
+{%- include snippets/prepend-baseurl.html path='/assets/css/main.css' -%}
+<link rel="stylesheet" href="{{ __return }}">
+{% for css in layout.head-csss %}
+    <link rel="stylesheet" href="{{ css }}">
+{% endfor %}

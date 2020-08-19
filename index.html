@@ -1,0 +1,77 @@
+---
+layout: default
+title: &title "Intro"
+---
+
+<div class="page-content">
+	{% capture _header_content %}
+		<p>
+			My name is Ross and this is my personal web page for all things professional.
+			I have spent most of my career in the information technology space as a software developer and business intelligence consultant.
+			Below is a sitemap providing an overview of the content you can find on this domain and assistance in quickly locating what you are looking for.
+			My purpose for this web site is:
+		</p>
+		
+		<div class="intro-quotes">
+			{% capture _quote %}
+				Help prospective employers and/or freelance seekers decide if we would be a good match by providing 
+				content that respresents my skill package.
+			{% endcapture %}
+			{% include quote.html content=_quote %}
+			
+			{% capture _quote %}
+				Capture things I've learned in article and note format that may benefit other developers and 
+				my future self should I ever need to duplicate some task.
+			{% endcapture %}
+			{% include quote.html content=_quote %}
+		</div> 
+	{% endcapture %}
+	{% include page-content-header.html title='Introduction' content=_header_content %}
+	
+	<section class="page-content-main">
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">About Me</h4>
+			<p>
+				Looking for my work history, GitHub repositories, strengths, skill sets or resume. Get to 
+				know a little bit more about me professionally.
+				<br/>
+				<a class="see-more" href="{% link about-me.html %}">Read more</a>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Projects</h4>
+			<p>
+				See a few of the projects I have worked on. Here you will find an overview of the project, 
+				technologies used, challenges faced and links to the product and corresponding source code.
+				<br/>
+				<a class="see-more" href="#">Read more</a>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Articles</h4>
+			<p>
+				Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.
+				<br/>
+				<a class="see-more" href="#">Read more</a>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">About This Site</h4>
+			<p>
+				This is a static site generated using Jekyll. In the following link I provide detail about the 
+				technical aspects of this site and links to articles I've written on how I prepared my Jekyll 
+				development environment.
+				<br/>
+				<a class="see-more" href="{% link about-this-site.html %}">Read more</a>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Contact Me</h4>
+			<p>Interested in using me on a project? I'd love to hear from you.</p>
+		</section>
+	</section>
+</div>

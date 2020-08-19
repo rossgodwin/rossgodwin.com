@@ -1,0 +1,117 @@
+.page-header {
+	background: $theme-color-primary;
+	color: $white;
+	padding: 1rem;
+	
+	.page-header-menu-title {
+		justify-self: center;
+		align-self: center;
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: $white;
+		a {
+			color: $white;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	.page-header-menu-toggler {
+		@include opacity(0.8);
+		padding: .25rem .6rem;
+		font-size: 1.25rem;
+		line-height: 1;
+		background-color: transparent;
+		border: 1px solid rgba(256, 256, 256, 0.8);
+		@include border-radius(2px);
+		
+		&:hover {
+			@include opacity(1);
+		}
+	}
+	
+	.page-header-menu-toggler-icon {
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		vertical-align: middle;
+		content: "";
+		background: no-repeat center center;
+		background-size: 100% 100%;
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(256,256,256, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+	}
+	
+	.page-header-content {
+		.profile-section {
+			padding-top: 1rem;
+			
+			.profile-image {
+				max-width: 160px;
+			}
+			
+			.bio {
+				font-size: 0.875rem;
+				a {
+					color: $white;
+					text-decoration: underline;
+					
+					&:hover {
+						color: rgba(0, 0, 0, 0.6);
+					}
+				}
+			}
+		}
+	}
+	
+	.page-header-content.active {
+		display: grid;
+		-webkit-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+}
+
+.page-content {
+	width: 100%;
+}
+
+.page-content-header {
+	background: $theme-bg-light;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	
+	.section-heading-text {
+		font-size: 1.5rem;
+	}
+	
+	.quote {
+		background: $white;
+	}
+}
+
+.page-content-main {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (min-width: 992px) {
+	.page-content-header {
+		padding-left: 3rem;
+		padding-right: 3rem;
+		
+		.section-heading-text {
+			font-size: 2.1rem;
+		}
+	}
+	
+	.page-content-main {
+		padding-left: 3rem;
+		padding-right: 3rem;
+	}
+}

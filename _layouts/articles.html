@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="page-content">
+	{% capture _header_content %}
+		These are just a listing of notes of mine.
+	{% endcapture %}
+	{% include page-content-header.html title='Blogs' content=_header_content %}
+	
+	<section class="page-content-main">
+		{%- include article-paging-list.html -%}
+	</section>
+</div>

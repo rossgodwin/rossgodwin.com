@@ -1,0 +1,26 @@
+---
+# This is need to convert scss to css.  Only the main Sass file needs front matter (the dashes are enough)
+# The empty front matter at the top tells Jekyll it needs to process the file.
+---
+
+@import
+	"common/variables",
+	"common/reset",
+	"variables",
+	"bootstrap/scss/bootstrap",
+	"mixins",
+	"layout",
+	"layout_about-me",
+	"layout_cv",
+	"layout_page",
+	"layout_project",
+	"style_about-me",
+	"style_article",
+	"style_articles",
+	"style_bootstrap-overrides",
+	"style_cv",
+	"style_page",
+	"style_paginator-nav",
+	"style_project",
+	"style"
+	

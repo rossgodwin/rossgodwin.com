@@ -1,0 +1,5 @@
+{% comment %}
+{% assign _page_filename = page.path | split: '/' | last | replace:'.md','' %}
+{% endcomment %}
+{% assign _asset_path = _page_filename | prepend: 'article/' | append: '/' | append: include.file_name %}
+{% include snippets/prepend-images-url.html file_name = _asset_path %}

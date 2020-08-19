@@ -1,0 +1,144 @@
+
+
+# Site wide configuration
+# destination: docs
+
+url:
+baseurl: "https://9to5.rossgodwin.com"
+
+title: Ross Godwin
+description: Web Developer from Somewhere
+
+linkedin:
+  display-url: linkedin.com/in/ross-godwin
+  url: https://www.linkedin.com/in/ross-godwin
+
+github:
+  display-url: github.com/rossgodwin
+  url: https://www.github.com/rossgodwin
+
+cheapthycable:
+  display-url: cheapthycable.rossgodwin.com
+  url: https://cheapthycable.rossgodwin.com
+
+# Jekyll configuration
+version: v1.2.0
+permalink: /:categories/:title/
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+include:
+  - _pages
+exclude:
+  - .bundle
+  - .jekyll-cache
+  - .gitignore
+  - .project
+  - _drafts
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME
+  - Photoshop/
+  - vendor/bundle/
+  - TODO
+
+excerpt_separator: <!--more-->
+
+# Collections
+collections_dir: articles
+collections:
+  howtos:
+    output: true
+    permalink: /:collection/:path/
+  notes:
+    output: true
+    permalink: /:collection/:path/
+
+
+# Front Matter Defaults
+#defaults:
+  # Notes
+#  - scope:
+#      path: _posts/_notes
+#      type: posts
+#    values:
+#      layout: article
+
+
+
+
+
+# Enter your Disqus shortname (not your username) to enable commenting on posts
+# You can find your shortname on the Settings page of your Disqus account
+disqus:
+
+## => Analytics
+##############################
+analytics:
+  provider: false # false (default), "google", "custom"
+
+  ## Google Analytics
+  google:
+    tracking_id : # Google Analytics id for the site
+    anonymize_ip: false # Anonymize IP tracking for Analytics
+
+
+
+
+# Set the Sass partials directory, as we're using @imports
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-gist
+
+# Plugin: Pagination (jekyll-paginate-v2)
+pagination:
+  enabled: true
+  per_page: 3
+  permalink: '/:num/'
+  title: ':title | :num of :max'
+  limit: 0
+  sort_field: 'date'
+  sort_reverse: true
+  trail: 
+    before: 2
+    after: 2
+
+# Plugin: Auto Pages (jekyll-paginate-v2)
+autopages:
+  enabled: true
+  tags:
+    enabled: true
+    layouts:
+      - autopage_tags.html
+    permalink: /tag/:tag
+  categories:
+    enabled: false
+    layouts:
+      - autopage_category.html
+  collections:
+    enabled: false
+    slugify:
+      mode: 'ascii'
+      cased: true
+
+content:
+  cv:
+    tsd:
+      name: Triangle Site Design
+      years-worked: 02-2019 to Present
+    atlatl:
+      name: Atlatl
+      years-worked: 08-2008 to 02-2019
+
+
+

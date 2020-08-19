@@ -1,0 +1,16 @@
+---
+layout: default
+pagination:
+  enabled: true
+  collection: all
+  debug: false
+---
+
+<div class="page-content">
+	{% assign _title = page.autopages.display_name | prepend: 'Articles Tagged: ' %}
+	{% include page-content-header.html title=_title content=_header_content %}
+	
+	<section class="page-content-main">
+		{%- include article-paging-list.html -%}
+	</section>
+</div>

@@ -1,0 +1,91 @@
+.page-wrapper {
+	display: grid;
+	grid-template-areas:
+		// h = header
+		// c = content
+		"h"
+		"c";
+}
+
+.page-header {
+	grid-area: h;
+	
+	.page-header-menu {
+		display: grid;
+		grid-template-columns: 1fr 10fr 1fr;
+	}
+}
+
+.page-header-content {
+	display: none;
+}
+
+.page-content {
+	grid-area: c;
+	display: grid;
+	grid-template-rows: auto 10px 1fr;
+	grid-template-areas:
+		// ch = content header
+		// cm = content main
+		"ch"
+		"."
+		"cm";
+}
+
+.page-content-header {
+	grid-area: ch;
+}
+
+.page-content-main {
+	grid-area: cm;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+	.page-content-header .page-content-main {
+		max-width: 540px;
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.page-content-header .page-content-main {
+		max-width: 720px;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.page-wrapper {
+		grid-template-columns: minmax($page-header-min-width, 1fr) 3fr;
+		grid-template-areas: 
+			"h c c c"
+	}
+	
+	.page-header-menu {
+		grid-template-columns: 1fr !important;
+	}
+	
+	.page-header-menu-toggler {
+		display: none;
+	}
+	
+	.page-header-menu-title {
+		display: none;
+	}
+	
+	.page-header-content {
+		display: block;
+	}
+	
+	.page-content-header .page-content-main {
+		max-width: 960px;
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.page-content-header .page-content-main {
+		max-width: 1140px;
+	}
+}

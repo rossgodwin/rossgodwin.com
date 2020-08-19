@@ -1,0 +1,179 @@
+---
+layout: default
+title: &title "CheapThyCable.com"
+---
+
+<div class="page-content">
+	{% include page-content-header.html title='CheapThyCable.com' content='' %}
+	
+	<section class="page-content-main">
+		<section class="project-overview">
+			{% include snippets/prepend-images-url.html file_name='projects/cheapthycable/computer-screen.png' %}
+			<img class="image image-responsive mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="{{ __return }}" alt="image">
+			
+			<div>
+				<strong>Website:</strong>&nbsp;<a href="{{ site.cheapthycable.url }}">{{ site.cheapthycable.display-url }}</a>
+				<br/>
+				<strong>Source Code:</strong>&nbsp;<a href="{{ site.github.url }}/cheapthycable-app">GitHub repository</a>
+				<br/><br/>
+				A crowdsourcing web application that allowed participants to see and analyze what others were paying for cable and internet services in their area with the goal of providing them leveraging power in negotiating lower monthly payments with their service provider. This product was under development and publicly accessible from August 2016 to October 2017. Though defunct, the application is running on Amazon AWS and hosted under my personal domain as part of my portfolio.
+				<br/><br/>
+				<a href="https://cheapthycable.rossgodwin.com/login">Give it a try</a>.
+			</div>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Overview</h4>
+			<p>
+				As sole developer on this project, I worked on it in my spare time in late 2016. The product 
+				was originally hosted on Google Cloud Platform utilizing Bitnami to quickly provide my hosted 
+				web application stack.
+			</p>
+			<p>
+				The idea behind the product was to gather some basic (non-personal) information about someone's 
+				cable bill such as: what is their bill total, what is their billing zip code and what services they 
+				are subscribed for.  The flow was very simple: the user would signup, provide information about 
+				their bill and then have access to look at similar information provided by their neighbors.
+			</p>
+			<p>
+				One of the key problems that I had to solve was providing user's the ability to filter out 
+				only bills within a vicinity i.e. within a 25 mile radius.  To do this I had to translate the 
+				haversine formula in to database queries. Here are links to class files and methods where this 
+				was done: <a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/bill/report/BillReportDAO.java#L35">1</a>, 
+				<a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/data/query/s/bill/BillSqueryUtils.java#L41">2</a>, <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/data/query/s/GeoZipCodeSqueryUtils.java">3</a>.
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Accomplishment</h4>
+			<p>
+				Though this did not go viral, I had people register from over 20 different states in the US. 
+				I learned a tremendous amount, gaining a wealth of knowledge and confidence as a developer.
+			</p>
+			<p>
+				Fun fact - at the time of development there were ~45,000 zip codes in the United States and 
+				there are ~150 cable service providers that I could identify.
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Technologies Used</h4>
+			<section class="technologies-grid">
+				<div class="technologies-grid-item">
+					{% include icons/amazon-aws-responsive.html %}
+					<br/>
+					<b>Amazon AWS</b>
+					<br/>
+					
+					
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/angular-responsive.html %}
+					<br/>
+					<b>AngularJS</b>
+					<br/>
+					AngularJS was the front-end used for this project, the source code can be found <a href="{{ site.github.url }}/cheapthycable-app/tree/master/WebContent/client/src">here</a>.
+					Also I took a few <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/angularjs">notes</a> explaining some of the implementations that I incorporated in to this project.
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/apache-responsive.html %}
+					<br/>
+					<b>Apache</b>
+					<br/>
+					Apache was the web server of choice in this project development stack.
+					See a couple of the <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/apache">articles</a> I wrote on configuring the web server. 
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/google-cloud-responsive.html %}
+					<br/>
+					<b>Google Cloud</b>
+					<br/>
+					
+					
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/hibernate-responsive.html %}
+					<br/>
+					<b>Hibernate</b>
+					<br/>
+					Hibernate is the object-relational mapping framework used in this project.
+					<a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/data/hibernate/entity/Account.java">Here</a> is a object to table mapping using Jakarta Persistence (JPA) instead of XML.
+					Take a look also at the <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/data/hibernate/hibernate.cfg.xml">configuration</a> file and a <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/data/hibernate/dao/BillDAOImpl.java">query class file</a>.
+					This application uses the session-per-request pattern<sup id="fnref:link" role="doc-noteref"><a href="#fn:link" class="footnote">1</a></sup>.
+					A filter in the <a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/WebContent/WEB-INF/web.xml#L18">web.xml</a> invokes a <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/web/filter/HibernateTxRequestFilter.java">filter class</a> to open and close a Hibernate session for the client request.
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/java-j2ee-responsive.html %}
+					<br/>
+					<b>Java J2EE</b>
+					<br/>
+					Servlets, JSP, EJB, JDBC
+					
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/mailgun-responsive.html %}
+					<br/>
+					<b>Mailgun</b>
+					<br/>
+					Mailgun is the email API that I used to send emails.  The free tier allows up to 30,000 transactional 
+					emails.
+					<a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/bl/mail/jrsy/JrsyEmailer.java">Here</a> 
+					is a "emailer" class that given a 
+					prefilled <a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/mail/data/model/Email.java">Email</a> 
+					object uses the Jersey client API classes to make a web API call using Mailgun account information 
+					like the domain and API key.
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/mysql-responsive.html %}
+					<br/>
+					<b>MySQL</b>
+					<br/>
+					{% include snippets/prepend-images-url.html file_name='projects/cheapthycable/database_eer_diagram.png' %}
+					
+					MySQL is the database used for this project. Here is project <a href="{{ __return }}" target="_blank">data 
+					model diagram</a> put together using MySQL Workbench
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/namecheap-responsive.html %}
+					<br/>
+					<b>Namecheap</b>
+					<br/>
+					Namecheap is the domain name registrar that I used for this project. Simple and clean interface for 
+					doing advance DNS configurations with a good knowledge base for when you get stuck.
+				</div>
+				
+				<div class="technologies-grid-item">
+					{% include icons/thymeleaf-responsive.html %}
+					<br/>
+					<b>Thymeleaf</b>
+					<br/>
+					Thymeleaf is integrated to use templates for creating rich HTML content in the body of outbound 
+					emails. See related source files: <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/bl/thymeleaf/TlfUtils.java">1</a>, <a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/auth/pwd/forgot/ForgotPwdHlpr.java#L27">2</a>, <a href="{{ site.github.url }}/cheapthycable-app/tree/master/WebContent/WEB-INF/templates/emails">3</a>.
+				</div>
+				
+				
+			</section>
+		</section>
+		
+		<section>
+			<h4 class="heading heading-leading-vertical-bar">Related Articles</h4>
+			<p>Here are articles I written, further explaining code functionality.</p>
+		</section>
+		
+		<div class="footnotes" role="doc-endnotes">
+			<ol>
+				<li id="fn:link" role="doc-endnote">
+					<p><a href="https://docs.jboss.org/hibernate/core/4.1/devguide/en-US/html/ch02.html#session-per-request" target="_blank">Hibernate session-per-request</a> <a href="#fnref:link" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+				</li>
+			</ol>
+		</div>
+	</section>
+</div>

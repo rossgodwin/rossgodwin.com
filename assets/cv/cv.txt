@@ -1,0 +1,92 @@
+============================================================
+Ross Godwin
+Durham, NC 27703 | 919.307.5167 | ross.godwin@gmail.com
+============================================================
+
+Forward-thinking software developer with 16 years of experience in web application development, mobile app development, and business intelligence development. Successfully operates in Agile-like development environments, taking ownership of projects from start to finish, delivering value, and employing proactive problem solving and resolution. Brings significant expertise in web development stack, single-page applications, and mobile app development.
+
+
+============================================================
+Work Experience
+============================================================
+
+TRIANGLE SITE DESIGN, Raleigh, NC	
+Civil Designer & IT Administrator, 02-2019 to Present
+* Involved in land development design, construction document preparation, and maintaining and enhancing the company’s technology infrastructure
+* Utilize AutoCAD to draft, scale and fine-tune drawings and maps for land development projects, and create concept plans and erosion and sediment control plans
+
+ATLATL, Durham, NC	
+Software Developer, 08-2008 to 02-2019
+* Worked closely with team of system analysts, developers, and customer support to build, enhance, and maintain in-house web and mobile applications used by small businesses
+* Executed data modeling, business logic, and user-interface projects
+* Managed all aspects of data layer needs, including database schema design, data migrations, ORM infrastructure needs implementation, and data retrieval and modification queries
+* Modified existing software by engaging with customer support to identify and correct problems and improve product performance
+* Collaborated with system analysts and programmers to design and obtain requirements for system enhancements
+* Developed and maintained iOS and Android apps that provided mobile access for the subscription base of Atlatl’s hosted software
+* Built and utilized REST and RPC SOA solutions in web and mobile application development
+
+DUNN SOLUTIONS, Raleigh, NC
+Business Intelligence Developer/Consultant, 03-2004 to 08-2008
+* Worked closely with clients from mid-sized to large corporations to create business intelligence solutions to meet business analytics needs 
+* Designed and implemented database schemas tuned for high-volume report querying
+* Implemented extract, transform, and load processes using ETL tools and database stored procedures for populating datamarts
+* Developed and maintained semantic layer data representations  and created and tested complex data reports using BusinessObjects
+
+NCSU CENTER FOR URBAN AFFAIRS, Raleigh, NC	
+Web Application Developer Intern, 02-2003 to 03-2004
+* Developed a web application prototype that demonstrated the feasibility of online computer skills testing for elementary grade students for the North Carolina Department of Education
+* Obtained extensive experience in Apache Tomcat, HTML, MySQL, Java Serve-Side technologies, JDBC, and JavaScript
+
+
+============================================================
+On the Side
+============================================================
+
+CHEAPTHYCABLE.COM, 08-2016 to 10-2017
+Developed crowdsourcing web application that allowed participants to see what others were paying for cable and internet in their area with the goal of providing leveraging power in negotiating a lower bill.  Developed using J2EE web container, Hibernate, AngularJS, Bootstrap, and other popular APIs such as Thymeleaf, Mailgun and Disqus.
+
+
+============================================================
+Highlighted Achievements
+============================================================
+
+* Created Amazon Alexa skill and Google Assistant app to provide a subset of features from Atlatl's second largest revenue generating software product
+
+* Served as core developer on user-interface redesign project, which converted multi-page web application comprised of JSF, Ajax, and Ext-JS frameworks into a GWT/GXT single-page app
+
+* Architected and developed Atlatl’s first native iOS universal app published in the Apple app store to provide mobile access to company’s fillable forms SaaS subscription base
+
+* Developed dynamic reporting solution for web-based software product by working on web development stack to provide a customizable report framework and eliminate overhead of persistent development and custom ad-hoc report maintenance
+
+* Built and integrated client-facing data import and export functionality into fillable forms hosted software service, allowing data portability for core system objects and providing users fast start-up time 
+
+* Developed automated Android app build process for mobile app CMS using Android SDK Tools and Java to create signed APK file for distribution to app marketplace
+
+* Developed ETL solution using SQL Server DTS and Transact-SQL stored procedures to provide data used in daily and quarterly reporting against transactional management system
+
+
+============================================================
+Technical Expertise
+============================================================
+
+* Languages: Java, Objective-C, SQL, PL/SQL, C++, C, JavaScript
+
+* Frameworks/APIs: Java EE, Hibernate, Primefaces, Cocoa Touch, iOS SDK, Android SDK, JAX-RS, RESTEasy, JSP, JSF, Apache POI, iText, Thymeleaf, Mailgun, Sencha Touch, Quartz Scheduler, JavaMail, Bootstrap
+
+* Web Application Client Side Frameworks: GWT, GXT, AngularJS
+
+* Tools: Eclipse, MyEclipse, Xcode, TortoiseSVN, SVN, SourceSafe, Git, Bugzilla, Jenkins, Hudson, Grunt, Balsamiq Mockups, phpMyFAQ
+
+* Databases: Oracle, SQL Server, MySQL
+
+* Protocols/Standards: REST, JSON, XML
+
+* Other: JBoss Application Server, Apache Web Server, Bitnami, BusinessObjects
+
+
+============================================================
+Education
+============================================================
+
+NORTH CAROLINA STATE UNIVERSITY, Raleigh, NC
+Bachelor of Science in Computer Science, 2003

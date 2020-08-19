@@ -1,0 +1,5 @@
+{% assign _images_path = include.file_name | prepend: '/images/' %}
+{% include
+	snippets/prepend-assets-url.html
+	file_name=_images_path
+%}

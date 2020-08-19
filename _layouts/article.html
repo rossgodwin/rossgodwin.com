@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% include snippets/prepend-baseurl.html %}
+
+<div class="page-content">
+	<section class="page-content-main">
+		<section class="article px-3 py-5 p-md-5">
+			<header class="article-header">
+				<h2 class="heading heading-leading-vertical-bar">{{ page.title | escape }}</h2>
+				<div class="article-header-meta mb-3">
+					Published:&nbsp;{{ page.date | date: "%b %-d, %Y" }}
+					<br>
+					Category:&nbsp;<a href="{{ page.collection | prepend: __return }}">{{ page.collection | capitalize }}</a>
+					{% if page.tags %}
+						<br>
+						<span>Tags:&nbsp;
+						{% for tag in page.tags %}
+							<a href="{{ tag | prepend: 'tag/' | prepend: __return }}">{{ tag }}</a>&nbsp;
+						{% endfor %}
+						</span>
+					{% endif %}
+					
+					<hr>
+				</div>
+			</header>
+			<div class="article-body">
+				{{ content }}
+			</div>
+			
+			{% include mvgallery-list.html %}
+		</section>
+	</section>
+</div>

@@ -1,0 +1,8 @@
+destination:
+
+# host: 0.0.0.0 # GitHub will simply ignore this when you push
+baseurl: ""
+# url: "http://127.0.0.1:4000"
+
+google_analytics_tracking_id:
+

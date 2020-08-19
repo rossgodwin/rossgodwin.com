@@ -1,0 +1,191 @@
+---
+layout: cv
+title: &title "Resume"
+---
+
+<article class="resume-wrapper p-5 mb-5 my-5">
+	<div class="resume-header">
+		<div class="resume-header-title">
+			<h2 class="resume-name mb-0 text-uppercase">Simon Doe</h2>
+			<div class="resume-tagline mb-3 mb-md-0">Full Stack Developer, IT Administrator & Civil Designer</div>
+		</div>
+		<div class="resume-header-contact">
+			<ul class="list-unstyled mb-0">
+				<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">0123 4567 890</a></li>
+				<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:#">simon.doe@yourwebsite.com</a></li>
+				<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="#">www.yourwebsite.com</a></li>
+				<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>New York</li>
+			</ul>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class="resume-intro py-3">
+		<div class="media flex-column flex-md-row align-items-center">
+			{%- include snippets/prepend-images-url.html file_name='resume-profile.png' -%}
+			<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="{{ __return }}" alt="image">
+			<div class="media-body text-left">
+				<p class="mb-0">
+					Forward-thinking software developer with 16 years of experience in web application development, 
+					mobile app development, and business intelligence development. Successfully operates in agile-like 
+					development environments, taking ownership of projects from start to finish, delivering value, 
+					and employing proactive problem solving and resolution. Brings significant expertise in web 
+					development stack, single-page applications, and mobile app development.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class="resume-body">
+		<div class="resume-body-main pr-0 pr-lg-5">
+			<!-- Work Experience -->
+			<section class="work-section py-3">
+				<div class="section-heading">
+					<span class="section-heading-text">Work Experience</span>
+				</div>
+				
+				<!-- Current Job -->
+				<div class="item mb-3">
+					<h6 class="item-title resume-work-heading-title mb-2 mb-md-0"><a href="{% link cv/tsd.html %}">{{ site.content.cv.tsd.name }}</a></h6>
+					<div class="item-heading resume-work-heading align-items-center mb-2">
+						Civil Designer & IT Administrator
+						<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">{{ site.content.cv.tsd.years-worked }}</div>
+					</div>
+					<div class="item-content">
+						<ul class="resume-list">
+							<li>
+								Involved in land development design, construction document preparation, site inspection 
+								of construction work and field surveying
+							</li>
+							<li>
+								Utilize AutoCAD to draft, scale and fine-tune drawings and maps for land
+								development projects, and create concept plans and erosion and sediment control plans
+							</li>
+							<li>
+								Responsible for daily management, upkeep and configuration of technology infrastructure. 
+								Designed and implemented significant changes, resulting in increased office productivity 
+								and improved cyber security
+							</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Atlatl -->
+				<div class="item mb-3">
+					<h6 class="item-title resume-work-heading-title mb-2 mb-md-0"><a href="{% link cv/atlatl.html %}">{{ site.content.cv.atlatl.name }}</a></h6>
+					<div class="item-heading resume-work-heading align-items-center mb-2">
+						Software Developer
+						<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">{{ site.content.cv.atlatl.years-worked }}</div>
+					</div>
+					<div class="item-content">
+						<p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
+						<ul class="resume-list">
+							<li>Lorem ipsum dolor sit amet, consectetuer.</li>
+							<li>Aenean commodo ligula eget dolor.</li>
+						</ul>
+					</div>
+				</div>
+				
+				<!-- Job -->
+				<div class="item mb-3">
+					<div class="item-heading resume-work-heading align-items-center mb-2">
+						<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Senior Software Developer</h4>
+						<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Dropbox | 2014 - 2016</div>
+					</div>
+					<div class="item-content">
+						<p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Projects -->
+			<section class="project-section py-3">
+				<div class="section-heading">
+					<span class="section-heading-text">Projects</span>
+				</div>
+				
+				<div class="item mb-3">
+					<div class="item-heading resume-work-heading align-items-center mb-2">
+						<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Project Lorem Ipsum</h4>
+						<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Open Source</div>
+					</div>
+					<div class="item-content">
+						<p>You can use this section for your side projects. You can <a href="#" class="theme-link">provide a project link here</a> as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+					</div>
+				</div>
+				
+				<div class="item">
+					<div class="item-heading resume-work-heading align-items-center mb-2">
+						<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Project Sed Fringilla</h4>
+						<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Open Source</div>
+					</div>
+					<div class="item-content">
+						<p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
+					</div>
+				</div>
+			</section>
+		</div>
+		<aside class="resume-body-aside resume-aside px-lg-4 pb-lg-4">
+			<section class="skills-section py-3">
+				<div class="section-heading">
+					<span class="section-heading-text">Skills</span>
+				</div>
+				<div class="item">
+					<h4 class="item-title">Technical</h4>
+					<ul class="list-unstyled resume-skills-list">
+						<li class="mb-2">JavaScript/Angular/React/Vue</li>
+						<li class="mb-2">Python/Ruby/PHP</li>
+						<li class="mb-2">Node.js/ASP.NET</li>
+						<li class="mb-2">PostgreSQL/MySQL</li>
+						<li class="mb-2">Object-oriented design</li>
+						<li class="mb-2">Design and implement database structures</li>
+						<li>Lead and deliver complex software systems</li>
+					</ul>
+				</div>
+			</section>
+			<section class="education-section py-3">
+				<div class="section-heading">
+					<span class="section-heading-text">Education</span>
+				</div>
+				<ul class="list-unstyled resume-education-list">
+					<li class="mb-3">
+						<div class="resume-degree font-weight-bold">MSc in Computer Science</div>
+						<div class="resume-degree-org text-muted">University College London</div>
+						<div class="resume-degree-time text-muted">2010 - 2011</div>
+					</li>
+					<li>
+						<div class="resume-degree font-weight-bold">BSc Maths and Physics</div>
+						<div class="resume-degree-org text-muted">Imperial College London</div>
+						<div class="resume-degree-time text-muted">2007 - 2010</div>
+					</li>
+				</ul>
+			</section>
+		</aside>
+	</div>
+	
+	<hr>
+	
+	<div class="resume-footer text-center">
+		<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
+			{%- if site.github -%}
+				<li class="list-inline-item mb-lg-0 mr-3">
+					<a class="resume-link" href="{{ site.github.url }}" target="_blank">
+						<i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i>
+						<span class="d-none d-lg-inline-block text-muted">{{ site.github.display-url }}</span>
+					</a>
+				</li>
+			{%- endif -%}
+			{%- if site.linkedin -%}
+				<li class="list-inline-item mb-lg-0 mr-3">
+					<a class="resume-link" href="{{ site.linkedin.url }}" target="_blank">
+						<i class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i>
+						<span class="d-none d-lg-inline-block text-muted">{{ site.linkedin.display-url }}</span>
+					</a>
+				</li>
+			{%- endif -%}
+		</ul>
+	</div>
+</article>

@@ -1,0 +1,20 @@
+<section class="articles py-5">
+	{% for _article in paginator.posts %}
+		{% include snippets/prepend-baseurl.html path=_article.url %}
+		{% assign _article_url = __return %}
+		<div class="article-list-item mb-3">
+			<h4 class="heading mb-1"><a href="{{ _article_url }}">{{ _article.title | escape }}</a></h4>
+			<div class="article-list-item-meta mb-1">
+				<span>Published {{ _article.date | date: "%b %-d, %Y" }}</span>
+			</div>
+			{% if _article.summary %}
+				<div>{{ _article.summary }}</div>
+			{% else if _article.excerpt %}
+				<div>{{ _article.excerpt }}</div>
+			{% endif %}
+			<a class="see-more" href="{{ _article.url | relative_url }}">Read more</a>
+		</div>
+	{% endfor %}
+</section>
+
+{% include paging-links.html %}
