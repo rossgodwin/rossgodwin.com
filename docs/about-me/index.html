@@ -1,0 +1,672 @@
+<!DOCTYPE html><html lang="en">
+	<head><meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<title>About Me - Ross Godwin</title>
+
+
+<meta name="description" content="Web Developer from Somewhere">
+<meta property="og:description" content="Web Developer from Somewhere" />
+
+<meta name="author" content="" />
+
+
+<meta property="og:title" content="About Me" />
+<meta property="twitter:title" content="About Me" />
+
+
+
+
+<link rel="stylesheet" href="/assets/css/main.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css" >
+
+<script>(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script>
+
+<script>
+	(function() {
+		var TEXT_VARIABLES = {
+		version: '2.2.6',
+			sources: {
+				jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+				highlightjs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js'
+			}
+		};
+		window.TEXT_VARIABLES = TEXT_VARIABLES;
+	})();
+</script></head>
+	<body>
+		<div class="root" data-is-touch="false">
+			<div class="page-wrapper">
+				<header class="page-header">
+	<nav class="page-header-menu" >
+		<button class="page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+			<span class="page-header-menu-toggler-icon"></span>
+		</button>
+		
+		<h1 class="page-header-menu-title mb-0"><a href="index.html">Ross Godwin</a></h1>
+	</nav>
+	
+	<div class="page-header-content text-center" >
+		<div class="profile-section">
+
+
+<img class="profile-image mb-3 rounded-circle mx-auto" src="/assets/images/me/headshot.png" alt="image" >			
+			
+			<div class="bio mb-3">
+				Hi, my name is Ross.
+				I work for a small civil consulting and engineering firm that specializes in land planning and land development design. My roles are project manager, civil designer, and IT administrator.
+				I'm also interested in freelance software development and tech hardware configuration projects.
+				Check out my professional <a href="#">sitemap</a>.
+			</div>
+			
+			<ul class="social-list list-inline mx-auto">
+				<li class="list-inline-item"><a href="https://www.linkedin.com/in/ross-godwin" target="_blank"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+				<li class="list-inline-item"><a href="https://www.github.com/rossgodwin" target="_blank"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			</ul>
+		</div>
+		
+		<hr>
+		
+		<ul class="navbar-nav flex-column text-left">
+			<li class="nav-item">
+
+<a class="nav-link" href="/cv"><i class="fas fa-chevron-right fa-fw mr-2"></i>Resume</a>
+			</li>
+			<li class="nav-item">
+
+<a class="nav-link" href="/portfolio"><i class="fas fa-chevron-right fa-fw mr-2"></i>Portfolio</a>
+			</li>
+		</ul>
+		
+		<hr>
+		
+		<ul class="navbar-nav flex-column text-left">
+			<li class="nav-item">
+
+<a class="nav-link" href="/howtos"><i class="fas fa-chevron-right fa-fw mr-2"></i>How Tos</a>
+			</li>
+			<li class="nav-item">
+
+<a class="nav-link" href="/notes"><i class="fas fa-chevron-right fa-fw mr-2"></i>Notes</a>
+			</li>
+			<li class="nav-item">
+
+<a class="nav-link" href="/projects"><i class="fas fa-chevron-right fa-fw mr-2"></i>Projects</a>
+			</li>
+		</ul>
+	</div>
+</header>
+				
+				<div class="page-content">
+	<section class="page-content-header">
+	<div class="mb-3">
+		<!-- https://jekyllcodex.org/without-plugin/breadcrumbs -->
+<div id="breadcrumbs">
+	
+	<a href="/">Home</a>
+	
+		
+			/ About Me
+		
+	
+</div>
+	</div>
+	
+	<h1 class="heading heading-leading-vertical-bar">About Me</h1>
+	
+	
+</section>
+	
+	<section class="page-content-main">
+		<article class="about-me">
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">About</h4>
+				<p>
+					Career long software developer having ventured into the construction industry working for 
+					a civil engineering firm as a multi-role professional performing the tasks of a civil designer, project manager  
+					and IT administrator. In my spare time, I seek freelance software development opportunities 
+					where I can discover how others are looking to add value to their product or business using 
+					software and apply (and sharpen) my broad technology skills to help them translate those 
+					requirements into a solution that exceeds expectations.
+				</p>
+				<div class="center">
+				<a class="btn btn-secondary" href="/cv/" role="button">Resume</a>
+				<a class="btn btn-secondary" href="https://www.linkedin.com/in/ross-godwin" role="button" target="_blank">LinkedIn</a>
+				<a class="btn btn-secondary" href="https://www.github.com/rossgodwin" role="button" target="_blank">Github</a>
+				</div>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Interests / Contact Me</h4>
+			</section>
+			
+			
+			
+			
+			
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Technical Skills</h4>
+				
+				<h6 class="heading heading-line-separator">Languages & Frameworks</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/angular-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/angular-100.png" alt="angular angularjs"/>
+</picture>
+						<br/>
+						<b>AngularJS</b>
+						<br/>
+						1 Year - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+						
+
+
+
+						
+						I learned Angular 1.x in my spare time to develop the user interface for this 
+						<a href="/projects/cheapthycable/">project</a>. Here are a few 
+						<a href="/tag/angularjs">notes</a> I've put together on this topic.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/bootstrap-150.png" media="(min-width: 768px)"/>
+	<img src="/assets/images/icons/bootstrap-100.png" alt="bootstrap"/>
+</picture>
+						<br/>
+						<b>Bootstrap</b>
+						<br/>
+						3 Years - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+						I have used this well know CSS framework on a few projects. While the grid system makes creating page 
+						layouts that are suitable for all screen sizes very simple, I have found that CSS grid layout (or CSS 
+						grid) keeps the HTML markup free of duplication and much cleaner as the responsive site grows in 
+						complexity.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/gwt-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/gwt-100.png" alt="gwt"/>
+</picture>
+						<br/>
+						<b>GWT</b>
+						<br/>
+						8 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						I love writing Java code and its fitting that the <i>write once, run anywhere</i> language 
+						is the language of choice for <a href="http://www.gwtproject.org/learnmore-sdk.html" target="_blank">GWT</a> 
+						where developers can create complex AJAX front-ends that get compiled into Javascript code 
+						that is compatible across all major browsers. 
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/sencha-gxt-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/sencha-gxt-100.png" alt="gwt sencha gxt"/>
+</picture>
+						<br/>
+						<b>GXT</b>
+						<br/>
+						5 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						<a href="https://www.sencha.com/products/gxt" target="_blank">GXT</a> is a product that Sencha put 
+						together which provides some really cool <a href="https://examples.sencha.com/gxt/examples" target="_blank">
+						UI components</a> for building GWT web applications. I thorough enjoyed 
+						working with this Java framework at my <a href="/cv/atlatl/">previous employer</a>.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/java-jdk-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/java-jdk-100.png" alt="java jdk"/>
+</picture>
+						<br/>
+						<b>Java</b>
+						<br/>
+						17 Years - 
+				PL4 <sup><a href="#fn:pl4" class="footnote">4</a></sup>
+			
+						<br/>
+						I learned this language in college and have been using it ever since. I love Java and feel 
+						very comfortable programming in this language. Extensive experience using up through JDK 7 
+						and some in JDK 8.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Databases</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/oracle-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/oracle-100.png" alt="oracle 10g database"/>
+</picture>
+						<br/>
+						<b>Oracle</b>
+						<br/>
+						10 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						I have extensive professional experience using 10g.  Though I was not a DBA I feel comfortable 
+						using PL/SQL constructing queries, stored procedures, functions and indexing.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/mysql-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/mysql-100.png" alt="mysql"/>
+</picture>
+						<br/>
+						<b>MySQL</b>
+						<br/>
+						10 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						
+
+
+
+						I have used this DBMS on various projects over the years. <a href="/assets/images/projects/cheapthycable/database_eer_diagram.png" target="_blank">Here</a> 
+						is a link to the database schema design that I put together for this <a href="/projects/cheapthycable/">project</a>.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Enterprise & Servers</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/apache-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/apache-100.png" alt="apache http httpd server"/>
+</picture>
+						<br/>
+						<b>Apache</b>
+						<br/>
+						5 Years - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+						I've used this open source web server on various projects 
+						throughout the years in both a Windows and Linux environments, often times configuring it to be used 
+						with Wildfly and Tomcat application servers but also using it to serve static files.
+						I have use several of the key features in the software such as loading modules, .htaccess, SSL, virtual servers 
+						logging and more. Check out a couple of the <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/apache">articles</a> 
+						I put together on configuring a Apache web server.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/wildfly-150.png" media="(min-width: 768px)"/>
+	<img src="/assets/images/icons/wildfly-100.png" alt="wildfly application-server" />
+</picture>
+						<br/>
+						<b>Wildfly</b>
+						<br/>
+						7 Years - PL2
+						<br/>
+						I have significant experience using JBoss and Wildfly in a windows environment. 
+						I have also installed, configured and deployed WAR files in a Linux environment for side projects.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Cloud</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/amazon-aws-150.png" media="(min-width: 768px)"/>
+	<img src="/assets/images/icons/amazon-aws-100.png" alt="Amazon AWS EC2 RDS Cloud"/>
+</picture>
+						<br/>
+						<b>Amazon AWS</b>
+						<br/>
+						1 Year - PL1
+						<br/>
+						I have recently delved in to AWS.  This <a href="/projects/cheapthycable/">project</a> 
+						is being powered by AWS using Amazon RDS and Amazon EC2.  I've also dipped my toes in the water on 
+						serverless computing with AWS Lambda functions.  I'm eager to learn more about AWS, one of my 
+						goals being to acquire the AWS Certified Solutions Architect certification.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Mobile</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/android-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/android-100.png" alt="android google mobile"/>
+</picture>
+						<br/>
+						<b>Android</b>
+						<br/>
+						4 Year - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						Good understanding of the Android app fundamentals with experience using the Android SDk to develop, package and 
+						public apps to the Google store.
+						I have experience managing app resources (layouts, 
+						menu, styles, drawable, etc), configuring app manifest and permissions, developing 
+						layouts, activities, fragments and intents, good understanding of the activity lifecyles 
+						and passing information between activities, understanding and experience with navigation 
+						principles between screens and app.  My past experience also includes using the java.net 
+						package to make HTTP POST and GET calls to application server for posting or retrieving 
+						data in JSON or XML format.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Source Control</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/github-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/github-100.png" alt="git github"/>
+</picture>
+						<br/>
+						<b>Git</b>
+						<br/>
+						2 Years - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+							
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/svn-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/svn-100.png" alt="svn subversion source-control"/>
+</picture>
+						<br/>
+						<b>Subversion</b>
+						<br/>
+						5 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						Used this source control
+						branching, tagging for managing features in development and production releases
+						Static web site generator that I've used to build a couple of web sites, including this one.
+					</div>
+				</section>
+				
+				<h6 class="heading heading-line-separator">Tools</h6>
+				<section class="skills-grid">
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/eclipse-150.png" media="(min-width: 768px)"/>
+	<img src="/assets/images/icons/eclipse-100.png" alt="Eclipse IDE"/>
+</picture>
+						<br/>
+						<b>Eclipse</b>
+						<br/>
+						12 Years - 
+				PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+			
+						<br/>
+						Well over 10 years of experience using this IDE and many of the available plugins in the market.
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/jekyll-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/jekyll-100.png" alt="jekyll"/>
+</picture>
+						<br/>
+						<b>Jekyll</b>
+						<br/>
+						1 Year - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+						
+
+
+
+						
+						Static web site generator that I've used to build a couple of web sites, including this one.
+						Here are some <a href="/tag/jekyll">notes</a> I've put together tagged Jekyll. 
+					</div>
+					
+					<div class="skills-grid-item">
+						<picture>
+	<source srcset="/assets/images/icons/pelican-150.png" media="(min-width: 992px)"/>
+	<img src="/assets/images/icons/pelican-100.png" alt="pelican static-site-generator"/>
+</picture>
+						<br/>
+						<b>Pelican</b>
+						<br/>
+						1 Year - 
+				PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+			
+						<br/>
+						
+
+
+
+						
+						The blog portion of this <a href="/projects/cheapthycable/">website</a> is a 
+						static site generated by Pelican. Check out some of the <a href="/tag/pelican">articles</a> 
+						tagged Pelican that I've put together.
+					</div>
+				</section>
+			</section>
+			
+			<div class="footnotes">
+				<ol>
+					<li id="fn:pl1">
+						<p>
+							PL1 - Have basic awareness and comprehension of the skill and is in the process of acquiring 
+							this skill through various channels.
+						</p>
+					</li>
+					<li id="fn:pl2">
+						<p>
+							PL2 - Possess working knowledge of the skill, and can actively and independently apply this 
+							skill in engagements and projects.
+						</p>
+					</li>
+					<li id="fn:pl3">
+						<p>
+							PL3 - Comprehensive, in-depth and specialized knowledge of the skill. Have extensively 
+							demonstrated successful application of the skill in engagements or projects.
+						</p>
+					</li>
+					<li id="fn:pl4">
+						<p>
+							PL4 - Can function as a subject matter expert for this skill and capable of analyzing, 
+							evaluating and synthesizing solutions using the skill.
+						</p>
+					</li>
+				</ol>
+			</div>
+		</article>
+	</section>
+</div>
+			</div>
+		</div>
+		
+		<script>(function () {
+	var SOURCES = window.TEXT_VARIABLES.sources;
+	
+	window.Lazyload.js(SOURCES.jquery, function() {
+		$(document).ready(function() {
+			
+			// Closes the sidebar menu
+			$(".page-header-menu-toggler").click(function(e) {
+				$(".page-header-content").toggleClass("active");
+			});
+		});
+	});
+	
+	window.Lazyload.js(SOURCES.highlightjs, function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
+	});
+})();
+</script>
+		
+		
+	</body>
+</html>
+

@@ -1,7 +1,7 @@
 
 
 # Site wide configuration
-# destination: docs
+destination: docs
 
 url:
 baseurl: "https://9to5.rossgodwin.com"
