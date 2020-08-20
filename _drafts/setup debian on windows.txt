@@ -1,0 +1,25 @@
+
+Do not modify linux files using windows apps.
+
+https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/
+
+
+Turn Windows features on or off
+
+Check "Windows Subsystem for Linux"
+
+Go to the Microsoft Store
+
+Search for "Debian" (include a screenshot here)
+
+Update Ubuntu (or Debian ???)
+
+Apt is Ubuntu's Advanced Packaging Tool (https://help.ubuntu.com/lts/serverguide/apt.html)
+
+
+> sudo apt-get update
+
+> sudo apt-get update && sudo apt-get dist-upgrade
+
+> cat /etc/os-release
+Version: Debian GNU/Linux 10

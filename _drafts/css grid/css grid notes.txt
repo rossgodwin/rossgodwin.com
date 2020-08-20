@@ -1,0 +1,412 @@
+
+
+
+
+
+https://scrimba.com/course/gR8PTE
+
+
+CSS will make your markup cleaner.  For example, rather than trying to define the columns and rows in the markup like it's done in Bootstrap, rows and columns and defined in the css.
+
+To make adjustments for responsive layouts, like adjusting page elements for vieing on a mobile device, use the @media query in the css and target the items that need to be changed i.e. header, menu, etc.
+
+Main elements
+	* Grid container
+		* The element on which 'display: grid' is applied (css-tricks)
+		* Direct parent of all the grid items (css-tricks)
+		* Ex.
+			* display: grid;
+			* grid-template-columns: 100px auto 100px;
+				* how many columns and how wide we want them to be
+			* grid-template-rows: 50px 50px;
+				* define the height of the rows
+			* grid-gap: 3px;
+				* provides a gap between the rows and columns
+	* Grid line
+		* Dividing lines that make up the structure of the grid
+		* Vertical - column grid lines
+		* Horizontal - row grid lines
+	* Grid item
+		* Children that are direct descendants of the grid container (css-tricks)
+
+* To get started you have to define a container element as a grid with display: grid, set the column and row sizes with grid-template-columns and grid-template-rows, and then place its child elements into the grid with grid-column and grid-row. (css-tricks)
+
+-- Lesson: Fraction units and repeat
+
+https://www.youtube.com/watch?v=ZPtpzuRajzM
+
+* fr unit = "fraction"
+	* Takes the space that's available and splits it up among all the things that are labeled fr units
+	* If 4 columns then each column gets 1 fr or 1/4 of the total space
+	* Decimal point numbers can be used
+
+----------- css -------------
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 50px;
+    grid-gap: 3px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    grid-gap: 3px;
+}
+
+Shorthand:
+grid-template is the shorthand for grid-template-columns and grid-template-rows
+
+.container {
+    display: grid;
+    grid-template: repeat(2, 50px) / repeat(3, 1fr);
+    grid-gap: 3px;
+}
+
+-- Lesson: Positioning items
+
+* Columns vs column lines (rows vs row lines)
+* Column lines = # of columns + 1
+* -1 is good to use if you don't know how many columns or rows the item will span across
+
+----------- css -------------
+.container {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(2, 1fr); // 2 columns = 3 column lines
+    grid-template-rows: 40px 200px 40px;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 3; // column lines
+}
+
+OR use shorthand
+
+.header {
+    grid-column: 1 / 3;
+	// OR grid-column: 1 / span 2; // span 2 columns (not column lines)
+	// OR grid-column: 1 / -1; // -1 indicates the very last column line
+}
+
+.menu {}
+
+.content{}
+
+.footer {
+    grid-column: 1 / -1;
+}
+
+-- Lesson: Template areas
+
+Templating is ideal for creating prototypes of layouts quickly
+
+Another video explaination of template areas:
+https://youtu.be/HgwCeNVPlo0?t=872
+
+Nested items:
+https://youtu.be/HgwCeNVPlo0?t=1313
+
+----------- css -------------
+.container {
+    height: 100%; // plus auto on grid-template-rows results in the height being responsive
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr); // defines the columns
+    grid-template-rows: 40px auto 40px;
+	grid-template-areas: // a visual representation of what the grid will look like
+        "h h h h h h h h h h h h"; // you're not defining the columns here just naming them
+	grid-template-areas: // a visual representation of what the grid will look like
+        "h h h h h h h h h h h h"
+        "m c c c c c c c c c c c"
+        "f f f f f f f f f f f f"; // you're not defining the columns here just naming them - see ex 1 screenshot
+		// dots can be use for blank cells (or white space)
+		// i.e.
+		// ". h h h h h h h h h h h"
+}
+
+.header {
+	grid-area: h;
+	// REPLACES
+    // grid-column: 1 / -1;
+}
+
+.menu {
+	grid-area: m;
+}
+
+.content {
+	grid-area: c;
+	// REPLACES
+    // grid-column: 2 / -1;
+}
+
+.footer {
+	grid-area: f;
+	// REPLACES
+    // grid-column: 1 / -1;
+}
+
+-- Lesson: Auto-fit and minmax
+
+How to change the amount of columns with the width of the container
+
+Auto-fit tries to fill up the grid with as many columns as possible until there's not enough space to add a new column
+Minmax - i.e. minmax(100px, 1fr)
+	* the columns would at least be 100 pixels but if there's more available space it would distribute it equally across the available columns
+	* this function prefers to use the minimum but falls back to maximum
+
+----------- css -------------
+.container {
+    display: grid;
+    grid-gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	// REPLACES
+	// grid-template-columns: repeat(auto-fit, 100px);
+    grid-template-rows: repeat(2, 100px);
+}
+
+-- Lesson: Implicit rows
+
+grid-auto-rows - targets those columns not explicit defined
+
+----------- css -------------
+.container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-rows: 100px 100px; // 2 rows have the heigth explicitly defined
+    grid-auto-rows: 100px; // implicit rows will be 100px...which means you can get rid of grid-template-rows
+}
+
+-- Lesson: Named lines
+
+----------- css -------------
+.container {
+    height: 100%; 
+    display: grid;
+    grid-gap: 3px;
+	grid-template-columns: [main-start] 1fr [content-start] 5fr [content-end main-end];
+	// REPLACES
+    // grid-template-columns: 1fr 5fr;
+	grid-template-rows: [main-start] 40px [content-start] auto [content-end] 40px [main-end];
+	// REPLACES
+    // grid-template-rows: 40px auto 40px; 
+}
+
+.header {
+	grid-column: main;
+	// REPLACES - because of the dash syntax (i.e. main-start and main-end)
+	// grid-column: main-start / main-end;
+	// REPLACES
+    // grid-column: 1 / 3;
+}
+
+.menu {}
+
+.content {
+	grid-area: content;
+	// REPLACES - grid area can be used here because content is "boxed" in by 4 main lines
+	// grid-column: content;
+	// REPLACES - because of the dash syntax (i.e. content-start and content-end)
+	// grid-column: content-start / content-end;
+	// REPLACES
+    // grid-column: 2 / 3;
+}
+
+.footer {
+	grid-column: main;
+	// REPLACES - because of the dash syntax (i.e. main-start and main-end)
+	// grid-column: main-start / main-end;
+	// REPLACES
+    // grid-column: 1 / 3;
+}
+
+-- Lesson: Justify-content and align-content
+
+justify-content
+	* Controls the content along the row axis, the horizontal one which goes from left to right
+	* Options
+		* start
+		* center
+		* end
+		* space-between - as much space as possible between items along the row axis
+		* space-evenly - distributes the items evening along the row axis, the items have an equal amount of space around them
+		* space-around - the items have a have-sized space on both sides, so between 2 items is a full-sized space but between a column line and item is a half-size space
+
+align-content
+	* Controls the content along the column axis, the vertical one which goes from top to bottom
+	* Options
+		* start
+		* center
+		* end
+
+-- Lesson: Justify-items and align-items
+
+justify-items
+	* Options
+		* stretch - default
+		* center
+		* start - squeezes all the items to the left hand side
+		* end - squeezes all the items to the right hand side
+
+align-items
+	* Controls along the column axis, vertical axis from top to bottom
+
+justify-self
+	* Target particular items
+
+align-self
+	* Target particular items
+
+----------- css -------------
+.container {
+    height: 100%; 
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 40px auto 40px;
+    //justify-items: center;
+    //align-items: center;
+}
+
+.header {
+    grid-column: 1 / -1;
+}
+
+.menu {
+    grid-column: 1 / 3;
+}
+
+.content {
+    grid-column: 3 / -1;
+    justify-self: center; // centers only the content
+	align-self: end; // squeezes the content to the bottom
+}
+
+.footer {
+    grid-column: 1 / -1;
+}
+
+-- Lesson: Auto-fit vs auto-fill
+
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	* repeats with auto-fit as many columns as we can fit into the grid given the constrains minmax(100px, 1fr), meaning they should be a minimum of 100 pixels and maximum of 1 fraction unit
+
+----------- css -------------
+.container {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 100px 100px;
+}
+
+.container2 {
+    border: 1px solid black;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); // adds new column tracks that are empty at every 100 pixel threshold
+    grid-template-rows: 100px 100px;
+}
+
+-- Lesson: Creating an article layout
+
+How to use css grids for artical layout
+
+----------- css -------------
+article {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px; // 3 column grid but 4 column lines
+	grid-column-gap: 10px;
+}
+
+// Rule where every element inside the article should start at the grid column line number 2
+article > * {
+    grid-column: 2;
+    min-width: 0; // allows the column to shrink
+}
+
+// The figure element takes the whole width
+article > figure {
+    grid-column: 1 / -1; // grid column starts at line 1 and end at the last column line
+    margin: 20px 0;
+}
+
+// Notice grid-column-gap in article to make the aside look a little better
+article > .aside {
+    grid-column: 3;
+    color: #666;
+    font-size: 0.8em;
+}
+
+-- Lesson: Grid vs Flexbox
+
+Flexbox
+	* Built for a one dimensional layout i.e. left to right on a single row
+	* Use this when creating a layout which has a direction, either row or column
+	* It's content first - it takes basis in the content
+	* The content makes the decision about where it will go in the layout
+	* All you need in the css is display: flex;
+	* https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Css grid
+	* Built for 2 dimensional layouts
+	* Use when creating a more overall layout with both rows and columns
+	* It's layout first - it takes basis in the layout
+	* It's not enought to define display: grid; but you then need to define columns and/or rows
+	* The elements get placed according to the layout
+
+The best of both worlds is combining both flexbox and css grid.
+
+----------- css -------------
+// The 3rd element gets shoved to the end of the container
+.flexbox-header > div:nth-child(3) {
+    margin-left: auto;
+}
+
+-- Lesson: Mobile responsiveness
+Source: https://youtu.be/HgwCeNVPlo0?t=1418
+
+----------- css -------------
+// make the default view for mobile
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-areas:
+		"title title"
+		"header header"
+		"sidebar sidebar"
+		"content content"
+		"footer footer";
+}
+
+// When the website is view inside anything larger than 736px in width it will start adding the styling inside the media query which in this case is the desktop view
+@media screen and (min-width: 736px)
+{
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr 500px 500px 1fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr;
+		grid-template-areas:
+			". title title ."
+			". header header ."
+			". sidebar sidebar ."
+			". content content ."
+			". footer footer .";
+	}
+}
+
+
+
+
+Additional resources:
+
+https://css-tricks.com/snippets/css/complete-guide-grid/ (css-tricks)
+https://www.youtube.com/watch?v=HgwCeNVPlo0
+https://css-tricks.com/look-ma-no-media-queries-responsive-layouts-using-css-grid/
+Common layouts: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/

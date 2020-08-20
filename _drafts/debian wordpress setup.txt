@@ -1,0 +1,212 @@
+
+
+I leaned heavily on the below 2 links.  Below are the steps that I took to get this to work.
+
+https://www.tecmint.com/install-wordpress-alongside-lamp-on-debian-10/
+
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-18-04
+
+--- Prereq ---
+
+If curl is not installed, go ahead and install it.
+$ sudo apt update && sudo apt upgrade
+$ sudo apt install curl
+
+Make the user you are logged in with and perform these commands has sudo privileges.
+$ sudo visudo
+
+---------------
+
+1) Create mysql database
+
+Log in with the root user
+
+$ sudo mysql -u root -p
+
+mysql> CREATE DATABASE wordpress;
+mysql> GRANT ALL ON wordpress.* TO 'wordpress_user'@'localhost' IDENTIFIED BY 'wordpress_pass';
+	* NOTE - this will indicate 0 rows affected
+mysql> FLUSH PRIVILEGES;
+mysql> select user, host from mysql.user;
+
+2) Install php extensions to the environment
+
+$ sudo apt update
+$ sudo apt install php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip
+
+$ sudo /etc/init.d/apache2 start
+
+Check what user/group apache is running under
+$ ps aux | grep apache2 | less
+
+3) Install WordPress
+
+Download and setup a wordpress directory structure
+
+$ cd /tmp
+$ sudo curl -O https://wordpress.org/latest.tar.gz
+$ sudo tar -xvf latest.tar.gz
+$ sudo rm latest.tar.gz
+$ touch /tmp/wordpress/.htaccess
+$ cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php
+$ mkdir /tmp/wordpress/wp-content/upgrade
+$ sudo cp -a /tmp/wordpress/. /var/www/wordpress
+
+Make www-data owner of files and folders.  This is the user Apache runs under and it needs permission to read and modify the wordpress folders
+
+$ sudo chown -R www-data:www-data /var/www/wordpress/
+$ sudo find /var/www/wordpress/ -type d -exec chmod 750 {} \;
+$ sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
+
+
+Update wordpress configuration
+
+Update the security keys in wp-config.php
+
+$ curl -s https://api.wordpress.org/secret-key/1.1/salt/
+$ sudo nano /var/www/wordpress/wp-config.php
+
+Update the database settings in wp-config.php
+
+$ sudo nano /var/www/wordpress/wp-config.php
+define('DB_NAME', 'wordpress');
+define('DB_USER', 'wordpress_user');
+define('DB_PASSWORD', 'wordpress_pass');
+define('FS_METHOD', 'direct');
+
+4) Configure Apache for WordPress
+
+$ cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/wordpress.conf
+
+$ sudo nano /etc/apache2/sites-available/wordpress.conf
+
+Change DocumentRoot to /var/www/wordpress
+
+Allow .htaccess files.  Add the following to the VirtualHost block
+<Directory /var/www/wordpress/>
+    AllowOverride All
+</Directory>
+
+Verify the syntax is correct
+
+$ sudo apache2ctl configtest
+
+Create symlink in sites-enabled
+
+$ sudo a2ensite wordpress.conf
+$ sudo a2dissite 000-default.conf
+
+$ sudo /etc/init.d/mysql start
+$ sudo /etc/init.d/apache2 start
+
+Wordpress login
+admin: john@doe.com
+pass: asdfasdf4
+
+--------------------------------- End of WordPress Installation ---------------------------------------------------
+
+Let's say you have your wordpress instance installed locally on your laptop and you move to a different network where you are assigned a different ip address.
+
+$ sudo mysql -u root -p
+
+mysql> update wordpress.wp_options set option_value='http://127.0.0.1' where option_name = 'siteurl';
+mysql> update wordpress.wp_options set option_value='http://127.0.0.1' where option_name = 'home';
+mysql> FLUSH PRIVILEGES;
+
+
+------ Migrate a website based off the Divi theme from 1 wordpress instance to another
+
+1) Install the Divi theme
+
+Select Appearance -> Themes -> Add New -> Upload Theme
+
+Choose the Divi zip file and select 'Install Now'
+
+If you receive the message 'The link you followed has expired'.  You can fix this by updating the .htaccess file in your wordpress folder.
+
+https://www.wpbeginner.com/wp-tutorials/how-to-fix-the-link-you-followed-has-expired-error-in-wordpress/
+
+$ cd /var/www/wordpress
+$ sudo nano .htaccess
+
+Add the following lines after the '# END WordPress' directive:
+php_value upload_max_size 64M
+php_value upload_max_filesize 64M
+php_value post_max_size 64M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+Activate the Divi theme.  Select 'Appearance', mouse over the Divi them and select 'Activate'
+
+2) Export and import Divi parts
+
+https://www.elegantthemes.com/documentation/divi/library-import/
+
+* Divi Library (Layouts)
+* Divi Role Editor
+* Divi Theme Options
+* Divi Theme Customizer
+
+
+-- Some manual changes
+* On Pages, remove Sample Page and Privacy Policy
+* Divi -> Theme Customizer -> General Settings -> Background
+* Divi -> Theme Customizer -> Homepage Settings
+	* Your Homepage Displays - select 'A static page'
+	* Homepage - select 'Home'
+* Divi -> Theme Customizer -> Widgets -> Footer Area #1 - remove Archives, Categories, Meta
+* Appearance -> Menus -> Screen Options (in the top right corner) - select 'Link Target'
+* Appearance -> Menus -> Menu structure - add 2 custom links
+	* Custom Link
+		* https://www.facebook.com/trianglesitedesign
+		* <i class="fab fa-facebook-square fa-2x"></i>
+		* Select 'Open link in a new tab'
+	* Custom Link
+		* https://www.linkedin.com/company/trianglesitedesign
+		* <i class="fab fa-linkedin fa-2x"></i>
+		* Select 'Open link in a new tab'
+* Appearance -> Menus -> Menu Settings - For 'Display Location' check 'Primary Menu'
+* Settings -> General -> Tagline - 'Civil Consulting and Engineering Firm'
+
+
+------------------- Publish your WordPress site as static html ------------------------
+
+https://wordpress.org/plugins/static-html-output-plugin/
+
+For the following link, there is a section 'index.html files for every folder'.  There are a few things I had to adjust to make sure redirects through index.php would not be used but instead subdirectories.
+https://wp2static.com/docs/basics/how-wp2static-works/
+
+1) It should be there but make sure the following code is in /var/www/wordpress/.htaccess
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+$ sudo nano /var/www/wordpress/.htaccess
+
+2) Ensure mod_rewrite is installed for apache2
+
+$ sudo touch /var/www/wordpress/phpinfo.php
+$ sudo nano /var/www/wordpress/phpinfo.php
+	* Add the following line:
+		<?php phpinfo();?>
+$ sudo chown -R www-data:www-data /var/www/wordpress/
+$ sudo find /var/www/wordpress/ -type d -exec chmod 750 {} \;
+$ sudo find /var/www/wordpress/ -type f -exec chmod 640 {} \;
+$ sudo a2enmod rewrite
+$ sudo /etc/init.d/apache2 restart
+
+In a web browser access the following url:
+http://127.0.0.1/phpinfo.php
+
+Under the apache configuration the mod_rewrite module should show up under loaded modules.
+
+3) Update wordpress permalinks
+* Settings -> Permalinks -> Common Settings
+	* Under 'Custom Structure' remove index.php from the url
+

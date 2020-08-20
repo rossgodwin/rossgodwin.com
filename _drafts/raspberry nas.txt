@@ -1,0 +1,42 @@
+* Raspberry Pi 4 kit
+
+https://www.amazon.com/CanaKit-Raspberry-4GB-Starter-Kit/dp/B07V5JTMV9/ref=sr_1_3?crid=18LHXW9XDJQV8&dchild=1&keywords=raspberry+pi+4+kit&qid=1584376726&s=electronics&sprefix=raspbe%2Celectronics%2C153&sr=1-3&swrs=75F2F1DDB011998486E59B7197D8D802
+
+ 
+
+* 2.5" SSD enclosure
+
+https://www.walmart.com/ip/Sabrent-2-5-Inch-SATA-to-USB-3-0-Tool-Free-External-Hard-Drive-Enclosure-Optimized-for-SSD-Support-UASP-SATA-III-Black-EC-UASP/43169820?wmlspartner=wlpa&selectedSellerId=1659&adid=22222222227031115619&wl0=&wl1=g&wl2=c&wl3=56040484736&wl4=aud-430887228898:pla-100120363016&wl5=9009734&wl6=&wl7=&wl8=&wl9=pla&wl10=112562635&wl11=online&wl12=43169820&veh=sem&gclid=EAIaIQobChMIwunQ9rSf6AIVU-WGCh0z3QkZEAQYAiABEgIB5vD_BwE
+
+ 
+
+
+
+
+* do all the updates on OMV after the first boot. Look for Update Management under System
+* i'd recommend having OMV reformat the SSD to ext4, NTFS does work under linux (which OMV is) but i have seen some rare problems with NTFS under linux so ext4 is safer
+* Raspbian buster
+	* https://www.raspberrypi.org/downloads/raspbian/
+
+
+https://www.youtube.com/watch?v=14D9MFcjubg
+
+ 
+
+-----------------------------
+
+ 
+
+* Micro SD card
+
+ 
+
+ 
+
+ 
+
+ 
+
+* USB Micro SD card reader
+
+https://www.walmart.com/ip/USB-3-0-Multi-function-SD-Memory-Card-Reader-for-SDHC-SDXC-MMC/592093583?wmlspartner=wlpa&selectedSellerId=11827&adid=22222222227243005762&wl0=&wl1=g&wl2=c&wl3=289724116277&wl4=pla-491766600184&wl5=9009734&wl6=&wl7=&wl8=&wl9=pla&wl10=117084777&wl11=online&wl12=592093583&veh=sem&gclid=EAIaIQobChMI6uLM0vGe6AIVM4VaBR2F5g9UEAQYAyABEgIvhvD_BwE

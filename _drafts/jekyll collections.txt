@@ -1,0 +1,41 @@
+
+Expiraments with collections
+
+This is a good article on jekyll collections.
+
+https://ben.balter.com/2015/02/20/jekyll-collections/
+
+
+-----
+Keep all your collections in 1 folder to keep your root folder from getting to large.
+
+Use collections_dir in _config.yml
+i.e. collections_dir: my_collections
+
+-----
+Use categories with collections
+
+Let's say you want to have a collection for your "tech" writings and then you want to categorize some of those writings as "notes".
+
+In _config.yml
+
+collections:
+  tech:
+    output: true
+    permalink: /:collection/:categories/:year/:month/:day/:title:output_ext
+
+In your folder structure
+-> _tech
+	-> notes
+		-> _posts
+
+You don't have to create the notes folder but it might be nice to use to keep things a little more organized.
+
+For the blog post, in between the triple-dashed lines set the Front Matter variable "categories"
+
+---
+...
+categories: notes
+...
+---
+

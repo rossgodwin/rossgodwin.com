@@ -1,0 +1,36 @@
+
+
+https://help.mailgun.com/hc/en-us/articles/203357040-Can-I-Use-the-Same-Domain-Name-for-Mailgun-and-for-Google-Apps-Or-Another-Email-Server-
+
+Don't use mailgun for personal email
+https://help.mailgun.com/hc/en-us/articles/203306710-Can-I-use-Mailgun-for-my-personal-email-address-
+
+Choose a domain for a mailgun account
+https://help.mailgun.com/hc/en-us/articles/202256730-How-Do-I-Pick-a-Domain-Name-for-My-Mailgun-Account-
+
+
+How to connect a domain to Mailgun
+https://www.namecheap.com/support/knowledgebase/article.aspx/10086/2208/how-to-connect-a-domain-to-mailgun
+
+
+TXT record - SPF and DKIM - allows mailgun to verify you own the domain
+
+
+After setting up a private email with namecheap
+On namecheap it will give you a message "This domain name uses a third-party DNS. To properly configure it for Private Email, please contact your DNS provider to add the following three records, which are mandatory:"
+
+
+
+Link your email address to gmail
+https://www.namecheap.com/support/knowledgebase/article.aspx/9188/2175/google-mail-fetcher-setup-for-namecheap-private-email
+
+
+Use a mx lookup to check that you have configured correctly
+https://mxtoolbox.com/
+
+
+-- Misc resources --
+https://yatsushi.com/blog/build-custom-email-with-mailgun-and-namecheap/
+https://www.namecheap.com/support/knowledgebase/article.aspx/308/2214/how-to-set-up-free-email-forwarding
+https://thedigitalnonprofit.com/use-gmail-own-domain-free/
+

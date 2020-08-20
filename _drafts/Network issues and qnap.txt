@@ -1,0 +1,19 @@
+As office IT administrator
+
+Recently I ran into an issue where our office router (Cisco Meraki) performed a firmware update late afternoon causing our office to lose connectivity to the internet.
+
+One affect was the subnet changing from 192.168.1.x to 192.168.127.x.
+
+For our file server we use a qnap 2 bay.  From initial setup to routine maintenance, I always been able to perform with a keyboard and monitor just using a web browser.
+
+For a few devices on the network that weren't set to DHCP (like the qnap server). The ip address and default gateway were incorrect. Where this caused a problem for the qnap server was I couldn't connect to it remotely because it's network settings were out of wack and how could I change them if I couldn't connect.  Remember I don't use a keyboard and monitor directly on this machine.  Thank goodness qnap has published a utility called Qfinder Pro (https://www.qnap.com/en-us/utilities/essentials) which was able to identify the qnap server on the network.  This utility provides some configuration functions that allowed me to adjust it's network settings.
+
+ 
+
+Right-click the qnap device that shows up in the list and choose 'General Settings' - it will prompt you for your login information
+
+Select the 'Network Settings' tab
+
+My was set to 'Use static IP address'
+
+I selected the option 'Obtain IP address settings automatically via DHCP'

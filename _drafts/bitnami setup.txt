@@ -1,0 +1,198 @@
+-- Bitnami / Google Cloud Platform - Compute Engine / Wildfly / MySQL / Namecheap / Eclipse IDE --
+
+https://docs.bitnami.com/google/infrastructure/wildfly/
+https://docs.bitnami.com/google/components/mysql/
+https://docs.bitnami.com/google/faq/
+https://bitnami.com/stack/wildfly/README.txt
+
+Editing a unix file (for those of us that haven't visited unix in a while):
+https://www.tutorialspoint.com/unix/unix-vi-editor.htm
+Helpful commands:
+i - insert mode
+Esc - command mode
+	:q - quit
+	:q! - quit without saving
+	:wq - write and quit
+	:w - save
+	:/string - search
+
+## show link to github project that is a basically a boilerplate project for java wildfly
+	
+
+0) Putty configuration - connect to the server through ssh
+I used PuTTY, the FAQ has good instructions under the 'Windows' heading
+https://docs.bitnami.com/google/faq/#windows
+
+Setup tunneling to access Wildfly server console
+https://docs.bitnami.com/google/infrastructure/wildfly/#access_console
+
+-- end of 0
+
+1) create virtual machine on bitnami
+	- follow the steps here, pretty self explanatory
+	- requires creating project on google developer console
+	- specify application stack
+
+Once the virtual machine is created you will be on the dashboard which will provide the following
+	- ip address (for what?)
+	- a button link ('Manage In The Google Console') to the Google Cloud Platform containing the virtual machine instance
+	- a button link ('Go To Application') to the wildfly application
+
+
+-- end of 1
+
+2) Configure MySql Workbench
+
+
+Opening port 3306
+https://docs.bitnami.com/google/faq/#how-to-open-the-server-ports-for-remote-access
+- I named the firewall rule 'bitnami-mysql'
+- Allowed protocol and ports
+	- source filter: 0.0.0.0/0/0
+	- protocol: tcp:3306
+
+https://docs.bitnami.com/google/components/mysql/#how-to-change-the-mysql-root-password
+
+
+https://docs.bitnami.com/google/components/mysql/#how-to-configure-mysql-workbench
+
+Switch to bin folder and run mysql:
+mysql -u root -p
+
+-- end of 2
+
+3) Access Wilfly server console
+When you try to access the administration console if you are denied with the following message:
+"For security reasons, Administration Console will be only available if you access it using 127.0.0.1 (localhost)."
+- make sure you setup tunnelling in PuTTY
+- try clicking the link 'Access Administration Console'
+
+On unix, switch to root user:
+sudo su -
+
+Follow the below instructions to create a management user in the management realm in order to log into the administration console.
+https://docs.jboss.org/author/display/WFLY8/Admin+Guide?_sscc=t#AdminGuide-Accessingthewebconsole
+
+-- end of 3
+
+4) Create datasource in Wildfly admin console
+- Configuration -> Subsystems -> Datasources -> Non-XA -> Add
+- choose MySQL datasource
+- Step 2 JDBC Driver I chose mysql-connector-java-5.1.37-bin.jar_com.mysql.jdbc.Driver_5_1
+	- It looks like Bitnami has fixed this with their Wildfly prepackaged configuration but if under the 'Detected Driver' tab you do not see the mysql driver available but perhaps you see the postgresql, check out the following post on the bitnami forums.  I posted the question and later resolved the issue and replied with the solution.
+	- https://community.bitnami.com/t/wildfly-create-mysql-driver/43738
+- Step 3 make sure your connection url, username and password is correct
+
+-- end of 4
+
+5) Configure a security domain in Wildfly admin console (add more verbiage about this)
+- Configuration -> Subsystems -> Security -> Add
+- Step 1:
+	- enter the security domain name
+	- cache type - default
+- Authentication - add 2 modules
+	- Remoting
+		- name: Remoting
+		- code: Remoting
+		- flag: optional
+	- add your login module
+		- name: 
+		- code:
+		- flag: required
+		- module: <leave blank>
+		- module options: dsJndiName=java:/MySqlSandboxDS
+
+-- end of 5
+
+6) Eclipse build WAR file
+- right-click the project -> Export -> WAR file
+	- Note if do not want to have a context root
+		- update the context root in jboss-web.xml to be "<context-root>/</context-root>"
+		- export to ROOT.war
+
+-- end of 6
+
+7) Deploy WAR file on Wildfly
+- Deployments -> Add -> Upload a new deployment
+
+-- end of 7
+
+8) Configure custom domain for apache
+
+The DNS provider I use is namecheap.com
+https://www.namecheap.com/support/knowledgebase/article.aspx/319/78/how-can-i-setup-an-a-address-record-for-my-domain
+I added 2 host record entries
+A Record | @ | XXX.XXX.XXX.XXX
+A Record | www | XXX.XXX.XXX.XXX
+
+You can check the name progagation
+https://www.whatsmydns.net/#A/www.cheapthycable.com
+
+- adjustments to httpd.conf
+	- update domain name for ServerName variable
+		- i.e. "ServerName cheapthycable.com"
+
+https://docs.bitnami.com/google/components/apache/#how-to-create-a-virtual-host
+https://docs.bitnami.com/google/components/apache/#how-to-redirect-wwwmyappexamplecom-or-other-domains-to-my-server
+
+Restart apache:
+https://httpd.apache.org/docs/current/stopping.html
+apachectl -k restart
+
+-- end of 8
+
+9) Send mail configuration
+https://cloud.google.com/compute/docs/tutorials/sending-mail/
+"Google Compute Engine does not allow outbound connections on ports 25, 465, and 587. By default, these outbound SMTP ports are blocked because of the large amount of abuse these ports are susceptible to."
+
+https://cloud.google.com/compute/docs/tutorials/sending-mail/using-mailgun
+
+
+- Mailgun
+- add a custom domain
+
+My DNS provider is Namecheap:
+- add SPF and DKIM records to the host records.  The following articles are helpful for this...
+https://documentation.mailgun.com/quickstart-sending.html#add-sending-tracking-dns-records
+https://www.namecheap.com/support/knowledgebase/article.aspx/317
+https://help.mailgun.com/hc/en-us/articles/202052074-How-do-I-verify-my-domain-
+https://julienliabeuf.com/mailgun-namecheap-spf-dkim-validation/
+http://mxtoolbox.com/SuperTool.aspx?action=mx:YOURDOMAIN.COM&run=toolpage
+
+
+https://documentation.mailgun.com/quickstart.html
+https://cloud.google.com/appengine/docs/flexible/java/sending-emails-with-mailgun
+https://www.namecheap.com/support/knowledgebase/article.aspx/308/77/how-to-set-up-free-email-forwarding
+
+
+
+
+
+
+-- end of 9
+
+
+
+
+
+XXXX) Wildfly SSL
+
+https://docs.bitnami.com/google/infrastructure/wildfly/#how-to-create-an-ssl-certificate-for-wildfly
+https://docs.bitnami.com/google/infrastructure/wildfly/#how-to-enable-ssl-in-wildfly
+https://docs.jboss.org/author/pages/viewpage.action?pageId=66322705
+
+https://www.namecheap.com/support/knowledgebase/article.aspx/9423/0/apache-opensslmodssl
+
+https://www.namecheap.com/support/knowledgebase/category.aspx/38/ssl-certificates-faq
+https://www.namecheap.com/support/knowledgebase/subcategory.aspx?type=category&contentid=69&categorytitle=installation
+
+
+--------------------- Private below --------------------------------
+Old Bitnami IP
+104.197.123.85
+
+mailgun sandbox server:
+sandbox0c1ac161e7cb476e98093d796cab95d1.mailgun.org
+
+
+

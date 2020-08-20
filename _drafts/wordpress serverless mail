@@ -1,0 +1,237 @@
+
+-- Lambda
+
+https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/
+
+https://aws.amazon.com/blogs/architecture/create-dynamic-contact-forms-for-s3-static-websites-using-aws-lambda-amazon-api-gateway-and-amazon-ses/
+
+
+
+Services -> Lambda
+
+Select 'Create Function'
+
+Select 'Use a blueprint'
+
+Search 'hello' to provide the 'hello-world' starter function
+
+Select 'Configure'
+
+Provide the basic information for the function name and role
+Select 'Create Function'
+
+Perform a test
+
+You may get the error
+
+Response:
+{
+  "errorType": "AccessDenied",
+  "errorMessage": "User `arn:aws:sts::197383631143:assumed-role/tsd-email-rfp-role-z5hpoxgm/tsd-email-rfp' is not authorized to perform `ses:SendEmail' on resource `arn:aws:ses:us-east-1:197383631143:identity/rgodwin.tsd@gmail.com'",
+  "trace": [
+    "AccessDenied: User `arn:aws:sts::197383631143:assumed-role/tsd-email-rfp-role-z5hpoxgm/tsd-email-rfp' is not authorized to perform `ses:SendEmail' on resource `arn:aws:ses:us-east-1:197383631143:identity/rgodwin.tsd@gmail.com'",
+    "    at Request.extractError (/var/runtime/node_modules/aws-sdk/lib/protocol/query.js:50:29)",
+    "    at Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:106:20)",
+    "    at Request.emit (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:78:10)",
+    "    at Request.emit (/var/runtime/node_modules/aws-sdk/lib/request.js:688:14)",
+    "    at Request.transition (/var/runtime/node_modules/aws-sdk/lib/request.js:22:10)",
+    "    at AcceptorStateMachine.runTo (/var/runtime/node_modules/aws-sdk/lib/state_machine.js:14:12)",
+    "    at /var/runtime/node_modules/aws-sdk/lib/state_machine.js:26:10",
+    "    at Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:38:9)",
+    "    at Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:690:12)",
+    "    at Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:116:18)"
+  ]
+}
+
+
+---- Give the Lambda function send email permission
+
+Services -> Identity and Access Management (IAM)
+
+Under 'Access management', select 'Roles'
+
+Select the role that is associated to the Lambda function
+
+Add a inline policy by selecting 'Add inline policy'
+	* 'CloudWatch Logs' -> Limited 'Write'
+	* 'Pinpoint Email' -> Access level 'Write'
+	* 'SES' -> Limited 'Write'
+
+
+-- AWS
+
+Services -> API Gateway
+
+Select 'Create API'
+
+For 'Choose an API type' select 'REST API' -> 'Build'
+
+
+select 'Actions' -> 'Create Resource'
+
+After creating the resource, highlight the resource and select 'Actions' -> 'Create Method'
+
+This will provide a dropdown of options, select 'POST'
+
+Set up the post
+	* For the integration type select 'Lambda Function'
+	* Enter the Lambda function name
+
+Enable CORS
+
+Highlight the POST method
+Select 'Actions'
+Select 'Enable CORS'
+
+Deploy
+
+Under the API
+Select 'Resources'
+Highlight the root resource, select 'Actions', select 'Deploy API'
+Enter the stage name and choose 'Deploy API'
+
+Get the API endpoint
+Select the API, select 'Stages'
+
+-- AWS Simple Email Service
+
+Services -> Simple Email Service
+
+
+-- WP Serverless Forms plugin
+
+Plugins -> Plugin Editor
+Select plugin to edit: WP Serverless Forms -> Select
+Plugin Files -> assets -> js -> main.js
+
+
+
+https://developer.mozilla.org/en-US/docs/Web/API/FormData/entries
+
+
+function filterFormFieldsToKeyValueObject(fieldPrefix, formData) {
+	var object = {};
+	for (var entry of formData.entries()) {
+		var key = entry[0];
+		if (key.startsWith(fieldPrefix)) {
+			var value = entry[1];
+			object[key] = value;
+		}
+	}
+	return object;
+}
+
+function buildTsdRfpJsonRequest(object) {
+	var subject = 'Request for Proposal';
+	
+	var inputs = [];
+	for (var key of Object.keys(object)) {
+		var value = object[key];
+		
+		if (key.startsWith('tsd_rfp_bool')) {
+			delete object[key];
+			
+			var newKey = key.replace('[]', '');
+			
+			var newValue = {};
+			newValue['label'] = value;
+			newValue['value'] = 'Yes';
+			
+			inputs.push(newValue);
+		} else {
+			console.log('key = ' + key);
+			if (key === "tsd_rfp_project_name") {
+				subject += ': ' + value;
+			};
+			
+			var label = '';
+			var el = document.getElementById(key);
+			if (el) {
+				label = el.getAttribute("placeholder");
+			}
+			
+			var newValue = {};
+			newValue['label'] = label.replace('*', '');
+			newValue['value'] = value;
+			
+			inputs.push(newValue);
+		}
+	}
+	
+	var fromAddress = 'tm.anonymous.1@gmail.com';
+	var toAddresses = [];
+	toAddresses.push('rgodwin.tsd@gmail.com');
+	
+	var request = {};
+	request['tsd_rfp_from'] = fromAddress;
+	request['tsd_rfp_tos'] = toAddresses;
+	request['tsd_rfp_subject'] = subject;
+	request['tsd_rfp_inputs'] = inputs;
+	
+ 	return JSON.stringify(request);
+}
+
+
+Modify the form submit function to use these new methods.
+
+form.addEventListener("submit", function (el) {
+      el.preventDefault();
+		
+      var data = new FormData(form);
+	
+      var object = filterFormFieldsToKeyValueObject('tsd_rfp', data);
+      processTsdRfpRequestFields(object);
+	  var json = JSON.stringify(object);
+		
+	  submitForm("POST", wp.wp_sls_forms_endpoint, json, el);
+    });
+
+
+-----------------------------------
+
+
+https://www.scrivito.com/using-an-aws-lambda-function-to-send-an-email-after-form-submission-f0e6697e59a381ba
+https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html
+
+
+
+
+
+
+
+
+Verifying email address with SES
+https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses-procedure.html
+
+
+
+When your SES account is in "sandbox" mode, you can:
+Only send from verified domains and email addressed, and
+Only send to verified domains and email addresses
+In order to send to anyone else, you must move your account out of sandbox mode by contacting AWS support and requesting it:
+https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html?icmpid=docs_ses_console
+
+
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"xyz","password":"xyz"}' \
+  https://mmnogc0s27.execute-api.us-east-1.amazonaws.com/Beta/contact-us
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  https://mmnogc0s27.execute-api.us-east-1.amazonaws.com/Beta/contact-us;
+
+
+-- CORS --
+
+https://fetch.spec.whatwg.org/#http-cors-protocol
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors.html
+
+https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-cors-console.html
+
+https://wordpress.org/support/topic/proper-status-code-on-preflight-options-request/
+
+https://thoughtsandstuff.com/wordpress-rest-api-cors-issues/
+

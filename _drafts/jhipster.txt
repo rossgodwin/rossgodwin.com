@@ -1,0 +1,11 @@
+
+pg.10
+
+Install
+JDK 8
+Node.js 8
+
+
+
+* At its core, JHipster is a Yeoman generator.
+* can help developers quickly build beautiful web applications

@@ -1,0 +1,137 @@
+
+- java keytool to create keystore and CSR
+- apache on Windows
+- Wildfly on windows
+- namecheap.com
+
+Explaination of CSR is here
+https://support.comodo.com/index.php?/Knowledgebase/Article/View/792/19/certificate-signing-request-csr-generation---nortel-ssl-accelerator
+
+*.csr file contains the CSR code that you need to submit during certificate activation. It can be opened with a text editor. Usually it looks like a block of code with a header: “-----BEGIN CERTIFICATE REQUEST----“ It is recommended to submit a CSR with the header and footer.
+
+
+To activate an SSL certificate you need submit a CSR (Certificate Signing Request) on a ssl hosting site, like namecheap.com.
+
+
+
+-- Create a new keystore
+* Result will be a .jks file
+{JAVA_HOME}\keytool -genkey -alias server -keyalg RSA -keysize 2048 -keystore yourdomain.jks
+	* You will encounter the following prompts:
+		* Enter keystore password:
+		* Re-enter new password:
+		* What is your first and last name?
+			* Common Name (CN) - The Common Name is the Host Name or Domain Name. Example "www.domain.com" or "domain.com".
+				* This is not YOUR first and last name, but rather your domain name and extension(i.e., www.yourdomain.com). If you are ordering a Wildcard Certificate this must begin with *. (example: *.digicert.com)
+				* (Ref 2) If all the aforementioned points are self-explanatory, “common name” part deserves some additional details. Common name is one (or more) host name(s) associated with the SSL certificate. In other words, this is a Fully Qualified Domain (or subdomain) Name (FQDN) that you would like to see HTTPS-accessible. However, we need to keep in mind that, when issued, the SSL certificate will be valid only for the exact FQDN indicated in your CSR code, and HTTPS access to subdomains will result in a browser warning. Let us check the example for a better understanding:
+					* (Ref 2) SSL certificate activated with the CSR code generated for www.example.com will not cover security.example.com or any other subdomain of example.com. It will be valid only for the FQDN indicated in the CSR. On the other hand, SSL activated with the CSR code generated for security.example.com, will cover neither www.example.com, nor example.com.
+		* What is the name of your organizational unit?
+			* Organization Unit (OU) - This is the name of the department or organization unit making the request
+		* What is the name of your organization?
+			* Organization (O) - Your company or department
+		* What is the name of your City or Locality?
+			* Locality or City (L): The Locality field is the city or town name
+		* What is the name of your State or Province?
+			* State or Province (S) - Spell out the state completely; do not abbreviate the state or province name
+		* What is the two-letter county code for this unit?
+			* Country Name (C) - Use the two-letter code without punctuation for country
+		* Is CN=, OU=, O=, L=, ST=, C=US correct?
+		* Enter key password for <value use for -alias in the command line>
+		* Re-enter new password:
+
+-- Convert .jks into .p12 format in order to create a private key
+{JAVA_HOME}\bin\keytool.exe -importkeystore -srckeystore cheapthycable_rossgodwin_com.jks -destkeystore cheapthycable_rossgodwin_com.p12 -deststoretype PKCS12
+
+-- Export private key from .p12 keystore
+{APACHE_HOME}\bin\openssl.exe pkcs12 -in cheapthycable_rossgodwin_com.p12 -nocerts -nodes -out cheapthycable_rossgodwin_com.key
+	* Note: openssl is shipped with Apache
+	* https://www.openssl.org/docs/manmaster/man1/s_client.html
+
+-- Generate your CSR with the new keystore
+* Result will be a .csr file
+{JAVA_HOME}\keytool -certreq -alias server -keyalg RSA -file yourdomain.csr -keystore yourdomain.jks
+	* You will encounter the following prompts:
+		* Enter keystore password:
+			* This will be the password you used to create the keystore above
+
+
+-- Namecheap
+(Show images with these steps)
+Step 1) enter CSR
+
+Step 3) DCV - domain control validation - way of proving that you own or control a registered domain name.  See ref 3.
+
+Step 4) specify who to send the ssl file to
+
+If the email DCV option is chosen, you will be sent a email that provides a validation link to enter a validation code provided in the email.  Note "Due to regulations of Certificate Authorities, it is only possible to use either a domain whois record or one of the following domain-related generic emails to receive an approver email: admin@example.com, administrator@example.com, postmaster@example.com, webmaster@example.com or hostmaster@example.com."  With namecheap.com you get a free 1 year subscription to whoisguard.  With that comes a proxy whoisguard email address that will forward emails to the namecheap.com registrant email address.  Where this comes in handy is when you haven't set up an email address under your domain yet but you are ready to setup ssl.  Your whoseisguard email address can be selected for DCV.
+	* Note: I created this certificate for a subdomain.  But in namecheap I had the top level domain (tld) pointing to github.  This was preventing the ssl certificate from being validated.
+
+-- Install SSL certifcate
+
+Under {APACHE_HOME}\conf create a folder ssl.  Add the security certificate file (*.crt) and the CA-BUNDLE file (*.ca-bundle).
+
+In {APACHE_HOME}\conf\httpd.conf, uncomment the following lines:
+LoadModule socache_shmcb_module modules/mod_socache_shmcb.so
+LoadModule ssl_module modules/mod_ssl.so
+
+Instead of uncommenting the line
+Include conf/extra/httpd-ssl.conf
+
+I created a copy of it in conf/extra/my-httpd-ssl.conf and added the following line to conf/httpd.conf
+Include conf/extra/my-httpd-ssl.conf
+
+Update the following in the ssl conf file under the virtual host 443 tag:
+	* ServerAdmin
+	* DocumentRoot
+	* ServerName
+	* ErrorLog
+	* CustomLog
+	* SSLCertificateFile
+		* point to .crt file
+	* SSLCertificateKeyFile
+		* point to .key file (private key)
+	* SSLCertificateChainFile
+		* point to .ca-bundle file
+
+Restart the Apache server. You can test your configuration by navigating to "https://localhost/" in your Web browser.
+
+-- Open port 80 and 443
+
+Open port 80 on firewall with the following, using 1 of the following:
+Windows Defender Firewall -> Advanced Settings -> add a new inbound rule for port 80
+Or the command line:
+netsh advfirewall firewall add rule name="Open Port <port number>" dir=in action=allow protocol=TCP localport=<port number>
+
+-- If using ec2
+
+Make sure the security group you are using has inbound rules turned on for port 80 and 443
+
+-- Wildfly
+
+Add the following to your web.xml
+<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Viewpoint Secure URLs</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+
+----------------------
+Resources
+
+Ref 1 - https://www.digicert.com/kb/csr-creation-java.htm
+
+Ref 2 - https://www.namecheap.com/support/knowledgebase/article.aspx/9641/67/how-to-put-domain-correctly-in-csr
+
+Ref 3 - https://www.namecheap.com/support/knowledgebase/article.aspx/9637/68/how-can-i-complete-the-domain-control-validation-dcv-for-my-ssl-certificate?_ga=2.66651821.204320459.1584048783-102943364.1576033604
+
+https://www.namecheap.com/support/knowledgebase/article.aspx/9834/69/how-can-i-find-the-private-key-for-my-ssl-certificate
+
+https://www.namecheap.com/support/knowledgebase/article.aspx/467/67/how-to-generate-csr-certificate-signing-request-code/
+
+https://www.namecheap.com/support/knowledgebase/article.aspx/795/14/how-to-install-ssl-certificates
+
+

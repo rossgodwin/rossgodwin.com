@@ -1,0 +1,38 @@
+
+.wrapper {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: 
+    "header"
+    "nav"
+	"sidebar"
+    "content"
+    "ad"
+    "footer";
+}
+
+.main-head {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.main-nav {
+  grid-area: nav;
+  display: grid;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  display: none;
+}
+
+.ad {
+  grid-area: ad;
+}
+
+.main-footer {
+  grid-area: footer;
+}

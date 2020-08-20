@@ -1,0 +1,10 @@
+
+
+Node.js is an open-source cross-platform JavaScript run-time environment that allows server-side execution of JavaScript code.
+
+Npm is the default package manager for Node.js and the world’s largest software registry.
+
+> sudo apt install nodejs
+
+> sudo apt install npm
+

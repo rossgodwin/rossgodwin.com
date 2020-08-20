@@ -1,0 +1,55 @@
+
+
+Some quick notes on linux permissions
+
+
+https://www.linode.com/docs/tools-reference/linux-users-and-groups/
+
+--- Understanding file permissions ---
+
+-rw-r--r--
+	* 1st dash indicates type of file
+		* d for directory
+		* s for special file
+		* - for a regular file
+	* The next three characters (rw-) define the owner’s permission to the file
+	* The next three characters (r--) are the permissions for the members of the same group as the file owner
+	* The last three characters (r--) show the permissions for all other users
+
+
+--- sudo ---
+
+* Root is the super user and has the ability to do anything on a system
+* A sudo user should be used in place of root 
+* sudo is a tool that gives users and groups access to commands and resources they normally would not be able to use
+* sudo enables a user to have administration privileges without logging in directly as root
+* To provide a user with sudo ability they need to 1) be added to a sudo enabled group or 2) their username be added to sudoers file
+
+$ su root
+$ sudo visudo
+
+When you save your changes it will save to the lock file /etc/sudoers.tmp and then basically copies it to the real /etc/sudoers file.
+
+https://www.linode.com/docs/tools-reference/linux-users-and-groups/#whitelisting-commands-with-sudo
+
+
+--- Check user and group permissions ---
+
+https://linuxize.com/post/how-to-list-groups-in-linux/
+List the current logged in user
+$ whoami
+List groups
+$ cat /etc/group
+List the groups the current user belongs to
+$ groups {USER-NAME-HERE}
+or
+$ id {USER-NAME-HERE}
+List members of a group
+$ getent group www-data
+or
+$ grep ^www-data /etc/group
+
+Add user to www-data group
+sudo adduser {USER-NAME-HERE} www-data
+
+Log out and log back in - close the linux terminal window and reopen

@@ -1,0 +1,35 @@
+
+
+Connecting MySQL Workbench on my Windows 10 host machine to a MySQL server running on Debian 10 VirtualBox client machine.
+
+VirtualBox Manager -> Settings -> Network -> Attached to: NAT -> Advanced -> Port Forwarding - add the following rule:
+	Name: MySQL
+	Protocol: TCP
+	Host IP: leave blank
+	Host Port: 3306
+	Guest IP: leave blank
+	Guest Port: 3306
+
+My install is a MariaDB (Since MariaDB is a fork of MySQL) so I had to update the config file to allow ip address other than localhost
+$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+Comment out the line
+	bind-address = 127.0.0.1
+Add the following line
+	bind-address = 0.0.0.0
+
+Because I'm running this in a local development I'm opening this up to any address (hence 0.0.0.0).  In a deployment environment it would be better to specify the ip address of the application server connecting to the database.
+
+Restart
+$ sudo /etc/init.d/mysql restart
+
+Lastly, give the user permission from a remote host to the database.  Here because it is a local development environment I'm going to grant the user all permissions from any host.
+$ sudo mysql -u root -p
+mysql> GRANT ALL PRIVILEGES ON database_name_here.* TO 'username_here'@'%' IDENTIFIED BY 'user_password_here';
+mysql> flush privileges;
+mysql> select user, host from mysql.user;
+
+
+Helpful log locations:
+For MySQL workbench: C:\Users\dev\AppData\Roaming\MySQL\Workbench\log
+For MySQL server: sudo nano /var/log/mysql/error.log
+

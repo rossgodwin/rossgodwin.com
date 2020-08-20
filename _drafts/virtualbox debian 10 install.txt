@@ -1,0 +1,88 @@
+
+
+1) Download a Debian Linux ISO
+
+https://www.debian.org/releases/stable/amd64/
+
+https://www.debian.org/releases/stable/amd64/ch04s02.en.html
+https://www.debian.org/distrib/ftplist
+https://www.debian.org/CD/
+Download CD/DVD images using HTTP - https://www.debian.org/CD/http-ftp/
+Official CD/DVD images of the stable release - https://www.debian.org/CD/http-ftp/#stable
+I'm installing on a PC so I chose amd64 - https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/
+
+You can download the netinst image, which is the smaller image.  During the installation process it will install the core system but it will have a step where you can choose the desktop environment that you would like to install.
+
+There is an Xfce iso.  Xfce is a lightweight desktop environment.
+https://wiki.debian.org/DesktopEnvironment
+
+
+2) Create a new virtualbox and install Debian Linux
+
+The following instructional blog was very helpful in creating a new Debian linux virtual machine:
+
+https://www.brianlinkletter.com/installing-debian-linux-in-a-virtualbox-virtual-machine/
+
+
+Linux /dev/sda is the first hard (the primary master) and /dev/sdb is the second.  The numbers refer to partitions, so /dev/sda1 is the first partition of the first drive.
+
+
+3) Troubleshoot
+
+You may start the virtual machine and receive a error.
+"Failed to open a session for the virtual machine."
+"Not in a hypervisor partition (HVP=0) (VERR_NEM_NOT_AVAILABLE).
+AMD-V is disabled in thee BIOS (or by the host OS) (VERR_SVM_DISABLED)"
+
+AMD-V is the renamed trademark for Secure Virtual Machine Mode (SVM). The number one reason why the  AMD-V is disabled in the BIOS (or by the host OS) (VERR_SVM_DISABLED) error occurs is because the AMD-V technology is disabled from your BIOS Settings.
+
+To fix you have to enable SVM Mode (Secure Virtual Machine Mode).
+
+In order to do this for in my MSI BIOS.  Go to Overclocking -> CPU Features -> SVM Mode - toggle to Enabled
+
+
+4) Enable copy/paste between guest and host machines
+
+There are 2 steps to take:
+
+1 - In VirtualBox Manager go to Settings -> General -> Advanced - change 'Shared Clipboard' and 'Drag'n'Drop' to 'Bidirectional'
+
+2 - Install guest services to enable copy/past between host and guest machine
+
+Download VBoxGuestAdditions_x.x.xx.iso for the version of VirtualBox you have.
+https://download.virtualbox.org/virtualbox
+So for 6.1.10 go to
+https://download.virtualbox.org/virtualbox/6.1.10/
+
+Follow this tutorial
+https://www.youtube.com/watch?v=8MiPmL0YaJk
+
+In the step when you go to the drive with the guest services iso mounted.  I could not get the 'Run Software' command to work.  It would give me the error 'Unable to locate the program'.  So instead I opened a terminal window and installed it manually.
+$ cd /media/cdrom0
+$ sudo sh VBoxLinuxAdditions.run
+
+5) Configure the virtualbox so apache is accessible from the host machine
+
+Settings -> Network -> Adapter 1
+	* for 'Attached to' select 'NAT'
+	* Advanced -> Port Forwarding - add a new port forwarding rule
+		* Name = Apache
+		* Protocol = TCP
+		* Host IP = <leave blank>
+		* Host Port = 80
+		* Guest IP = <leave blank>
+		* Guest Port = 80
+
+From your host maching you can access the apache web server using the loop back address (http://127.0.0.1) or the host machines ip address.
+
+https://www.virtualbox.org/manual/ch06.html#natforward
+
+
+
+
+------------------------------------------------------------
+
+Helpful GNOME shortcut keys
+	* To open Linux console key in Ctrl+Alt+F3
+	* To go back to GUI key in Ctrl+Alt+F2
+

@@ -1,0 +1,50 @@
+
+Apt is Ubuntu's Advanced Packaging Tool (https://help.ubuntu.com/lts/serverguide/apt.html)
+
+Install Pip for Python 3
+
+> sudo apt install python3-pip
+
+
+Install virtualenv to create isolated Python environments (https://virtualenv.pypa.io/en/latest/installation/)
+
+> pip3 install virtualenv
+
+Add the Python module to the user path
+
+> nano ~/.bashrc
+
+This should install the new module in ~/.local/bin
+
+Add the following to the end of the file and save.
+export PATH="$HOME/.local/bin:$PATH"
+
+Create a new virtual environment for Pelican
+
+> virtualenv ~/virtualenvs/pelican
+> cd ~/virtualenvs/pelican
+> source bin/activate
+
+Remain in ~/virtualenvs/pelican and install Pelican
+
+> pip3 install pelican
+
+Update the plugin paths to reflect the virtual environment.  Open pelicanconf.py and update the PLUGIN_PATHS variable.
+
+PLUGIN_PATHS = ["plugins", "~/virtualenvs/pelican/lib/python3.7/site-packages"]
+
+Install markdown
+
+> pip3 install Markdown
+
+To compile the project, go to the project root folder and run
+
+> pelican content
+
+Run Pelican's simple built-in web server to view the content
+
+> pelican --listen
+> pelican --autoreload --listen
+
+The site will be available at http://localhost:8000
+

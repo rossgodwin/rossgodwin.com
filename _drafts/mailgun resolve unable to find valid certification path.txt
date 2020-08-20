@@ -1,0 +1,11 @@
+
+
+https://stackoverflow.com/questions/48417338/during-post-request-on-send-email-api-of-mailgun-it-shows-error-using-java-web-a/48425037#48425037
+
+
+mailgun PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+
+
+D:\dev\Java\jdk1.8.0_77\bin\keytool.exe -import -trustcacerts -keystore D:\dev\Java\jdk1.8.0_77\jre\lib\security\cacerts -storepass changeit -noprompt -alias digicert-global-root-g2 -file C:\Users\rgodwin\Downloads\DigiCertGlobalRootG2.crt
+
+

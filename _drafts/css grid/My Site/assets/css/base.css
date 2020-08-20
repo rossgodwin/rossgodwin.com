@@ -1,0 +1,38 @@
+
+
+
+.sidebar {
+	background: #5FCB71;
+	color: #fff;
+	
+	.site-name {
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: #fff;
+		a {
+			color: #fff;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	.profile-section {
+		.profile-image {
+			max-width: 160px;
+		}
+
+		.bio {
+			font-size: 0.875rem;
+			a {
+				color: #fff;
+				text-decoration: underline;
+				
+				&:hover {
+					color: rgba(0, 0, 0, 0.6);
+					
+				}
+			}
+		}
+	}
+}

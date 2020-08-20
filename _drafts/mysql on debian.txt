@@ -1,0 +1,61 @@
+
+
+"In order to install the latest available version of a software from the Internet repositories, your local repository index needs to be in line with them. Run the following command as sudo in order to update your local repository index"
+> sudo apt-get update
+
+To discover the actual package name for installation
+http://repo.mysql.com/apt/debian/pool/
+
+> apt-cache search mysql-server
+
+> sudo apt-get install default-mysql-server
+
+This installs MariaDB - the open source community version of MySQL server
+
+https://dev.mysql.com/doc/refman/8.0/en/upgrade-before-you-begin.html
+
+https://www.a2hosting.com/kb/developer-corner/mysql/reset-mysql-root-password
+
+
+
+
+> sudo mysql -u root
+
+> UPDATE mysql.user SET Password=PASSWORD('password') WHERE User='root';
+
+> flush privileges;
+
+
+Update debian.cnf to include the root password
+C:\Users\rgodwin\AppData\Local\Packages\TheDebianProject.DebianGNULinux_76v4gfsz19hv4\LocalState\rootfs\etc\mysql\debian.cnf
+password = asdfasdf4
+
+
+sudo /etc/init.d/mysql start
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql restart
+sudo /etc/init.d/mysql status
+
+
+If attempting to connect through MySQL Workbench.  Check the following:
+
+1) Does a local connection work
+> mysql -u root
+
+2) Does a local connection work specifying a host
+> mysql -u root -h 127.0.0.1
+
+If trouble connecting specifying a host, the following link is helpful:
+https://stackoverflow.com/a/44095674
+
+
+
+MySQL
+- Community downloads
+https://dev.mysql.com/downloads/
+
+
+https://dev.mysql.com/doc/refman/8.0/en/linux-installation-debian.html
+
+
+

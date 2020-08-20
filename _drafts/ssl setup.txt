@@ -1,0 +1,21 @@
+
+
+1 - update genkey.bat
+
+2 - run genkey.bat
+	- generates a .keystore file
+	- for first and last name, name of organizational unit, and name of organization I recommend going ahead and using the domain name (i.e. www.cheapthycable.com)
+
+3 - update gencertreq.bat
+
+4 - run gencertreq.bat
+	- generates a .txt file that is a base64 encoded CSR (Certificate Signing Request).  This contains the public key and information about the certificate applicant such as organization, locality, state, country and domain name for which the certificate should be applied.
+	- the base64 encoded CSR in the .txt file is information that you will provide (copy and paste) your DNS provider when activating SSL
+
+
+6 - change .keystore file from step 2 to .jks
+
+7 - run keytool program run_ktl.bat
+
+Go to Keytool -> Export -> Keystore's entry -> Private key
+

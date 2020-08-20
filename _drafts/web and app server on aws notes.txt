@@ -1,0 +1,60 @@
+
+
+Remote desktop connection
+Make sure the security group allows traffic on RDP port 3389 
+
+RDP local file access
+https://serverfault.com/questions/150369/how-to-copy-files-to-amazon-ec2-windows-instance-from-my-local-machine
+
+
+
+---- Apache setup
+
+https://www.apachelounge.com/download/
+Download the 64 bit version
+httpd-2.4.41-win64-VS16.zip  
+
+
+
+
+"the code execution cannot proceed because VCRUNTIME140.dll was not found. Reinstalling the program may fix this problem"
+
+
+Download and install: Microsoft Visual C++ 2015 Redistributable Update 3 RC
+https://visualstudio.microsoft.com/downloads/
+	* under "Other Tools and Frameworks"
+https://www.microsoft.com/en-US/download/details.aspx?id=52685
+https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
+
+
+Windows Server 2019 Datacenter:
+System type: 64-bit Operating System, x64-based processor
+
+So select vc_redist.x64.exe
+
+httpd.exe -k install "Apache HTTP Server"
+
+See my blog posting "Configure Apache to Host Multiple Sites"
+
+Open port 80 on firewall with the following, using 1 of the following:
+Windows Defender Firewall -> Advanced Settings -> add a new inbound rule for port 80
+Or the command line:
+netsh advfirewall firewall add rule name="Open Port <port number>" dir=in action=allow protocol=TCP localport=<port number>
+
+---- Wildfly setup (Wildfly 18.0.1.Final)
+
+http://www.mastertheboss.com/jboss-server/jboss-configuration/installing-wildfly-on-windows
+
+Download Java SE Development Kit 8
+
+Add JAVA_HOME variable to system path
+
+Install Wildfly as a service
+
+-- Apache 
+
+
+
+-- Enable SSH for MySQL connections
+Make sure the security group for the ec2 instance allows incoming traffic on the SSH port
+https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse
