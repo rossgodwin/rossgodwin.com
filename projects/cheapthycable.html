@@ -64,8 +64,13 @@ title: &title "CheapThyCable.com"
 					<br/>
 					<b>Amazon AWS</b>
 					<br/>
-					
-					
+					When I originally deployed this product, I was using the Google Cloud platform. As I 
+					republished this for demo purposes, I decided it would be a great opportunity to learn a 
+					little about Amazon's cloud services. In particular the services this application relies 
+					on are Amazon EC2 running a instance of Window Server 2019 Datacenter and Amazon RDS 
+					for a MySQL database instance. I learned a lot deploying this application to the Amazon 
+					cloud and configuring AWS services to talk with each other and look forward to offloading 
+					code features that can be handled by AWS services in the future.
 				</div>
 				
 				<div class="technologies-grid-item">
@@ -155,11 +160,24 @@ title: &title "CheapThyCable.com"
 					<br/>
 					<b>Thymeleaf</b>
 					<br/>
-					Thymeleaf is integrated to use templates for creating rich HTML content in the body of outbound 
-					emails. See related source files: <a href="{{ site.github.url }}/cheapthycable-app/blob/master/src/com/gwn/xcbl/bl/thymeleaf/TlfUtils.java">1</a>, <a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/auth/pwd/forgot/ForgotPwdHlpr.java#L27">2</a>, <a href="{{ site.github.url }}/cheapthycable-app/tree/master/WebContent/WEB-INF/templates/emails">3</a>.
+					Thymeleaf is integrated in to this application. This API makes it easy to use HTML in the body of 
+					emails, creating a message whose style matches that of the product brand.
+					<a href="{{ site.github.url }}/cheapthycable-app/tree/master/WebContent/WEB-INF/templates/emails">Here</a> 
+					are the application's email templates and 
+					<a href="{{ site.github.url }}/cheapthycable-app/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/auth/pwd/forgot/ForgotPwdHlpr.java#L27">here</a> 
+					is an example of a Java class that builds a forgot password email using a Thymeleaf template.
 				</div>
 				
-				
+				<div class="skills-grid-item">
+					{% include icons/wildfly-responsive.html %}
+					<br/>
+					<b>Wildfly</b>
+					<br/>
+					{% include snippets/get-tag-url.html tag_name='wildfly' %}
+					
+					Wildfly is the application server being used.
+					<a href="{{ __return }}">Here</a> are some notes I've put together on Wildfly.
+				</div>
 			</section>
 		</section>
 		

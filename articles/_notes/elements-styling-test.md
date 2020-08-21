@@ -4,7 +4,7 @@ article_id: 1000
 title: Elements Styling Test
 summary: Format features that I use through articles on this website.
 categories: [notes]
-tags: [jekyll, markdown]
+tags: [jekyll, markdown, demo]
 date: 2020-05-15
 ---
 
@@ -46,10 +46,11 @@ export  $initHighlight;
 
 #### Quote Example
 
-<blockquote class="blockquote m-lg-5 py-3 pl-4 px-lg-5">
-						<p class="mb-2">You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.</p>
-						<footer class="blockquote-footer">John Romero</footer>
-					</blockquote>
+{% capture _quote %}
+	<p class="mb-2">You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.</p>
+<footer class="blockquote-footer">John Romero</footer>
+{% endcapture %}
+{% include quote.html content=_quote %}
 
 #### Embed a Tweet
 

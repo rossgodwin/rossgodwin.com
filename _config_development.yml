@@ -1,4 +1,4 @@
-destination:
+destination: _site
 
 # host: 0.0.0.0 # GitHub will simply ignore this when you push
 baseurl: ""
