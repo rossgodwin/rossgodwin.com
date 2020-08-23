@@ -8,9 +8,14 @@ baseurl: "https://9to5.rossgodwin.com"
 
 title: Ross Godwin
 description: Web Developer from Somewhere
+location: Durham, NC
+
+website:
+  display-url: rossgodwin.com
+  url: https://rossgodwin.com
 
 linkedin:
-  display-url: linkedin.com/in/ross-godwin
+  display-url: linkedin.com/rossgodwin
   url: https://www.linkedin.com/in/ross-godwin
 
 github:
@@ -139,6 +144,10 @@ content:
     atlatl:
       name: Atlatl
       years-worked: 08-2008 to 02-2019
+  articles:
+    notes:
+      title: Notes
+      description: A collection of notes I've taken on various topics as I've tried to become familiar with a subject. A majority of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a project.
 
 
 

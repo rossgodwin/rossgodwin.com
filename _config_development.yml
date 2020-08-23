@@ -1,8 +1,9 @@
 destination: _site
 
 # host: 0.0.0.0 # GitHub will simply ignore this when you push
+
+url: "http://127.0.0.1:4000"
 baseurl: ""
-# url: "http://127.0.0.1:4000"
 
 google_analytics_tracking_id:
 

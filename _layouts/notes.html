@@ -6,12 +6,10 @@ title: &title "Notes"
 <div class="page-content">
 	{% capture _header_content %}
 		<p>
-			A collection of notes I've taken on various topics as I've tried to become familiar with a subject.
-			A majority of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a project.
+			{{ site.content.articles.notes.description }}
 		</p>
-		{%- include popular-topics.html -%}
 	{% endcapture %}
-	{% include page-content-header.html title='Notes' content=_header_content %}
+	{% include page-content-header.html title=site.content.articles.notes.title content=_header_content %}
 	
 	<section class="page-content-main">
 		{%- include article-paging-list.html -%}

@@ -6,7 +6,7 @@
 			
 			// Closes the sidebar menu
 			$(".page-header-menu-toggler").click(function(e) {
-				$(".page-header-content").toggleClass("active");
+				$(".page-header-navigation").toggleClass("active");
 			});
 		});
 	});

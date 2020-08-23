@@ -18,15 +18,50 @@ title: &title "About Me"
 					software and apply (and sharpen) my broad technology skills to help them translate those 
 					requirements into a solution that exceeds expectations.
 				</p>
+				<p>
+					Here is some of my professional IT experience by role:
+					<ul>
+						<li>
+							As a <b>business intelligence developer</b> I worked with databases and transactional information systems 
+							while combining and developing a hosts of skills and knowledge to optimize the flow of data within 
+							organizations.  My role was to bridge the gap between business users and (the critical company data 
+							housed in their technical infrastructure)the technical infrastructure containing critical data about 
+							the company. In addition to the exposure of working in various business and technical environments, 
+							I enjoyed designing datamarts and creating ETL processes.
+						</li>
+						<li>
+							As a <b>mobile application developer</b> I have developed and published Android and iPhone mobile 
+							applications. My professional experience comes in the way of providing mobile access to existing 
+							business web applications using native mobile platform SDKs and integrating REST APIs services 
+							in to the server side architecture.
+						</li>
+						<li>
+							As a <b>software engineer</b> I have worked on all phases of the software development lifecycle for 
+							business applications primarily developing specialized web applications for small companies.  I have 
+							enjoyed working on all aspects of the development stack but found that my strengths lie in working on 
+							the server side portion of web applications.
+						</li>
+						<li>
+							As a <b>web developer</b>, particularly web application development, I have become proficient with 
+							tools, languages, scripts, server-side programming languages and frameworks to create complex web 
+							applications. My professional experience involves designing the layout and navigation 
+							as well as developing front-end and back-end aspects of websites and applications.
+						</li>
+					</ul>
+				</p>
 				<div class="center">
-				<a class="btn btn-secondary" href="{% link cv/index.html %}" role="button">Resume</a>
-				<a class="btn btn-secondary" href="{{ site.linkedin.url }}" role="button" target="_blank">LinkedIn</a>
-				<a class="btn btn-secondary" href="{{ site.github.url }}" role="button" target="_blank">Github</a>
+					<a class="btn btn-primary" href="{% link cv/index.html %}" role="button">Resume</a>
+					<a class="btn btn-primary" href="{{ site.linkedin.url }}" role="button" target="_blank">LinkedIn</a>
+					<a class="btn btn-primary" href="{{ site.github.url }}" role="button" target="_blank">Github</a>
 				</div>
 			</section>
 			
 			<section>
-				<h4 class="heading heading-leading-vertical-bar">Interests / Contact Me</h4>
+				<h4 class="heading heading-leading-vertical-bar">Contact Me</h4>
+				<p>
+					For any inquiries, feel free to reach out to me: 
+					<a href="{{ site.linkedin.url }}">{{ site.linkedin.display-url }}</a>
+				</p>
 			</section>
 			
 			{% capture _pl1 %}
@@ -133,9 +168,9 @@ title: &title "About Me"
 						<br/>
 						10 Years - {{ _pl3 }}
 						<br/>
-						{% include snippets/prepend-images-url.html file_name='projects/cheapthycable/database_eer_diagram.png' %}
+						{% include snippets/prepend-images-url.html file_name='gallery/projects-cheapthycable/database_eer_diagram.png' %}
 						I have used this DBMS on various projects over the years. <a href="{{ __return }}" target="_blank">Here</a> 
-						is a link to the database schema design that I put together for this <a href="{% link projects/cheapthycable.html %}">project</a>.
+						is a link to the database schema design that I put together for a <a href="{% link projects/cheapthycable.html %}">personal project</a>.
 					</div>
 				</section>
 				
@@ -149,9 +184,9 @@ title: &title "About Me"
 						5 Years - {{ _pl2 }}
 						<br/>
 						I've used this open source web server on various projects 
-						throughout the years in both a Windows and Linux environments, often times configuring it to be used 
+						throughout the years in both Windows and Linux environments, often times configuring it to be used 
 						with Wildfly and Tomcat application servers but also using it to serve static files.
-						I have use several of the key features in the software such as loading modules, .htaccess, SSL, virtual servers 
+						I have used several of the key features in the software such as loading modules, .htaccess, SSL, virtual servers 
 						logging and more. Check out a couple of the <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/apache">articles</a> 
 						I put together on configuring a Apache web server.
 					</div>
@@ -239,7 +274,7 @@ title: &title "About Me"
 						<br/>
 						12 Years - {{ _pl3 }}
 						<br/>
-						Well over 10 years of experience using this IDE and many of the available plugins in the market.
+						Well over 10 years of experience using this IDE and many of the available market plugins.
 					</div>
 					
 					<div class="skills-grid-item">
