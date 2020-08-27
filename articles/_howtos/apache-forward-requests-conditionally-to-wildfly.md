@@ -23,14 +23,14 @@ A couple of quick notes. Under my htdocs folder, I created a subfolder ```cheapt
 {% capture _quote %}
 	The reverse proxy then decides where to send those requests and returns the content as if it were itself the origin.
 {% endcapture %}
-{% include quote.html content=_quote %}
+{% include quote.html quote=_quote %}
 
 and
 
 {% capture _quote %}
 	Note that whether you use RewriteRule or ProxyPass, you'll still need to use the ProxyPassReverse directive to catch redirects issued from the back-end server:
 {% endcapture %}
-{% include quote.html content=_quote %}
+{% include quote.html quote=_quote %}
 
 I won't include all the app related urls that need to be forwarded, but a couple are ```/login``` and ```/app```.
 

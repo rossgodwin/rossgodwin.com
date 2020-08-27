@@ -17,13 +17,13 @@ title: &title "Intro"
 				Help prospective employers and/or freelance seekers decide if we would be a good match by providing 
 				content that respresents my skill package.
 			{% endcapture %}
-			{% include quote.html content=_quote %}
+			{% include quote.html quote=_quote %}
 			
 			{% capture _quote %}
 				Capture things I've learned in article and note format that may benefit other developers and 
 				my future self should I ever need to duplicate some task.
 			{% endcapture %}
-			{% include quote.html content=_quote %}
+			{% include quote.html quote=_quote %}
 		</div> 
 	{% endcapture %}
 	{% include page-content-header.html title='Introduction' content=_header_content %}

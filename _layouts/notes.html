@@ -6,7 +6,8 @@ title: &title "Notes"
 <div class="page-content">
 	{% capture _header_content %}
 		<p>
-			{{ site.content.articles.notes.description }}
+			{{ page.pagination.collection.description }}
+			
 		</p>
 	{% endcapture %}
 	{% include page-content-header.html title=site.content.articles.notes.title content=_header_content %}

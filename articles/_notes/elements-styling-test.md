@@ -47,10 +47,9 @@ export  $initHighlight;
 #### Quote Example
 
 {% capture _quote %}
-	<p class="mb-2">You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.</p>
-<footer class="blockquote-footer">John Romero</footer>
+	You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.
 {% endcapture %}
-{% include quote.html content=_quote %}
+{% include quote.html quote=_quote quote_by="John Romero" %}
 
 #### Embed a Tweet
 
