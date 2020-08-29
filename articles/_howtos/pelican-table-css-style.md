@@ -1,6 +1,5 @@
 ---
 layout: article
-article_id: 1003
 title: How To Style a Markdown Table in Pelican
 summary: This explains how to style a markdown table in the static site generator pelican.
 categories: [howtos]

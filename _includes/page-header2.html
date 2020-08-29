@@ -18,13 +18,13 @@
 					{% include snippets/prepend-baseurl.html path='/cv' %}
 					<a href="{{ __return }}">Resume</a>
 				</li>
-				<li class="{% if page.url contains 'writings' %}active{% endif %}">
-					{% include snippets/prepend-baseurl.html path='/writings' %}
-					<a href="{{ __return }}">Writings</a>
-				</li>
 				<li class="{% if page.url contains 'projects' %}active{% endif %}">
 					{% include snippets/prepend-baseurl.html path='/projects' %}
 					<a href="{{ __return }}">Projects</a>
+				</li>
+				<li class="{% if page.url contains 'articles' %}active{% endif %}">
+					{% include snippets/prepend-baseurl.html path='/articles' %}
+					<a href="{{ __return }}">Articles</a>
 				</li>
 				<li class="nav-item-separator">
 					|

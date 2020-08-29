@@ -1,6 +1,5 @@
 ---
 layout: article
-article_id: 1001
 title: Agile Software Development
 summary: These are just some basic notes that I took while doing some research on agile software development.
 categories: [notes]

@@ -1,24 +1,22 @@
 ---
 layout: article
-article_id: 1000
-title: Elements Styling Test
-summary: Format features that I use through articles on this website.
+title: Website Kitchen Sink
 categories: [notes]
-tags: [jekyll, markdown, demo]
+tags: [demo, jekyll, markdown, kitchen-sink]
 date: 2020-05-15
 ---
 
-Below are elements that I use through my notes and blogs.  [View the markdown source](https://www.google.com) for the code on how to integrate in your posts. 
+These are examples of components that I've used throughout my website. I created this and will maintain it as a reference during development.<!--more--> Source can be in the github website [repository]({{ site.github.url }}/{{ site.github.website-repo }})
 
 #### Link to Local Asset
 
-[Link to a image]({% link /assets/images/article/{{ page.article_id }}/arrows-1738067_1280_350.jpg %})[^link]
+[Link to a image]({% link /assets/images/article/website-kitchen-sink/arrows-1738067_1280_350.jpg %})[^link]
 
 [^link]: [Jekyll resource linking](https://jekyllrb.com/docs/liquid/tags/#link){:target="_blank"}
 
 #### Embed Image
 
-![A bunch of colorful arrows]({% link /assets/images/article/{{ page.article_id }}/arrows-1738067_1280_350.jpg %}){:class="img-responsive" width="100%"}
+![A bunch of colorful arrows]({% link /assets/images/article/website-kitchen-sink/arrows-1738067_1280_350.jpg %}){:class="img-responsive" width="100%"}
 
 #### Code Block Example
 
