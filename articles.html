@@ -5,10 +5,13 @@ title: &title "Articles"
 ---
 
 <div class="page-content">
-	{% include page-content-header.html title=page.title %}
+	{% capture _header_content %}
+		{{ site.content.articles_description }}
+	{% endcapture %}
+	{% include page-content-header.html title=page.title content=_header_content %}
 	
 	<section class="page-content-main">
-		<section class="articles py-5">
+		<section class="articles">
 			{% include snippets/prepend-baseurl.html path="" %}
 			<div class="article-list-item mb-3">
 				<h4 class="heading mb-1"><a href="{{ __return }}howtos">{{ site.content.articles.howtos.title }}</a></h4>
@@ -18,11 +21,11 @@ title: &title "Articles"
 				<a class="see-more" href="{{ __return }}howtos">Read more</a>
 			</div>
 			<div class="article-list-item mb-3">
-				<h4 class="heading mb-1"><a href="{{ __return }}howtos">{{ site.content.articles.notes.title }}</a></h4>
+				<h4 class="heading mb-1"><a href="{{ __return }}notes">{{ site.content.articles.notes.title }}</a></h4>
 				<div>
 					{{ site.content.articles.notes.description }}
 				</div>
-				<a class="see-more" href="{{ __return }}howtos">Read more</a>
+				<a class="see-more" href="{{ __return }}notes">Read more</a>
 			</div>
 		</section>
 	</section>

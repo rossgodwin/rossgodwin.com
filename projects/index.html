@@ -1,15 +1,16 @@
 ---
 layout: default
+title: &title "Projects"
 ---
 
 <div class="page-content">
 	{% capture _header_content %}
-		These are just a listing of notes of mine.
+		{{ site.content.projects_description }}
 	{% endcapture %}
-	{% include page-content-header.html title='Projects' content=_header_content %}
+	{% include page-content-header.html title=page.title content=_header_content %}
 	
 	<section class="page-content-main">
-		<section class="articles py-5">
+		<section class="articles">
 			{% include snippets/prepend-baseurl.html path="projects/" %}
 			{% assign _projects_url = __return %}
 			<div class="article-list-item mb-3">

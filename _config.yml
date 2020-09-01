@@ -145,13 +145,17 @@ content:
     atlatl:
       name: Atlatl
       years-worked: 08-2008 to 02-2019
+  projects_description: See a few of the projects I have worked on. Here you will find an overview of the project, 
+        technologies used, challenges faced and links to the product and corresponding source code.
+  articles_description: A broad category of articles I've compile on IT related topics ranging from how I installed and 
+      configured a Wordpress server on a Oracle VirtualBox machine to coding related topics like how I implemented a splash 
+      screen in a AngularJS single page application.
   articles:
     howtos:
       title: How Tos
       description: Articles that I've written explaining how I doing something.
     notes:
       title: Notes
-      description: A collection of notes I've taken on various topics as I've tried to become familiar with a subject. A majority of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a project.
-
-
-
+      description: A collection of notes I've taken on various topics as I've tried to become familiar with a subject. A majority 
+          of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a 
+          project.
