@@ -8,7 +8,6 @@
 		"h"
 		"c"
 		"f";
-	height: 100%;
 }
 
 .page-header-wrapper {
@@ -67,9 +66,7 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-	.page-content-header .page-content-main {
-		max-width: 540px;
-	}
+	
 }
 
 // Medium devices (tablets, 768px and up)
@@ -89,22 +86,14 @@
 	.page-header-navigation ul li {
 		display: inline;
 	}
-	
-	.page-content-header .page-content-main {
-		max-width: 720px;
-	}
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-	.page-content-header .page-content-main {
-		max-width: 960px;
-	}
+	
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-	.page-content-header .page-content-main {
-		max-width: 1140px;
-	}
+	
 }
