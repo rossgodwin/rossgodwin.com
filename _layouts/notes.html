@@ -6,13 +6,30 @@ title: &title "Notes"
 <div class="page-content">
 	{% capture _header_content %}
 		<p>
-			{{ page.pagination.collection.description }}
-			
+			{{ page.description }}
 		</p>
 	{% endcapture %}
-	{% include page-content-header.html title=site.content.articles.notes.title content=_header_content %}
+	{% include page-content-header.html title=page.title content=_header_content %}
 	
 	<section class="page-content-main">
-		{%- include article-paging-list.html -%}
+		<section class="articles">
+			{% for _article in paginator.posts %}
+				{% assign _date = _article.date | date: "%b %-d, %Y" %}
+				{% if _article.summary %}
+					{% assign _description = _article.summary %}
+				{% else if _article.excerpt %}
+					{% assign _description = _article.excerpt %}
+				{% endif %}
+				
+				{% include snippets/prepend-baseurl.html path=_article.url %}
+				{% include article-preview-link.html
+					heading=_article.title
+					date=_date
+					description=_description
+					url=__return %}
+			{% endfor %}
+		</section>
+		
+		{% include paging-links.html %}
 	</section>
 </div>

@@ -105,6 +105,7 @@ gems:
   - jekyll-feed
   - jekyll-paginate-v2
   - jekyll-gist
+  - jekyll-liquify
 
 # Plugin: Pagination (jekyll-paginate-v2)
 pagination:
@@ -147,6 +148,15 @@ content:
       years-worked: 08-2008 to 02-2019
   projects_description: See a few of the projects I have worked on. Here you will find an overview of the project, 
         technologies used, challenges faced and links to the product and corresponding source code.
+  projects:
+    cheapthycable:
+      title: Cheapthycable.com
+      description: A write up about a personal project that I worked on in late 2016 developing a web application. 
+          Learn more about the project, technologies used, reference to source code and a link to the demo.
+    tsd-office:
+      title: Office IT Infrastructure Overhaul
+      description: Check out a network upgrade that I performed for my employer at the time, Triangle Site Design. 
+          Learning more about the existing setup, equipment upgrades and see pictures.
   articles_description: A broad category of articles I've compile on IT related topics ranging from how I installed and 
       configured a Wordpress server on a Oracle VirtualBox machine to coding related topics like how I implemented a splash 
       screen in a AngularJS single page application.

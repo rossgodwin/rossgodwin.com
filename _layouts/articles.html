@@ -9,6 +9,24 @@ layout: default
 	{% include page-content-header.html title='Blogs' content=_header_content %}
 	
 	<section class="page-content-main">
-		{%- include article-paging-list.html -%}
+		<section class="articles py-5">
+			{% for _article in paginator.posts %}
+				{% _date = _article.date | date: "%b %-d, %Y" %}
+				{% if _article.summary %}
+					{% assign _description = _article.summary %}
+				{% else if _article.excerpt %}
+					{% assign _description = _article.excerpt %}
+				{% endif %}
+				
+				{% include snippets/prepend-baseurl.html path=_article.url %}
+				{% include page-preview-link.html
+					heading=_article.title
+					date=_date
+					description=_description
+					url=__return %}
+			{% endfor %}
+		</section>
+		
+		{% include paging-links.html %}
 	</section>
 </div>

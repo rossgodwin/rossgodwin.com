@@ -11,28 +11,17 @@ title: &title "Projects"
 	
 	<section class="page-content-main">
 		<section class="articles">
-			{% include snippets/prepend-baseurl.html path="projects/" %}
-			{% assign _projects_url = __return %}
-			<div class="article-list-item mb-3">
-				<h4 class="heading mb-1"><a href="{{ _projects_url }}cheapthycable">Cheapthycable.com</a></h4>
-				<div>
-					A write up about a personal project that I worked on in late 2016 developing a web application. 
-					Learn more about the project, technologies used, reference to source code and a link to the demo.
-				</div>
-				<a class="see-more" href="{{ _projects_url }}cheapthycable">Read more</a>
-			</div>
-			<div class="article-list-item mb-3">
-				<h4 class="heading mb-1"><a href="{{ _projects_url }}tsd-office-it-infrastructure-overhaul">Office IT Infrastructure Overhaul</a></h4>
-				<div>
-					Check out a network upgrade that I performed for my employer at the time, Triangle Site Design. 
-					Learning more about the existing setup, equipment upgrades and see pictures.
-				</div>
-				<a class="see-more" href="{{ _projects_url }}tsd-office-it-infrastructure-overhaul">Read more</a>
-			</div>
+			{% include snippets/prepend-baseurl.html path='projects/cheapthycable' %}
+			{% include page-preview-link.html
+				heading=site.content.projects.cheapthycable.title
+				description=site.content.projects.cheapthycable.description
+				url=__return %}
+			
+			{% include snippets/prepend-baseurl.html path='projects/tsd-office-it-infrastructure-overhaul' %}
+			{% include page-preview-link.html
+				heading=site.content.projects.tsd-office.title
+				description=site.content.projects.tsd-office.description
+				url=__return %}
 		</section>
-		
-		
-		
-		
 	</section>
 </div>

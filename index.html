@@ -31,32 +31,34 @@ title: &title "Intro"
 	{% include page-content-header.html title='Introduction' content=_header_content %}
 	
 	<section class="page-content-main">
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">About Me</h4>
-			<p>
-				Looking for my work history, GitHub repositories, skill sets or CV. Get to 
-				know a little bit more about me professionally.
-				<br/>
-				<a class="see-more" href="{% link about-me.html %}">Read more</a>
-			</p>
-		</section>
-		
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Projects</h4>
-			<p>
-				{{ site.content.projects_description }}
-				<br/>
-				<a class="see-more" href="{% link projects/index.html %}">Read more</a>
-			</p>
-		</section>
-		
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Articles</h4>
-			<p>
-				{{ site.content.articles_description }}
-				<br/>
-				<a class="see-more" href="{% link articles.html %}">Read more</a>
-			</p>
-		</section>
+		<article>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">About Me</h4>
+				<p>
+					Looking for my work history, GitHub repositories, skill sets or CV. Get to 
+					know a little bit more about me professionally.
+					<br/>
+					<a class="see-more" href="{% link about-me.html %}">Read more</a>
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Projects</h4>
+				<p>
+					{{ site.content.projects_description }}
+					<br/>
+					<a class="see-more" href="{% link projects/index.html %}">Read more</a>
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Articles</h4>
+				<p>
+					{{ site.content.articles_description }}
+					<br/>
+					<a class="see-more" href="{% link articles.html %}">Read more</a>
+				</p>
+			</section>
+		</article>
 	</section>
 </div>

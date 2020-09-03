@@ -12,21 +12,17 @@ title: &title "Articles"
 	
 	<section class="page-content-main">
 		<section class="articles">
-			{% include snippets/prepend-baseurl.html path="" %}
-			<div class="article-list-item mb-3">
-				<h4 class="heading mb-1"><a href="{{ __return }}howtos">{{ site.content.articles.howtos.title }}</a></h4>
-				<div>
-					{{ site.content.articles.howtos.description }}
-				</div>
-				<a class="see-more" href="{{ __return }}howtos">Read more</a>
-			</div>
-			<div class="article-list-item mb-3">
-				<h4 class="heading mb-1"><a href="{{ __return }}notes">{{ site.content.articles.notes.title }}</a></h4>
-				<div>
-					{{ site.content.articles.notes.description }}
-				</div>
-				<a class="see-more" href="{{ __return }}notes">Read more</a>
-			</div>
+			{% include snippets/prepend-baseurl.html path='howtos' %}
+			{% include page-preview-link.html 
+				heading=site.content.articles.howtos.title 
+				description=site.content.articles.howtos.description
+				url=__return %}
+			
+			{% include snippets/prepend-baseurl.html path='notes' %}
+			{% include page-preview-link.html 
+				heading=site.content.articles.notes.title 
+				description=site.content.articles.notes.description
+				url=__return %}
 		</section>
 	</section>
 </div>
