@@ -1,4 +1,8 @@
-// THIS is a page alternative to the sticky header
+$header-height-768: 7em;
+$header-height-992: 5em;
+
+$padding-left-right-576: 1rem;
+$padding-left-right-992: 4rem;
 
 .page-wrapper {
 	display: grid;
@@ -16,17 +20,20 @@
 
 // ------------- Page Header -----------------
 .page-header {
-	border-bottom: 5px solid $theme-color-primary;
-	padding-top: .5em;
-	padding-bottom: .5em;
+	
 }
 
 .page-header-wrapper {
 	display: flex;
 	flex-direction: column;
 	
-	margin-left: 1%;
-	margin-right: 1%;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: $padding-left-right-576;
+	padding-right: $padding-left-right-576;
+	
+	background-color: $white;
+	border-bottom: 1px solid #ccc;
 }
 
 .page-header-title {
@@ -94,8 +101,8 @@
 	
 	padding-top: .75rem;
 	padding-bottom: .75rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: $padding-left-right-576;
+	padding-right: $padding-left-right-576;
 	
 	background: $theme-bg-light;
 	
@@ -113,8 +120,8 @@
 	
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
+	padding-left: $padding-left-right-576;
+	padding-right: $padding-left-right-576;
 }
 
 // ------------- Page Footer -----------------
@@ -142,16 +149,24 @@
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+	.page-wrapper {
+		grid-template-rows: $header-height-768 1fr auto;
+	}
+
 	// ------------- Page Header -----------------
 	.page-header {
-		padding-top: 1.25em;
-		padding-bottom: 1.25em;
 	}
 	
 	.page-header-wrapper {
+		height: $header-height-768;
+		
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		
 		text-align: left;
-		margin-left: 1rem;
-		margin-right: 1rem;
 	}
 	
 	.page-header-navigation {
@@ -181,12 +196,20 @@
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+	.page-wrapper {
+		grid-template-rows: $header-height-992 1fr auto;
+	}
+	
 	// ------------- Page Header -----------------
 	.page-header-wrapper {
-		margin-left: 3rem;
-		margin-right: 3rem;
 		flex-direction: row;
 		justify-content: space-between;
+		align-items: center;
+		
+		height: $header-height-992;
+		
+		padding-left: $padding-left-right-992;
+		padding-right: $padding-left-right-992;
 	}
 	
 	// ------------- Page Content -----------------
@@ -195,8 +218,8 @@
 	}
 	
 	.page-content-header {
-		padding-left: 3rem;
-		padding-right: 3rem;
+		padding-left: $padding-left-right-992;
+		padding-right: $padding-left-right-992;
 		
 		.section-heading-text {
 			font-size: 2.1rem;
@@ -204,8 +227,8 @@
 	}
 	
 	.page-content-main {
-		padding-left: 3rem;
-		padding-right: 3rem;
+		padding-left: $padding-left-right-992;
+		padding-right: $padding-left-right-992;
 	}
 }
 
