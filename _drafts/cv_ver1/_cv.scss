@@ -10,6 +10,15 @@
 	font-weight: bold;
 }
 
+.resume-header {
+	display: grid;
+	grid-template-areas:
+		// t = title
+		// c = content
+		"t t t t t t t t t t t t"
+		"c c c c c c c c c c c c";
+}
+
 .resume-name {
 	font-size: 2.75rem;
 	font-weight: 900;
@@ -23,6 +32,8 @@
 }
 
 .resume-header-contact {
+	grid-area: c;
+	
 	border-left: 1px solid rgba(0, 0, 0, 0.08);
 	font-size: 0.75rem;
 	padding-left: 1.5rem;
@@ -46,10 +57,17 @@ a.resume-link {
 }
 
 .resume-body {
-	
+	display: grid;
+	grid-template-areas:
+		// m = main
+		// s = side
+		"m m m m m m m m m m m m"
+		"s s s s s s s s s s s s";
 }
 
 .resume-body-main {
+	grid-area: m;
+	
 	.section-heading-text {
 		font-size: 1.125rem;
 	}
@@ -68,7 +86,24 @@ a.resume-link {
 .work-section {
 	
 }
-	
+
+.resume-work-heading {
+	display: grid;
+	grid-template-areas:
+		// wt = work title
+		// wm = work meta
+		"wt wt wt wt wt wt wt wt wt wt wt wt"
+		"wm wm wm wm wm wm wm wm wm wm wm wm";
+}
+
+.resume-work-heading-title {
+	grid-area: wt;
+}
+
+.resume-work-heading-meta {
+	grid-area: wm;
+}
+
 .skills-section {
 
 }
@@ -78,6 +113,8 @@ a.resume-link {
 }
 
 .resume-body-aside {
+	grid-area: s;
+	
 	border-left: 1px solid rgba(0, 0, 0, 0.08);
 	.item {
 		font-size: 0.875rem;
@@ -97,6 +134,55 @@ a.resume-link {
 
 .resume-social-list {
 	font-size: 0.75rem;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t c c c c c c";
+	}
+	
+	.resume-work-heading {
+		grid-template-areas:
+			"wt wt wt wt wt wt wm wm wm wm wm wm";
+	}
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t t t c c c c";
+	}
+	
+	.resume-body {
+		grid-template-areas:
+			"m m m m m m m m s s s s";
+	}
+	
+	.resume-work-heading {
+		grid-template-areas:
+			"wt wt wt wt wt wt wt wt wm wm wm wm";
+	}
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+	.resume-header {
+		grid-template-areas:
+			"t t t t t t t t t c c c";
+	}
+	
+	.resume-body {
+		grid-template-areas:
+			"m m m m m m m m m s s s";
+	}
 }
 
 // Medium devices (tablets, less than 992px)

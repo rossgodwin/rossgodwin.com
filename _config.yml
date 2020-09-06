@@ -145,7 +145,16 @@ content:
       years-worked: 02-2019 to Present
     atlatl:
       name: Atlatl
+      role: Software Developer
       years-worked: 08-2008 to 02-2019
+    dunn:
+      name: Dunn Solutions Group
+      role: Business Intelligence Developer
+      years-worked: 03-2004 to 08-2008
+    ncsu-cuacs:
+      name: North Carolina State Univeristy - CUACS
+      role: Software Developer Intern
+      years-worked: 2003 to 2004
   projects_description: See a few of the projects I have worked on. Here you will find an overview of the project, 
         technologies used, challenges faced and links to the product and corresponding source code.
   projects:

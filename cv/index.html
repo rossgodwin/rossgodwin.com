@@ -13,203 +13,156 @@ title: &title "Resume"
 	{% include page-content-header.html title='Resume' content=_header_content %}
 	
 	<section class="page-content-main">
-		<article class="resume-wrapper p-5 mb-5 my-5">
-			<div class="resume-header">
-				<div class="resume-header-title">
-					<h2 class="resume-name mb-0 text-uppercase">Ross Godwin</h2>
-					<div class="resume-tagline mb-3 mb-md-0">Full Stack Developer, IT Administrator & Civil Designer</div>
-				</div>
-				<div class="resume-header-contact">
-					<ul class="list-unstyled mb-0">
-						<li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="{{ site.website.url }}">{{ site.website.display-url }}</a></li>
-						<li class="mb-2"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>{{ site.location }}</li>
-						<li class="mb-2"><i class="fab fa-linkedin fa-fw fa-lg mr-2"></i><a class="resume-link" href="{{ site.linkedin.url }}" target="_blank">{{ site.linkedin.display-url }}</a></li>
-						<li class="mb-0"><i class="fab fa-github-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="{{ site.github.url }}" target="_blank">{{ site.github.display-url }}</a></li>
-					</ul>
-				</div>
-			</div>
-			
-			<hr>
-			
-			<div class="resume-intro py-3">
-				<div class="media flex-column flex-md-row align-items-center">
-					{%- include snippets/prepend-images-url.html file_name='resume-profile.png' -%}
-					<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="{{ __return }}" alt="image">
-					<div class="media-body text-left">
-						<p class="mb-0">
-							Forward-thinking software developer with 16 years of experience in web application development, 
-							mobile app development, and business intelligence development. Successfully operates in agile-like 
-							development environments, taking ownership of projects from start to finish, delivering value, 
-							and employing proactive problem solving and resolution. Brings significant expertise in web 
-							development stack, single-page applications, and mobile app development.
-						</p>
+		<article class="cv-wrapper">
+			<section class="cv-header">
+				<h4 class="cv-header-title mb-0">Ross Godwin</h4>
+				<div class="cv-header-tagline">
+					Software Developer
+					<br/>
+					{{ site.location }}
+					<span>&#183;</span>
+					<a href="{{ site.website.url }}">{{ site.website.display-url }}</a>
+					<br/>
+					<div class="cv-text">
+						<i class="fab fa-linkedin fa-fw fa-lg mr-2"></i><a class="cv-link" href="{{ site.linkedin.url }}" target="_blank">{{ site.linkedin.display-url }}</a>
+						<span>&#183;</span>
+						<i class="fab fa-github-square fa-fw fa-lg mr-2 "></i><a class="cv-link" href="{{ site.github.url }}" target="_blank">{{ site.github.display-url }}</a>
 					</div>
 				</div>
-			</div>
+			</section>
 			
 			<hr>
 			
-			<div class="resume-body">
-				<div class="resume-body-main pr-0 pr-lg-5">
-					<!-- Work Experience -->
-					<section class="work-section py-3">
-						<div class="section-heading">
-							<span class="section-heading-text">Work Experience</span>
-						</div>
-						
-						<!-- Current Job -->
-						<div class="item mb-3">
-							<h6 class="item-title resume-work-heading-title mb-2 mb-md-0"><a href="{% link cv/tsd.html %}">{{ site.content.cv.tsd.name }}</a></h6>
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								Project Overseer & Civil Designer
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">{{ site.content.cv.tsd.years-worked }}</div>
-							</div>
-							<div class="item-content">
-								<ul class="resume-list">
-									<li>
-										Involved in land development design, construction document preparation, site inspection 
-										of construction work and field surveying
-									</li>
-									<li>
-										Utilize AutoCAD to draft, scale and fine-tune drawings and maps for land
-										development projects, and create concept plans and erosion and sediment control plans
-									</li>
-									<li>
-										Responsible for daily management, upkeep and configuration of technology infrastructure. 
-										Designed and implemented significant changes, resulting in increased office productivity 
-										and improved cyber security
-									</li>
-								</ul>
-							</div>
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								IT Administrator
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">{{ site.content.cv.tsd.years-worked }}</div>
-							</div>
-							<div class="item-content">
-								<ul class="resume-list">
-									<li>
-										Involved in land development design, construction document preparation, site inspection 
-										of construction work and field surveying
-									</li>
-								</ul>
-							</div>
-						</div>
-						
-						<!-- Atlatl -->
-						<div class="item mb-3">
-							<h6 class="item-title resume-work-heading-title mb-2 mb-md-0"><a href="{% link cv/atlatl.html %}">{{ site.content.cv.atlatl.name }}</a></h6>
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								Software Developer
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">{{ site.content.cv.atlatl.years-worked }}</div>
-							</div>
-							<div class="item-content">
-								<p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
-								<ul class="resume-list">
-									<li>Lorem ipsum dolor sit amet, consectetuer.</li>
-									<li>Aenean commodo ligula eget dolor.</li>
-								</ul>
-							</div>
-						</div>
-						
-						<!-- Job -->
-						<div class="item mb-3">
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Senior Software Developer</h4>
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Dropbox | 2014 - 2016</div>
-							</div>
-							<div class="item-content">
-								<p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-							</div>
-						</div>
-					</section>
-					
-					<!-- Projects -->
-					<section class="project-section py-3">
-						<div class="section-heading">
-							<span class="section-heading-text">Projects</span>
-						</div>
-						
-						<div class="item mb-3">
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Project Lorem Ipsum</h4>
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Open Source</div>
-							</div>
-							<div class="item-content">
-								<p>You can use this section for your side projects. You can <a href="#" class="theme-link">provide a project link here</a> as well. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-							</div>
-						</div>
-						
-						<div class="item">
-							<div class="item-heading resume-work-heading align-items-center mb-2">
-								<h4 class="item-title resume-work-heading-title mb-2 mb-md-0">Project Sed Fringilla</h4>
-								<div class="item-meta resume-work-heading-meta text-muted text-left text-md-right">Open Source</div>
-							</div>
-							<div class="item-content">
-								<p>You can use this section for your side projects. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.</p>
-							</div>
-						</div>
-					</section>
+			<section>
+				<div class="cv-section-heading">
+					<h4 class="heading">Recommendations</h4>
 				</div>
-				<aside class="resume-body-aside resume-aside px-lg-4 pb-lg-4">
-					<section class="skills-section py-3">
-						<div class="section-heading">
-							<span class="section-heading-text">Skills</span>
+				<div class="cv-section-content">
+					{% include cv/duke-recommendation.html %}
+				</div>
+			</section>
+			<section>
+				<div class="cv-section-heading">
+					<h4 class="heading">How I Can Add Value</h4>
+				</div>
+				<div class="cv-section-content">
+					<span class="cv-text">
+					Forward-thinking software developer with 16 years of experience in web application development, 
+					mobile app development, and business intelligence development. Successfully operates in agile-like 
+					development environments, taking ownership of projects from start to finish, delivering value, 
+					and employing proactive problem solving and resolution. Brings significant expertise in web 
+					development stack, single-page applications, and mobile app development.
+					</span>
+				</div>
+			</section>
+			<section>
+				<div class="cv-section-heading">
+					<h4 class="heading">Where I've Been</h4>
+				</div>
+				<div class="cv-section-content">
+					<div class="cv-work-history-item">
+						<div>
+							<div class="cv-work-history-item-employer">
+								<a href="{% link cv/tsd.html %}">{{ site.content.cv.tsd.name }}</a>
+							</div>
+							<div class="cv-work-history-item-position">Project Coordinator & Civil Designer</div>
+							<div class="cv-work-history-item-years-worked">{{ site.content.cv.tsd.years-worked }}</div>
 						</div>
-						<div class="item">
-							<h4 class="item-title">Technical</h4>
-							<ul class="list-unstyled resume-skills-list">
-								<li class="mb-2">JavaScript/Angular/React/Vue</li>
-								<li class="mb-2">Python/Ruby/PHP</li>
-								<li class="mb-2">Node.js/ASP.NET</li>
-								<li class="mb-2">PostgreSQL/MySQL</li>
-								<li class="mb-2">Object-oriented design</li>
-								<li class="mb-2">Design and implement database structures</li>
-								<li>Lead and deliver complex software systems</li>
-							</ul>
+						<div class="cv-text">
+							Involved in project coordination, land development design, construction document preparation, 
+							field surveying, and on site inspection of construction work. Utilize AutoCAD to draft, 
+							scale and fine-tune drawings and maps for land development projects, and create concept, 
+							site, grading and erosion control plans. Also responsible for daily management, upkeep and 
+							configuration of critical information technology systems.
 						</div>
-					</section>
-					<section class="education-section py-3">
-						<div class="section-heading">
-							<span class="section-heading-text">Education</span>
+					</div>
+					<div class="cv-work-history-item cv-work-history-item-separator">
+						<div>
+							<div class="cv-work-history-item-employer">
+								<a href="{% link cv/atlatl.html %}">{{ site.content.cv.atlatl.name }}</a>
+							</div>
+							<div class="cv-work-history-item-position">Software Developer</div>
+							<div class="cv-work-history-item-years-worked">{{ site.content.cv.atlatl.years-worked }}</div>
 						</div>
-						<ul class="list-unstyled resume-education-list">
-							<li class="mb-3">
-								<div class="resume-degree font-weight-bold">MSc in Computer Science</div>
-								<div class="resume-degree-org text-muted">University College London</div>
-								<div class="resume-degree-time text-muted">2010 - 2011</div>
-							</li>
-							<li>
-								<div class="resume-degree font-weight-bold">BSc Maths and Physics</div>
-								<div class="resume-degree-org text-muted">Imperial College London</div>
-								<div class="resume-degree-time text-muted">2007 - 2010</div>
-							</li>
-						</ul>
-					</section>
-				</aside>
-			</div>
-			
-			<hr>
-			
-			<div class="resume-footer text-center">
-				<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-					{%- if site.linkedin -%}
-						<li class="list-inline-item mb-lg-0 mr-3">
-							<a class="resume-link" href="{{ site.linkedin.url }}" target="_blank">
-								<i class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i>
-								<span class="d-none d-lg-inline-block text-muted">{{ site.linkedin.display-url }}</span>
-							</a>
-						</li>
-					{%- endif -%}
-					{%- if site.github -%}
-						<li class="list-inline-item mb-lg-0 mr-3">
-							<a class="resume-link" href="{{ site.github.url }}" target="_blank">
-								<i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i>
-								<span class="d-none d-lg-inline-block text-muted">{{ site.github.display-url }}</span>
-							</a>
-						</li>
-					{%- endif -%}
-				</ul>
-			</div>
+						<div class="cv-text">
+							Worked closely with a small team of software developers and customer support to build, enhance, 
+							and maintain in-house web and mobile applications used by small businesses. Being a team member 
+							of a small development shop afforded me the opportunity to work on all stages of the development 
+							life cycle and pushed me to stay current on the latest technologies and best practices. As a 
+							full stack developer, I was a key contributor on one of the company's top revenue producing web 
+							applications. Additionally, I developed and maintained iOS and Android apps providing mobile 
+							access for the subscription base of our hosted software.
+						</div>
+					</div>
+					<div class="cv-work-history-item cv-work-history-item-separator">
+						<div>
+							<div class="cv-work-history-item-employer">{{ site.content.cv.dunn.name }}</div>
+							<div class="cv-work-history-item-position">Business Intelligence Developer</div>
+							<div class="cv-work-history-item-years-worked">{{ site.content.cv.dunn.years-worked }}</div>
+						</div>
+						<div class="cv-text">
+							Worked closely with a small team of software developers and customer support to build, 
+							enhance, and maintain in-house web and mobile applications used by small businesses. 
+							Being a team member of a small development shop afforded me the opportunity to work on 
+							all stages of the development life cycle and pushed me to stay current on the latest 
+							technologies and best practices. As a full stack developer, I was a key contributor on 
+							one of the company's top revenue producing web applications. Additionally, I developed 
+							and maintained iOS and Android apps providing mobile access for the subscription base 
+							of our hosted software.
+						</div>
+					</div>
+					<div class="cv-work-history-item cv-work-history-item-separator">
+						<div>
+							<div class="cv-work-history-item-employer">{{ site.content.cv.ncsu-cuacs.name }}</div>
+							<div class="cv-work-history-item-position">{{ site.content.cv.ncsu-cuacs.role }}</div>
+							<div class="cv-work-history-item-years-worked">{{ site.content.cv.ncsu-cuacs.years-worked }}</div>
+						</div>
+						<div class="cv-text">
+							This position began as basic data entry and HTML formatting with the Center for Urban Affairs 
+							and Community Services, an affiliate of North Carolina State University, and expanded into a 
+							challenging role as a intern web application developer. I was assigned the responsibility of 
+							developing a proof of concept for the North Carolina Department of Education to demonstrate 
+							the feasibility of performing computer skills testing online for elementary grade students. 
+							I was able to deliver a web application using Apache Tomcat, HTML, MySQL, Java Serve-Side 
+							technologies, JDBC, and JavaScript. This proof of concept was presented to representatives 
+							from the department broadening their vision at the possibilities of expanding their online 
+							testing capabilities.
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="cv-section-heading">
+					<h4 class="heading">Side Projects I've Initiated</h4>
+				</div>
+				<div class="cv-section-content">
+					<div class="cv-work-history-item">
+						<div>
+							<span class="cv-work-history-item-employer">
+								<a href="{% link projects/cheapthycable.html %}">{{ site.content.projects.cheapthycable.title }}</a>
+							</span>
+							<br/>
+							<span class="cv-work-history-item-years-worked">08-2016 to 10-2017</span>
+						</div>
+						<div class="cv-text">
+							Developed crowdsourcing web application that allowed participants to see what others were 
+							paying for cable and internet in their area with the goal of providing leveraging power in 
+							negotiating a lower bill. Developedusing J2EE web container,Hibernate, AngularJS, Bootstrap, 
+							and other popular APIs such as Thymeleaf, Mailgun and Disqus.
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="cv-section-heading">
+					<h4 class="heading">What I've Learned</h4>
+				</div>
+				<div class="cv-section-content">
+					<div class="cv-work-history-item-employer">Bachelor of Science in Computer Science</div>
+					<div class="cv-work-history-item-position">North Carolina State University</div>
+					<div class="cv-work-history-item-years-worked">1999 - 2003</div>
+				</div>
+			</section>
 		</article>
 	</section>
 </div>

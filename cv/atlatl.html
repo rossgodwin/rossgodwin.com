@@ -3,62 +3,121 @@ layout: default
 title: &title "Work History - Atlatl"
 ---
 
-<div class="page-content">
-	{% capture _header_content %}
-		<strong>Software Developer</strong>, {{ site.content.cv.atlatl.years-worked }}
-	{% endcapture %}
-	{% include page-content-header.html title=site.content.cv.atlatl.name content=_header_content %}
+<main class="page-content">
+	{% include page-content-header.html title=site.content.cv.atlatl.name %}
 	
 	<section class="page-content-main">
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Description</h4>
-			<p>
-				Worked closely with a small team of developers and customer support to build, enhance, 
-				and maintain in-house web and mobile applications used by small businesses. Being a team member 
-				of a small development shop afforded me the opportunity to work on all stages of the development 
-				life cycle and pushed me to stay current on the latest technologies and best practices. As a 
-				full stack developer, I was a key contributor on one of the company's top revenue producing 
-				web applications. Additionally, I developed and maintained iOS and Android apps providing mobile 
-				access for the subscription base of our hosted software.
-			</p>
+		<article>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Recommendations</h4>
+				
+				{% include cv/duke-recommendation.html %}
+			</section>
 			
-			{% capture _quote %}
-				Ross was employed by my company - Atlatl - for ten years. During that time he constantly improved his skills 
-				and abilities. He had everything an employer could hope for in any employee. I cannot recommend him more highly.
-			{% endcapture %}
-			{% include quote.html quote=_quote quote_by="Duke Williams - Founder Atlatl" %}
-		</section>
-		
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Achievements</h4>
-			<ul>
-				<li>
-					Created Amazon Alexa skill and Google Assistant app to provide a subset of features
-					from Atlatl's second largest revenue generating software product
-				</li>
-				<li>
-					Served as core developer on user-interface redesign project, which converted multi-page
-					web application comprised of JSF, Ajax, and ExtJS frameworks into a GWT/GXT single-page app
-				</li>
-				<li>
-					Architected and developed Atlatl's first native iOS universal app published in the Apple app
-					store to provide mobile access to company's fillable forms subscriber base
-				</li>
-				<li>
-					Developed dynamic reporting solution for web based software product by working on web
-					development stack to provide a customizable report framework and eliminate overhead of
-					persistent development and custom ad-hoc report maintenance
-				</li>
-				<li>
-					Built and integrated client-facing data import and export functionality into fillable forms
-					hosted software service, allowing data portability for core system objects and 
-					providing users fast start-up time
-				</li>
-				<li>
-					Developed automated Android app build process for mobile app CMS using Android SDK
-					Tools and Java to create signed APK file for distribution to app marketplace
-				</li>
-			</ul>
-		</section>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Description</h4>
+				<strong>Software Developer</strong>, {{ site.content.cv.atlatl.years-worked }}
+				<p>
+					Worked closely with a small team of developers and customer support to build, enhance, 
+					and maintain in-house web and mobile applications used by small businesses. Being a team member 
+					of a small development shop afforded me the opportunity to work on all stages of the development 
+					life cycle and pushed me to stay current on the latest technologies and best practices. As a 
+					full stack developer, I was a key contributor on one of the company's top revenue producing 
+					web applications. Additionally, I developed and maintained iOS and Android apps providing mobile 
+					access for the subscription base of our hosted software.
+				</p>
+				<p>
+					{% capture _content %}
+						Worked closely with a small team of developers and customer support to
+						build, enhance, and maintain in-house web and mobile applications used
+						by small businesses
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Executed data modeling, business logic, and user-interface projects
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Managed all aspects of data layer needs, including database schema
+						design, data migrations, ORM infrastructure needs implementation, and
+						data retrieval and modification queries
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Modified existing software by engaging with customer support to
+						identify and correct problems and improve product performance
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Developed and maintained iOS and Android apps that provided mobile
+						access for the subscription base of hosted software
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Built and utilized REST and RPC SOA solutions in web and mobile
+						application development
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Achievements</h4>
+				<p>
+					{% capture _content %}
+						Created Amazon Alexa skill and Google Assistant app to provide a subset of features
+						from Atlatl's second largest revenue generating software product
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Served as core developer on user-interface redesign project, which converted multi-page
+						web application comprised of JSF, Ajax, and ExtJS frameworks into a GWT/GXT single-page app
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Architected and developed Atlatl's first native iOS universal app published in the Apple app
+						store to provide mobile access to company's fillable forms subscriber base
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Developed dynamic reporting solution for web based software product by working on web
+						development stack to provide a customizable report framework and eliminate overhead of
+						persistent development and custom ad-hoc report maintenance
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Built and integrated client-facing data import and export functionality into fillable forms
+						hosted software service, allowing data portability for core system objects and 
+						providing users fast start-up time
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+				<p>
+					{% capture _content %}
+						Developed automated Android app build process for mobile app CMS using Android SDK
+						Tools and Java to create signed APK file for distribution to app marketplace
+					{% endcapture %}
+					{% include custom-list-item.html content=_content %}
+				</p>
+			</section>
+		</article>
 	</section>
-</div>
+</main>
