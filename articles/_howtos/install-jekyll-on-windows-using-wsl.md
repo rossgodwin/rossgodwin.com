@@ -7,8 +7,7 @@ tags: [jekyll, windows, bash, wsl, linux, debian]
 date: 2020-07-26
 ---
 
-{% include snippets/get-article-image-url.html file_name = 'install-jekyll-on-windows-using-wsl/' %}
-{% assign _image_folder = __return %}
+{% assign _image_folder = 'assets/images/article/install-jekyll-on-windows-using-wsl/' %}
 
 I was not interested in installing Jekyll and dependency software directly on my Windows operating system: 1) because I like to keep my environment as free as possible from development software as possible, 2) it frees me up from going in to modify my Windows path environment variable, 3) the Linux deb packages make things go much more smoothly.
 

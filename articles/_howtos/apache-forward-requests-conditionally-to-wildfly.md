@@ -9,8 +9,7 @@ date: 2018-01-03
 I created a website ([{{ site.cheapthycable.display-url }}]({{ site.cheapthycable.url }}){:target="_blank"}) that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
 <!--more-->
 
-{% include snippets/get-article-image-url.html file_name = 'apache-forward-requests-conditionally-to-wildfly/' %}
-{% assign _image_folder = __return %}
+{% assign _image_folder = 'assets/images/article/apache-forward-requests-conditionally-to-wildfly/' %}
 
 ![apache wildfly]({% link {{ _image_folder }}arrows-1738067_1280_350.jpg %}){:class="img-responsive" width="100%"}
 
