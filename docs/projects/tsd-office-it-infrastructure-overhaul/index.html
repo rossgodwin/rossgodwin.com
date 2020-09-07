@@ -1,0 +1,718 @@
+<!DOCTYPE html><html lang="en">
+	<head><meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<title>Office IT Infrastructure Overhaul - Ross Godwin</title>
+
+
+<meta name="description" content="Web Developer from Somewhere">
+<meta property="og:description" content="Web Developer from Somewhere" />
+
+<meta name="author" content="" />
+
+
+<meta property="og:title" content="Office IT Infrastructure Overhaul" />
+<meta property="twitter:title" content="Office IT Infrastructure Overhaul" />
+
+
+
+
+<link rel="stylesheet" href="https:/9to5.rossgodwin.com/assets/css/main.css">
+
+    <link rel="stylesheet" href="/assets/magnific-popup/magnific-popup.css">
+
+    <link rel="stylesheet" href="/assets/magnific-popup/magnific-popup-custom.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css" >
+
+<script>(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script>
+
+<script>
+	(function() {
+		var TEXT_VARIABLES = {
+		version: '2.2.6',
+			sources: {
+				jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+				highlightjs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js'
+			}
+		};
+		window.TEXT_VARIABLES = TEXT_VARIABLES;
+	})();
+</script></head>
+	<body>
+		<div class="page-wrapper">
+			<header class="page-header">
+	<div class="page-header-wrapper">
+		<div class="page-header-title">
+			<h1 class="heading heading-leading-vertical-bar">Ross Godwin</h1>
+			
+			<button class="page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+			</button>
+		</div>
+		
+		<nav class="page-header-navigation">
+			<ul class="unordered-list-no-bullets">
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/">Get Started</a>
+				</li>
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/cv">Resume</a>
+				</li>
+				<li class="active">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/projects">Projects</a>
+				</li>
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/articles">Articles</a>
+				</li>
+				<li class="nav-item-separator">
+					|
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/ross-godwin" target="_blank">
+						<i class="fab fa-linkedin fa-2x" data-fa-transform="down-4"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.github.com/rossgodwin" target="_blank">
+						<i class="fab fa-github-square fa-2x" data-fa-transform="down-4"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+			
+			<div class="page-content">
+	<header class="page-content-header">
+	<div class="mb-3">
+		<!-- https://jekyllcodex.org/without-plugin/breadcrumbs -->
+<div id="breadcrumbs">
+	
+	<a href="/">Home</a>
+	
+		
+			/ <a href="/projects/">Projects</a>
+		
+	
+		
+			/ Office IT Infrastructure Overhaul
+		
+	
+</div>
+	</div>
+	
+	<h2 class="heading heading-leading-vertical-bar">Office IT Infrastructure Overhaul</h2>
+	
+	
+</header>
+	
+	<section class="page-content-main">
+		<article>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">About the Project</h4>
+				<p>
+					This was a fun, rewarding and necessary project where I improved a small office network to be a better 
+					performing, more stable network resulting in improved office productivity and scalability for future company 
+					growth. If you are just interested in pictures, <a href="#pictures">here are before and after photos</a>.
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Background</h4>
+				<p>
+					Shortly after starting employment with <a href="/https://9to5.rossgodwin.com/cv/tsd/">Triangle Site Design</a> 
+					I began poking around at the network and computer components. After investigation the IT infrastructure and using 
+					it on a daily basis it was evident that an upgrade was needed due to slow computer and network performance.
+					
+					it was evident that updates to workstations and network topology as well as cybersecurity
+					measures were needed.
+					There were also some security vulnerabilities that needed addressing.
+				</p>
+				<p>
+					I brought the issues that I found to the company owner's attention and initiated the idea of making some changes. 
+					He indicated to me that over the course of a few years in that current office location they had spent thousands 
+					of dollars with two different vendors and had trouble getting the infrastructure to where it currently was 
+					which was a functioning network but lacked in performance and expandability.
+				</p>
+				<p>
+					Here were some of the current conditions that I found:
+					
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							The closet containing the computer and networking equipment was a mess with components laying on the floor. 
+							You can see a picture below. 
+							This was unsightly, hard environment to work in and identify problems and put the network at risk should 
+							someone go in there, trip and break a critical component.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							Download speeds were not close to reaching the 100Mbps that the company was paying for.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							The office, located in a office park, was using shared internet access with several other businesses 
+							in surround office suites. Internet download speeds would slow as neighboring employees began arriving 
+							to work in the mornings and continue to degrade throughout the day as the load increased.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							Desktop workstations were using wireless connectivity connecting to 2 UniFi AP-AC-Pro wireless access 
+							points which opened the door for bottlenecking and latency issues. Updating desktop wireless card 
+							drivers helped performance but was not a long-term fixed.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							WAN access through a Cisco Meraki MX60 4 port router whose specifications indicated this device had a 
+							stateful firewall throughput of 100 Mbps and a advanced security throughput 50 Mbps. Another limiting 
+							factor was a recommended use case of 20 users. These were limiting factors should the company 
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							Unshielded Cat5e ethernet cable running through walls to the wireless access points and printers.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							The network topography did not lend itself to quick and easy expandability should the need arise, for 
+							instance if the company added employees (which it would in the future) or swith to IP phone service 
+							(which it would in the future)
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							Slow computers with inadequate hardware to keep up with the software used on a daily basis to perform 
+							required tasks.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							Slow windows desktop station serving as the shared file server also running Carbonite for offsite 
+							backup. This machine did not have enough hardware resources to keep up with all that was required of 
+							it and it was central to daily business task.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							No guest wireless network access, visiting clients were given full access to the company network.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+					<p>
+						
+						<table>
+	<tr>
+		<td style="vertical-align: top; padding-top: 3px; padding-right: 10px;"><i class="fas fa-chevron-right"></i></td>
+		<td>
+			
+							No login protection on any of the workstations.
+						
+		</td>
+	</tr>
+</table>
+					</p>
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Met Goals</h4>
+				<p>
+					After analyzing existing network limitations, research better network and hardware options, plan for future 
+					expandibility and consider cost.  Here were some goals that I had in mind researching 
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> find a ISP that could provide reasonably priced dedicated internet access.
+					</i>
+					<p>
+						<a href="https://celito.net" target="_blank">Celito</a> is a local internet service provider that was 
+						looking to venture in to the office complex where we were located. We made the switch and have been 
+						extremely pleased with the dedicated fiber service that we receive and their wonderful customer support.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> transform the small closet that was a tangled mess of cables and equipment laying around 
+						on the floor in to a space that resembles a organized server room.
+					</i>
+					<p>
+						To get things off the floor and make working on the network easier, I decided to go with a wall mounted rack. 
+						I chose the <a href="https://www.startech.com/Server-Management/Racks/6U-14in-Deep-Wall-Mounting-Bracket-for-Patch-Panel~WALLMOUNT6" target="_blank">StarTech.com 6U wall mount network equipment rack</a>.
+						This meant that any network components that I purchased from here out would need to be compatible 
+						with a 19 inch rack.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> replace existing router.
+					</i>
+					<p>
+						The router in use was a Cisco Meraki and based on my research in the specifications was not a good fit for 
+						our environment.
+						
+						I upgraded to the <a href="https://www.ui.com/unifi-routing/usg" target="_blank">UniFi Security Gateway</a> 
+						by Ubiquiti Networks.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> consolidate the two network switches in to one. There was an 8-port non-PoE switch sitting between the workstations and router 
+						and off of that was a 16-port PoE switch that was used to provide power and connectivity for the wireless 
+						access points.
+					</i>
+					<p>
+						I went with a <a href="https://www.cisco.com/c/en/us/products/switches/110-series-unmanaged-switches/index.html" target="_blank">Cisco 
+						SG110 24-Port unmanaged PoE network switch</a>, which provides 12 PoE ports. Enough for the 2 wireless 
+						access points that are powered over the ethernet. And 12 non-PoE ports.
+					</p>
+				</p>
+				<p>
+					<i><b>Goal:</b> hardwire each office with ethernet cable so that workstations no longer depend on wireless 
+					connectivity.</i>
+					<p>
+						To future proof the cable installation, I decided to go with Cat6a ethernet. I chose a product by 
+						<a href="https://www.monoprice.com/product?c_id=301&cp_id=30103&cs_id=3010303&p_id=18593&seq=1&format=2" target="_blank">Monoprice</a> 
+						that was rated F/UTP which wraps the 23AWG wire in a foil shield that acts as a barrier preventing interference and 
+						data signal leaks.
+					</p>
+					<p>
+						To organize the cable feeds coming in to the server closet from the offices, I went with 
+						a <a href="https://www.cablematters.com/pc-445-162-rackmount-or-wallmount-24-port-cat6a-shielded-rj45-patch-panel-with-jack-shutter.aspx" target="_blank">24-port 
+						Cable Matters rackmount Cat6a patch panel</a>. Outlets in the office would be provided by 
+						<a href="https://cat5ecableguy.com/inc/sdetail/238566" target="_blank">surface mount box</a>.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> upgrade the network storage access because of the volume of reads and writes required of it 
+						and because it's such a critical piece to the daily business operation.
+					</i>
+					<p>
+						
+						
+						Part of this would be to Free up the network storage server resources by offloading backup workload to a seperate dedicated 
+							workstation
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> data redundancy, emergency failover option and office uptime during power flickers and outages.
+					</i>
+					<p>
+						For data backup, I chose not put this burden on the network storage device. Rather I took that workstation 
+						that served as the older file server and dedicated it to managing data backup.
+					</p>
+					<p>
+						For uptime during power flickers and outages, I made sure each employee workstation was equipped with a 
+						function UPS. For the network hardware I chose a rackmount power supply by 
+						<a href="https://www.cyberpowersystems.com/product/ups/smart-app-lcd/or500lcdrm1u/" target="_blank">CypberPower</a>.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> network folder space for each employee.
+					</i>
+					<p>
+						The main reason I wanted to set this up was for ease of employee information backup. Rather than having 
+						to maintain backup processes on each individual computer, I setup a personal network folder for them to 
+						use instead of the local C drive. The Linux based QTS kernel on the QNAP network access storage device 
+						provides nice management of users, folder resources and access privileges.
+					</p>
+				</p>
+				<p>
+					<i>
+						<b>Goal:</b> provide new computers for employees also individual network storage 
+					</i>
+					<p>
+						and thus automatic backing up
+					</p>
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Results</h4>
+				<p>
+					I was very pleased with how everything turned out as was my boss and coworkers. The improvement in speed, latency 
+					and stability has been a drastic one.  A lot of our traffic is internal so with the Gigabit network, hardwired 
+					workstations and new network storage,
+				</p>
+				<p>
+					Since performing this upgrade, the company has hired one additional full time employee and 2 summer interns. We have 
+					also made the switch to IP phones. Had these infrastructure changes not been made, supporting this additional load 
+					would have been interesting to say the least and probably made a negative impact on office productivity.
+				</p>
+				<p>
+					The power backup strategy worked well and has been tested a couple of times and worked great. Also the data backup 
+					strategy has really worked out well and has been a hands off solution.
+				</p>
+				<p>
+					With the employee network folders I no longer had to worry about how to backup data on each individual workstation 
+					and also requiring less hard drive space on individual desktops
+				</p>
+				<p>
+					One other thing that I'll mention is I installed the UniFi Controller service on the backup machine and has allowed 
+					me to perform monitoring and maintenance on the netork. This is a very nice interface
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Things I Would Do Different</h4>
+				<p>
+					One thing I would do differently would be to run two ethernet cables to each office instead of just one. We also 
+					made the switch to IP phones and it would have been nice an additional line dedicated for the workstation and the 
+					other for the IP phone or a switch for multiple devices like an IP phone or laptop.
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Future Enhancements</h4>
+				
+					Setup Windows active directory
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar"><a id="pictures"></a>Pictures</h4>
+				
+				
+
+<figure>
+	<div class="custom-mfp-gallery">
+	
+		
+			<div class="custom-mfp-vertical">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/001.jpg" title="This is a before photo of the network room. What a mess!">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/001-th.jpg" alt="network room 1">
+				</a>
+			</div>
+		
+	
+		
+			<div class="custom-mfp-horizontal">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/002.jpg" title="New server rack is up and 4 offices hard wired.">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/002-th.jpg" alt="network room 2">
+				</a>
+			</div>
+		
+	
+		
+			<div class="custom-mfp-vertical">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/003.jpg" title="Close up of the rack in progress. Still a ways to go.">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/003-th.jpg" alt="network room 3">
+				</a>
+			</div>
+		
+	
+		
+			<div class="custom-mfp-horizontal">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/004.jpg" title="Finished!">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/004-th.jpg" alt="network room 4">
+				</a>
+			</div>
+		
+	
+		
+			<div class="custom-mfp-vertical">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/005.jpg" title="Finished! For now.">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/005-th.jpg" alt="network room 5">
+				</a>
+			</div>
+		
+	
+		
+			<div class="custom-mfp-horizontal">
+				<a href="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/006.jpg" title="Close up of the new rack.">
+					<img src="/https://9to5.rossgodwin.com/assets/images/gallery/tsd-office-it-infrastructure-overhaul/006-th.jpg" alt="network room 6">
+				</a>
+			</div>
+		
+	
+	</div>
+	
+</figure>
+			</section>
+		</article>
+	</section>
+</div>
+			
+			<footer class="page-footer">
+	<div class="page-footer-wrapper">
+		Contact me: <a href="https://www.linkedin.com/in/ross-godwin">linkedin.com/rossgodwin</a>
+	</div>
+</footer>
+		</div>
+		
+		<script>(function () {
+	var SOURCES = window.TEXT_VARIABLES.sources;
+	
+	window.Lazyload.js(SOURCES.jquery, function() {
+		$(document).ready(function() {
+			
+			// Closes the sidebar menu
+			$(".page-header-menu-toggler").click(function(e) {
+				$(".page-header-navigation").toggleClass("active");
+			});
+		});
+	});
+	
+	window.Lazyload.js(SOURCES.highlightjs, function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
+	});
+})();
+</script>
+		
+		
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="/assets/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <script src="/assets/magnific-popup/magnific-popup-custom.js"></script>
+
+	</body>
+</html>
+

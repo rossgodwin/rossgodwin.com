@@ -1,0 +1,654 @@
+<!DOCTYPE html><html lang="en">
+	<head><meta charset="utf-8" />
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+
+<title>Install Jekyll on Windows Using WSL - Ross Godwin</title>
+
+
+<meta name="description" content="
+I was not interested in installing Jekyll and dependency software directly on my Windows operating system: 1) because I like to keep my environment as free as possible from development software as possible, 2) it frees me up from going in to modify my Windows path environment variable, 3) the Linux deb packages make things go much more smoothly.
+
+Jekyllrb does have installation instructions on how to install and run Jekyll via Windows Subsystem for Linux(wsl)1 but I like to record the steps that I took in case I ever have to recreate my environment.  And often times I find there is an important tweek here or there that I have to make.
+
+Install WSL
+
+Open Windows Features and enable Windows Subsystem for Linux.  Windows Features can be found using the Windows search tool.
+
+
+
+Install the Debian app
+
+Open Microsoft Store, search for Debian and install the app.
+
+
+
+Configure Debian
+
+Update the local repository index in order to install the latest software versions from the repositories.
+
+
+$ sudo apt-get update
+$ sudo apt-get dist-upgrade
+
+
+Install Ruby
+
+Jekyll is a Ruby Gem.
+
+
+$ sudo apt-get install ruby-full build-essential zlib1g-dev
+
+
+You can check what version of Ruby, RubyGems and the installation location.
+
+
+$ ruby -v
+$ gem -v
+$ gem env
+
+
+Install Gem
+
+Don’t install gems as the root user.  Rather setup a gems folder in your user account home.  Make sure you are in the user’s home directory and run the following.
+
+
+$ cd ~
+$ echo '# Install Ruby Gems to ~/gems' &gt;&gt; .bashrc
+$ echo 'export GEM_HOME="$HOME/gems"' &gt;&gt; .bashrc
+$ echo 'export PATH="$HOME/gems/bin:$PATH"' &gt;&gt; .bashrc
+$ source .bashrc
+$ nano .bashrc
+
+
+Install Bundler
+
+The next step that jekyllrb.com has is to install both Jekyll and Bundler.  I’m going to deviate from that and just install bundler and opt to use Bundler to add Jekyll as a dependency in any jekyll projects that I create.
+
+
+$ gem install bundler
+
+
+Configure Jekyll
+
+At this this point, I found that I had to restart my computer to get the remaining steps to work.
+
+Create your project folder and change to that directory.  Then create a new Bundler project.
+
+
+$ bundle init
+
+
+Configure Bundler2 to install gems in a local isolated environment to prevent conflict with other gems on your system.
+
+
+$ bundle install --path vendor/bundle
+
+
+Now whenever you see the message Run ‘bundle install’ to install missings gems. when performing a build, running the below command will install the gems into ‘./vendor/bundle’ keeping your project environment clean and isolated.
+
+
+$ bundle install
+
+
+Add Jekyll as a dependency of the project.
+
+
+$ bundle add jekyll
+
+
+To build the project
+
+
+$ bundle exec jekyll build
+
+
+To serve the content in order to build and test locally
+
+
+$ bundle exec jekyll serve
+
+
+
+  
+    
+      Install Jekyll on Windows &#8617;
+    
+    
+      Bundler tracks dependencies on a per-project basis &#8617;
+    
+  
+
+" />
+<meta property="og:description" content="
+I was not interested in installing Jekyll and dependency software directly on my Windows operating system: 1) because I like to keep my environment as free as possible from development software as possible, 2) it frees me up from going in to modify my Windows path environment variable, 3) the Linux deb packages make things go much more smoothly.
+
+Jekyllrb does have installation instructions on how to install and run Jekyll via Windows Subsystem for Linux(wsl)1 but I like to record the steps that I took in case I ever have to recreate my environment.  And often times I find there is an important tweek here or there that I have to make.
+
+Install WSL
+
+Open Windows Features and enable Windows Subsystem for Linux.  Windows Features can be found using the Windows search tool.
+
+
+
+Install the Debian app
+
+Open Microsoft Store, search for Debian and install the app.
+
+
+
+Configure Debian
+
+Update the local repository index in order to install the latest software versions from the repositories.
+
+
+$ sudo apt-get update
+$ sudo apt-get dist-upgrade
+
+
+Install Ruby
+
+Jekyll is a Ruby Gem.
+
+
+$ sudo apt-get install ruby-full build-essential zlib1g-dev
+
+
+You can check what version of Ruby, RubyGems and the installation location.
+
+
+$ ruby -v
+$ gem -v
+$ gem env
+
+
+Install Gem
+
+Don’t install gems as the root user.  Rather setup a gems folder in your user account home.  Make sure you are in the user’s home directory and run the following.
+
+
+$ cd ~
+$ echo '# Install Ruby Gems to ~/gems' &gt;&gt; .bashrc
+$ echo 'export GEM_HOME="$HOME/gems"' &gt;&gt; .bashrc
+$ echo 'export PATH="$HOME/gems/bin:$PATH"' &gt;&gt; .bashrc
+$ source .bashrc
+$ nano .bashrc
+
+
+Install Bundler
+
+The next step that jekyllrb.com has is to install both Jekyll and Bundler.  I’m going to deviate from that and just install bundler and opt to use Bundler to add Jekyll as a dependency in any jekyll projects that I create.
+
+
+$ gem install bundler
+
+
+Configure Jekyll
+
+At this this point, I found that I had to restart my computer to get the remaining steps to work.
+
+Create your project folder and change to that directory.  Then create a new Bundler project.
+
+
+$ bundle init
+
+
+Configure Bundler2 to install gems in a local isolated environment to prevent conflict with other gems on your system.
+
+
+$ bundle install --path vendor/bundle
+
+
+Now whenever you see the message Run ‘bundle install’ to install missings gems. when performing a build, running the below command will install the gems into ‘./vendor/bundle’ keeping your project environment clean and isolated.
+
+
+$ bundle install
+
+
+Add Jekyll as a dependency of the project.
+
+
+$ bundle add jekyll
+
+
+To build the project
+
+
+$ bundle exec jekyll build
+
+
+To serve the content in order to build and test locally
+
+
+$ bundle exec jekyll serve
+
+
+
+  
+    
+      Install Jekyll on Windows &#8617;
+    
+    
+      Bundler tracks dependencies on a per-project basis &#8617;
+    
+  
+
+" />
+
+<meta name="author" content="" />
+
+
+<meta property="og:title" content="Install Jekyll on Windows Using WSL" />
+<meta property="twitter:title" content="Install Jekyll on Windows Using WSL" />
+
+
+
+
+<link rel="stylesheet" href="https:/9to5.rossgodwin.com/assets/css/main.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css" >
+
+<script>(function() {
+  var Set = (function() {
+    var add = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (data[i] === item) {
+          return;
+        }
+      }
+      this.size ++;
+      data.push(item);
+      return data;
+    };
+
+    var Set = function(data) {
+      this.size = 0;
+      this._data = [];
+      var i;
+      if (data.length > 0) {
+        for (i = 0; i < data.length; i++) {
+          add.call(this, data[i]);
+        }
+      }
+    };
+    Set.prototype.add = add;
+    Set.prototype.get = function(index) { return this._data[index]; };
+    Set.prototype.has = function(item) {
+      var i, data = this._data;
+      for (i = 0; i < data.length; i++) {
+        if (this.get(i) === item) {
+          return true;
+        }
+      }
+      return false;
+    };
+    Set.prototype.is = function(map) {
+      if (map._data.length !== this._data.length) { return false; }
+      var i, j, flag, tData = this._data, mData = map._data;
+      for (i = 0; i < tData.length; i++) {
+        for (flag = false, j = 0; j < mData.length; j++) {
+          if (tData[i] === mData[j]) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) { return false; }
+      }
+      return true;
+    };
+    Set.prototype.values = function() {
+      return this._data;
+    };
+    return Set;
+  })();
+
+  window.Lazyload = (function(doc) {
+    var queue = {js: [], css: []}, sources = {js: {}, css: {}}, context = this;
+    var createNode = function(name, attrs) {
+      var node = doc.createElement(name), attr;
+      for (attr in attrs) {
+        if (attrs.hasOwnProperty(attr)) {
+          node.setAttribute(attr, attrs[attr]);
+        }
+      }
+      return node;
+    };
+    var end = function(type, url) {
+      var s, q, qi, cbs, i, j, cur, val, flag;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        s[url] = true;
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (cur.urls.has(url)) {
+            qi = cur, val = qi.urls.values();
+            qi && (cbs = qi.callbacks);
+            for (flag = true, j = 0; j < val.length; j++) {
+              cur = val[j];
+              if (!s[cur]) {
+                flag = false;
+              }
+            }
+            if (flag && cbs && cbs.length > 0) {
+              for (j = 0; j < cbs.length; j++) {
+                cbs[j].call(context);
+              }
+              qi.load = true;
+            }
+          }
+        }
+      }
+    };
+    var load = function(type, urls, callback) {
+      var s, q, qi, node, i, cur,
+        _urls = typeof urls === 'string' ? new Set([urls]) : new Set(urls), val, url;
+      if (type === 'js' || type ==='css') {
+        s = sources[type], q = queue[type];
+        for (i = 0; i < q.length; i++) {
+          cur = q[i];
+          if (_urls.is(cur.urls)) {
+            qi = cur;
+            break;
+          }
+        }
+        val = _urls.values();
+        if (qi) {
+          callback && (qi.load || qi.callbacks.push(callback));
+          callback && (qi.load && callback());
+        } else {
+          q.push({
+            urls: _urls,
+            callbacks: callback ? [callback] : [],
+            load: false
+          });
+          for (i = 0; i < val.length; i++) {
+            node = null, url = val[i];
+            if (s[url] === undefined) {
+              (type === 'js' ) && (node = createNode('script', { src: url }));
+              (type === 'css') && (node = createNode('link', { rel: 'stylesheet', href: url }));
+              if (node) {
+                node.onload = (function(type, url) {
+                  return function() {
+                    end(type, url);
+                  };
+                })(type, url);
+                (doc.head || doc.body).appendChild(node);
+                s[url] = false;
+              }
+            }
+          }
+        }
+      }
+    };
+    return {
+      js: function(url, callback) {
+        load('js', url, callback);
+      },
+      css: function(url, callback) {
+        load('css', url, callback);
+      }
+    };
+  })(this.document);
+})();
+</script>
+
+<script>
+	(function() {
+		var TEXT_VARIABLES = {
+		version: '2.2.6',
+			sources: {
+				jquery: 'https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js',
+				highlightjs: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js'
+			}
+		};
+		window.TEXT_VARIABLES = TEXT_VARIABLES;
+	})();
+</script></head>
+	<body>
+		<div class="page-wrapper">
+			<header class="page-header">
+	<div class="page-header-wrapper">
+		<div class="page-header-title">
+			<h1 class="heading heading-leading-vertical-bar">Ross Godwin</h1>
+			
+			<button class="page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+			</button>
+		</div>
+		
+		<nav class="page-header-navigation">
+			<ul class="unordered-list-no-bullets">
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/">Get Started</a>
+				</li>
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/cv">Resume</a>
+				</li>
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/projects">Projects</a>
+				</li>
+				<li class="">
+					
+
+
+					<a href="https:/9to5.rossgodwin.com/articles">Articles</a>
+				</li>
+				<li class="nav-item-separator">
+					|
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/in/ross-godwin" target="_blank">
+						<i class="fab fa-linkedin fa-2x" data-fa-transform="down-4"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.github.com/rossgodwin" target="_blank">
+						<i class="fab fa-github-square fa-2x" data-fa-transform="down-4"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+			
+			
+
+
+
+<div class="page-content">
+	<section class="page-content-main">
+		<section class="article px-3 py-5 p-md-5">
+			<header class="article-header">
+				<h2 class="heading heading-leading-vertical-bar">Install Jekyll on Windows Using WSL</h2>
+				<div class="article-header-meta mb-3">
+					Published:&nbsp;Jul 26, 2020
+					<br>
+					Category:&nbsp;<a href="https:/9to5.rossgodwin.com/howtos">Howtos</a>
+					
+						<br>
+						<span>Tags:&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/jekyll">jekyll</a>&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/windows">windows</a>&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/bash">bash</a>&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/wsl">wsl</a>&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/linux">linux</a>&nbsp;
+						
+							<a href="https:/9to5.rossgodwin.com/tag/debian">debian</a>&nbsp;
+						
+						</span>
+					
+					
+					<hr>
+				</div>
+			</header>
+			<div class="article-body">
+				
+<p>I was not interested in installing Jekyll and dependency software directly on my Windows operating system: 1) because I like to keep my environment as free as possible from development software as possible, 2) it frees me up from going in to modify my Windows path environment variable, 3) the Linux deb packages make things go much more smoothly.</p>
+
+<p>Jekyllrb does have installation instructions on how to install and run Jekyll via Windows Subsystem for Linux(wsl)<sup id="fnref:Jekyllrb-install-instructions" role="doc-noteref"><a href="#fn:Jekyllrb-install-instructions" class="footnote">1</a></sup> but I like to record the steps that I took in case I ever have to recreate my environment.  And often times I find there is an important tweek here or there that I have to make.</p>
+
+<h6 id="install-wsl">Install WSL</h6>
+
+<p>Open <strong><em>Windows Features</em></strong> and enable <strong>Windows Subsystem for Linux</strong>.  <strong><em>Windows Features</em></strong> can be found using the Windows search tool.</p>
+
+<p><img src="/https://9to5.rossgodwin.com/assets/images/article/install-jekyll-on-windows-using-wsl/windows-features.png" alt="Windows Features" class="img-fluid" /></p>
+
+<h6 id="install-the-debian-app">Install the Debian app</h6>
+
+<p>Open <strong><em>Microsoft Store</em></strong>, search for <strong><em>Debian</em></strong> and install the app.</p>
+
+<p><img src="/https://9to5.rossgodwin.com/assets/images/article/install-jekyll-on-windows-using-wsl/debian-microsoft-store.png" alt="Debian Microsoft Store" class="img-fluid" /></p>
+
+<h6 id="configure-debian">Configure Debian</h6>
+
+<p>Update the local repository index in order to install the latest software versions from the repositories.</p>
+
+<pre><code>
+$ sudo apt-get update
+$ sudo apt-get dist-upgrade
+</code></pre>
+
+<h6 id="install-ruby">Install Ruby</h6>
+
+<p>Jekyll is a Ruby Gem.</p>
+
+<pre><code>
+$ sudo apt-get install ruby-full build-essential zlib1g-dev
+</code></pre>
+
+<p>You can check what version of Ruby, RubyGems and the installation location.</p>
+
+<pre><code>
+$ ruby -v
+$ gem -v
+$ gem env
+</code></pre>
+
+<h6 id="install-gem">Install Gem</h6>
+
+<p>Don’t install gems as the root user.  Rather setup a gems folder in your user account home.  Make sure you are in the user’s home directory and run the following.</p>
+
+<pre><code>
+$ cd ~
+$ echo '# Install Ruby Gems to ~/gems' &gt;&gt; .bashrc
+$ echo 'export GEM_HOME="$HOME/gems"' &gt;&gt; .bashrc
+$ echo 'export PATH="$HOME/gems/bin:$PATH"' &gt;&gt; .bashrc
+$ source .bashrc
+$ nano .bashrc
+</code></pre>
+
+<h6 id="install-bundler">Install Bundler</h6>
+
+<p>The next step that jekyllrb.com has is to install both Jekyll and <a href="https://bundler.io" target="_blank">Bundler</a>.  I’m going to deviate from that and just install bundler and opt to use Bundler to add Jekyll as a dependency in any jekyll projects that I create.</p>
+
+<pre><code>
+$ gem install bundler
+</code></pre>
+
+<h6 id="configure-jekyll">Configure Jekyll</h6>
+
+<p>At this this point, I found that I had to restart my computer to get the remaining steps to work.</p>
+
+<p>Create your project folder and change to that directory.  Then create a new Bundler project.</p>
+
+<pre><code>
+$ bundle init
+</code></pre>
+
+<p>Configure Bundler<sup id="fnref:configure-bundler" role="doc-noteref"><a href="#fn:configure-bundler" class="footnote">2</a></sup> to install gems in a local isolated environment to prevent conflict with other gems on your system.</p>
+
+<pre><code>
+$ bundle install --path vendor/bundle
+</code></pre>
+
+<p>Now whenever you see the message <em>Run ‘bundle install’ to install missings gems.</em> when performing a build, running the below command will install the gems into ‘./vendor/bundle’ keeping your project environment clean and isolated.</p>
+
+<pre><code>
+$ bundle install
+</code></pre>
+
+<p>Add Jekyll as a dependency of the project.</p>
+
+<pre><code>
+$ bundle add jekyll
+</code></pre>
+
+<p>To build the project</p>
+
+<pre><code>
+$ bundle exec jekyll build
+</code></pre>
+
+<p>To serve the content in order to build and test locally</p>
+
+<pre><code>
+$ bundle exec jekyll serve
+</code></pre>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:Jekyllrb-install-instructions" role="doc-endnote">
+      <p><a href="https://jekyllrb.com/docs/installation/windows" target="_blank">Install Jekyll on Windows</a> <a href="#fnref:Jekyllrb-install-instructions" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:configure-bundler" role="doc-endnote">
+      <p><a href="https://jekyllrb.com/tutorials/using-jekyll-with-bundler/#configure-bundler" target="_blank">Bundler tracks dependencies on a per-project basis</a> <a href="#fnref:configure-bundler" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+			</div>
+		</section>
+	</section>
+</div>
+			
+			<footer class="page-footer">
+	<div class="page-footer-wrapper">
+		Contact me: <a href="https://www.linkedin.com/in/ross-godwin">linkedin.com/rossgodwin</a>
+	</div>
+</footer>
+		</div>
+		
+		<script>(function () {
+	var SOURCES = window.TEXT_VARIABLES.sources;
+	
+	window.Lazyload.js(SOURCES.jquery, function() {
+		$(document).ready(function() {
+			
+			// Closes the sidebar menu
+			$(".page-header-menu-toggler").click(function(e) {
+				$(".page-header-navigation").toggleClass("active");
+			});
+		});
+	});
+	
+	window.Lazyload.js(SOURCES.highlightjs, function() {
+		document.querySelectorAll('pre code').forEach((block) => {
+			hljs.highlightBlock(block);
+		});
+	});
+})();
+</script>
+		
+		
+	</body>
+</html>
+
