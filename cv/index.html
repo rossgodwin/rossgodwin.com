@@ -4,22 +4,16 @@ title: &title "Resume"
 ---
 
 <div class="page-content">
-	{% capture _header_content %}
-		{% include snippets/prepend-assets-url.html file_name='cv/cv.pdf' %}
-		<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
-		{% include snippets/prepend-assets-url.html file_name='cv/cv.txt' %}
-		<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
-	{% endcapture %}
-	{% include page-content-header.html title='Resume' content=_header_content %}
+	{% include page-content-header.html title='Resume' %}
 	
 	<section class="page-content-main">
 		<article class="cv-wrapper">
 			<section class="cv-header">
-				<h4 class="cv-header-title mb-0">Ross Godwin</h4>
+				<h4 class="cv-header-title mb-0">{{ site.data.cv.name }}</h4>
 				<div class="cv-header-tagline">
-					Software Developer
+					{{ site.data.cv.title }}
 					<br/>
-					{{ site.location }}
+					{{ site.data.cv.location }}
 					<span>&#183;</span>
 					<a href="{{ site.website.url }}">{{ site.website.display-url }}</a>
 					<br/>
@@ -38,131 +32,89 @@ title: &title "Resume"
 					<h4 class="heading">Recommendations</h4>
 				</div>
 				<div class="cv-section-content">
-					{% include cv/duke-recommendation.html %}
+					{% assign recommendation = site.data.cv.jobs[1].recommendations[0] %}
+					{% include quote.html quote=recommendation.quote quote_by=recommendation.by %}
 				</div>
 			</section>
+			
 			<section>
 				<div class="cv-section-heading">
 					<h4 class="heading">How I Can Add Value</h4>
 				</div>
 				<div class="cv-section-content">
 					<span class="cv-text">
-					Forward-thinking software developer with 16 years of experience in web application development, 
-					mobile app development, and business intelligence development. Successfully operates in agile-like 
-					development environments, taking ownership of projects from start to finish, delivering value, 
-					and employing proactive problem solving and resolution. Brings significant expertise in web 
-					development stack, single-page applications, and mobile app development.
+						{{ site.data.cv.intro }}
 					</span>
 				</div>
 			</section>
+			
 			<section>
 				<div class="cv-section-heading">
 					<h4 class="heading">Where I've Been</h4>
 				</div>
 				<div class="cv-section-content">
-					<div class="cv-work-history-item">
-						<div>
-							<div class="cv-work-history-item-employer">
-								<a href="{% link cv/tsd.html %}">{{ site.content.cv.tsd.name }}</a>
+					{% for job in site.data.cv.jobs %}
+						{% if forloop.index < 4 %}
+							<div class="cv-work-history-item">
+								<div>
+									<div class="cv-work-history-item-employer">
+										{% if job.url %}<a href="{{ job.url }}">{% endif %}
+										{{ job.company.name }}
+										{% if job.url %}</a>{% endif %}
+									</div>
+									{% for position in job.positions %}
+										<div class="cv-work-history-item-position">{{ position.title }}</div>
+										<div class="cv-work-history-item-years-worked">{{ position.duration }}</div>
+									{% endfor %}
+								</div>
+								<div class="cv-text">
+									{{ job.description }}
+								</div>
 							</div>
-							<div class="cv-work-history-item-position">Project Coordinator & Civil Designer</div>
-							<div class="cv-work-history-item-years-worked">{{ site.content.cv.tsd.years-worked }}</div>
-						</div>
-						<div class="cv-text">
-							Involved in project coordination, land development design, construction document preparation, 
-							field surveying, and on site inspection of construction work. Utilize AutoCAD to draft, 
-							scale and fine-tune drawings and maps for land development projects, and create concept, 
-							site, grading and erosion control plans. Also responsible for daily management, upkeep and 
-							configuration of critical information technology systems.
-						</div>
-					</div>
-					<div class="cv-work-history-item cv-work-history-item-separator">
-						<div>
-							<div class="cv-work-history-item-employer">
-								<a href="{% link cv/atlatl.html %}">{{ site.content.cv.atlatl.name }}</a>
-							</div>
-							<div class="cv-work-history-item-position">Software Developer</div>
-							<div class="cv-work-history-item-years-worked">{{ site.content.cv.atlatl.years-worked }}</div>
-						</div>
-						<div class="cv-text">
-							Worked closely with a small team of software developers and customer support to build, enhance, 
-							and maintain in-house web and mobile applications used by small businesses. Being a team member 
-							of a small development shop afforded me the opportunity to work on all stages of the development 
-							life cycle and pushed me to stay current on the latest technologies and best practices. As a 
-							full stack developer, I was a key contributor on one of the company's top revenue producing web 
-							applications. Additionally, I developed and maintained iOS and Android apps providing mobile 
-							access for the subscription base of our hosted software.
-						</div>
-					</div>
-					<div class="cv-work-history-item cv-work-history-item-separator">
-						<div>
-							<div class="cv-work-history-item-employer">{{ site.content.cv.dunn.name }}</div>
-							<div class="cv-work-history-item-position">Business Intelligence Developer</div>
-							<div class="cv-work-history-item-years-worked">{{ site.content.cv.dunn.years-worked }}</div>
-						</div>
-						<div class="cv-text">
-							Worked closely with a small team of software developers and customer support to build, 
-							enhance, and maintain in-house web and mobile applications used by small businesses. 
-							Being a team member of a small development shop afforded me the opportunity to work on 
-							all stages of the development life cycle and pushed me to stay current on the latest 
-							technologies and best practices. As a full stack developer, I was a key contributor on 
-							one of the company's top revenue producing web applications. Additionally, I developed 
-							and maintained iOS and Android apps providing mobile access for the subscription base 
-							of our hosted software.
-						</div>
-					</div>
-					<div class="cv-work-history-item cv-work-history-item-separator">
-						<div>
-							<div class="cv-work-history-item-employer">{{ site.content.cv.ncsu-cuacs.name }}</div>
-							<div class="cv-work-history-item-position">{{ site.content.cv.ncsu-cuacs.role }}</div>
-							<div class="cv-work-history-item-years-worked">{{ site.content.cv.ncsu-cuacs.years-worked }}</div>
-						</div>
-						<div class="cv-text">
-							This position began as basic data entry and HTML formatting with the Center for Urban Affairs 
-							and Community Services, an affiliate of North Carolina State University, and expanded into a 
-							challenging role as a intern web application developer. I was assigned the responsibility of 
-							developing a proof of concept for the North Carolina Department of Education to demonstrate 
-							the feasibility of performing computer skills testing online for elementary grade students. 
-							I was able to deliver a web application using Apache Tomcat, HTML, MySQL, Java Serve-Side 
-							technologies, JDBC, and JavaScript. This proof of concept was presented to representatives 
-							from the department broadening their vision at the possibilities of expanding their online 
-							testing capabilities.
-						</div>
-					</div>
+						{% endif %}
+					{% endfor %}
 				</div>
 			</section>
+			
 			<section>
 				<div class="cv-section-heading">
 					<h4 class="heading">Side Projects I've Initiated</h4>
 				</div>
 				<div class="cv-section-content">
-					<div class="cv-work-history-item">
-						<div>
-							<span class="cv-work-history-item-employer">
-								<a href="{% link projects/cheapthycable.html %}">{{ site.content.projects.cheapthycable.title }}</a>
-							</span>
-							<br/>
-							<span class="cv-work-history-item-years-worked">08-2016 to 10-2017</span>
+					{% for project in site.data.cv.projects %}
+						<div class="cv-work-history-item">
+							<div>
+								<span class="cv-work-history-item-employer">
+									<a href="{{ project.url }}">{{ project.name }}</a>
+								</span>
+								<br/>
+								<span class="cv-work-history-item-years-worked">{{ project.duration }}</span>
+							</div>
+							<div class="cv-text">
+								{{ project.description }}
+							</div>
 						</div>
-						<div class="cv-text">
-							Developed crowdsourcing web application that allowed participants to see what others were 
-							paying for cable and internet in their area with the goal of providing leveraging power in 
-							negotiating a lower bill. Developedusing J2EE web container,Hibernate, AngularJS, Bootstrap, 
-							and other popular APIs such as Thymeleaf, Mailgun and Disqus.
-						</div>
-					</div>
+					{% endfor %}
 				</div>
 			</section>
+			
 			<section>
 				<div class="cv-section-heading">
 					<h4 class="heading">What I've Learned</h4>
 				</div>
 				<div class="cv-section-content">
-					<div class="cv-work-history-item-employer">Bachelor of Science in Computer Science</div>
-					<div class="cv-work-history-item-position">North Carolina State University</div>
-					<div class="cv-work-history-item-years-worked">1999 - 2003</div>
+					<div class="cv-work-history-item-employer">{{ site.data.cv.education.school }}</div>
+					<div class="cv-work-history-item-position">{{ site.data.cv.education.degree }}</div>
+					<div class="cv-work-history-item-years-worked">{{ site.data.cv.education.graduated }}</div>
 				</div>
 			</section>
 		</article>
+		
+		<section style="margin-top: 15px; text-align: center;">
+			{% include snippets/prepend-assets-url.html file_name='cv/cv.pdf' %}
+			<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
+			{% include snippets/prepend-assets-url.html file_name='cv/cv.txt' %}
+			<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
+		</section>
 	</section>
 </div>

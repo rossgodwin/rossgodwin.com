@@ -19,6 +19,10 @@ $text-size: 0.875rem;
 	padding: 1.5rem;
 }
 
+.cv-wrapper .quote {
+	font-size: $text-size;
+}
+
 .cv-wrapper h1, h2, h3, h4, h5, h6 {
 	color: $theme-text-color-primary;
 	font-weight: bold;
@@ -67,7 +71,7 @@ $text-size: 0.875rem;
 }
 
 .cv-work-history-item-position {
-	font-size: 0.95rem;
+	font-size: $text-size;
 }
 
 .cv-work-history-item-years-worked {

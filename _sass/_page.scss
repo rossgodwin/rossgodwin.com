@@ -20,7 +20,7 @@ $padding-left-right-992: 4rem;
 
 // ------------- Page Header -----------------
 .page-header {
-	
+	grid-area: h;
 }
 
 .page-header-wrapper {
@@ -87,7 +87,7 @@ $padding-left-right-992: 4rem;
 .page-content {
 	grid-area: c;
 	display: grid;
-	grid-template-rows: auto 10px 1fr;
+	grid-template-rows: auto 10px 1fr 10px;
 	grid-template-areas:
 		// ch = content header
 		// cm = content main

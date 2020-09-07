@@ -3,55 +3,39 @@ layout: default
 title: &title "Work History - Triangle Site Design"
 ---
 
-<div class="page-content">
-	{% include page-content-header.html title=site.content.cv.tsd.name %}
+<main class="page-content">
+	{% assign job = site.data.cv.jobs[0] %}
+	
+	{% capture _header_content %}
+		{% for position in job.positions %}
+			<div><strong>{{ position.title }}</strong>, {{ position.duration }}</div>
+		{% endfor %}
+	{% endcapture %}
+	{% include page-content-header.html title=job.company.name content=_header_content %}
 	
 	<section class="page-content-main">
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Description</h4>
-			<strong>Project Coordinator & Civil Designer</strong>, {{ site.content.cv.tsd.years-worked }}
-			<p>
-				Involved in land development design, construction document preparation, on site inspection of 
-				construction work and field surveying. Utilize AutoCAD to draft, scale and fine-tune drawings 
-				and maps for land development projects, and create concept plans and erosion and sediment control 
-				plans. Research city, county and state laws to ensure project designs are in compliance with 
-				government requirements.
-			</p>
+		<article>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Responsibilies</h4>
+				<div class="cv-section-content">
+					{% for responsibility in job.responsibilities %}
+						{% if forloop.index != 1 %}<p>{% endif %}
+							{% include custom-list-item.html content=responsibility %}
+						{% if forloop.index != 1 %}</p>{% endif %}
+					{% endfor %}
+				</div>
+			</section>
 			
-			<strong>Information Technology Administrator</strong>, {{ site.content.cv.tsd.years-worked }}
-			<p>
-				Responsible for daily management, upkeep and configuration of critical systems. Designed 
-				and implemented significant changes to the technology infrastructure, which resulted in 
-				increased office productivity and improved cyber-security.
-			</p>
-		</section>
-		
-		<section>
-			<h4 class="heading heading-leading-vertical-bar">Achievements</h4>
-			<ul>
-				<li>
-					Built new high performance computers replacing slow and outdated desktops
-				</li>
-				<li>
-					Designed and implemented office network overhaul addressing latency issues as well 
-					as making the network more scalable for future growth
-				</li>
-				<li>
-					QNAP server installation and configuration
-				</li>
-				<li>
-					Addressed security vulnerabilities by instituting new security policies and enforcing 
-					security through users and groups
-				</li>
-				<li>
-					Oversaw phone system transition to a cloud-based communications and collaboration 
-					solution which involved installation and configuration of new system
-				</li>
-				<li>
-					Designed and implemented customized backup and redundancy automation plan for critical 
-					company digital content
-				</li>
-			</ul>
-		</section>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Achievements</h4>
+				<div class="cv-section-content">
+					{% for achievement in job.achievements %}
+						{% if forloop.index != 1 %}<p>{% endif %}
+							{% include custom-list-item.html content=achievement %}
+						{% if forloop.index != 1 %}</p>{% endif %}
+					{% endfor %}
+				</div>
+			</section>
+		</article>
 	</section>
-</div>
+</main>
