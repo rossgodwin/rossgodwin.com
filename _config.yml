@@ -47,7 +47,6 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - README.md
-  - CNAME
   - Photoshop/
   - vendor/bundle/
   - TODO
