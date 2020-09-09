@@ -3,8 +3,8 @@
 # Site wide configuration
 destination: docs
 
-url:
-baseurl: "https://9to5.rossgodwin.com"
+url: "https://9to5.rossgodwin.com"
+baseurl: ""
 
 title: Ross Godwin
 description: Web Developer from Somewhere

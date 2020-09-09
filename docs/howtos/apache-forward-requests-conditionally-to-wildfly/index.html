@@ -1,9 +1,19 @@
-<!DOCTYPE html><html lang="en">
-	<head><meta charset="utf-8" />
+<!DOCTYPE html>
+
+
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8" />
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
+
+
+
+
+  
 
 <title>Configure Apache to Forward some Url Reqests to Wildfly - Ross Godwin</title>
 
@@ -20,15 +30,15 @@
 <meta property="twitter:title" content="Configure Apache to Forward some Url Reqests to Wildfly" />
 
 
-
-
-<link rel="stylesheet" href="https:/9to5.rossgodwin.com/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css" >
 
-<script>(function() {
+
+		<script>
+			(function() {
   var Set = (function() {
     var add = function(item) {
       var i, data = this._data;
@@ -171,7 +181,9 @@
     };
   })(this.document);
 })();
-</script>
+
+	    </script>
+		
 
 <script>
 	(function() {
@@ -184,7 +196,8 @@
 		};
 		window.TEXT_VARIABLES = TEXT_VARIABLES;
 	})();
-</script></head>
+</script>
+	</head>
 	<body>
 		<div class="page-wrapper">
 			<header class="page-header">
@@ -200,28 +213,16 @@
 		<nav class="page-header-navigation">
 			<ul class="unordered-list-no-bullets">
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/">Get Started</a>
+					<a href="/">Get Started</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/cv">Resume</a>
+					<a href="/cv">Resume</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/projects">Projects</a>
+					<a href="/projects">Projects</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/articles">Articles</a>
+					<a href="/articles">Articles</a>
 				</li>
 				<li class="nav-item-separator">
 					|
@@ -253,18 +254,18 @@
 				<div class="article-header-meta mb-3">
 					Published:&nbsp;Jan 3, 2018
 					<br>
-					Category:&nbsp;<a href="https:/9to5.rossgodwin.com/howtos">Howtos</a>
+					Category:&nbsp;<a href="/howtos">Howtos</a>
 					
 						<br>
 						<span>Tags:&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/apache">apache</a>&nbsp;
+							<a href="/tag/apache">apache</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/httpd">httpd</a>&nbsp;
+							<a href="/tag/httpd">httpd</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/mod_proxy">mod_proxy</a>&nbsp;
+							<a href="/tag/mod_proxy">mod_proxy</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/wildfly">wildfly</a>&nbsp;
+							<a href="/tag/wildfly">wildfly</a>&nbsp;
 						
 						</span>
 					
@@ -276,7 +277,7 @@
 				<p>I created a website (<a href="https://cheapthycable.rossgodwin.com" target="_blank">cheapthycable.com</a>) that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
 <!--more--></p>
 
-<p><img src="/https://9to5.rossgodwin.com/assets/images/article/apache-forward-requests-conditionally-to-wildfly/arrows-1738067_1280_350.jpg" alt="apache wildfly" class="img-responsive" width="100%" /></p>
+<p><img src="/assets/images/article/apache-forward-requests-conditionally-to-wildfly/arrows-1738067_1280_350.jpg" alt="apache wildfly" class="img-responsive" width="100%" /></p>
 
 <p>When I originally built the project, I wanted everything to be contained in my war file, both dynamic content and static content. A couple of things I have since discovered I don’t like about this are 1) any blogs I add requires a war file deployment which is much slower than just doing a apache restart, 2) I didn’t like the effect this had on my version control. For me, it was difficult to determine when a good time to perform a tag on the source code should occur, since things were constantly changing with the blog.</p>
 
@@ -321,7 +322,8 @@
 </footer>
 		</div>
 		
-		<script>(function () {
+		<script>
+			(function () {
 	var SOURCES = window.TEXT_VARIABLES.sources;
 	
 	window.Lazyload.js(SOURCES.jquery, function() {
@@ -340,9 +342,9 @@
 		});
 	});
 })();
-</script>
+
+		</script>
 		
 		
 	</body>
 </html>
-

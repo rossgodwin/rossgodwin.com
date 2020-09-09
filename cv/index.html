@@ -111,10 +111,8 @@ title: &title "Resume"
 		</article>
 		
 		<section style="margin-top: 15px; text-align: center;">
-			{% include snippets/prepend-assets-url.html file_name='cv/cv.pdf' %}
-			<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
-			{% include snippets/prepend-assets-url.html file_name='cv/cv.txt' %}
-			<a class="btn btn-primary" href="{{ __return }}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
+			<a class="btn btn-primary" href="{% link assets/cv/cv.pdf %}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
+			<a class="btn btn-primary" href="{% link assets/cv/cv.txt %}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
 		</section>
 	</section>
 </div>

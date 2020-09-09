@@ -11,20 +11,16 @@
 		<nav class="page-header-navigation">
 			<ul class="unordered-list-no-bullets">
 				<li class="{% if page.url == '/' %}active{% endif %}">
-					{% include snippets/prepend-baseurl.html path='/' %}
-					<a href="{{ __return }}">Get Started</a>
+					<a href="{{ '/' | relative_url }}">Get Started</a>
 				</li>
 				<li class="{% if page.url contains 'cv' %}active{% endif %}">
-					{% include snippets/prepend-baseurl.html path='/cv' %}
-					<a href="{{ __return }}">Resume</a>
+					<a href="{{ '/cv' | relative_url }}">Resume</a>
 				</li>
 				<li class="{% if page.url contains 'projects' %}active{% endif %}">
-					{% include snippets/prepend-baseurl.html path='/projects' %}
-					<a href="{{ __return }}">Projects</a>
+					<a href="{{ '/projects' | relative_url }}">Projects</a>
 				</li>
 				<li class="{% if page.url contains 'articles' %}active{% endif %}">
-					{% include snippets/prepend-baseurl.html path='/articles' %}
-					<a href="{{ __return }}">Articles</a>
+					<a href="{{ '/articles' | relative_url }}">Articles</a>
 				</li>
 				<li class="nav-item-separator">
 					|

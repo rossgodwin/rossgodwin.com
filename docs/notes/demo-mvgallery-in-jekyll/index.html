@@ -1,9 +1,19 @@
-<!DOCTYPE html><html lang="en">
-	<head><meta charset="utf-8" />
+<!DOCTYPE html>
+
+
+<html lang="en">
+	<head>
+		
+		<meta charset="utf-8" />
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
+
+
+
+
+  
 
 <title>Demo Minimum Viable Gallery(mv-gallery) in Jekyll Website - Ross Godwin</title>
 
@@ -20,9 +30,7 @@
 <meta property="twitter:title" content="Demo Minimum Viable Gallery(mv-gallery) in Jekyll Website" />
 
 
-
-
-<link rel="stylesheet" href="https:/9to5.rossgodwin.com/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
     <link rel="stylesheet" href="/assets/mvgallery/mvgallery.css">
 
@@ -30,7 +38,9 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/monokai-sublime.min.css" >
 
-<script>(function() {
+
+		<script>
+			(function() {
   var Set = (function() {
     var add = function(item) {
       var i, data = this._data;
@@ -173,7 +183,9 @@
     };
   })(this.document);
 })();
-</script>
+
+	    </script>
+		
 
 <script>
 	(function() {
@@ -186,7 +198,8 @@
 		};
 		window.TEXT_VARIABLES = TEXT_VARIABLES;
 	})();
-</script></head>
+</script>
+	</head>
 	<body>
 		<div class="page-wrapper">
 			<header class="page-header">
@@ -202,28 +215,16 @@
 		<nav class="page-header-navigation">
 			<ul class="unordered-list-no-bullets">
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/">Get Started</a>
+					<a href="/">Get Started</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/cv">Resume</a>
+					<a href="/cv">Resume</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/projects">Projects</a>
+					<a href="/projects">Projects</a>
 				</li>
 				<li class="">
-					
-
-
-					<a href="https:/9to5.rossgodwin.com/articles">Articles</a>
+					<a href="/articles">Articles</a>
 				</li>
 				<li class="nav-item-separator">
 					|
@@ -255,18 +256,18 @@
 				<div class="article-header-meta mb-3">
 					Published:&nbsp;Jul 7, 2020
 					<br>
-					Category:&nbsp;<a href="https:/9to5.rossgodwin.com/notes">Notes</a>
+					Category:&nbsp;<a href="/notes">Notes</a>
 					
 						<br>
 						<span>Tags:&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/demo">demo</a>&nbsp;
+							<a href="/tag/demo">demo</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/gallery">gallery</a>&nbsp;
+							<a href="/tag/gallery">gallery</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/jekyll">jekyll</a>&nbsp;
+							<a href="/tag/jekyll">jekyll</a>&nbsp;
 						
-							<a href="https:/9to5.rossgodwin.com/tag/mv-gallery">mv-gallery</a>&nbsp;
+							<a href="/tag/mv-gallery">mv-gallery</a>&nbsp;
 						
 						</span>
 					
@@ -277,7 +278,7 @@
 			<div class="article-body">
 				<p>The following demonstrates integrating <a href="https://github.com/blinkcursor/mv-gallery" target="_blank">Minimum Viable Gallery</a> in to a Jekyll generated website.<!--more--> I was digging around for a simple photo gallery rendering framework to use in my website and this was one that I came across. I wanted something to take in to account loading smaller sized thumbnail images and then select expanding to view larger size images.  Also I wanted to reuse the source code across articles. The one thing I don’t like about about this method of rendering photos was all the different size versions of a photo that is need to be created. It would be to cumbersome for me. I contemplated writing a program to generate all the different sized photo versions that would be needed from a base photo but did not want to invest time in that.</p>
 
-<p>Had I stuck with this method, it would have been a big deterrence to posting photos. For this reason I kept researching and settled on <a href="/https://9to5.rossgodwin.com/notes/demo-magnific-popup-in-jekyll/">magnific-popup</a>. Nevertheless because I tried it out, I figured I would leave a demonstration for anyone else that might be interested in integrating this in to their Jekyll website. Source can be in the github website <a href="https://www.github.com/rossgodwin/9to5.rossgodwin.com">repository</a>.</p>
+<p>Had I stuck with this method, it would have been a big deterrence to posting photos. For this reason I kept researching and settled on <a href="/notes/demo-magnific-popup-in-jekyll/">magnific-popup</a>. Nevertheless because I tried it out, I figured I would leave a demonstration for anyone else that might be interested in integrating this in to their Jekyll website. Source can be in the github website <a href="https://www.github.com/rossgodwin/9to5.rossgodwin.com">repository</a>.</p>
 
 <figure>
 	<ul class="mvgallery list-bare u-mv+">
@@ -453,7 +454,8 @@
 </footer>
 		</div>
 		
-		<script>(function () {
+		<script>
+			(function () {
 	var SOURCES = window.TEXT_VARIABLES.sources;
 	
 	window.Lazyload.js(SOURCES.jquery, function() {
@@ -472,7 +474,8 @@
 		});
 	});
 })();
-</script>
+
+		</script>
 		
 		
     <script src="/assets/mvgallery/mvgallery-bundle.min.js"></script>
@@ -481,4 +484,3 @@
 
 	</body>
 </html>
-

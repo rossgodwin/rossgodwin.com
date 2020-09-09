@@ -1,16 +1,17 @@
 ---
 layout: none
 ---
+
 <!DOCTYPE html>
-{%- include snippets/get-lang.html -%}
+{% include snippets/get-lang.html %}
 <html lang="{{ __return }}">
 	<head>
-		{%- include analytics.html -%}
-		{%- include head.html -%}
+		{% include analytics.html %}
+		{% include head.html %}
 		<script>
-			{%- include scripts/lib/lazyload.js -%}
+			{% include scripts/lib/lazyload.js %}
 	    </script>
-		{%- include scripts/variables.html -%}
+		{% include scripts/variables.html %}
 	</head>
 	<body>
 		<div class="page-wrapper">
@@ -22,7 +23,7 @@ layout: none
 		</div>
 		
 		<script>
-			{%- include scripts/common.js -%}
+			{% include scripts/common.js %}
 		</script>
 		
 		{% include footer-scripts.html %}

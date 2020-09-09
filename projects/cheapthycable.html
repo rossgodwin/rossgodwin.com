@@ -9,8 +9,7 @@ title: &title "CheapThyCable.com"
 	<section class="page-content-main">
 		<article>
 			<section class="project-overview">
-				{% include snippets/prepend-images-url.html file_name='gallery/projects-cheapthycable/computer-screen.png' %}
-				<img class="image image-responsive mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="{{ __return }}" alt="image">
+				<img class="image image-responsive mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="{% link assets/images/gallery/projects-cheapthycable/computer-screen.png %}" alt="image">
 				
 				<div>
 					<strong>Website:</strong>&nbsp;<a href="{{ site.cheapthycable.url }}">{{ site.cheapthycable.display-url }}</a>
@@ -141,9 +140,7 @@ title: &title "CheapThyCable.com"
 						<br/>
 						<b>MySQL</b>
 						<br/>
-						{% include snippets/prepend-images-url.html file_name='gallery/projects-cheapthycable/database_eer_diagram.png' %}
-						
-						MySQL is the database used for this project. Here is project <a href="{{ __return }}" target="_blank">data 
+						MySQL is the database used for this project. Here is project <a href="{% link assets/images/gallery/projects-cheapthycable/database_eer_diagram.png %}" target="_blank">data 
 						model diagram</a> put together using MySQL Workbench
 					</div>
 					
