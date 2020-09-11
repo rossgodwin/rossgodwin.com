@@ -1,12 +1,11 @@
-$header-height-768: 7em;
-$header-height-992: 5em;
-
-$padding-left-right-576: 1rem;
-$padding-left-right-992: 4rem;
+$small-device-page-left-right-padding: 1rem;
+$medium-device-header-height: 7em;
+$large-device-header-height: 5em;
 
 .page-wrapper {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid (https://css-tricks.com/preventing-a-grid-blowout/)
 	grid-template-areas:
 		// h = header
 		// c = content
@@ -29,8 +28,8 @@ $padding-left-right-992: 4rem;
 	
 	padding-top: .5em;
 	padding-bottom: .5em;
-	padding-left: $padding-left-right-576;
-	padding-right: $padding-left-right-576;
+	padding-left: $small-device-page-left-right-padding;
+	padding-right: $small-device-page-left-right-padding;
 	
 	background-color: $white;
 	border-bottom: 1px solid #ccc;
@@ -88,6 +87,7 @@ $padding-left-right-992: 4rem;
 	grid-area: c;
 	display: grid;
 	grid-template-rows: auto 10px 1fr 10px;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid (https://css-tricks.com/preventing-a-grid-blowout/)
 	grid-template-areas:
 		// ch = content header
 		// cm = content main
@@ -101,9 +101,6 @@ $padding-left-right-992: 4rem;
 	
 	padding-top: .75rem;
 	padding-bottom: .75rem;
-	padding-left: $padding-left-right-576;
-	padding-right: $padding-left-right-576;
-	
 	background: $theme-bg-light;
 	
 	.section-heading-text {
@@ -115,13 +112,18 @@ $padding-left-right-992: 4rem;
 	}
 }
 
+.page-content-header-inner {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $small-device-page-left-right-padding;
+	padding-right: $small-device-page-left-right-padding;
+}
+
 .page-content-main {
 	grid-area: cm;
 	
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: $padding-left-right-576;
-	padding-right: $padding-left-right-576;
+	padding-left: $small-device-page-left-right-padding;
+	padding-right: $small-device-page-left-right-padding;
 }
 
 // ------------- Page Footer -----------------
@@ -136,21 +138,16 @@ $padding-left-right-992: 4rem;
 }
 
 .page-footer-wrapper {
-	
 }
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-	// ------------- Page Content -----------------
-	.page-content-header .page-content-main {
-		max-width: 540px;
-	}
 }
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
 	.page-wrapper {
-		grid-template-rows: $header-height-768 1fr auto;
+		grid-template-rows: $medium-device-header-height 1fr auto;
 	}
 
 	// ------------- Page Header -----------------
@@ -158,7 +155,7 @@ $padding-left-right-992: 4rem;
 	}
 	
 	.page-header-wrapper {
-		height: $header-height-768;
+		height: $medium-device-header-height;
 		
 		position: fixed;
 		top: 0;
@@ -197,7 +194,7 @@ $padding-left-right-992: 4rem;
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 	.page-wrapper {
-		grid-template-rows: $header-height-992 1fr auto;
+		grid-template-rows: $large-device-header-height 1fr auto;
 	}
 	
 	// ------------- Page Header -----------------
@@ -206,36 +203,28 @@ $padding-left-right-992: 4rem;
 		justify-content: space-between;
 		align-items: center;
 		
-		height: $header-height-992;
-		
-		padding-left: $padding-left-right-992;
-		padding-right: $padding-left-right-992;
+		height: $large-device-header-height;
 	}
 	
 	// ------------- Page Content -----------------
-	.page-content-header .page-content-main {
-		max-width: 960px;
-	}
-	
 	.page-content-header {
-		padding-left: $padding-left-right-992;
-		padding-right: $padding-left-right-992;
-		
 		.section-heading-text {
 			font-size: 2.1rem;
 		}
-	}
-	
-	.page-content-main {
-		padding-left: $padding-left-right-992;
-		padding-right: $padding-left-right-992;
 	}
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
 	// ------------- Page Content -----------------
-	.page-content-header .page-content-main {
+	.page-content-header-inner {
 		max-width: 1140px;
+	}
+	
+	.page-content-main {
+		min-width: 1140px;
+		max-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }

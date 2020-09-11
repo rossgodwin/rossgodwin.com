@@ -9879,6 +9879,7 @@ h3 {
 .page-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "h" "c" "f";
   height: 100vh;
 }
@@ -9953,6 +9954,7 @@ h3 {
   grid-area: c;
   display: grid;
   grid-template-rows: auto 10px 1fr 10px;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "ch" "." "cm";
 }
 
@@ -9960,8 +9962,6 @@ h3 {
   grid-area: ch;
   padding-top: .75rem;
   padding-bottom: .75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   background: #fafafa;
 }
 
@@ -9973,10 +9973,15 @@ h3 {
   background: #fff;
 }
 
-.page-content-main {
-  grid-area: cm;
+.page-content-header-inner {
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.page-content-main {
+  grid-area: cm;
   padding-left: 1rem;
   padding-right: 1rem;
 }
@@ -9987,12 +9992,6 @@ h3 {
   justify-content: center;
   padding: .5em 0;
   border-top: 5px solid #5FCB71;
-}
-
-@media (min-width: 576px) {
-  .page-content-header .page-content-main {
-    max-width: 540px;
-  }
 }
 
 @media (min-width: 768px) {
@@ -10038,28 +10037,21 @@ h3 {
     justify-content: space-between;
     align-items: center;
     height: 5em;
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
-  .page-content-header .page-content-main {
-    max-width: 960px;
-  }
-  .page-content-header {
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
   .page-content-header .section-heading-text {
     font-size: 2.1rem;
   }
-  .page-content-main {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
 }
 
 @media (min-width: 1200px) {
-  .page-content-header .page-content-main {
+  .page-content-header-inner {
     max-width: 1140px;
+  }
+  .page-content-main {
+    min-width: 1140px;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -10227,6 +10219,10 @@ h3 {
   border: 1px solid rgba(0, 0, 0, 0.025);
   padding: 1rem;
   text-align: center;
+}
+
+.article {
+  margin-top: 1rem;
 }
 
 .article-header-meta {
