@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
-tags: [css, css-grid, github, gits]
+tags: [css, css-grid, github, gist]
 date: 2020-09-12
 ---
 

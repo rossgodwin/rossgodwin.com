@@ -58,7 +58,7 @@ title: &title "Resume"
 							<div class="cv-work-history-item">
 								<div>
 									<div class="cv-work-history-item-employer">
-										{% if job.url %}<a href="{{ job.url }}">{% endif %}
+										{% if job.url %}<a class="see-more" href="{{ job.url }}">{% endif %}
 										{{ job.company.name }}
 										{% if job.url %}</a>{% endif %}
 									</div>

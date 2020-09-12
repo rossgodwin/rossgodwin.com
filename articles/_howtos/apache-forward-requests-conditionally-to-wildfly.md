@@ -4,6 +4,7 @@ title: Configure Apache to Forward some Url Reqests to Wildfly
 categories: [howtos]
 tags: [apache, httpd, mod_proxy, wildfly]
 date: 2018-01-03
+image: /assets/images/article/apache-forward-requests-conditionally-to-wildfly/arrows-1738067_1280_350.jpg
 ---
 
 I created a website ([{{ site.cheapthycable.display-url }}]({{ site.cheapthycable.url }}){:target="_blank"}) that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.

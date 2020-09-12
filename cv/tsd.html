@@ -18,22 +18,22 @@ title: &title "Work History - Triangle Site Design"
 			<section>
 				<h4 class="heading heading-leading-vertical-bar">Responsibilies</h4>
 				<div class="cv-section-content">
-					{% for responsibility in job.responsibilities %}
-						{% if forloop.index != 1 %}<p>{% endif %}
-							{% include custom-list-item.html content=responsibility %}
-						{% if forloop.index != 1 %}</p>{% endif %}
-					{% endfor %}
+					<ul class="ul-chevron">
+						{% for responsibility in job.responsibilities %}
+							<li>{{ responsibility }}</li>
+						{% endfor %}
+					</ul>
 				</div>
 			</section>
 			
 			<section>
 				<h4 class="heading heading-leading-vertical-bar">Achievements</h4>
 				<div class="cv-section-content">
-					{% for achievement in job.achievements %}
-						{% if forloop.index != 1 %}<p>{% endif %}
-							{% include custom-list-item.html content=achievement %}
-						{% if forloop.index != 1 %}</p>{% endif %}
-					{% endfor %}
+					<ul class="ul-chevron">
+						{% for achievement in job.achievements %}
+							<li>{{ achievement }}</li>
+						{% endfor %}
+					</ul>
 				</div>
 			</section>
 		</article>

@@ -103,10 +103,6 @@ $large-device-header-height: 5em;
 	padding-bottom: .75rem;
 	background: $theme-bg-light;
 	
-	.section-heading-text {
-		font-size: 1.5rem;
-	}
-	
 	.quote {
 		background: $white;
 	}
@@ -204,13 +200,6 @@ $large-device-header-height: 5em;
 		align-items: center;
 		
 		height: $large-device-header-height;
-	}
-	
-	// ------------- Page Content -----------------
-	.page-content-header {
-		.section-heading-text {
-			font-size: 2.1rem;
-		}
 	}
 }
 

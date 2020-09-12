@@ -12,13 +12,13 @@ title: &title "Projects"
 	<section class="page-content-main">
 		<section class="articles">
 			{% include snippets/prepend-baseurl.html path='projects/cheapthycable' %}
-			{% include page-preview-link.html
+			{% include list-item-page-preview.html
 				heading=site.content.projects.cheapthycable.title
 				description=site.content.projects.cheapthycable.description
 				url=__return %}
 			
 			{% include snippets/prepend-baseurl.html path='projects/tsd-office-it-infrastructure-overhaul' %}
-			{% include page-preview-link.html
+			{% include list-item-page-preview.html
 				heading=site.content.projects.tsd-office.title
 				description=site.content.projects.tsd-office.description
 				url=__return %}

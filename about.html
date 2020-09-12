@@ -7,7 +7,7 @@ title: &title "About Me"
 	{% include page-content-header.html title=page.title %}
 	
 	<section class="page-content-main">
-		<article class="about-me">
+		<article>
 			<section>
 				<h4 class="heading heading-leading-vertical-bar">About</h4>
 				<p>
@@ -20,7 +20,7 @@ title: &title "About Me"
 				</p>
 				<p>
 					Here is some of my professional IT experience by role:
-					<ul>
+					<ul class="ul-chevron">
 						<li>
 							As a <b>business intelligence developer</b> I worked with databases and transactional information systems 
 							while combining and developing a hosts of skills and knowledge to optimize the flow of data within 
@@ -73,8 +73,8 @@ title: &title "About Me"
 				<h4 class="heading heading-leading-vertical-bar">Technical Skills</h4>
 				
 				<h6 class="heading heading-line-separator">Languages & Frameworks</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/angular-responsive.html %}
 						<br/>
 						<b>AngularJS</b>
@@ -88,7 +88,7 @@ title: &title "About Me"
 						<a href="{{ __return }}">notes</a> I've put together on this topic.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/bootstrap-responsive.html %}
 						<br/>
 						<b>Bootstrap</b>
@@ -101,7 +101,7 @@ title: &title "About Me"
 						complexity.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/gwt-responsive.html %}
 						<br/>
 						<b>GWT</b>
@@ -114,7 +114,7 @@ title: &title "About Me"
 						that is compatible across all major browsers. 
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/sencha-gxt-responsive.html %}
 						<br/>
 						<b>GXT</b>
@@ -127,7 +127,7 @@ title: &title "About Me"
 						working with this Java framework at my <a href="{% link cv/atlatl.html %}">previous employer</a>.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/java-jdk-responsive.html %}
 						<br/>
 						<b>Java</b>
@@ -141,8 +141,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Databases</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/oracle-responsive.html %}
 						<br/>
 						<b>Oracle</b>
@@ -153,7 +153,7 @@ title: &title "About Me"
 						using PL/SQL constructing queries, stored procedures, functions and indexing.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/mysql-responsive.html %}
 						<br/>
 						<b>MySQL</b>
@@ -166,8 +166,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Enterprise & Servers</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/apache-responsive.html %}
 						<br/>
 						<b>Apache</b>
@@ -182,7 +182,7 @@ title: &title "About Me"
 						I put together on configuring a Apache web server.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/wildfly-responsive.html %}
 						<br/>
 						<b>Wildfly</b>
@@ -195,8 +195,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Cloud</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/amazon-aws-responsive.html %}
 						<br/>
 						<b>Amazon AWS</b>
@@ -211,8 +211,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Mobile</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/android-responsive.html %}
 						<br/>
 						<b>Android</b>
@@ -232,8 +232,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Source Control</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/github-responsive.html %}
 						<br/>
 						<b>Git</b>
@@ -243,7 +243,7 @@ title: &title "About Me"
 							
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/svn-responsive.html %}
 						<br/>
 						<b>Subversion</b>
@@ -257,8 +257,8 @@ title: &title "About Me"
 				</section>
 				
 				<h6 class="heading heading-line-separator">Tools</h6>
-				<section class="skills-grid">
-					<div class="skills-grid-item">
+				<section class="about-skills-grid">
+					<div class="about-skills-grid-item">
 						{% include icons/eclipse-responsive.html %}
 						<br/>
 						<b>Eclipse</b>
@@ -268,7 +268,7 @@ title: &title "About Me"
 						Well over 10 years of experience using this IDE and many of the available market plugins.
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/jekyll-responsive.html %}
 						<br/>
 						<b>Jekyll</b>
@@ -281,7 +281,7 @@ title: &title "About Me"
 						Here are some <a href="{{ __return }}">notes</a> I've put together tagged Jekyll. 
 					</div>
 					
-					<div class="skills-grid-item">
+					<div class="about-skills-grid-item">
 						{% include icons/pelican-responsive.html %}
 						<br/>
 						<b>Pelican</b>

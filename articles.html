@@ -13,13 +13,13 @@ title: &title "Articles"
 	<section class="page-content-main">
 		<section class="articles">
 			{% include snippets/prepend-baseurl.html path='howtos' %}
-			{% include page-preview-link.html 
+			{% include list-item-page-preview.html 
 				heading=site.content.articles.howtos.title 
 				description=site.content.articles.howtos.description
 				url=__return %}
 			
 			{% include snippets/prepend-baseurl.html path='notes' %}
-			{% include page-preview-link.html 
+			{% include list-item-page-preview.html 
 				heading=site.content.articles.notes.title 
 				description=site.content.articles.notes.description
 				url=__return %}
