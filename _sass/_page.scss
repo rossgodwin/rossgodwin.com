@@ -5,7 +5,7 @@ $large-device-header-height: 5em;
 .page-wrapper {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
-	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid (https://css-tricks.com/preventing-a-grid-blowout/)
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
 	grid-template-areas:
 		// h = header
 		// c = content
@@ -87,7 +87,7 @@ $large-device-header-height: 5em;
 	grid-area: c;
 	display: grid;
 	grid-template-rows: auto 10px 1fr 10px;
-	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid (https://css-tricks.com/preventing-a-grid-blowout/)
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
 	grid-template-areas:
 		// ch = content header
 		// cm = content main
