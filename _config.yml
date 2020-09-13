@@ -3,7 +3,7 @@
 # Site wide configuration
 destination: docs
 
-url: "https://9to5.rossgodwin.com"
+url: "https://career.rossgodwin.com"
 baseurl: ""
 
 title: Ross Godwin
@@ -21,7 +21,7 @@ linkedin:
 github:
   display-url: github.com/rossgodwin
   url: https://www.github.com/rossgodwin
-  website-repo: 9to5.rossgodwin.com
+  website-repo: career.rossgodwin.com
 
 cheapthycable:
   display-url: cheapthycable.com

@@ -15,17 +15,19 @@
 
   
 
-<title>Posts tagged with linux - Ross Godwin</title>
+<title>Github Gist Causing Horizontal Page Scrollbar in CSS Grid - Ross Godwin</title>
 
 
-<meta name="description" content="Web Developer from Somewhere">
-<meta property="og:description" content="Web Developer from Somewhere" />
+<meta name="description" content="I was running in to a issue on my website where Github gist embedded code shares were causing horizontal page/viewport scrollbars on small devices like a mobile phone.
+" />
+<meta property="og:description" content="I was running in to a issue on my website where Github gist embedded code shares were causing horizontal page/viewport scrollbars on small devices like a mobile phone.
+" />
 
 <meta name="author" content="" />
 
 
-<meta property="og:title" content="Posts tagged with linux" />
-<meta property="twitter:title" content="Posts tagged with linux" />
+<meta property="og:title" content="Github Gist Causing Horizontal Page Scrollbar in CSS Grid" />
+<meta property="twitter:title" content="Github Gist Causing Horizontal Page Scrollbar in CSS Grid" />
 
 
 <link rel="stylesheet" href="/assets/css/main.css">
@@ -240,54 +242,86 @@
 	</div>
 </header>
 			
-			<div class="page-content">
-	
-	<header class="page-content-header">
-	<section class="page-content-header-inner">
-		<div class="mb-3">
-			<!-- https://jekyllcodex.org/without-plugin/breadcrumbs -->
-<div id="breadcrumbs">
-	
-	<a href="/">Home</a>
-	
-		
-			/ <a href="/tag/">Tag</a>
-		
-	
-		
-			/ Posts tagged with linux
-		
-	
-</div>
-		</div>
-		
-		<h2 class="heading heading-leading-vertical-bar">Articles Tagged: linux</h2>
-		
-		
-	</section>
-</header>
-	
+			
+
+
+
+<div class="page-content">
 	<section class="page-content-main">
-		<section class="articles">
-			
-				
-				
-				
-				
+		<section class="article">
+			<header class="article-header">
+				<h2 class="heading heading-leading-vertical-bar">Github Gist Causing Horizontal Page Scrollbar in CSS Grid</h2>
+				<div class="article-header-meta mb-3">
+					Published:&nbsp;Sep 12, 2020
+					<br>
+					Category:&nbsp;<a href="/howtos">Howtos</a>
+					
+						<br>
+						<span>Tags:&nbsp;
+						
+							<a href="/tag/css">css</a>&nbsp;
+						
+							<a href="/tag/css-grid">css-grid</a>&nbsp;
+						
+							<a href="/tag/github">github</a>&nbsp;
+						
+							<a href="/tag/gist">gist</a>&nbsp;
+						
+						</span>
+					
+					
+					<hr>
+				</div>
+			</header>
+			<div class="article-body">
+				<p>I was running in to a issue on my website where Github gist embedded code shares were causing horizontal page/viewport scrollbars on small devices like a mobile phone.
+<!--more-->
+I have another website that I built where I included Github gist code snippets, so I checked how those looked on small screen sizes and there was no issue.</p>
 
+<p><img src="/assets/images/article/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png" alt="css css-grid github gist" class="img-responsive" width="100%" /></p>
 
-				<section class="list-item-preview">
-	<h4 class="heading heading-leading-vertical-bar"><a href="/howtos/install-jekyll-on-windows-using-wsl/">Install Jekyll on Windows Using WSL</a></h4>
-	<div class="list-item-preview-published">Published Jul 26, 2020</div>
-	<div>
-		These are the steps I took to install and run the Jekyll static site generator on my Windows 10 operating system.
-	</div>
-	<a class="see-more" href="/howtos/install-jekyll-on-windows-using-wsl/">Read more</a>
-</section>
-			
+<p>Since this is the first website where I used CSS Grid, I immediately suspected there was some incompatibility between the gist and CSS Grid. I did some testing and in fact discovered that a gist in a CSS grid block would not scale down properly on smaller screen sizes when the content in the gist was wider than the viewport. After doing some research I stumbled upon a article by <a href="https://css-tricks.com/preventing-a-grid-blowout" target="_blank">CSS-Tricks.com</a> discussing grid blowouts. To be clear, the issue does not have to do so much with the size of the device, rather the width of the content in the gist relative to the viewport size. If the content in the gist stretches beyond the viewport width the horizontal page scrolling occurs.</p>
+
+<p>Below are a couple of examples of embedded gists. On a larger screen size they look no different, but go ahead and minimize the browser window and scaled down the width of the browser window as far as you can or view this on a mobile device. Notice how a horizontal scrollbar appears on the page and the first gist’s width overflows the viewport width where as the second gist stays within the boundary of the viewport and has a horizontal scrollbar within it’s element. The second gist is functioning correctly or how I preferred gists to render on my website.</p>
+
+<h3 id="horizontal-page-scrolling">Horizontal Page Scrolling</h3>
+
+<p>The below snippet of HTML code recreates the issue.</p>
+
+<pre>
+<code>
+	
+&lt;div style="display: grid;"&gt;
+	// gist code embed here
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<div style="display: grid;">
+	<noscript><pre>400: Invalid request</pre></noscript><script src="https://gist.github.com/2b51dd400db9a8bbf881324a80b91aca.js"> </script>
+</div>
+
+<h3 id="no-horizontal-scrolling">No Horizontal Scrolling</h3>
+
+<p>Again, resize your browser window down or view on a mobile device to see how the gist code block below scales to the viewport width and the horizontal scrolling occurs within the gist block itself. To eliminate the horizontal page/viewport scrolling, add the following property to the element being defined as a grid, <code class="highlighter-rouge">grid-template-columns: minmax(0, 1fr);</code>. I won’t rehash what the <a href="https://css-tricks.com/preventing-a-grid-blowout" target="_blank">CSS-Tricks.com</a> article explains well about this fix but I’ll add that you would need to add the column template minmax property to any nested elements defined as a grid.</p>
+
+<pre>
+<code>
+	
+&lt;div style="display: grid; grid-template-columns: minmax(0, 1fr);"&gt;
+	// gist code embed here
+&lt;/div&gt;
+
+</code>
+</pre>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr);">
+	<noscript><pre>400: Invalid request</pre></noscript><script src="https://gist.github.com/2b51dd400db9a8bbf881324a80b91aca.js"> </script>
+</div>
+
+			</div>
 		</section>
-		
-		
 	</section>
 </div>
 			
