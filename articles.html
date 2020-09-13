@@ -6,23 +6,19 @@ title: &title "Articles"
 
 <div class="page-content">
 	{% capture _header_content %}
-		{{ site.content.articles_description }}
+		{{ site.data.articles.description }}
 	{% endcapture %}
 	{% include page-content-header.html title=page.title content=_header_content %}
 	
 	<section class="page-content-main">
 		<section class="articles">
-			{% include snippets/prepend-baseurl.html path='howtos' %}
-			{% include list-item-page-preview.html 
-				heading=site.content.articles.howtos.title 
-				description=site.content.articles.howtos.description
-				url=__return %}
-			
-			{% include snippets/prepend-baseurl.html path='notes' %}
-			{% include list-item-page-preview.html 
-				heading=site.content.articles.notes.title 
-				description=site.content.articles.notes.description
-				url=__return %}
+			{% for collection in site.data.articles.collections %}
+				{% include snippets/prepend-baseurl.html path=collection.path %}
+				{% include list-item-page-preview.html 
+					heading=collection.title 
+					description=collection.description
+					url=__return %}
+			{% endfor %}
 		</section>
 	</section>
 </div>

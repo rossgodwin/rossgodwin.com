@@ -5,23 +5,19 @@ title: &title "Projects"
 
 <div class="page-content">
 	{% capture _header_content %}
-		{{ site.content.projects_description }}
+		{{ site.data.projects.description }}
 	{% endcapture %}
 	{% include page-content-header.html title=page.title content=_header_content %}
 	
 	<section class="page-content-main">
 		<section class="articles">
-			{% include snippets/prepend-baseurl.html path='projects/cheapthycable' %}
-			{% include list-item-page-preview.html
-				heading=site.content.projects.cheapthycable.title
-				description=site.content.projects.cheapthycable.description
-				url=__return %}
-			
-			{% include snippets/prepend-baseurl.html path='projects/tsd-office-it-infrastructure-overhaul' %}
-			{% include list-item-page-preview.html
-				heading=site.content.projects.tsd-office.title
-				description=site.content.projects.tsd-office.description
-				url=__return %}
+			{% for project in site.data.projects.projects %}
+				{% include snippets/prepend-baseurl.html path=project.path %}
+				{% include list-item-page-preview.html 
+					heading=project.title 
+					description=project.description
+					url=__return %}
+			{% endfor %}
 		</section>
 	</section>
 </div>

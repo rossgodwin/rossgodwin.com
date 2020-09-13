@@ -14,6 +14,13 @@ education:
   degree: Bachelor of Science in Computer Science
   graduated: December 2003
 
+job_index_tsd: 0
+job_index_atlatl: 1
+job_index_dunn: 2
+
+job_atlatl_recommendation_index_duke: 0
+job_atlatl_recommendation_index_ivan: 1
+
 jobs:
   - company:
       name: Triangle Site Design

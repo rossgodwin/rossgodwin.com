@@ -1,0 +1,16 @@
+description: A broad category of articles I've compile on IT related topics ranging from how I installed and 
+  configured a Wordpress server on a Oracle VirtualBox machine to coding related topics like how I implemented a splash 
+  screen in a AngularJS single page application.
+
+collection_index_howto: 0
+collection_index_notes: 1
+
+collections:
+  - title: How Tos
+    path: howtos
+    description: Articles that I've written explaining how I doing something.
+  - title: Notes
+    path: notes
+    description: A collection of notes I've taken on various topics as I've tried to become familiar with a subject. A majority 
+      of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a 
+      project.

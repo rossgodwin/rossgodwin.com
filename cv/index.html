@@ -32,7 +32,7 @@ title: &title "Resume"
 					<h4 class="heading">Recommendations</h4>
 				</div>
 				<div class="cv-section-content">
-					{% assign recommendation = site.data.cv.jobs[1].recommendations[0] %}
+					{% assign recommendation = site.data.cv.jobs[site.data.cv.job_index_atlatl].recommendations[site.data.cv.job_atlatl_recommendation_index_duke] %}
 					{% include quote.html quote=recommendation.quote quote_by=recommendation.by %}
 				</div>
 			</section>

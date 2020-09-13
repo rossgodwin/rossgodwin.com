@@ -4,7 +4,7 @@ title: &title "Work History - Atlatl"
 ---
 
 <main class="page-content">
-	{% assign job = site.data.cv.jobs[1] %}
+	{% assign job = site.data.cv.jobs[site.data.cv.job_index_atlatl] %}
 	
 	{% capture _header_content %}
 		{% for position in job.positions %}
