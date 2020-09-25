@@ -6,24 +6,24 @@ title: &title "Intro"
 <div class="page-content">
 	{% capture _header_content %}
 		<p>
-			Hi, my name is Ross and this is my personal website containing content about my career activities. For the 
-			past 18 months, I've been working in the construction industry as a project coordinator and civil designer for 
-			an engineering firm in Raleigh, NC. Given my background in computers and networking, I have also served as the 
-			company's office systems administrator. Prior to this change in occupation, I spent most of my career in the 
-			information technology industry as a software developer and business intelligence consultant. I've put this 
-			website together for the following purposes:
+			My name is Ross and this is my personal website containing content pertaining to my career 
+			activities. For the past 18 months, I have been working in the construction industry as a project coordinator 
+			and civil designer for an engineering firm in Raleigh, North Carolina. Because of my background in 
+			computers and networking technology, I have also served as the company's office systems administrator. Prior 
+			to this change in occupation, I spent most of my career in the information technology industry as a software 
+			developer and business intelligence consultant. I have put this website together for the following purposes:
 		</p>
 		
 		<div class="intro-quotes">
 			{% capture _quote %}
-				Provide a more personalized and detailed presentation of my work experience, skill set and project results 
-				to prospective employers or freelance seekers.
+				To provide a more personalized and detailed presentation of my work experience, skill set, and project 
+				results to prospective employers or freelance seekers.
 			{% endcapture %}
 			{% include quote.html quote=_quote %}
 			
 			{% capture _quote %}
-				Comprise a repository of notes, how tos, demonstrations and articles on IT related topics that may be 
-				beneficial to other IT professionals or my future self in need of a reference.
+				To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
+				IT related topics that may be beneficial to other IT professionals or references I may need in the future.
 			{% endcapture %}
 			{% include quote.html quote=_quote %}
 		</div> 
@@ -32,33 +32,23 @@ title: &title "Intro"
 	
 	<section class="page-content-main">
 		<article class=get-started>
-			<section>
-				<h4 class="heading heading-leading-vertical-bar">About Me</h4>
-				<p>
-					Looking for my work history, GitHub repositories, skill sets or CV. Get to 
-					know a little bit more about me professionally.
-					<br/>
-					<a class="see-more" href="{% link about.html %}">Read more</a>
-				</p>
-			</section>
+			{% include snippets/prepend-baseurl.html path='about/' %}
+			{% include list-item-page-preview.html 
+				heading='About Me'
+				description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
+				url=__return %}
 			
-			<section>
-				<h4 class="heading heading-leading-vertical-bar">Projects</h4>
-				<p>
-					{{ site.data.projects.description }}
-					<br/>
-					<a class="see-more" href="{% link projects/index.html %}">Read more</a>
-				</p>
-			</section>
+			{% include snippets/prepend-baseurl.html path='projects/' %}
+			{% include list-item-page-preview.html 
+				heading='Projects'
+				description=site.data.projects.description
+				url=__return %}
 			
-			<section>
-				<h4 class="heading heading-leading-vertical-bar">Articles</h4>
-				<p>
-					{{ site.data.articles.description }}
-					<br/>
-					<a class="see-more" href="{% link articles.html %}">Read more</a>
-				</p>
-			</section>
+			{% include snippets/prepend-baseurl.html path='articles/' %}
+			{% include list-item-page-preview.html 
+				heading='Articles'
+				description=site.data.articles.description
+				url=__return %}
 		</article>
 	</section>
 </div>

@@ -1,15 +1,17 @@
-description: See a few of the projects I have worked on. Here you will find an overview of the project, 
-  technologies used, challenges faced and links to the product and corresponding source code.
+description: Examine some of the projects I have worked on. Here you will find an overview of the project, technologies 
+  used, obstacles encountered, links to the product, and corresponding source code.
 
 project_index_cheapthycable: 0
-project_index_tsd: 1
+project_index_tsd_office: 1
+project_index_tsd_website: 2
 
 projects:
   - title: Cheapthycable.com
     path: projects/cheapthycable
-    description: A write up about a personal project that I worked on in late 2016 developing a web application. 
-      Learn more about the project, technologies used, reference to source code and a link to the demo.
+    description: Read about this web application I developed in late 2016 and learn more 
+      about this side project. See technologies used, references to source code, and view the product demonstration.
   - title: Office IT Infrastructure Overhaul
     path: projects/tsd-office-it-infrastructure-overhaul
-    description: Check out a network upgrade that I performed for my employer at the time, Triangle Site Design. 
-      Learning more about the existing setup, equipment upgrades and see pictures.
+    description: Examine a office network upgrade that I performed for my employer at <a href="/cv/tsd">Triangle Site 
+      Design</a>. Learn about the original office setup, resulting configuration changes, and view the before and 
+      after pictures.
