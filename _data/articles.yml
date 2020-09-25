@@ -1,4 +1,4 @@
-description: A broad category of articles I have written on IT related topics that range from how I installed and 
+description: A broad category of articles I have compiled on IT related topics that range from how I installed and 
   configured a Wordpress server on a Oracle VirtualBox machine, to coding related topics like how I implemented a 
   splash screen in an AngularJS single page application.
 
@@ -8,9 +8,12 @@ collection_index_notes: 1
 collections:
   - title: How Tos
     path: howtos
-    description: Articles that I've written explaining how I doing something.
+    description: A collection of instructional articles I have written that include steps for completing 
+      IT related tasks. For example, one article topic explains how to fix the unexpected rendering of a browser window 
+      horizontal scrollbar when using github gist in a CSS grid.
   - title: Notes
     path: notes
-    description: A collection of notes I've taken on various topics as I've tried to become familiar with a subject. A majority 
-      of these are tech related, often times notes taken during research on a technology that I'm looking to integrate into a 
-      project.
+    description: A collection of notes I have taken on subjects as I have performed research on various topics. A majority 
+      of the notes are frequently taken during research pertaining to a technology that I am interested in integrating into 
+      a project. An example would be, testing the compatibility and functionality of photo gallery rendering frameworks that 
+      are used in websites.
