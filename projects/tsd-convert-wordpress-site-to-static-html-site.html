@@ -1,0 +1,37 @@
+---
+layout: default
+title: &title "Convert Wordpress Site to Static HTML Site"
+---
+
+{% assign project = site.data.projects.projects[site.data.projects.project_index_tsd_website] %}
+
+<div class="page-content">
+	{% include page-content-header.html title=project.title %}
+	
+	<section class="page-content-main">
+		<article>
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">About the Project</h4>
+				<p>
+					This was a fun, rewarding and necessary project where I improved a small office network to be a better 
+					performing, more stable network resulting in improved office productivity and scalability for future company 
+					growth. If you are just interested in pictures, <a href="#pictures">here are before and after photos</a>.
+				</p>
+			</section>
+			
+			<section>
+				<h4 class="heading heading-leading-vertical-bar">Background</h4>
+				<p>
+					Shortly after starting employment with <a href="{% link cv/tsd.html %}">{{ site.data.cv.jobs[site.data.cv.job_index_tsd].company.name }}</a> 
+					I began poking around at the network and computer components. After investigation the IT infrastructure and using 
+					it on a daily basis it was evident that an upgrade was needed due to slow computer and network performance.
+					
+					it was evident that updates to workstations and network topology as well as cybersecurity
+					measures were needed.
+					There were also some security vulnerabilities that needed addressing.
+				</p>
+				
+			</section>
+		</article>
+	</section>
+</div>
