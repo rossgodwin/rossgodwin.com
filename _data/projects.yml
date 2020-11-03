@@ -15,3 +15,6 @@ projects:
     description: Examine a office network upgrade that I performed for my employer at <a href="/cv/tsd">Triangle Site 
       Design</a>. Learn about the original office setup, resulting configuration changes, and view the before and 
       after pictures.
+  - title: Convert Wordpress Site to Static HTML Site
+    path: projects/tsd-convert-wordpress-site-to-static-html-site
+    description: This is a test.

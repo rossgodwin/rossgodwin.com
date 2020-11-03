@@ -1,0 +1,43 @@
+---
+---
+
+.page-wrapper {
+	grid-template-rows: auto;
+}
+
+.page-header {
+	display: none;
+}
+
+.page-content {
+	grid-template-areas:
+		"cm";
+}
+
+.page-content-header {
+	display: none;
+}
+
+.cv-wrapper {
+	padding-top: 0;
+	padding-bottom: 0;
+	border: 0;
+	
+	a {
+		text-decoration: none;
+	}
+}
+
+.see-more {
+	&:after {
+		content: "";
+	}
+}
+
+.cv-download-options {
+	display: none;
+}
+
+.page-footer {
+	display: none;
+}

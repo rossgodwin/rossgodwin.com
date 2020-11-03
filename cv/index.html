@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: cv
 title: &title "Resume"
 ---
 
@@ -84,11 +84,12 @@ title: &title "Resume"
 					{% for project in site.data.cv.projects %}
 						<div class="cv-work-history-item">
 							<div>
-								<span class="cv-work-history-item-employer">
-									<a href="{{ project.url }}">{{ project.name }}</a>
-								</span>
-								<br/>
-								<span class="cv-work-history-item-years-worked">{{ project.duration }}</span>
+								<div class="cv-work-history-item-employer">
+									{% if project.url %}<a class="see-more" href="{{ project.url }}">{% endif %}
+									{{ project.name }}
+									{% if project.url %}</a>{% endif %}
+								</div>
+								<div class="cv-work-history-item-years-worked">{{ project.duration }}</div>
 							</div>
 							<div class="cv-text">
 								{{ project.description }}
@@ -110,7 +111,7 @@ title: &title "Resume"
 			</section>
 		</article>
 		
-		<section style="margin-top: 15px; text-align: center;">
+		<section class="cv-download-options">
 			<a class="btn btn-primary" href="{% link assets/cv/cv.pdf %}" role="button" target="_blank"><i class="fa fa-file-pdf fa-w-12 mr-2"></i>PDF Version</a>
 			<a class="btn btn-primary" href="{% link assets/cv/cv.txt %}" role="button" target="_blank"><i class="fa fa-file-alt fa-w-12 mr-2"></i>Text Version</a>
 		</section>

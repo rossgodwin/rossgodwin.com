@@ -14,9 +14,9 @@ $text-size: 0.875rem;
 }
 
 .cv-wrapper {
+	padding: 1.5rem;
 	border: 1px solid rgba(0, 0, 0, 0.025);
 	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-	padding: 1.5rem;
 }
 
 .cv-wrapper .quote {
@@ -76,6 +76,11 @@ $text-size: 0.875rem;
 
 .cv-work-history-item-years-worked {
 	font-size: 0.75rem;
+}
+
+.cv-download-options {
+	margin-top: 15px;
+	text-align: center;
 }
 
 // Small devices (landscape phones, 576px and up)
