@@ -3,8 +3,10 @@ layout: default
 title: &title "CheapThyCable.com"
 ---
 
+{% assign project = site.data.projects.projects[site.data.projects.project_index_cheapthycable] %}
+
 <div class="page-content">
-	{% include page-content-header.html title='CheapThyCable.com' content='' %}
+	{% include page-content-header.html title=project.title %}
 	
 	<section class="page-content-main">
 		<article>

@@ -34,8 +34,10 @@ gallery:
     class: custom-mfp-horizontal
 ---
 
+{% assign project = site.data.projects.projects[site.data.projects.project_index_tsd_office] %}
+
 <div class="page-content">
-	{% include page-content-header.html title='Office IT Infrastructure Overhaul' content='' %}
+	{% include page-content-header.html title=project.title %}
 	
 	<section class="page-content-main">
 		<article>
