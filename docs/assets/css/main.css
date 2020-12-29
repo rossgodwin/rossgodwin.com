@@ -10063,9 +10063,9 @@ h3 {
 }
 
 .cv-wrapper {
+  padding: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.025);
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-  padding: 1.5rem;
 }
 
 .cv-wrapper .quote {
@@ -10125,6 +10125,11 @@ h3 {
 
 .cv-work-history-item-years-worked {
   font-size: 0.75rem;
+}
+
+.cv-download-options {
+  margin-top: 15px;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
@@ -10263,12 +10268,12 @@ body {
   text-transform: uppercase;
 }
 
-.heading-leading-vertical-bar, .article-body h1, .article-body h2, .article-body h3, .article-body h4, .article-body h5, .article-body h6 {
+.heading-leading-vertical-bar {
   position: relative;
   padding-left: 1rem;
 }
 
-.heading-leading-vertical-bar:before, .article-body h1:before, .article-body h2:before, .article-body h3:before, .article-body h4:before, .article-body h5:before, .article-body h6:before {
+.heading-leading-vertical-bar:before {
   content: "";
   display: inline-block;
   position: absolute;

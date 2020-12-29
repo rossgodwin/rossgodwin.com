@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "cv-print.css",
+	"sources": [
+		"cv-print.scss"
+	],
+	"sourcesContent": [
+		".page-wrapper {\r\n\tgrid-template-rows: auto;\r\n}\r\n\r\n.page-header {\r\n\tdisplay: none;\r\n}\r\n\r\n.page-content {\r\n\tgrid-template-areas:\r\n\t\t\"cm\";\r\n}\r\n\r\n.page-content-header {\r\n\tdisplay: none;\r\n}\r\n\r\n.cv-wrapper {\r\n\tpadding-top: 0;\r\n\tpadding-bottom: 0;\r\n\tborder: 0;\r\n\t\r\n\ta {\r\n\t\ttext-decoration: none;\r\n\t}\r\n}\r\n\r\n.see-more {\r\n\t&:after {\r\n\t\tcontent: \"\";\r\n\t}\r\n}\r\n\r\n.cv-download-options {\r\n\tdisplay: none;\r\n}\r\n\r\n.page-footer {\r\n\tdisplay: none;\r\n}"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,aAAa,CAAC;EACb,kBAAkB,EAAE,IAAI;CACxB;;AAED,AAAA,YAAY,CAAC;EACZ,OAAO,EAAE,IAAI;CACb;;AAED,AAAA,aAAa,CAAC;EACb,mBAAmB,EAClB,IAAI;CACL;;AAED,AAAA,oBAAoB,CAAC;EACpB,OAAO,EAAE,IAAI;CACb;;AAED,AAAA,WAAW,CAAC;EACX,WAAW,EAAE,CAAC;EACd,cAAc,EAAE,CAAC;EACjB,MAAM,EAAE,CAAC;CAKT;;AARD,AAKC,WALU,CAKV,CAAC,CAAC;EACD,eAAe,EAAE,IAAI;CACrB;;AAGF,AACC,SADQ,CACN,KAAK,CAAC;EACP,OAAO,EAAE,EAAE;CACX;;AAGF,AAAA,oBAAoB,CAAC;EACpB,OAAO,EAAE,IAAI;CACb;;AAED,AAAA,YAAY,CAAC;EACZ,OAAO,EAAE,IAAI;CACb"
+}
