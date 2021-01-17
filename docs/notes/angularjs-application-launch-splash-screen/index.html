@@ -3,7 +3,6 @@
 
 <html lang="en">
 	<head>
-		
 		<meta charset="utf-8" />
 <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -236,6 +235,19 @@ Notice a couple of things:
 		window.TEXT_VARIABLES = TEXT_VARIABLES;
 	})();
 </script>
+		
+		
+	<!-- Google Analytics -->
+
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-X190CB39TW"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-X190CB39TW');
+	</script>
+
 	</head>
 	<body>
 		<div class="page-wrapper">
@@ -312,8 +324,7 @@ This could be useful to display to a user while the single page application is l
 
 <p>The first thing I did was to define the html/css content for the splash screen content in the <a href="https://www.github.com/rossgodwin/rg-archetype-j2ee-angularjs/blob/master/WebContent/client/src/index-app-secure.jsp" target="_blank">entry point index page</a>.</p>
 
-<noscript><pre>400: Invalid request</pre></noscript>
-<script src="https://gist.github.com/2b51dd400db9a8bbf881324a80b91aca.js"> </script>
+<p>true<script src="https://gist.github.com/2b51dd400db9a8bbf881324a80b91aca.js"> </script></p>
 
 <p>This div tag contains the image element referencing the splash image and also contains inline css styling.  This splash display will be the only thing the user sees until the <code class="highlighter-rouge">&lt;div&gt;</code> element is removed.  The div element can be removed when the app is bootstrapped and the module gets built and run.  <a href="https://www.github.com/rossgodwin/rg-archetype-j2ee-angularjs/blob/master/WebContent/client/src/app/app-secure.js" target="_blank">See here</a> for a example of this.</p>
 

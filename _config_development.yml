@@ -5,5 +5,5 @@ destination: _site
 url: "http://127.0.0.1:4000"
 baseurl: ""
 
-google_analytics_tracking_id:
-
+# Analytics
+google_analytics_measurement_id: ""
