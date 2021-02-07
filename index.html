@@ -3,7 +3,7 @@ layout: default
 title: &title "Intro"
 ---
 
-<div class="page-content">
+<div class="rg-page-content">
 	{% capture _header_content %}
 		<p>
 			My name is Ross and this is my personal website containing content pertaining to my career 
@@ -19,18 +19,18 @@ title: &title "Intro"
 				To provide a more personalized and detailed presentation of my work experience, skill set, and project 
 				results to prospective employers or freelance seekers.
 			{% endcapture %}
-			{% include quote.html quote=_quote %}
+			{% include snippets/quote.html quote=_quote %}
 			
 			{% capture _quote %}
 				To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
 				IT related topics that may be beneficial to other IT professionals or references I may need in the future.
 			{% endcapture %}
-			{% include quote.html quote=_quote %}
+			{% include snippets/quote.html quote=_quote %}
 		</div> 
 	{% endcapture %}
 	{% include page-content-header.html title='Introduction' content=_header_content %}
 	
-	<section class="page-content-main">
+	<section class="rg-page-content-main">
 		<article class=get-started>
 			{% include snippets/prepend-baseurl.html path='about/' %}
 			{% include list-item-page-preview.html 

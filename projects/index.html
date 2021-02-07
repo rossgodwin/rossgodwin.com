@@ -3,13 +3,13 @@ layout: default
 title: &title "Projects"
 ---
 
-<div class="page-content">
+<div class="rg-page-content">
 	{% capture _header_content %}
 		{{ site.data.projects.description }}
 	{% endcapture %}
 	{% include page-content-header.html title=page.title content=_header_content %}
 	
-	<section class="page-content-main">
+	<section class="rg-page-content-main">
 		<section class="articles">
 			{% for project in site.data.projects.projects %}
 				{% include snippets/prepend-baseurl.html path=project.path %}

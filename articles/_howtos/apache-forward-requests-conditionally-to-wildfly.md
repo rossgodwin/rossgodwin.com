@@ -7,12 +7,12 @@ date: 2018-01-03
 image: /assets/images/article/apache-forward-requests-conditionally-to-wildfly/arrows-1738067_1280_350.jpg
 ---
 
-I created a website ([{{ site.cheapthycable.display-url }}]({{ site.cheapthycable.url }}){:target="_blank"}) that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
+I created a website <i>{{ site.cheapthycable.display-url }}</i> that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
 <!--more-->
 
 {% assign _image_folder = 'assets/images/article/apache-forward-requests-conditionally-to-wildfly/' %}
 
-![{{ page.tags | join: " "}}]({% link {{ _image_folder }}arrows-1738067_1280_350.jpg %}){:class="image-responsive"}
+![{{ page.tags | join: " "}}]({% link {{ _image_folder }}arrows-1738067_1280_350.jpg %}){:class="rg-image-responsive"}
 
 When I originally built the project, I wanted everything to be contained in my war file, both dynamic content and static content. A couple of things I have since discovered I don't like about this are 1) any blogs I add requires a war file deployment which is much slower than just doing a apache restart, 2) I didn't like the effect this had on my version control. For me, it was difficult to determine when a good time to perform a tag on the source code should occur, since things were constantly changing with the blog.
 
@@ -23,14 +23,14 @@ A couple of quick notes. Under my htdocs folder, I created a subfolder ```cheapt
 {% capture _quote %}
 	The reverse proxy then decides where to send those requests and returns the content as if it were itself the origin.
 {% endcapture %}
-{% include quote.html quote=_quote %}
+{% include snippets/quote.html quote=_quote %}
 
 and
 
 {% capture _quote %}
 	Note that whether you use RewriteRule or ProxyPass, you'll still need to use the ProxyPassReverse directive to catch redirects issued from the back-end server:
 {% endcapture %}
-{% include quote.html quote=_quote %}
+{% include snippets/quote.html quote=_quote %}
 
 I won't include all the app related urls that need to be forwarded, but a couple are ```/login``` and ```/app```.
 

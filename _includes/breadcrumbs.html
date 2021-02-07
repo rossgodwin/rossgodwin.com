@@ -1,5 +1,5 @@
 <!-- https://jekyllcodex.org/without-plugin/breadcrumbs -->
-<div id="breadcrumbs">
+<div>
 	{% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
 	<a href="/">Home</a>
 	{% for crumb in crumbs offset: 1 %}

@@ -1,5 +1,5 @@
 ---
-layout: notes
+layout: articles
 title: Notes
 permalink: /notes
 pagination:

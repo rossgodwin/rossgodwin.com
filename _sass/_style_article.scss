@@ -1,16 +1,17 @@
-.article {
+.rg-article {
 	margin-top: 1rem;
 }
 
-.article-header {
+.rg-article-header {
 }
 
-.article-header-meta {
+.rg-article-header-meta {
+	margin-bottom: 1rem;
 	color: $theme-text-color-light;
 	font-size: 0.8125rem;
 }
 
-.article-body {
+.rg-article-body {
 	.image-caption {
 		color: $theme-text-color-light;
 		font-size: 0.875rem;
@@ -34,10 +35,9 @@
 		p {
 			font-size: 1.5rem;
 		}
-		
 	}
 	
 	h1, h2, h3, h4, h5, h6 {
-		@extend .heading;
+		@extend .rg-heading;
 	}
 }

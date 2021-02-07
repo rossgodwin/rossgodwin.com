@@ -7,15 +7,9 @@ layout: none
 <html lang="{{ __return }}">
 	<head>
 		{% include head.html %}
-		<script>
-			{% include scripts/lib/lazyload.js %}
-	    </script>
-		{% include scripts/variables.html %}
-		
-		{% include scripts/google-analytics.js %}
 	</head>
 	<body>
-		<div class="page-wrapper">
+		<div class="rg-page-wrapper">
 			{% include page-header.html %}
 			
 			{{ content }}
@@ -23,10 +17,6 @@ layout: none
 			{% include page-footer.html %}
 		</div>
 		
-		<script>
-			{% include scripts/common.js %}
-		</script>
-		
-		{% include footer-scripts.html %}
+		{% include body-footer-scripts.html %}
 	</body>
 </html>

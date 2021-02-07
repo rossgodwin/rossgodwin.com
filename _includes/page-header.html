@@ -1,15 +1,15 @@
-<header class="page-header">
-	<div class="page-header-wrapper">
-		<div class="page-header-title">
-			<h1 class="heading heading-leading-vertical-bar">Ross Godwin</h1>
+<header class="rg-page-header">
+	<div class="rg-page-header-wrapper">
+		<div class="rg-page-header-title">
+			<h1 class="rg-heading rg-heading-leading-vertical-bar">Ross Godwin</h1>
 			
-			<button class="page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+			<button class="rg-page-header-menu-toggler" type="button" aria-label="Toggle navigation">
 				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
 			</button>
 		</div>
 		
-		<nav class="page-header-navigation">
-			<ul class="unordered-list-no-bullets">
+		<nav class="rg-page-header-navigation">
+			<ul class="rg-unordered-list-no-bullets">
 				<li class="{% if page.url == '/' %}active{% endif %}">
 					<a href="{{ '/' | relative_url }}">Get Started</a>
 				</li>
@@ -22,7 +22,7 @@
 				<li class="{% if page.url contains 'articles' %}active{% endif %}">
 					<a href="{{ '/articles' | relative_url }}">Articles</a>
 				</li>
-				<li class="nav-item-separator">
+				<li class="rg-page-header-navigation-item-separator">
 					|
 				</li>
 				<li>

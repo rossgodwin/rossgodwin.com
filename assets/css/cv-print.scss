@@ -1,43 +1,56 @@
 ---
 ---
 
-.page-wrapper {
+@page {
+	size: a3;
+}
+
+body {
+	min-width: 992px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.rg-page-wrapper {
 	grid-template-rows: auto;
 }
 
-.page-header {
+.rg-page-header {
 	display: none;
 }
 
-.page-content {
+.rg-page-content {
 	grid-template-areas:
 		"cm";
 }
 
-.page-content-header {
+.rg-page-content-header {
 	display: none;
 }
 
-.cv-wrapper {
+.rg-page-content-main {
+	padding: 0;
+}
+
+.rg-cv-wrapper {
 	padding-top: 0;
 	padding-bottom: 0;
 	border: 0;
-	
-	a {
-		text-decoration: none;
-	}
+	box-shadow: none;
 }
 
-.see-more {
+.rg-link-arrow {
 	&:after {
 		content: "";
 	}
 }
 
-.cv-download-options {
+.rg-cv-download-options {
 	display: none;
 }
 
-.page-footer {
+.rg-page-footer {
 	display: none;
 }

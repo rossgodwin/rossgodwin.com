@@ -17,13 +17,7 @@
 
 {% if page.title %}
 <meta property="og:title" content="{{ page.title }}" />
-<meta property="twitter:title" content="{{ page.title }}" />
 {% endif %}
 
 {% include head-css.html %}
-
-{%- include snippets/get-sources.html -%}
-{%- assign _sources = __return -%}
-<link rel="stylesheet" href="{{ _sources.font_awesome_style }}" >
-<link rel="stylesheet" href="{{ _sources.highlightjs_style }}" >
-
+{% include head-scripts.html %}

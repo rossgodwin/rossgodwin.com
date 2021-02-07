@@ -1,5 +1,5 @@
 ---
-layout: notes
+layout: articles
 title: How Tos
 permalink: /howtos
 pagination:

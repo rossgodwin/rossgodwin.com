@@ -1,5 +1,7 @@
 
-$page-header-min-width: 280px;
+$rg-color-primary: #5FCB71;
+
+$rg-font-Segeo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 $theme-color-primary: #5FCB71;
 
@@ -15,3 +17,9 @@ $theme-colors: (
 );
 
 $font-size-secondary: 0.8125rem;
+
+$small-device-page-left-right-padding: 1rem;
+
+$medium-device-header-height: 7em;
+
+$large-device-header-height: 5em;

@@ -4,6 +4,7 @@ title: Website Kitchen Sink
 categories: [notes]
 tags: [demo, jekyll, markdown, kitchen-sink]
 date: 2020-05-15
+include-highlightjs: yes
 ---
 
 These are examples of components that I've used throughout my website. I created this and will maintain it as a reference during development.<!--more--> Source can be in the github website [repository]({{ site.github.url }}/{{ site.github.website-repo }})
@@ -47,7 +48,7 @@ export  $initHighlight;
 {% capture _quote %}
 	You might not think that programmers are artists, but programming is an extremely creative profession. It's logic-based creativity.
 {% endcapture %}
-{% include quote.html quote=_quote quote_by="John Romero" %}
+{% include snippets/quote.html quote=_quote quote_by="John Romero" %}
 
 #### Embed a Tweet
 

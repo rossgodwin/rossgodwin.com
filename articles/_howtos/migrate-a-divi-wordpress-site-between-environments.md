@@ -9,7 +9,7 @@ date: 2020-10-4
 The following are steps that I took to migrate a Wordpress site running the Divi theme between two different environments.
 <!--more-->
 
-![{{ page.tags | join: " "}}]({% link assets/images/article/migrate-a-divi-wordpress-site-between-environments/banner.png %}){:class="image-responsive"}
+![{{ page.tags | join: " "}}]({% link assets/images/article/migrate-a-divi-wordpress-site-between-environments/banner.png %}){:class="rg-image-responsive"}
 
 Porting a Wordpress site between environments involves a process of export files from the source environment and importing the files in to the target environment. The number of steps, or files to export and import, is contingent on the Wordpress environment, primary theme and plugins used, but the following will be a good starting point for anyone looking to port their site. At the time of this migration, I was running Wordpress 5.4.2 running Divi theme version 4.4.9.
 

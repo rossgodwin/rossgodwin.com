@@ -4,12 +4,12 @@ layout: default
 
 {% include snippets/prepend-baseurl.html %}
 
-<div class="page-content">
-	<section class="page-content-main">
-		<section class="article">
-			<header class="article-header">
-				<h2 class="heading heading-leading-vertical-bar">{{ page.title | escape }}</h2>
-				<div class="article-header-meta mb-3">
+<div class="rg-page-content">
+	<section class="rg-page-content-main">
+		<section class="rg-article">
+			<header class="rg-article-header">
+				<h2 class="rg-heading rg-heading-leading-vertical-bar">{{ page.title | escape }}</h2>
+				<div class="rg-article-header-meta">
 					Published:&nbsp;{{ page.date | date: "%b %-d, %Y" }}
 					<br>
 					Category:&nbsp;<a href="{{ page.collection | prepend: __return }}">{{ page.collection | capitalize }}</a>
@@ -25,7 +25,7 @@ layout: default
 					<hr>
 				</div>
 			</header>
-			<div class="article-body">
+			<div class="rg-article-body">
 				{{ content }}
 			</div>
 		</section>

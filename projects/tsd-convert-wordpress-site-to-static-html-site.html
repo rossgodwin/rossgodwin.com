@@ -5,13 +5,13 @@ title: &title "Convert Wordpress Site to Static HTML Site"
 
 {% assign project = site.data.projects.projects[site.data.projects.project_index_tsd_website] %}
 
-<div class="page-content">
+<div class="rg-page-content">
 	{% include page-content-header.html title=project.title %}
 	
-	<section class="page-content-main">
+	<section class="rg-page-content-main">
 		<article>
 			<section>
-				<h4 class="heading heading-leading-vertical-bar">About the Project</h4>
+				<h4 class="rg-heading rg-heading-leading-vertical-bar">About the Project</h4>
 				<p>
 					This was a fun, rewarding and necessary project where I improved a small office network to be a better 
 					performing, more stable network resulting in improved office productivity and scalability for future company 
@@ -20,7 +20,7 @@ title: &title "Convert Wordpress Site to Static HTML Site"
 			</section>
 			
 			<section>
-				<h4 class="heading heading-leading-vertical-bar">Background</h4>
+				<h4 class="rg-heading rg-heading-leading-vertical-bar">Background</h4>
 				<p>
 					Shortly after starting employment with <a href="{% link cv/tsd.html %}">{{ site.data.cv.jobs[site.data.cv.job_index_tsd].company.name }}</a> 
 					I began poking around at the network and computer components. After investigation the IT infrastructure and using 
@@ -30,7 +30,6 @@ title: &title "Convert Wordpress Site to Static HTML Site"
 					measures were needed.
 					There were also some security vulnerabilities that needed addressing.
 				</p>
-				
 			</section>
 		</article>
 	</section>

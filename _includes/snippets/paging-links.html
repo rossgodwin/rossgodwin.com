@@ -1,0 +1,17 @@
+{% if paginator.total_pages > 1 %}
+	<nav class="rg-paginator">
+		{% if paginator.previous_page %}
+			<a class="rg-paginator-btn rg-paginator-btn-prev" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="rg-btn-left-icon fas fa-long-arrow-alt-left"></i>Previous</a>
+		{% endif %}
+		
+		{% if paginator.page_trail %}
+			{% for trail in paginator.page_trail %}
+				<a class="rg-paginator-btn {% if page.url == trail.path %}rg-paginator-btn-selected{% endif %}" href="{{ trail.path | prepend: site.baseurl | replace: '//', '/' }}" title="{{trail.title}}">{{ trail.num }}</a>
+			{% endfor %}
+		{% endif %}
+		
+		{% if paginator.next_page %}
+			<a class="rg-paginator-btn rg-paginator-btn-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next<i class="rg-btn-right-icon fas fa-long-arrow-alt-right"></i></a>
+		{% endif %}
+	</nav>
+{% endif %}
