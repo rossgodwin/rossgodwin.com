@@ -13,8 +13,8 @@ title: &title "Articles"
 	<section class="rg-page-content-main">
 		<section>
 			{% for collection in site.data.articles.collections %}
-				{% include snippets/prepend-baseurl.html path=collection.path %}
-				{% include list-item-page-preview.html 
+				{% include helpers/prepend-baseurl.html path=collection.path %}
+				{% include snippets/list-item-page-preview.html 
 					heading=collection.title 
 					description=collection.description
 					url=__return %}

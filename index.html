@@ -32,20 +32,20 @@ title: &title "Intro"
 	
 	<section class="rg-page-content-main">
 		<article class=get-started>
-			{% include snippets/prepend-baseurl.html path='about/' %}
-			{% include list-item-page-preview.html 
+			{% include helpers/prepend-baseurl.html path='about/' %}
+			{% include snippets/list-item-page-preview.html 
 				heading='About Me'
 				description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
 				url=__return %}
 			
-			{% include snippets/prepend-baseurl.html path='projects/' %}
-			{% include list-item-page-preview.html 
+			{% include helpers/prepend-baseurl.html path='projects/' %}
+			{% include snippets/list-item-page-preview.html 
 				heading='Projects'
 				description=site.data.projects.description
 				url=__return %}
 			
-			{% include snippets/prepend-baseurl.html path='articles/' %}
-			{% include list-item-page-preview.html 
+			{% include helpers/prepend-baseurl.html path='articles/' %}
+			{% include snippets/list-item-page-preview.html 
 				heading='Articles'
 				description=site.data.articles.description
 				url=__return %}

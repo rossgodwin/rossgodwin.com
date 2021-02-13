@@ -20,8 +20,8 @@ pagination:
 					{% assign _description = _article.excerpt %}
 				{% endif %}
 				
-				{% include snippets/prepend-baseurl.html path=_article.url %}
-				{% include list-item-article-preview.html
+				{% include helpers/prepend-baseurl.html path=_article.url %}
+				{% include snippets/list-item-article-preview.html
 					heading=_article.title
 					date=_date
 					description=_description

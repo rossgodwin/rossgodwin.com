@@ -11,7 +11,7 @@ title: &title "CheapThyCable.com"
 	<section class="rg-page-content-main">
 		<article>
 			<section class="rg-project-overview">
-				<img class="rg-project-overview-image rg-image-responsive rg-center" src="{% link assets/images/gallery/projects-cheapthycable/computer-screen.png %}" alt="image">
+				<img class="rg-project-overview-image rg-image-responsive" src="{% link assets/images/gallery/projects-cheapthycable/computer-screen.png %}" alt="image">
 				
 				<div>
 					<!--<strong>Website:</strong>&nbsp;<a href="{{ site.cheapthycable.url }}">{{ site.cheapthycable.display-url }}</a>
@@ -174,7 +174,7 @@ title: &title "CheapThyCable.com"
 						<br/>
 						<b>Wildfly</b>
 						<br/>
-						{% include snippets/get-tag-url.html tag_name='wildfly' %}
+						{% include helpers/get-tag-url.html tag_name='wildfly' %}
 						
 						Wildfly is the application server being used.
 						<a href="{{ __return }}">Here</a> are some notes I've put together on Wildfly.

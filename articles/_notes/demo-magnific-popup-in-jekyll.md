@@ -73,8 +73,8 @@ gallery3:
 
 The following demonstrates integrating [Magnific Popup](https://dimsemenov.com/plugins/magnific-popup){:target="_blank"} in to a Jekyll generated website.<!--more--> I was digging around for a simple photo gallery rendering framework to use in my website and this was one that I came across. I wanted something to take in to account loading smaller sized thumbnail images and then select expanding to view larger size images. I ended up settling on this because it was simple, quick and easy to add and it worked well. Source can be in the github website [repository]({{ site.github.url }}/{{ site.github.website-repo }}). Also, [here]({% link projects/tsd-office-it-infrastructure-overhaul.html %}#pictures) is a example of where I used it in a writeup.
 
-{% include gallery-magnific-popup.html caption="This is a sample gallery with **Markdown support**." %}
+{% include snippets/gallery-magnific-popup.html caption="This is a sample gallery with **Markdown support**." %}
 
-{% include gallery-magnific-popup.html id="gallery2" caption="This is a second gallery example with images hosted externally." %}
+{% include snippets/gallery-magnific-popup.html id="gallery2" caption="This is a second gallery example with images hosted externally." %}
 
-{% include gallery-magnific-popup.html id="gallery3" caption="This is a third gallery example with two images and fills the entire content container." %}
+{% include snippets/gallery-magnific-popup.html id="gallery3" caption="This is a third gallery example with two images and fills the entire content container." %}

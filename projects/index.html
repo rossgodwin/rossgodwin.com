@@ -12,8 +12,8 @@ title: &title "Projects"
 	<section class="rg-page-content-main">
 		<section class="articles">
 			{% for project in site.data.projects.projects %}
-				{% include snippets/prepend-baseurl.html path=project.path %}
-				{% include list-item-page-preview.html 
+				{% include helpers/prepend-baseurl.html path=project.path %}
+				{% include snippets/list-item-page-preview.html 
 					heading=project.title 
 					description=project.description
 					url=__return %}

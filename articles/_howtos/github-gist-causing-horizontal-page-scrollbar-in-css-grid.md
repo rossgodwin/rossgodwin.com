@@ -3,6 +3,7 @@ layout: article
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
 tags: [css, css-grid, github, gist]
 date: 2020-09-12
+include-highlightjs: yes
 ---
 
 I was running in to a issue on my website where Github gist embedded code shares were causing horizontal page/viewport scrollbars on small devices like a mobile phone.
@@ -24,7 +25,7 @@ The below snippet of HTML code recreates the issue.
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include html-code-block.html html=_html %}
+{% include snippets/html-code-block.html html=_html %}
 
 <div style="display: grid;">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
@@ -39,7 +40,7 @@ Again, resize your browser window down or view on a mobile device to see how the
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include html-code-block.html html=_html %}
+{% include snippets/html-code-block.html html=_html %}
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr);">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
