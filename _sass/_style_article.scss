@@ -7,19 +7,19 @@
 
 .rg-article-header-meta {
 	margin-bottom: 1rem;
-	color: $theme-text-color-light;
+	color: $rg-theme-text-color-light;
 	font-size: 0.8125rem;
 }
 
 .rg-article-body {
 	.image-caption {
-		color: $theme-text-color-light;
+		color: $rg-theme-text-color-light;
 		font-size: 0.875rem;
 		a {
-			color: $theme-text-color-light;
+			color: $rg-theme-text-color-light;
 			text-decoration: underline;
 			&:hover {
-				color: $theme-text-color-secondary;
+				color: $rg-theme-text-color-secondary;
 			}
 		}
 	}
@@ -29,8 +29,8 @@
 	}
 	
 	.blockquote {
-		font-family: Georgia,"Times New Roman",Times,serif;
-		border-left: 2px solid $theme-text-color-primary;
+		font-family: $rg-font-TimesNewRomand;
+		border-left: 2px solid $rg-theme-text-color-primary;
 		font-size: 1.5rem;
 		p {
 			font-size: 1.5rem;

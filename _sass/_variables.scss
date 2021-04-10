@@ -1,20 +1,4 @@
-
-$rg-color-primary: #5FCB71;
-
-$rg-font-Segeo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
-$theme-color-primary: #5FCB71;
-
-$theme-text-color-primary: #292929;
-$theme-text-color-secondary: lighten($theme-text-color-primary, 15%);
-$theme-text-color-light: lighten($theme-text-color-primary, 40%);
-$theme-bg-light: #fafafa;
-$theme-border-color:  lighten($theme-text-color-primary, 60%);
-
-$theme-colors: (
-	"primary":  $theme-color-primary, 
-	"secondary":  $theme-text-color-secondary, 
-);
+$color-white: #fff;
 
 $font-size-secondary: 0.8125rem;
 
@@ -23,3 +7,12 @@ $small-device-page-left-right-padding: 1rem;
 $medium-device-header-height: 7em;
 
 $large-device-header-height: 5em;
+
+$rg-theme-color-primary: #205ec9;
+$rg-theme-background-color-secondary: #fafafa;
+$rg-theme-text-color-primary: #292929;
+$rg-theme-text-color-secondary: lighten($rg-theme-text-color-primary, 15%);
+$rg-theme-text-color-light: lighten($rg-theme-text-color-primary, 40%);
+
+$rg-font-Segeo: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$rg-font-TimesNewRomand : Georgia, "Times New Roman", Times, serif;

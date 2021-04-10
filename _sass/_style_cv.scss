@@ -5,11 +5,11 @@ $text-size: 0.875rem;
 }
 
 .rg-cv-link {
-	color: $theme-text-color-secondary;
+	color: $rg-theme-text-color-secondary;
 	text-decoration: none;
 	background-color: transparent;
 	&:hover {
-		color: $theme-color-primary;
+		color: $rg-theme-color-primary;
 	}
 }
 
@@ -24,7 +24,7 @@ $text-size: 0.875rem;
 }
 
 .rg-cv-wrapper h1, h2, h3, h4, h5, h6 {
-	color: $theme-text-color-primary;
+	color: $rg-theme-text-color-primary;
 	font-weight: bold;
 	padding: 0.5rem;
 }
@@ -38,7 +38,7 @@ $text-size: 0.875rem;
 	font-size: 2.75rem;
 	font-weight: 900;
 	letter-spacing: 0.4rem;
-	color: $theme-color-primary;
+	color: $rg-theme-color-primary;
 	text-transform: uppercase;
 }
 
@@ -48,7 +48,7 @@ $text-size: 0.875rem;
 }
 
 .rg-cv-section-heading {
-	border-bottom: 3px solid $theme-color-primary;
+	border-bottom: 3px solid $rg-theme-color-primary;
 }
 
 .rg-cv-section-content {
@@ -64,7 +64,7 @@ $text-size: 0.875rem;
 
 .rg-cv-work-history-item-employer {
 	font-size: 1rem;
-	color: $theme-color-primary
+	color: $rg-theme-color-primary
 }
 
 .rg-cv-work-history-item-position {

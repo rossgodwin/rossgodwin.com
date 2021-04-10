@@ -6,7 +6,7 @@
 }
 
 .resume-wrapper h1, h2, h3, h4, h5, h6 {
-	color: $theme-text-color-primary;
+	color: $rg-theme-text-color-primary;
 	font-weight: bold;
 }
 
@@ -23,7 +23,7 @@
 	font-size: 2.75rem;
 	font-weight: 900;
 	letter-spacing: 0.4rem;
-	color: $theme-color-primary;
+	color: $rg-theme-color-primary;
 }
 
 .resume-tagline {
@@ -40,11 +40,11 @@
 }
 
 a.resume-link {
-	color: $theme-text-color-secondary;
+	color: $rg-theme-text-color-secondary;
 	text-decoration: none;
 	background-color: transparent;
 	&:hover {
-		color: $theme-color-primary;
+		color: $rg-theme-color-primary;
 	}
 }
 

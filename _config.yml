@@ -1,20 +1,17 @@
-
-
 # Site wide configuration
 destination: docs
 
 url: "https://career.rossgodwin.com"
 baseurl: ""
-
+locale: en
 title: Ross Godwin
-description: Web Developer from Somewhere
+description: Personal website about Ross Godwin' career
 location: Durham, NC
 
 website:
   display-url: rossgodwin.com
   url: https://rossgodwin.com
 
-# Analytics
 google_analytics_measurement_id: G-X190CB39TW
 
 linkedin:
@@ -32,8 +29,8 @@ cheapthycable:
   url: https://cheapthycable.rossgodwin.com
 
 # Jekyll configuration
-version: v1.2.0
 permalink: /:categories/:title/
+show_drafts: false
 kramdown:
   input: GFM
   syntax_highlighter: rouge
@@ -57,6 +54,17 @@ exclude:
 
 excerpt_separator: <!--more-->
 
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Plugings
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-gist
+  - jekyll-liquify
+
 # Collections
 collections_dir: articles
 collections:
@@ -66,27 +74,6 @@ collections:
   notes:
     output: true
     permalink: /:collection/:path/
-
-# Front Matter Defaults
-#defaults:
-  # Notes
-#  - scope:
-#      path: _posts/_notes
-#      type: posts
-#    values:
-#      layout: article
-
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
-
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate-v2
-  - jekyll-gist
-  - jekyll-liquify
 
 # Plugin: Pagination (jekyll-paginate-v2)
 pagination:

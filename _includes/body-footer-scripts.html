@@ -9,6 +9,8 @@
 			$(".rg-page-header-navigation").toggleClass("active");
 		});
 
+		$("#year").html(new Date().getFullYear());
+		
 		{% if page.include-highlightjs %}
 			document.querySelectorAll('pre code').forEach((block) => {
 				hljs.highlightBlock(block);

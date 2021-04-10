@@ -1,0 +1,4 @@
+{% assign __return = site.description %}
+{% if page.excerpt %}
+	{% assign __return = page.excerpt | strip_html %}
+{% endif %}
