@@ -1,5 +1,8 @@
+---
+permalink: robots.txt
+---
 
-Sitemap: https://career.rossgodwin.com/sitemap.xml
+Sitemap: {{ '/sitemap.xml' | relative_url }}
 
 User-agent: *
 Disallow: /
