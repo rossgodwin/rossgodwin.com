@@ -36,252 +36,250 @@ gallery:
 
 {% assign project = site.data.projects.projects[site.data.projects.project_index_tsd_office] %}
 
-<div class="rg-page-content">
-	{% include page-content-header.html title=project.title %}
-	
-	<section class="rg-page-content-main">
-		<article>
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">About the Project</h4>
+{% include page-content-header.html title=project.title %}
+
+<section class="rg-page-content-main">
+	<article>
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">About the Project</h4>
+			<p>
+				This was a fun, rewarding and necessary project where I improved a small office network to be a better 
+				performing, more stable network resulting in improved office productivity and scalability for future company 
+				growth. If you are just interested in pictures, <a href="#pictures">here are before and after photos</a>.
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Background</h4>
+			<p>
+				Shortly after starting employment with <a href="{% link cv/tsd.html %}">Triangle Site Design</a> 
+				I began poking around at the network and computer components. After investigation the IT infrastructure and using 
+				it on a daily basis it was evident that an upgrade was needed due to slow computer and network performance.
+				
+				it was evident that updates to workstations and network topology as well as cybersecurity
+				measures were needed.
+				There were also some security vulnerabilities that needed addressing.
+			</p>
+			<p>
+				I brought the issues that I found to the company owner's attention and initiated the idea of making some changes. 
+				He indicated to me that over the course of a few years in that current office location they had spent thousands 
+				of dollars with two different vendors and had trouble getting the infrastructure to where it currently was 
+				which was a functioning network but lacked in performance and expandability.
+			</p>
+			<p>
+				Here were some of the current conditions that I found:
+				<ul class="ul-chevron">
+					<li>
+						The closet containing the computer and networking equipment was a mess with components laying on the floor. 
+						You can see a picture below. 
+						This was unsightly, hard environment to work in and identify problems and put the network at risk should 
+						someone go in there, trip and break a critical component.
+					</li>
+					<li>
+						Download speeds were not close to reaching the 100Mbps that the company was paying for.
+					</li>
+					<li>
+						The office, located in a office park, was using shared internet access with several other businesses 
+						in surround office suites. Internet download speeds would slow as neighboring employees began arriving 
+						to work in the mornings and continue to degrade throughout the day as the load increased.
+					</li>
+					<li>
+						Desktop workstations were using wireless connectivity connecting to 2 UniFi AP-AC-Pro wireless access 
+						points which opened the door for bottlenecking and latency issues. Updating desktop wireless card 
+						drivers helped performance but was not a long-term fixed.
+					</li>
+					<li>
+						WAN access through a Cisco Meraki MX60 4 port router whose specifications indicated this device had a 
+						stateful firewall throughput of 100 Mbps and a advanced security throughput 50 Mbps. Another limiting 
+						factor was a recommended use case of 20 users. These were limiting factors should the company
+					</li>
+					<li>
+						Unshielded Cat5e ethernet cable running through walls to the wireless access points and printers.
+					</li>
+					<li>
+						The network topography did not lend itself to quick and easy expandability should the need arise, for 
+						instance if the company added employees (which it would in the future) or swith to IP phone service 
+						(which it would in the future)
+					</li>
+					<li>
+						Slow computers with inadequate hardware to keep up with the software used on a daily basis to perform 
+						required tasks.
+					</li>
+					<li>
+						Slow windows desktop station serving as the shared file server also running Carbonite for offsite 
+						backup. This machine did not have enough hardware resources to keep up with all that was required of 
+						it and it was central to daily business task.
+					</li>
+					<li>
+						No guest wireless network access, visiting clients were given full access to the company network.
+					</li>
+					<li>
+						No login protection on any of the workstations.
+					</li>
+				</ul>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Met Goals</h4>
+			<p>
+				After analyzing existing network limitations, research better network and hardware options, plan for future 
+				expandibility and consider cost.  Here were some goals that I had in mind researching 
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> find a ISP that could provide reasonably priced dedicated internet access.
+				</i>
 				<p>
-					This was a fun, rewarding and necessary project where I improved a small office network to be a better 
-					performing, more stable network resulting in improved office productivity and scalability for future company 
-					growth. If you are just interested in pictures, <a href="#pictures">here are before and after photos</a>.
+					<a href="https://celito.net" target="_blank">Celito</a> is a local internet service provider that was 
+					looking to venture in to the office complex where we were located. We made the switch and have been 
+					extremely pleased with the dedicated fiber service that we receive and their wonderful customer support.
 				</p>
-			</section>
-			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">Background</h4>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> transform the small closet that was a tangled mess of cables and equipment laying around 
+					on the floor in to a space that resembles a organized server room.
+				</i>
 				<p>
-					Shortly after starting employment with <a href="{% link cv/tsd.html %}">{{ site.data.cv.jobs[site.data.cv.job_index_tsd].company.name }}</a> 
-					I began poking around at the network and computer components. After investigation the IT infrastructure and using 
-					it on a daily basis it was evident that an upgrade was needed due to slow computer and network performance.
+					To get things off the floor and make working on the network easier, I decided to go with a wall mounted rack. 
+					I chose the <a href="https://www.startech.com/Server-Management/Racks/6U-14in-Deep-Wall-Mounting-Bracket-for-Patch-Panel~WALLMOUNT6" target="_blank">StarTech.com 6U wall mount network equipment rack</a>.
+					This meant that any network components that I purchased from here out would need to be compatible 
+					with a 19 inch rack.
+				</p>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> replace existing router.
+				</i>
+				<p>
+					The router in use was a Cisco Meraki and based on my research in the specifications was not a good fit for 
+					our environment.
 					
-					it was evident that updates to workstations and network topology as well as cybersecurity
-					measures were needed.
-					There were also some security vulnerabilities that needed addressing.
+					I upgraded to the <a href="https://www.ui.com/unifi-routing/usg" target="_blank">UniFi Security Gateway</a> 
+					by Ubiquiti Networks.
+				</p>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> consolidate the two network switches in to one. There was an 8-port non-PoE switch sitting between the workstations and router 
+					and off of that was a 16-port PoE switch that was used to provide power and connectivity for the wireless 
+					access points.
+				</i>
+				<p>
+					I went with a <a href="https://www.cisco.com/c/en/us/products/switches/110-series-unmanaged-switches/index.html" target="_blank">Cisco 
+					SG110 24-Port unmanaged PoE network switch</a>, which provides 12 PoE ports. Enough for the 2 wireless 
+					access points that are powered over the ethernet. And 12 non-PoE ports.
+				</p>
+			</p>
+			<p>
+				<i><b>Goal:</b> hardwire each office with ethernet cable so that workstations no longer depend on wireless 
+				connectivity.</i>
+				<p>
+					To future proof the cable installation, I decided to go with Cat6a ethernet. I chose a product by 
+					<a href="https://www.monoprice.com/product?c_id=301&cp_id=30103&cs_id=3010303&p_id=18593&seq=1&format=2" target="_blank">Monoprice</a> 
+					that was rated F/UTP which wraps the 23AWG wire in a foil shield that acts as a barrier preventing interference and 
+					data signal leaks.
 				</p>
 				<p>
-					I brought the issues that I found to the company owner's attention and initiated the idea of making some changes. 
-					He indicated to me that over the course of a few years in that current office location they had spent thousands 
-					of dollars with two different vendors and had trouble getting the infrastructure to where it currently was 
-					which was a functioning network but lacked in performance and expandability.
+					To organize the cable feeds coming in to the server closet from the offices, I went with 
+					a <a href="https://www.cablematters.com/pc-445-162-rackmount-or-wallmount-24-port-cat6a-shielded-rj45-patch-panel-with-jack-shutter.aspx" target="_blank">24-port 
+					Cable Matters rackmount Cat6a patch panel</a>. Outlets in the office would be provided by 
+					<a href="https://cat5ecableguy.com/inc/sdetail/238566" target="_blank">surface mount box</a>.
+				</p>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> upgrade the network storage access because of the volume of reads and writes required of it 
+					and because it's such a critical piece to the daily business operation.
+				</i>
+				<p>
+					
+					
+					Part of this would be to Free up the network storage server resources by offloading backup workload to a seperate dedicated 
+						workstation
+				</p>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> data redundancy, emergency failover option and office uptime during power flickers and outages.
+				</i>
+				<p>
+					For data backup, I chose not put this burden on the network storage device. Rather I took that workstation 
+					that served as the older file server and dedicated it to managing data backup.
 				</p>
 				<p>
-					Here were some of the current conditions that I found:
-					<ul class="ul-chevron">
-						<li>
-							The closet containing the computer and networking equipment was a mess with components laying on the floor. 
-							You can see a picture below. 
-							This was unsightly, hard environment to work in and identify problems and put the network at risk should 
-							someone go in there, trip and break a critical component.
-						</li>
-						<li>
-							Download speeds were not close to reaching the 100Mbps that the company was paying for.
-						</li>
-						<li>
-							The office, located in a office park, was using shared internet access with several other businesses 
-							in surround office suites. Internet download speeds would slow as neighboring employees began arriving 
-							to work in the mornings and continue to degrade throughout the day as the load increased.
-						</li>
-						<li>
-							Desktop workstations were using wireless connectivity connecting to 2 UniFi AP-AC-Pro wireless access 
-							points which opened the door for bottlenecking and latency issues. Updating desktop wireless card 
-							drivers helped performance but was not a long-term fixed.
-						</li>
-						<li>
-							WAN access through a Cisco Meraki MX60 4 port router whose specifications indicated this device had a 
-							stateful firewall throughput of 100 Mbps and a advanced security throughput 50 Mbps. Another limiting 
-							factor was a recommended use case of 20 users. These were limiting factors should the company
-						</li>
-						<li>
-							Unshielded Cat5e ethernet cable running through walls to the wireless access points and printers.
-						</li>
-						<li>
-							The network topography did not lend itself to quick and easy expandability should the need arise, for 
-							instance if the company added employees (which it would in the future) or swith to IP phone service 
-							(which it would in the future)
-						</li>
-						<li>
-							Slow computers with inadequate hardware to keep up with the software used on a daily basis to perform 
-							required tasks.
-						</li>
-						<li>
-							Slow windows desktop station serving as the shared file server also running Carbonite for offsite 
-							backup. This machine did not have enough hardware resources to keep up with all that was required of 
-							it and it was central to daily business task.
-						</li>
-						<li>
-							No guest wireless network access, visiting clients were given full access to the company network.
-						</li>
-						<li>
-							No login protection on any of the workstations.
-						</li>
-					</ul>
+					For uptime during power flickers and outages, I made sure each employee workstation was equipped with a 
+					function UPS. For the network hardware I chose a rackmount power supply by 
+					<a href="https://www.cyberpowersystems.com/product/ups/smart-app-lcd/or500lcdrm1u/" target="_blank">CypberPower</a>.
 				</p>
-			</section>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> network folder space for each employee.
+				</i>
+				<p>
+					The main reason I wanted to set this up was for ease of employee information backup. Rather than having 
+					to maintain backup processes on each individual computer, I setup a personal network folder for them to 
+					use instead of the local C drive. The Linux based QTS kernel on the QNAP network access storage device 
+					provides nice management of users, folder resources and access privileges.
+				</p>
+			</p>
+			<p>
+				<i>
+					<b>Goal:</b> provide new computers for employees also individual network storage 
+				</i>
+				<p>
+					and thus automatic backing up
+				</p>
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Results</h4>
+			<p>
+				I was very pleased with how everything turned out as was my boss and coworkers. The improvement in speed, latency 
+				and stability has been a drastic one.  A lot of our traffic is internal so with the Gigabit network, hardwired 
+				workstations and new network storage,
+			</p>
+			<p>
+				Since performing this upgrade, the company has hired one additional full time employee and 2 summer interns. We have 
+				also made the switch to IP phones. Had these infrastructure changes not been made, supporting this additional load 
+				would have been interesting to say the least and probably made a negative impact on office productivity.
+			</p>
+			<p>
+				The power backup strategy worked well and has been tested a couple of times and worked great. Also the data backup 
+				strategy has really worked out well and has been a hands off solution.
+			</p>
+			<p>
+				With the employee network folders I no longer had to worry about how to backup data on each individual workstation 
+				and also requiring less hard drive space on individual desktops
+			</p>
+			<p>
+				One other thing that I'll mention is I installed the UniFi Controller service on the backup machine and has allowed 
+				me to perform monitoring and maintenance on the netork. This is a very nice interface
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Things I Would Do Different</h4>
+			<p>
+				One thing I would do differently would be to run two ethernet cables to each office instead of just one. We also 
+				made the switch to IP phones and it would have been nice an additional line dedicated for the workstation and the 
+				other for the IP phone or a switch for multiple devices like an IP phone or laptop.
+			</p>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Future Enhancements</h4>
 			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">Met Goals</h4>
-				<p>
-					After analyzing existing network limitations, research better network and hardware options, plan for future 
-					expandibility and consider cost.  Here were some goals that I had in mind researching 
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> find a ISP that could provide reasonably priced dedicated internet access.
-					</i>
-					<p>
-						<a href="https://celito.net" target="_blank">Celito</a> is a local internet service provider that was 
-						looking to venture in to the office complex where we were located. We made the switch and have been 
-						extremely pleased with the dedicated fiber service that we receive and their wonderful customer support.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> transform the small closet that was a tangled mess of cables and equipment laying around 
-						on the floor in to a space that resembles a organized server room.
-					</i>
-					<p>
-						To get things off the floor and make working on the network easier, I decided to go with a wall mounted rack. 
-						I chose the <a href="https://www.startech.com/Server-Management/Racks/6U-14in-Deep-Wall-Mounting-Bracket-for-Patch-Panel~WALLMOUNT6" target="_blank">StarTech.com 6U wall mount network equipment rack</a>.
-						This meant that any network components that I purchased from here out would need to be compatible 
-						with a 19 inch rack.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> replace existing router.
-					</i>
-					<p>
-						The router in use was a Cisco Meraki and based on my research in the specifications was not a good fit for 
-						our environment.
-						
-						I upgraded to the <a href="https://www.ui.com/unifi-routing/usg" target="_blank">UniFi Security Gateway</a> 
-						by Ubiquiti Networks.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> consolidate the two network switches in to one. There was an 8-port non-PoE switch sitting between the workstations and router 
-						and off of that was a 16-port PoE switch that was used to provide power and connectivity for the wireless 
-						access points.
-					</i>
-					<p>
-						I went with a <a href="https://www.cisco.com/c/en/us/products/switches/110-series-unmanaged-switches/index.html" target="_blank">Cisco 
-						SG110 24-Port unmanaged PoE network switch</a>, which provides 12 PoE ports. Enough for the 2 wireless 
-						access points that are powered over the ethernet. And 12 non-PoE ports.
-					</p>
-				</p>
-				<p>
-					<i><b>Goal:</b> hardwire each office with ethernet cable so that workstations no longer depend on wireless 
-					connectivity.</i>
-					<p>
-						To future proof the cable installation, I decided to go with Cat6a ethernet. I chose a product by 
-						<a href="https://www.monoprice.com/product?c_id=301&cp_id=30103&cs_id=3010303&p_id=18593&seq=1&format=2" target="_blank">Monoprice</a> 
-						that was rated F/UTP which wraps the 23AWG wire in a foil shield that acts as a barrier preventing interference and 
-						data signal leaks.
-					</p>
-					<p>
-						To organize the cable feeds coming in to the server closet from the offices, I went with 
-						a <a href="https://www.cablematters.com/pc-445-162-rackmount-or-wallmount-24-port-cat6a-shielded-rj45-patch-panel-with-jack-shutter.aspx" target="_blank">24-port 
-						Cable Matters rackmount Cat6a patch panel</a>. Outlets in the office would be provided by 
-						<a href="https://cat5ecableguy.com/inc/sdetail/238566" target="_blank">surface mount box</a>.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> upgrade the network storage access because of the volume of reads and writes required of it 
-						and because it's such a critical piece to the daily business operation.
-					</i>
-					<p>
-						
-						
-						Part of this would be to Free up the network storage server resources by offloading backup workload to a seperate dedicated 
-							workstation
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> data redundancy, emergency failover option and office uptime during power flickers and outages.
-					</i>
-					<p>
-						For data backup, I chose not put this burden on the network storage device. Rather I took that workstation 
-						that served as the older file server and dedicated it to managing data backup.
-					</p>
-					<p>
-						For uptime during power flickers and outages, I made sure each employee workstation was equipped with a 
-						function UPS. For the network hardware I chose a rackmount power supply by 
-						<a href="https://www.cyberpowersystems.com/product/ups/smart-app-lcd/or500lcdrm1u/" target="_blank">CypberPower</a>.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> network folder space for each employee.
-					</i>
-					<p>
-						The main reason I wanted to set this up was for ease of employee information backup. Rather than having 
-						to maintain backup processes on each individual computer, I setup a personal network folder for them to 
-						use instead of the local C drive. The Linux based QTS kernel on the QNAP network access storage device 
-						provides nice management of users, folder resources and access privileges.
-					</p>
-				</p>
-				<p>
-					<i>
-						<b>Goal:</b> provide new computers for employees also individual network storage 
-					</i>
-					<p>
-						and thus automatic backing up
-					</p>
-				</p>
-			</section>
+				Setup Windows active directory
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar"><a id="pictures"></a>Pictures</h4>
 			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">Results</h4>
-				<p>
-					I was very pleased with how everything turned out as was my boss and coworkers. The improvement in speed, latency 
-					and stability has been a drastic one.  A lot of our traffic is internal so with the Gigabit network, hardwired 
-					workstations and new network storage,
-				</p>
-				<p>
-					Since performing this upgrade, the company has hired one additional full time employee and 2 summer interns. We have 
-					also made the switch to IP phones. Had these infrastructure changes not been made, supporting this additional load 
-					would have been interesting to say the least and probably made a negative impact on office productivity.
-				</p>
-				<p>
-					The power backup strategy worked well and has been tested a couple of times and worked great. Also the data backup 
-					strategy has really worked out well and has been a hands off solution.
-				</p>
-				<p>
-					With the employee network folders I no longer had to worry about how to backup data on each individual workstation 
-					and also requiring less hard drive space on individual desktops
-				</p>
-				<p>
-					One other thing that I'll mention is I installed the UniFi Controller service on the backup machine and has allowed 
-					me to perform monitoring and maintenance on the netork. This is a very nice interface
-				</p>
-			</section>
-			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">Things I Would Do Different</h4>
-				<p>
-					One thing I would do differently would be to run two ethernet cables to each office instead of just one. We also 
-					made the switch to IP phones and it would have been nice an additional line dedicated for the workstation and the 
-					other for the IP phone or a switch for multiple devices like an IP phone or laptop.
-				</p>
-			</section>
-			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar">Future Enhancements</h4>
-				
-					Setup Windows active directory
-			</section>
-			
-			<section>
-				<h4 class="rg-heading rg-heading-leading-vertical-bar"><a id="pictures"></a>Pictures</h4>
-				
-				{% include snippets/gallery-magnific-popup.html %}
-			</section>
-		</article>
-	</section>
-</div>
+			{% include snippets/gallery-thumbnails.html %}
+		</section>
+	</article>
+</section>

@@ -1,1 +1,0 @@
-mvGallery.init('.mvgallery');

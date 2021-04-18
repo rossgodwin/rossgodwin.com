@@ -25,7 +25,7 @@ The below snippet of HTML code recreates the issue.
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include snippets/html-code-block.html html=_html %}
+{% include snippets/html-source-code-block.html html=_html %}
 
 <div style="display: grid;">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
@@ -40,7 +40,7 @@ Again, resize your browser window down or view on a mobile device to see how the
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include snippets/html-code-block.html html=_html %}
+{% include snippets/html-source-code-block.html html=_html %}
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr);">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}

@@ -1,23 +1,21 @@
 ---
-layout: default
+layout: page
 title: &title "Projects"
 ---
 
-<div class="rg-page-content">
-	{% capture _header_content %}
-		{{ site.data.projects.description }}
-	{% endcapture %}
-	{% include page-content-header.html title=page.title content=_header_content %}
-	
-	<section class="rg-page-content-main">
-		<section class="articles">
-			{% for project in site.data.projects.projects %}
-				{% include helpers/prepend-baseurl.html path=project.path %}
-				{% include snippets/list-item-page-preview.html 
-					heading=project.title 
-					description=project.description
-					url=__return %}
-			{% endfor %}
-		</section>
+{% capture _header_content %}
+	{{ site.data.projects.description }}
+{% endcapture %}
+{% include page-content-header.html title=page.title content=_header_content %}
+
+<section class="rg-page-content-main">
+	<section class="articles">
+		{% for project in site.data.projects.projects %}
+			{% include helpers/prepend-baseurl.html path=project.path %}
+			{% include snippets/page-preview.html 
+				heading=project.title 
+				description=project.description
+				url=__return %}
+		{% endfor %}
 	</section>
-</div>
+</section>

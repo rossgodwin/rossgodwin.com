@@ -1,54 +1,52 @@
 ---
-layout: default
+layout: page
 title: &title "Intro"
 ---
 
-<div class="rg-page-content">
-	{% capture _header_content %}
-		<p>
-			My name is Ross and this is my personal website containing content pertaining to my career 
-			activities. For the past 18 months, I have been working in the construction industry as a project coordinator 
-			and civil designer for an engineering firm in Raleigh, North Carolina. Because of my background in 
-			computers and networking technology, I have also served as the company's office systems administrator. Prior 
-			to this change in occupation, I spent most of my career in the information technology industry as a software 
-			developer and business intelligence consultant. I have put this website together for the following purposes:
-		</p>
-		
-		<div class="intro-quotes">
-			{% capture _quote %}
-				To provide a more personalized and detailed presentation of my work experience, skill set, and project 
-				results to prospective employers or freelance seekers.
-			{% endcapture %}
-			{% include snippets/quote.html quote=_quote %}
-			
-			{% capture _quote %}
-				To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
-				IT related topics that may be beneficial to other IT professionals or references I may need in the future.
-			{% endcapture %}
-			{% include snippets/quote.html quote=_quote %}
-		</div> 
-	{% endcapture %}
-	{% include page-content-header.html title='Introduction' content=_header_content %}
+{% capture _header_content %}
+	<p>
+		My name is Ross and this is my personal website containing content pertaining to my career 
+		activities. For the past 18 months, I have been working in the construction industry as a project coordinator 
+		and civil designer for an engineering firm in Raleigh, North Carolina. Because of my background in 
+		computers and networking technology, I have also served as the company's office systems administrator. Prior 
+		to this change in occupation, I spent most of my career in the information technology industry as a software 
+		developer and business intelligence consultant. I have put this website together for the following purposes:
+	</p>
 	
-	<section class="rg-page-content-main">
-		<article class=get-started>
-			{% include helpers/prepend-baseurl.html path='about/' %}
-			{% include snippets/list-item-page-preview.html 
-				heading='About Me'
-				description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
-				url=__return %}
-			
-			{% include helpers/prepend-baseurl.html path='projects/' %}
-			{% include snippets/list-item-page-preview.html 
-				heading='Projects'
-				description=site.data.projects.description
-				url=__return %}
-			
-			{% include helpers/prepend-baseurl.html path='articles/' %}
-			{% include snippets/list-item-page-preview.html 
-				heading='Articles'
-				description=site.data.articles.description
-				url=__return %}
-		</article>
-	</section>
-</div>
+	<div class="intro-quotes">
+		{% capture _quote %}
+			To provide a more personalized and detailed presentation of my work experience, skill set, and project 
+			results to prospective employers or freelance seekers.
+		{% endcapture %}
+		{% include snippets/quote.html quote=_quote %}
+		
+		{% capture _quote %}
+			To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
+			IT related topics that may be beneficial to other IT professionals or references I may need in the future.
+		{% endcapture %}
+		{% include snippets/quote.html quote=_quote %}
+	</div> 
+{% endcapture %}
+{% include page-content-header.html title='Introduction' content=_header_content %}
+
+<section class="rg-page-content-main">
+	<article class=get-started>
+		{% include helpers/prepend-baseurl.html path='about/' %}
+		{% include snippets/page-preview.html 
+			heading='About Me'
+			description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
+			url=__return %}
+		
+		{% include helpers/prepend-baseurl.html path='projects/' %}
+		{% include snippets/page-preview.html 
+			heading='Projects'
+			description=site.data.projects.description
+			url=__return %}
+		
+		{% include helpers/prepend-baseurl.html path='articles/' %}
+		{% include snippets/page-preview.html 
+			heading='Articles'
+			description=site.data.articles.description
+			url=__return %}
+	</article>
+</section>

@@ -7,4 +7,5 @@ pagination:
   collection: notes
   sort_field: 'date'
   sort_reverse: true
+sitemap: false
 ---

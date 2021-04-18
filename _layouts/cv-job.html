@@ -1,0 +1,38 @@
+---
+layout: page
+---
+
+{% assign job = site.data.cv.jobs[page.job-index] %}
+
+{% capture _header_content %}
+	{% for position in job.positions %}
+		<div><strong>{{ position.title }}</strong>, {{ position.duration }}</div>
+	{% endfor %}
+{% endcapture %}
+{% include page-content-header.html title=job.company.name content=_header_content %}
+
+<section class="rg-page-content-main">
+	<article>
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Responsibilies</h4>
+			<div class="rg-cv-section-content">
+				<ul class="ul-chevron">
+					{% for responsibility in job.responsibilities %}
+						<li>{{ responsibility }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+		
+		<section>
+			<h4 class="rg-heading rg-heading-leading-vertical-bar">Achievements</h4>
+			<div class="rg-cv-section-content">
+				<ul class="ul-chevron">
+					{% for achievement in job.achievements %}
+						<li>{{ achievement }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+	</article>
+</section>

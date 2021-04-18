@@ -1,16 +1,14 @@
 # Site wide configuration
+theme: jekyll-theme-perfolio
+
 destination: docs
 
 url: "https://career.rossgodwin.com"
 baseurl: ""
-locale: en
+
 title: Ross Godwin
 description: Personal website about Ross Godwin' career
-location: Durham, NC
-
-website:
-  display-url: rossgodwin.com
-  url: https://rossgodwin.com
+author: Ross Godwin
 
 google_analytics_measurement_id: G-X190CB39TW
 
@@ -55,15 +53,7 @@ exclude:
 excerpt_separator: <!--more-->
 
 sass:
-  style: :expanded # You might prefer to minify using :compressed
-
-# Plugings
-gems:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate-v2
-  - jekyll-gist
-  - jekyll-liquify
+  style: :compressed
 
 # Collections
 collections_dir: articles
@@ -74,6 +64,27 @@ collections:
   notes:
     output: true
     permalink: /:collection/:path/
+
+# Plugings
+gems:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate-v2
+  - jekyll-liquify
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-gist
+
+defaults:
+  - scope:
+      path: docs/*
+    values:
+      sitemap: false
+  - scope:
+      path: assets/*
+    values:
+      sitemap: false
 
 # Plugin: Pagination (jekyll-paginate-v2)
 pagination:

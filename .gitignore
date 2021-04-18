@@ -1,11 +1,8 @@
 /_site
 /.bundle
 /.jekyll-cache
-/.settings
 /.project
 /.sass-cache
-Gemfile
+/.settings/
 Gemfile.lock
-node_modules
-package.json
 /vendor/

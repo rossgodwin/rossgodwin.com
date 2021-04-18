@@ -7,3 +7,6 @@ baseurl: ""
 
 # Analytics
 google_analytics_measurement_id: ""
+
+sass:
+  style: :expanded

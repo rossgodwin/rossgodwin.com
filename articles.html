@@ -1,24 +1,22 @@
 ---
-layout: default
+layout: page
 permalink: /articles/
 title: &title "Articles"
 ---
 
-<div class="rg-page-content">
-	{% capture _header_content %}
-		{{ site.data.articles.description }}
-	{% endcapture %}
-	{% include page-content-header.html title=page.title content=_header_content %}
-	
-	<section class="rg-page-content-main">
-		<section>
-			{% for collection in site.data.articles.collections %}
-				{% include helpers/prepend-baseurl.html path=collection.path %}
-				{% include snippets/list-item-page-preview.html 
-					heading=collection.title 
-					description=collection.description
-					url=__return %}
-			{% endfor %}
-		</section>
+{% capture _header_content %}
+	{{ site.data.articles.description }}
+{% endcapture %}
+{% include page-content-header.html title=page.title content=_header_content %}
+
+<section class="rg-page-content-main">
+	<section>
+		{% for collection in site.data.articles.collections %}
+			{% include helpers/prepend-baseurl.html path=collection.path %}
+			{% include snippets/page-preview.html 
+				heading=collection.title 
+				description=collection.description
+				url=__return %}
+		{% endfor %}
 	</section>
-</div>
+</section>

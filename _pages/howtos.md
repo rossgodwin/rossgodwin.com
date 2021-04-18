@@ -7,4 +7,5 @@ pagination:
   collection: howtos
   sort_field: 'date'
   sort_reverse: true
+sitemap: false
 ---

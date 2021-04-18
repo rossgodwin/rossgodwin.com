@@ -2,6 +2,22 @@ name: Ross Godwin
 title: Software Developer
 location: Durham, NC
 
+# Optional
+website:
+  display-url: rossgodwin.com
+  url: https://rossgodwin.com
+
+# Optional
+linkedin:
+  display-url: linkedin.com/ross-godwin
+  url: https://www.linkedin.com/in/ross-godwin
+
+# Optional
+github:
+  display-url: github.com/rossgodwin
+  url: https://www.github.com/rossgodwin
+
+intro-heading-text: How I Add Value
 intro:
   Forward-thinking software developer with 16 years of experience in web application development, 
   mobile app development, and business intelligence development. Successfully operates in agile-like 
@@ -9,22 +25,25 @@ intro:
   and employing proactive problem solving and resolution. Brings significant expertise in web 
   development stack, single-page applications, and mobile app development.
 
-education:
-  school: North Carolina State University
-  degree: Bachelor of Science in Computer Science
-  graduated: December 2003
+recommendations-heading-text: Recommendations
+recommendations:
+  - quote:
+      Ross was employed by my company - Atlatl - for ten years. During that time he constantly improved his skills 
+      and abilities. He had everything an employer could hope for in any employee. I cannot recommend him more highly.
+    by: Duke Williams - Founder Atlatl & Simply Easier Payments
+  - quote:
+      Ross is a very efficient, team oriented and well-rounded developer. I worked with Ross closely on various software 
+      projects for several years. He is always eager to learn and improve his skills. I was always impressed by his 
+      ability to grasp complex designs and implement them efficiently and accurately to specifications. He is very 
+      helpful in nature. It is a real pleasure to work with him anytime. Very highly recommended.
+    by: Ivan Yeh - Principal Software Engineer at Simply Easier Payments
 
-job_index_tsd: 0
-job_index_atlatl: 1
-job_index_dunn: 2
-
-job_atlatl_recommendation_index_duke: 0
-job_atlatl_recommendation_index_ivan: 1
-
+jobs-heading-text: Where I Have Worked
 jobs:
   - company:
       name: Triangle Site Design
-    url: /cv/tsd
+    # Optional
+    internal-url: cv/tsd
     positions:
       - title: Project Coordinator, Civil Designer, & IT Administrator
         duration: 02-2019 to Present
@@ -62,10 +81,10 @@ jobs:
       - Oversaw phone system transition to a cloud-based communications and collaboration solution which involved 
         installation and configuration of new system
       - Designed and implemented customized backup and redundancy automation plan for critical company digital content
-
   - company:
       name: Atlatl
-    url: /cv/atlatl
+    # Optional
+    internal-url: cv/atlatl
     positions:
       - title: Software Developer
         duration: 08-2008 to 02-2019
@@ -76,17 +95,6 @@ jobs:
       latest technologies and best practices. As a full stack developer, I was a key contributor on one of the company's 
       top revenue producing web applications. Additionally, I developed and maintained iOS and Android apps providing 
       mobile access for the subscription base of our hosted software.
-    recommendations:
-      - quote:
-          Ross was employed by my company - Atlatl - for ten years. During that time he constantly improved his skills 
-          and abilities. He had everything an employer could hope for in any employee. I cannot recommend him more highly.
-        by: Duke Williams - Founder Atlatl & Simply Easier Payments
-      - quote:
-          Ross is a very efficient, team oriented and well-rounded developer. I worked with Ross closely on various software 
-          projects for several years. He is always eager to learn and improve his skills. I was always impressed by his 
-          ability to grasp complex designs and implement them efficiently and accurately to specifications. He is very 
-          helpful in nature. It is a real pleasure to work with him anytime. Very highly recommended.
-        by: Ivan Yeh - Principal Software Engineer at Simply Easier Payments
     responsibilities:
       - Worked closely with a small team of developers and customer support to build, enhance, and maintain in-house web 
         and mobile applications used by small businesses
@@ -110,7 +118,6 @@ jobs:
         allowing data portability for core system objects and providing users fast start-up time
       - Developed automated Android app build process for mobile app CMS using Android SDK Tools and Java to create signed 
         APK file for distribution to app marketplace
-
   - company:
       name: Dunn Solutions Group
     positions:
@@ -123,37 +130,27 @@ jobs:
       schemas tuned for high-volume report querying, I also implemented ETL processes, developed and maintained semantic 
       layer data representations, and created and tested complex data reports.
 
-  - company:
-      name: North Carolina State Univeristy - CUACS
-    positions:
-      - title: Software Developer Intern
-        duration: 2003 to 2004
-    description:
-      This position began as basic data entry and HTML formatting with the Center for Urban Affairs and Community Services, 
-      an affiliate of North Carolina State University, and expanded into a challenging role as a intern web application 
-      developer. I was assigned the responsibility of developing a proof of concept for the North Carolina Department of 
-      Education to demonstrate the feasibility of performing computer skills testing online for elementary grade students. 
-      I was able to deliver a web application using Apache Tomcat, HTML, MySQL, Java Serve-Side technologies, JDBC, and 
-      JavaScript. This proof of concept was presented to representatives from the department broadening their vision at the 
-      possibilities of expanding their online testing capabilities.
-
-  - company:
-      name: U.S. Naval Research Laboratory
-    positions:
-      - title: Research Assistant
-        duration: 05-2002 to 08-2002
-    description:
-      I was granted one of two available spots from a nationwide pool of candidates to assist researchers in better 
-      understanding Security-Enhanced Linux, a Linux kernel security module. This was a great experience as a college 
-      student living and working in Washington, DC and exponentially improved my understanding and capability of the 
-      Linux operating system. The position required that I receive a security clearance and involved studying documentation, 
-      browsing source code and presenting research findings related to SELinux.
-
+projects-heading-text: A Side Project
 projects:
   - name: Cheapthycable.com
-    url: /projects/cheapthycable
+    # Optional
+    internal-url: projects/cheapthycable
     duration: 08-2016 to 10-2017
     description:
       Developed crowdsourcing web application that allowed participants to see what others were paying for cable and 
       internet in their area with the goal of providing leveraging power to negotiate a cheaper bill. Developed by using 
       J2EE web container, Hibernate, AngularJS, Bootstrap, and other popular APIs such as Thymeleaf, Mailgun and Disqus.
+
+education-heading-text: Education
+education:
+  school: North Carolina State University
+  degree: Bachelor of Science in Computer Science
+  graduated: December 2003
+
+download-formats:
+  pdf:
+    text: PDF Version
+    internal-url: assets/cv/cv.pdf
+  txt:
+    text: Text Version
+    internal-url: assets/cv/cv.txt
