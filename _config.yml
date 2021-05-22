@@ -1,30 +1,15 @@
 # Site wide configuration
 theme: jekyll-theme-perfolio
-
 destination: docs
-
-url: "https://career.rossgodwin.com"
-baseurl: ""
-
+url: 'https://career.rossgodwin.com'
+baseurl: ''
+lang: en
 title: Ross Godwin
 description: Personal website about Ross Godwin' career
 author: Ross Godwin
 
+# Analytics
 google_analytics_measurement_id: G-X190CB39TW
-
-linkedin:
-  display-url: linkedin.com/ross-godwin
-  url: https://www.linkedin.com/in/ross-godwin
-
-github:
-  display-url: github.com/rossgodwin
-  url: https://www.github.com/rossgodwin
-  website-repo: career.rossgodwin.com
-  ctc-repo: app.cheapthycable.com
-
-cheapthycable:
-  display-url: cheapthycable.com
-  url: https://cheapthycable.rossgodwin.com
 
 # Jekyll configuration
 permalink: /:categories/:title/
@@ -44,11 +29,9 @@ exclude:
   - _drafts
   - Gemfile
   - Gemfile.lock
-  - LICENSE
   - README.md
   - Photoshop/
   - vendor/bundle/
-  - TODO
 
 excerpt_separator: <!--more-->
 
@@ -65,15 +48,14 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-# Plugings
+# Plugins
 gems:
-  - jekyll-sitemap
   - jekyll-feed
-  - jekyll-paginate-v2
   - jekyll-liquify
 
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate-v2
   - jekyll-gist
 
 defaults:

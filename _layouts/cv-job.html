@@ -9,13 +9,13 @@ layout: page
 		<div><strong>{{ position.title }}</strong>, {{ position.duration }}</div>
 	{% endfor %}
 {% endcapture %}
-{% include page-content-header.html title=job.company.name content=_header_content %}
+{% include snippets/layout/page/page-content-header.html title=job.company.name content=_header_content %}
 
-<section class="rg-page-content-main">
+<section class="pf-page-content-main">
 	<article>
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Responsibilies</h4>
-			<div class="rg-cv-section-content">
+			<h4 class="pf-heading-leading-vertical-bar">Responsibilies</h4>
+			<div class="pf-cv-section-content">
 				<ul class="ul-chevron">
 					{% for responsibility in job.responsibilities %}
 						<li>{{ responsibility }}</li>
@@ -25,8 +25,8 @@ layout: page
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Achievements</h4>
-			<div class="rg-cv-section-content">
+			<h4 class="pf-heading-leading-vertical-bar">Achievements</h4>
+			<div class="pf-cv-section-content">
 				<ul class="ul-chevron">
 					{% for achievement in job.achievements %}
 						<li>{{ achievement }}</li>

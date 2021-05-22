@@ -6,13 +6,13 @@ title: &title "Projects"
 {% capture _header_content %}
 	{{ site.data.projects.description }}
 {% endcapture %}
-{% include page-content-header.html title=page.title content=_header_content %}
+{% include snippets/layout/page/page-content-header.html title=page.title content=_header_content %}
 
-<section class="rg-page-content-main">
+<section class="pf-page-content-main">
 	<section class="articles">
 		{% for project in site.data.projects.projects %}
 			{% include helpers/prepend-baseurl.html path=project.path %}
-			{% include snippets/page-preview.html 
+			{% include snippets/components/page-preview.html 
 				heading=project.title 
 				description=project.description
 				url=__return %}

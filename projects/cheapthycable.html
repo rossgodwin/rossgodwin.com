@@ -5,27 +5,27 @@ title: &title "CheapThyCable.com"
 
 {% assign project = site.data.projects.projects[site.data.projects.project_index_cheapthycable] %}
 
-{% include page-content-header.html title=project.title %}
+{% include snippets/layout/page/page-content-header.html title=project.title %}
 
-<section class="rg-page-content-main">
+<section class="pf-page-content-main">
 	<article>
 		<section class="rg-project-overview">
-			<img class="rg-project-overview-image rg-image-responsive" src="{% link assets/images/gallery/projects-cheapthycable/computer-screen.png %}" alt="image">
+			<img class="rg-project-overview-image" src="{% link assets/images/gallery/projects-cheapthycable/computer-screen.png %}" alt="image">
 			
 			<div>
-				<!--<strong>Website:</strong>&nbsp;<a href="{{ site.cheapthycable.url }}">{{ site.cheapthycable.display-url }}</a>
+				<!--<strong>Website:</strong>&nbsp;<a href="{{ site.data.me.cheapthycable.url }}">{{ site.data.me.cheapthycable.display-url }}</a>
 				<br/>-->
-				<strong>Source Code:</strong>&nbsp;<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}">GitHub repository</a>
+				<strong>Source Code:</strong>&nbsp;<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}">GitHub repository</a>
 				<br/><br/>
 				A crowdsourcing web application that allowed participants to see and analyze what others were paying for cable and internet services in their area with the goal of providing them leveraging power in negotiating lower monthly payments with their service provider. This product was under development and publicly accessible from August 2016 to October 2017. Though defunct, the application is running on Amazon AWS and hosted under my personal domain as part of my portfolio.
 				<!--<br/><br/>
-				<a href="{{ site.cheapthycable.url }}/login">Give it a try</a>.-->
+				<a href="{{ site.data.me.cheapthycable.url }}/login">Give it a try</a>.-->
 				
 			</div>
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Overview</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Overview</h4>
 			<p>
 				As sole developer on this project, I worked on it in my spare time in late 2016. The product 
 				was originally hosted on Google Cloud Platform utilizing Bitnami to quickly provide my hosted 
@@ -41,13 +41,13 @@ title: &title "CheapThyCable.com"
 				One of the key problems that I had to solve was providing user's the ability to filter out 
 				only bills within a vicinity i.e. within a 25 mile radius.  To do this I had to translate the 
 				haversine formula in to database queries. Here are links to class files and methods where this 
-				was done: <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/bill/report/BillReportDAO.java#L35">1</a>, 
-				<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/data/query/s/bill/BillSqueryUtils.java#L41">2</a>, <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/query/s/GeoZipCodeSqueryUtils.java">3</a>.
+				was done: <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/bill/report/BillReportDAO.java#L35">1</a>, 
+				<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/data/query/s/bill/BillSqueryUtils.java#L41">2</a>, <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/query/s/GeoZipCodeSqueryUtils.java">3</a>.
 			</p>
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Accomplishment</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Accomplishment</h4>
 			<p>
 				Though this did not go viral, I had people register from over 20 different states in the US. 
 				I learned a tremendous amount, gaining a wealth of knowledge and confidence as a developer.
@@ -59,7 +59,7 @@ title: &title "CheapThyCable.com"
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Technologies Used</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Technologies Used</h4>
 			<section class="rg-project-technologies-grid">
 				<div class="rg-project-technologies-grid-item">
 					{% include icons/amazon-aws-responsive.html %}
@@ -80,7 +80,7 @@ title: &title "CheapThyCable.com"
 					<br/>
 					<b>AngularJS</b>
 					<br/>
-					AngularJS was the front-end used for this project, the source code can be found <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/tree/master/WebContent/client/src">here</a>.
+					AngularJS was the front-end used for this project, the source code can be found <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/tree/master/WebContent/client/src">here</a>.
 					Also I took a few <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/angularjs">notes</a> explaining some of the implementations that I incorporated in to this project.
 				</div>
 				
@@ -108,10 +108,10 @@ title: &title "CheapThyCable.com"
 					<b>Hibernate</b>
 					<br/>
 					Hibernate is the object-relational mapping framework used in this project.
-					<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/entity/Account.java">Here</a> is a object to table mapping using Jakarta Persistence (JPA) instead of XML.
-					Take a look also at the <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/hibernate.cfg.xml">configuration</a> file and a <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/dao/BillDAOImpl.java">query class file</a>.
+					<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/entity/Account.java">Here</a> is a object to table mapping using Jakarta Persistence (JPA) instead of XML.
+					Take a look also at the <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/hibernate.cfg.xml">configuration</a> file and a <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/data/hibernate/dao/BillDAOImpl.java">query class file</a>.
 					This application uses the session-per-request pattern<sup id="fnref:link" role="doc-noteref"><a href="#fn:link" class="footnote">1</a></sup>.
-					A filter in the <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/WebContent/WEB-INF/web.xml#L18">web.xml</a> invokes a <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/web/filter/HibernateTxRequestFilter.java">filter class</a> to open and close a Hibernate session for the client request.
+					A filter in the <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/WebContent/WEB-INF/web.xml#L18">web.xml</a> invokes a <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/web/filter/HibernateTxRequestFilter.java">filter class</a> to open and close a Hibernate session for the client request.
 				</div>
 				
 				<div class="rg-project-technologies-grid-item">
@@ -130,9 +130,9 @@ title: &title "CheapThyCable.com"
 					<br/>
 					Mailgun is the email API that I used to send emails.  The free tier allows up to 30,000 transactional 
 					emails.
-					<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/bl/mail/jrsy/JrsyEmailer.java">Here</a> 
+					<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/master/src/com/gwn/xcbl/bl/mail/jrsy/JrsyEmailer.java">Here</a> 
 					is a "emailer" class that given a 
-					prefilled <a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/mail/data/model/Email.java">Email</a> 
+					prefilled <a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/mail/data/model/Email.java">Email</a> 
 					object uses the Jersey client API classes to make a web API call using Mailgun account information 
 					like the domain and API key.
 				</div>
@@ -162,9 +162,9 @@ title: &title "CheapThyCable.com"
 					<br/>
 					Thymeleaf is integrated in to this application. This API makes it easy to use HTML in the body of 
 					emails, creating a message whose style matches that of the product brand.
-					<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/tree/master/WebContent/WEB-INF/templates/emails">Here</a> 
+					<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/tree/master/WebContent/WEB-INF/templates/emails">Here</a> 
 					are the application's email templates and 
-					<a href="{{ site.github.url }}/{{ site.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/auth/pwd/forgot/ForgotPwdHlpr.java#L27">here</a> 
+					<a href="{{ site.data.me.github.url }}/{{ site.data.me.github.ctc-repo }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/auth/pwd/forgot/ForgotPwdHlpr.java#L27">here</a> 
 					is an example of a Java class that builds a forgot password email using a Thymeleaf template.
 				</div>
 				
@@ -175,12 +175,12 @@ title: &title "CheapThyCable.com"
 					<br/>
 					
 					Wildfly is the application server being used.
-					<a href="{{ '/tag/wildfly' | relative_url }}">Here</a> are some notes I've put together on Wildfly.
+					<a href="{{ 'tag/wildfly' | relative_url }}">Here</a> are some notes I've put together on Wildfly.
 				</div>
 			</section>
 		</section>
 		
-		<footer class="footnotes" role="doc-endnotes">
+		<footer class="pf-footnotes" role="doc-endnotes">
 			<ol>
 				<li id="fn:link" role="doc-endnote">
 					<p><a href="https://docs.jboss.org/hibernate/core/4.1/devguide/en-US/html/ch02.html#session-per-request" target="_blank">Hibernate session-per-request</a> <a href="#fnref:link" class="reversefootnote" role="doc-backlink">&#8617;</a></p>

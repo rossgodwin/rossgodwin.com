@@ -10,7 +10,7 @@ I was running in to a issue on my website where Github gist embedded code shares
 <!--more-->
 I have another website that I built where I included Github gist code snippets, so I checked how those looked on small screen sizes and there was no issue.
 
-![{{ page.tags | join: " "}}]({% link assets/images/article/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png %}){:class="rg-image-responsive"}
+![{{ page.tags | join: " "}}]({% link assets/images/article/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png %}){:class="pf-image-responsive"}
 
 Since this is the first website where I used CSS Grid, I immediately suspected there was some incompatibility between the gist and CSS Grid. I did some testing and in fact discovered that a gist in a CSS grid block would not scale down properly on smaller screen sizes when the content in the gist was wider than the viewport. After doing some research I stumbled upon a article by [CSS-Tricks.com](https://css-tricks.com/preventing-a-grid-blowout){:target="_blank"} discussing grid blowouts. To be clear, the issue does not have to do so much with the size of the device, rather the width of the content in the gist relative to the viewport size. If the content in the gist stretches beyond the viewport width the horizontal page scrolling occurs.
 
@@ -25,7 +25,7 @@ The below snippet of HTML code recreates the issue.
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include snippets/html-source-code-block.html html=_html %}
+{% include snippets/components/html-source-code-block.html html=_html %}
 
 <div style="display: grid;">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
@@ -40,7 +40,7 @@ Again, resize your browser window down or view on a mobile device to see how the
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include snippets/html-source-code-block.html html=_html %}
+{% include snippets/components/html-source-code-block.html html=_html %}
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr);">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}

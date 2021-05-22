@@ -1,0 +1,34 @@
+.rg-about-heading-line-separator {
+	@extend .pf-heading;
+	display: grid;
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr);
+	grid-gap: 20px;
+	&:before,
+	&:after {
+		content: "";
+		border-top: 1px solid $pf-theme-color-primary;
+	}
+}
+
+.rg-about-skills-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: .5em;
+}
+
+.rg-about-skills-grid-item {
+	background: $pf-theme-background-color-secondary;
+	border: 1px solid rgba(0, 0, 0, 0.025);
+	padding: 1rem;
+	text-align: center;
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.rg-about-skills-grid {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-column-gap: 1em;
+	}
+}

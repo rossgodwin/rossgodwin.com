@@ -1,47 +1,52 @@
 ---
-layout: gallery
+layout: page
 title: &title "Office IT Infrastructure Overhaul"
-gallery:
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/001.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/001-th.jpg
-    alt: "network room 1"
-    title: "This is a before photo of the network room. What a mess!"
-    class: custom-mfp-vertical
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/002.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/002-th.jpg
-    alt: "network room 2"
-    title: "New server rack is up and 4 offices hard wired."
-    class: custom-mfp-horizontal
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/003.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/003-th.jpg
-    alt: "network room 3"
-    title: "Close up of the rack in progress. Still a ways to go."
-    class: custom-mfp-vertical
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/004.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/004-th.jpg
-    alt: "network room 4"
-    title: "Finished!"
-    class: custom-mfp-horizontal
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/005.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/005-th.jpg
-    alt: "network room 5"
-    title: "Finished! For now."
-    class: custom-mfp-vertical
-  - url: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/006.jpg
-    image_path: /assets/images/gallery/tsd-office-it-infrastructure-overhaul/006-th.jpg
-    alt: "network room 6"
-    title: "Close up of the new rack."
-    class: custom-mfp-horizontal
+
+head-csss:
+  - assets/lib/justifiedgallery/css/justifiedGallery.min.css
+  - assets/lib/lightgallery/css/lightgallery.min.css
+body-footer-scripts:
+  - assets/lib/justifiedgallery/js/jquery.justifiedGallery.min.js
+  - assets/lib/lightgallery/js/lightgallery-all.min.js
+galleries:
+  - id: thumbnail-demo
+    type: thumbnails
+    images:
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/001-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/001.jpg
+        alt: "network room 1"
+        html_content: "This is a before photo of the network room. What a mess!"
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/002-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/002.jpg
+        alt: "network room 2"
+        html_content: "New server rack is up and 4 offices hard wired."
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/003-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/003.jpg
+        alt: "network room 3"
+        html_content: "Close up of the rack in progress. Still a ways to go."
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/004-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/004.jpg
+        alt: "network room 4"
+        html_content: "Finished!"
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/005-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/005.jpg
+        alt: "network room 5"
+        html_content: "Finished! For now."
+      - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/006-th.jpg
+        url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/006.jpg
+        alt: "network room 6"
+        html_content: "Close up of the new rack."
+        class: custom-mfp-horizontal
 ---
 
 {% assign project = site.data.projects.projects[site.data.projects.project_index_tsd_office] %}
 
-{% include page-content-header.html title=project.title %}
+{% include snippets/layout/page/page-content-header.html title=project.title %}
 
-<section class="rg-page-content-main">
+<section class="pf-page-content-main">
 	<article>
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">About the Project</h4>
+			<h4 class="pf-heading-leading-vertical-bar">About the Project</h4>
 			<p>
 				This was a fun, rewarding and necessary project where I improved a small office network to be a better 
 				performing, more stable network resulting in improved office productivity and scalability for future company 
@@ -50,7 +55,7 @@ gallery:
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Background</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Background</h4>
 			<p>
 				Shortly after starting employment with <a href="{% link cv/tsd.html %}">Triangle Site Design</a> 
 				I began poking around at the network and computer components. After investigation the IT infrastructure and using 
@@ -121,7 +126,7 @@ gallery:
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Met Goals</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Met Goals</h4>
 			<p>
 				After analyzing existing network limitations, research better network and hardware options, plan for future 
 				expandibility and consider cost.  Here were some goals that I had in mind researching 
@@ -236,7 +241,7 @@ gallery:
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Results</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Results</h4>
 			<p>
 				I was very pleased with how everything turned out as was my boss and coworkers. The improvement in speed, latency 
 				and stability has been a drastic one.  A lot of our traffic is internal so with the Gigabit network, hardwired 
@@ -262,7 +267,7 @@ gallery:
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Things I Would Do Different</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Things I Would Do Different</h4>
 			<p>
 				One thing I would do differently would be to run two ethernet cables to each office instead of just one. We also 
 				made the switch to IP phones and it would have been nice an additional line dedicated for the workstation and the 
@@ -271,15 +276,16 @@ gallery:
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar">Future Enhancements</h4>
+			<h4 class="pf-heading-leading-vertical-bar">Future Enhancements</h4>
 			
 				Setup Windows active directory
 		</section>
 		
 		<section>
-			<h4 class="rg-heading rg-heading-leading-vertical-bar"><a id="pictures"></a>Pictures</h4>
+			<h4 class="pf-heading-leading-vertical-bar"><a id="pictures"></a>Pictures</h4>
 			
-			{% include snippets/gallery-thumbnails.html %}
+			{% assign _gallery = page.galleries[0] %}
+			{% include snippets/components/gallery/thumbnails.html gallery=_gallery %}
 		</section>
 	</article>
 </section>

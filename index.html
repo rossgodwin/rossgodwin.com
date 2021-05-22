@@ -13,40 +13,38 @@ title: &title "Intro"
 		developer and business intelligence consultant. I have put this website together for the following purposes:
 	</p>
 	
-	<div class="intro-quotes">
+	<div class="rg-home-intro-quotes">
 		{% capture _quote %}
 			To provide a more personalized and detailed presentation of my work experience, skill set, and project 
 			results to prospective employers or freelance seekers.
 		{% endcapture %}
-		{% include snippets/quote.html quote=_quote %}
+		{% include snippets/components/quote.html quote=_quote %}
 		
 		{% capture _quote %}
 			To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
 			IT related topics that may be beneficial to other IT professionals or references I may need in the future.
 		{% endcapture %}
-		{% include snippets/quote.html quote=_quote %}
+		{% include snippets/components/quote.html quote=_quote %}
 	</div> 
 {% endcapture %}
-{% include page-content-header.html title='Introduction' content=_header_content %}
+{% include snippets/layout/page/page-content-header.html title='Introduction' content=_header_content %}
 
 <section class="rg-page-content-main">
-	<article class=get-started>
-		{% include helpers/prepend-baseurl.html path='about/' %}
-		{% include snippets/page-preview.html 
-			heading='About Me'
-			description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
-			url=__return %}
-		
-		{% include helpers/prepend-baseurl.html path='projects/' %}
-		{% include snippets/page-preview.html 
-			heading='Projects'
-			description=site.data.projects.description
-			url=__return %}
-		
-		{% include helpers/prepend-baseurl.html path='articles/' %}
-		{% include snippets/page-preview.html 
-			heading='Articles'
-			description=site.data.articles.description
-			url=__return %}
-	</article>
+	{% include helpers/prepend-baseurl.html path='about/' %}
+	{% include snippets/components/page-preview.html 
+		heading='About Me'
+		description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
+		url=__return %}
+	
+	{% include helpers/prepend-baseurl.html path='projects/' %}
+	{% include snippets/components/page-preview.html 
+		heading='Projects'
+		description=site.data.projects.description
+		url=__return %}
+	
+	{% include helpers/prepend-baseurl.html path='articles/' %}
+	{% include snippets/components/page-preview.html 
+		heading='Articles'
+		description=site.data.articles.description
+		url=__return %}
 </section>
