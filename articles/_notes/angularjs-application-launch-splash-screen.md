@@ -1,7 +1,7 @@
 ---
 layout: article
 title: AngularJS Application Launch Splash Screen
-summary: The following is a explanation of how to create a launch screen (or splash screen) for a AngularJS user interface.
+description: The following is a explanation of how to create a launch screen (or splash screen) for a AngularJS user interface.
 categories: [notes]
 tags: [angularjs]
 date: 2018-01-17

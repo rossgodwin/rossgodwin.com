@@ -4,9 +4,6 @@ destination: docs
 url: 'https://career.rossgodwin.com'
 baseurl: ''
 lang: en
-title: Ross Godwin
-description: Personal website about Ross Godwin' career
-author: Ross Godwin
 
 # Analytics
 google_analytics_measurement_id: G-X190CB39TW
@@ -38,6 +35,15 @@ excerpt_separator: <!--more-->
 sass:
   style: :compressed
 
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
 # Collections
 collections_dir: articles
 collections:
@@ -54,9 +60,9 @@ gems:
   - jekyll-liquify
 
 plugins:
-  - jekyll-sitemap
-  - jekyll-paginate-v2
   - jekyll-gist
+  - jekyll-paginate-v2
+  - jekyll-sitemap
 
 defaults:
   - scope:

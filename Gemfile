@@ -4,7 +4,6 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-perfolio", path: "../../jekyll-themes/jekyll-theme-perfolio"
 
-group :jekyll_plugins do
-	gem "jekyll-paginate-v2", ">= 3.0"
-	gem 'jekyll-gist'
-end
+gem 'jekyll-gist'
+gem "jekyll-paginate-v2", ">= 3.0"
+gem "jekyll-sitemap", "~> 1.4"

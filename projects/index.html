@@ -1,12 +1,12 @@
 ---
 layout: page
-title: &title "Projects"
+title-concat: ' - Projects'
 ---
 
 {% capture _header_content %}
 	{{ site.data.projects.description }}
 {% endcapture %}
-{% include snippets/layout/page/page-content-header.html title=page.title content=_header_content %}
+{% include snippets/layout/page/page-content-header.html title='Projects' content=_header_content %}
 
 <section class="pf-page-content-main">
 	<section class="articles">

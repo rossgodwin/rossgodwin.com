@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Install Jekyll on Windows Using WSL
-summary: These are the steps I took to install and run the Jekyll static site generator on my Windows 10 operating system.
+description: These are the steps I took to install and run the Jekyll static site generator on my Windows 10 operating system.
 categories: [notes]
 tags: [jekyll, windows, bash, wsl, linux, debian]
 date: 2020-07-26

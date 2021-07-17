@@ -14,8 +14,8 @@ sitemap: false
 	<section class="articles">
 		{% for _article in paginator.posts %}
 			{% assign _date = _article.date | date: "%b %-d, %Y" %}
-			{% if _article.summary %}
-				{% assign _description = _article.summary %}
+			{% if _article.description %}
+				{% assign _description = _article.description %}
 			{% else if _article.excerpt %}
 				{% assign _description = _article.excerpt %}
 			{% endif %}

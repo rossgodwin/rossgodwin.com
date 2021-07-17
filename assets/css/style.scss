@@ -1,11 +1,14 @@
 ---
 ---
 
-@import
-	"jekyll-theme-perfolio",
-	
-	"addon/modules",
-	
-	"layout/about",
-	"layout/home",
-	"layout/project"
+$site-baseurl: '{{ site.baseurl }}';
+
+@import "reset";
+
+@import "lib/fontawesome-free-5.15.3-web/fontawesome.scss";
+@import "lib/fontawesome-free-5.15.3-web/solid.scss";
+@import "lib/fontawesome-free-5.15.3-web/brands.scss";
+
+@import "lib/perfolio/perfolio";
+
+@import "lib/rg/rg";

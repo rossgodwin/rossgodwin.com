@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Agile Software Development
-summary: These are just some basic notes that I took while doing some research on agile software development.
+description: These are just some basic notes that I took while doing some research on agile software development.
 categories: [notes]
 tags: [agile, software-development]
 date: 2017-02-17
