@@ -1,0 +1,44 @@
+.pf-quote {
+	padding: 1.5rem;
+	padding-left: 3rem;
+	border: 1px solid rgba(0, 0, 0, 0.025);
+	background: $pf-theme-background-color-secondary;
+	height: 100%;
+	position: relative;
+	&:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 40px 40px 0 0;
+		border-color: $pf-theme-color-primary transparent transparent transparent;
+	}
+	
+	.fa-quote-left {
+		position: absolute;
+		left: 0.35rem;
+		top: 0.3rem;
+		color: $color-white;
+		font-size: 0.75rem;
+	}
+	
+	.svg-inline--fa {
+		display: inline-block;
+		height: 1em;
+		vertical-align: -0.125em;
+	}
+	
+	footer {
+		display: block;
+		margin-top: 0.5rem;
+		font-size: 80%;
+		color: #6c757d;
+		&:before {
+			content: "\2014\00A0";
+		}
+	}
+}

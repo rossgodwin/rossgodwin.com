@@ -1,0 +1,25 @@
+title: Software Developer
+
+intro-heading-text: How I Add Value
+intro:
+  Forward-thinking software developer with 16 years of experience in web application development, 
+  mobile app development, and business intelligence development. Successfully operates in agile-like 
+  development environments, taking ownership of projects from start to finish, delivering value, 
+  and employing proactive problem solving and resolution. Brings significant expertise in web 
+  development stack, single-page applications, and mobile app development.
+
+recommendations-heading-text: Recommendations
+
+jobs-heading-text: Where I Have Worked
+
+projects-heading-text: A Side Project
+
+education-heading-text: Education
+
+format:
+  pdf:
+    text: PDF Version
+    internal-url: assets/cv/cv.pdf
+  txt:
+    text: Text Version
+    internal-url: assets/cv/cv.txt

@@ -1,0 +1,59 @@
+{% if site.data.seo.og-locale %}
+	<meta property="og:locale" content="{{ site.data.seo.og-locale }}" />
+{% endif %}
+
+{% if site.data.seo.og-site-name %}
+	<meta name="og:site_name" content="{{ site.data.seo.og-site-name }}" />
+{% endif %}
+
+{% assign _og-title = site.data.seo.og-title %}
+{% if page.og-title %}
+	{% assign _og-title = page.og-title %}
+{% elsif layout.og-title %}
+	{% assign _og-title = layout.og-title %}
+{% else %}
+	{% include perfolio/helpers/get-page-title.html %}
+	{% assign _og-title = __return %}
+{% endif %}
+{% if _og-title %}
+	<meta name="og:title" content="{{ _og-title }}" />
+{% endif %}
+
+{% assign _og-description = site.data.seo.og-description %}
+{% if page.og-description %}
+	{% assign _og-description = page.og-description %}
+{% elsif layout.og-description %}
+	{% assign _og-description = layout.og-description %}
+{% elsif page.description %}
+	{% assign _og-description = page.description %}
+{% elsif page.excerpt %}
+	{% assign _og-description = page.excerpt | strip_html %}
+{% elsif layout.description %}
+	{% assign _og-description = layout.description %}
+{% endif %}
+{% if _og-description %}
+	<meta name="og:description" content="{{ _og-description }}" />
+{% endif %}
+
+{% assign _og-type = site.data.seo.og-type %}
+{% if page.og-type %}
+	{% assign _og-type = page.og-type %}
+{% elsif layout.og-type %}
+	{% assign _og-type = layout.og-type %}
+{% endif %}
+{% if _og-type %}
+	<meta property="og:type" content="{{ _og-type }}" />
+{% endif %}
+
+{% include perfolio/helpers/get-page-url.html %}
+<meta property="og:url" content="{{ __return }}" />
+
+{% assign _og-image = site.data.seo.og-image %}
+{% if page.og-image %}
+	{% assign _og-image = page.og-image %}
+{% elsif layout.og-image %}
+	{% assign _og-image = layout.og-image %}
+{% endif %}
+{% if _og-image %}
+	<meta property="og:image" content="{{ _og-image }}" />
+{% endif %}

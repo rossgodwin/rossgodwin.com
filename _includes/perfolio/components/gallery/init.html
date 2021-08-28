@@ -1,0 +1,31 @@
+{% if page.galleries %}
+	<script>
+		$(document).ready(function() {
+			{% for gallery in page.galleries %}
+				{% if gallery.type == 'dynamic' %}
+					$('#{{ gallery.id }}').on('click', function() {
+						$(this).lightGallery({
+							dynamic: true,
+							dynamicEl: [
+								{% for image in gallery.images %}
+									{
+										'src': '{{ image.url | relative_url }}',
+										'thumb': '{{ image.thumbnail_url | relative_url }}'{% if image.html_content %},{% endif %}
+										{% if image.html_content %}
+											'subHtml' : '{{ image.html_content }}'
+										{% endif %}
+									}{% if forloop.last != true %},{% endif %}
+								{% endfor %}
+							]
+						})
+					});
+				{% elsif gallery.type == 'thumbnails' %}
+					$('#{{ gallery.id }}').lightGallery({
+						thumbnail: true
+					});
+					$('#{{ gallery.id }}').justifiedGallery();
+				{% endif %}
+			{% endfor %}
+		});
+	</script>
+{% endif %}

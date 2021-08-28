@@ -1,0 +1,17 @@
+.pf-page-preview-list {
+	.pf-page-preview:not(:last-of-type) {
+		margin-bottom: 1rem;
+	}
+	
+	.pf-page-preview {
+		> h4 {
+			@extend %pf-heading-leading-vertical-bar;
+		}
+		
+		.pf-page-preview-title {
+			margin-bottom: .5rem;
+			color: $pf-theme-text-color-light;
+			font-size: $pf-theme-font-size-secondary;
+		}
+	}
+}

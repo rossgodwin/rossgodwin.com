@@ -1,0 +1,97 @@
+employment_index_tsd: 0
+jobs_index_atlatl: 1
+jobs_index_dunn: 2
+
+jobs:
+  - company:
+      name: Triangle Site Design
+    industry: construction
+    # Optional
+    internal-url: construction/employment/triangle-site-design
+    positions:
+      - title: Project Manager
+        duration: 02-2019 to Present
+    description:
+      Land development project manager and civil designer focused on commercial site permitting and design in North Carolina and South Carolina. Involved 
+      in project coordination, re-zoning, land development design, permit acquisition, construction document preparation, field surveying, and 
+      on-site inspection and certification of construction work. Design experience uncludes site layout, stormwater management, erosion & sediment 
+      control design, drainage/grading design, utility design and landscaping design. Projects I have lead and assisted in include Autozone, 
+      Dollar General, Multiple car washes, Multifamily residential, Sherwin-Williams, Starbucks, Walgreens and more.
+    responsibilities:
+      - Involved in all pre-construction work of projects which involves preliminary site approval, design and 
+        permitting of project
+      - Worked closely with investors, municipalities, engineers, land developers, and contractors coordinating to get 
+        projects successfully and in-a-timely-manner through the design phase of development
+      - Collaborated with government agencies to acquire construction project permits
+      - Researched and documented local, county and state ordinances to ensure project designs were in compliance with 
+        government requirements
+      - Utilize AutoCAD to draft, scale and fine-tune drawings and maps for land development projects
+      - Played integral role in creating concept, site, grading, stormwater, erosion control, utility and landscape plans for new and upfit 
+        commercial site projects
+      - Prepared construction drawing plan sets for submittal to local and state reviewers and engineers for permit issuance 
+        and final product delivery to the client
+      - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
+    achievements:
+      - Successfully lead and assisted in getting many projects like Starbucks, Autozone and PL$ Financial fully permitted 
+        and ready for brick and mortar construction
+      - Introduced the company to color renderings using AutoCAD and Photoshop which provide tangible evidence of the 
+        scope and quality of the project to assist the client in selling their vision to government agencies and residents 
+        being affected by their project. This also provided an additional revenue stream for the company
+      - Initiated, designed and implemented <a href="/information-technology/projects/tsd-office-it-infrastructure-overhaul">office technology infrastructure overhaul</a> 
+        resulting in increased office productivity and improved cyber-security
+      - Built new high performance computers replacing slow and outdated desktops
+      - Oversaw phone system transition to a cloud-based communications and collaboration solution which involved 
+        installation and configuration of new system
+      - Designed and implemented customized backup and redundancy automation plan for critical company digital content
+  - company:
+      name: Atlatl
+    industry: it
+    # Optional
+    internal-url: information-technology/employment/atlatl
+    positions:
+      - title: Software Developer
+        duration: 08-2008 to 02-2019
+    description:
+      Worked with a small team of software developers and customer support staff to build, enhance, and maintain in-house 
+      web and mobile applications used by small businesses. Being a team member of a small development shop afforded me 
+      the opportunity to work on all stages of the development life cycle which motivated me to stay current on the 
+      latest technologies and best practices. As a full stack developer, I was a key contributor on one of the company's 
+      top revenue producing web applications. Additionally, I developed and maintained iOS and Android apps providing 
+      mobile access for the subscription base of our hosted software.
+    responsibilities:
+      - Worked closely with a small team of developers and customer support to build, enhance, and maintain in-house web 
+        and mobile applications used by small businesses
+      - Executed data modeling, business logic, and user-interface projects
+      - Managed all aspects of data layer needs, including database schema design, data migrations, ORM infrastructure needs 
+        implementation, and data retrieval and modification queries
+      - Modified existing software by engaging with customer support to identify and correct problems and improve product 
+        performance
+      - Developed and maintained iOS and Android apps that provided mobile access for the subscription base of hosted software
+      - Built and utilized REST and RPC SOA solutions in web and mobile application development
+    achievements:
+      - Created Amazon Alexa skill and Google Assistant app to provide a subset of features from Atlatl's second largest 
+        revenue generating software product
+      - Served as core developer on user-interface redesign project, which converted multi-page web application comprised of 
+        JSF, Ajax, and ExtJS frameworks into a GWT/GXT single-page app
+      - Architected and developed Atlatl's first native iOS universal app published in the Apple app store to provide mobile 
+        access to company's fillable forms subscriber base
+      - Developed dynamic reporting solution for web based software product by working on web development stack to provide a 
+        customizable report framework and eliminate overhead of persistent development and custom ad-hoc report maintenance
+      - Built and integrated client-facing data import and export functionality into fillable forms hosted software service, 
+        allowing data portability for core system objects and providing users fast start-up time
+      - Developed automated Android app build process for mobile app CMS using Android SDK Tools and Java to create signed 
+        APK file for distribution to app marketplace
+  - company:
+      name: Dunn Solutions Group
+    industry: it
+    # Optional
+    internal-url: information-technology/employment/dunn-solutions-group
+    positions:
+      - title: Business Intelligence Developer
+        duration: 03-2004 to 08-2008
+    description:
+      Worked with clients from mid-sized to large corporations to create business intelligence solutions to meet 
+      business analytics needs. My role involved bridging the gap between business users and data, thus securely and 
+      responsibly optimizing the flow of data within organizations. In addition to designing and implementing database 
+      schemas tuned for high-volume report querying, I also implemented ETL processes, developed and maintained semantic 
+      layer data representations, and created and tested complex data reports.

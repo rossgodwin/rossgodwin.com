@@ -1,0 +1,25 @@
+---
+layout: rg/page
+---
+
+{% include perfolio/page/body/page-content-header.html title='Employment' %}
+
+<article class="rg-page-content-main">
+	<section class="pf-page-preview-list">
+		{% for job in site.data.career.employment.jobs %}
+			{% if job.industry == page.industry and job.internal-url %}
+				{% capture _title %}
+					{% for position in job.positions %}
+						<strong>{{ position.title }}</strong>, {{ position.duration }}
+					{% endfor %}
+				{% endcapture %}
+				{% include perfolio/helpers/prepend-baseurl.html path=job.internal-url %}
+				{% include perfolio/components/list/page-preview.html 
+					heading=job.company.name
+					title=_title
+					description=job.description
+					url=__return %}
+			{% endif %}
+		{% endfor %}
+	</section>
+</article>

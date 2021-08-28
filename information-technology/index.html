@@ -1,0 +1,350 @@
+---
+layout: rg/page
+title: &title "Information Technology"
+---
+
+{% assign project-cheapthycable-path = site.data.career.projects.it-side-projects[site.data.career.projects.side-project_index_cheapthycable].path %}
+{% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.jobs_index_atlatl].internal-url %}
+
+{% include perfolio/page/body/page-content-header.html title='Information Technology' %}
+
+<article class="rg-page-content-main">
+	<section>
+		<h3>Bio</h3>
+		<p>
+			Career long software developer having ventured into the construction industry working for 
+			a civil engineering firm as a multi-role professional performing the tasks of a project coordinator, 
+			civil designer, and IT administrator. In my spare time, I seek freelance software development opportunities 
+			where I can discover how others are looking to add value to their product or business using 
+			software and apply (and sharpen) my broad technology skills to help them translate those 
+			requirements into a solution that exceeds expectations.
+		</p>
+		<p>
+			Here is some of my professional IT experience by role:
+			<ul class="rg-ul-marker-fa-chevron">
+				<li>
+					As a <b>business intelligence developer</b> I worked with databases and transactional information systems 
+					while combining and developing a hosts of skills and knowledge to optimize the flow of data within 
+					organizations.  My role was to bridge the gap between business users and (the critical company data 
+					housed in their technical infrastructure)the technical infrastructure containing critical data about 
+					the company. In addition to the exposure of working in various business and technical environments, 
+					I enjoyed designing datamarts and creating ETL processes.
+				</li>
+				<li>
+					As a <b>mobile application developer</b> I have developed and published Android and iPhone mobile 
+					applications. My professional experience comes in the way of providing mobile access to existing 
+					business web applications using native mobile platform SDKs and integrating REST APIs services 
+					in to the server side architecture.
+				</li>
+				<li>
+					As a <b>software engineer</b> I have worked on all phases of the software development lifecycle for 
+					business applications primarily developing specialized web applications for small companies.  I have 
+					enjoyed working on all aspects of the development stack but found that my strengths lie in working on 
+					the server side portion of web applications.
+				</li>
+				<li>
+					As a <b>web developer</b>, particularly web application development, I have become proficient with 
+					tools, languages, scripts, server-side programming languages and frameworks to create complex web 
+					applications. My professional experience involves designing the layout and navigation 
+					as well as developing front-end and back-end aspects of websites and applications.
+				</li>
+			</ul>
+		</p>
+		<div class="pf-align-horizontal-center">
+			<a class="pf-button-primary" href="{% link information-technology/cv/index.html %}" role="button">Resume</a>
+			<a class="pf-button-primary" href="{{ site.data.me.social.linkedin.url }}" role="button" target="_blank">LinkedIn</a>
+			<a class="pf-button-primary" href="{{ site.data.me.social.github.url }}" role="button" target="_blank">Github</a>
+		</div>
+	</section>
+	
+	<section>
+		<h3>Work History</h3>
+		
+		<div class="rg-career-employment">
+			{% for job in site.data.career.employment.jobs %}
+				{% if job.industry == 'it' %}
+					{% include rg/components/career/employment-list-item.html job=_job %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+	
+	<section>
+		<h3>Projects</h3>
+		
+		<section class="pf-page-preview-list">
+			{% for project in site.data.career.projects.it-side-projects %}
+				{% include perfolio/helpers/prepend-baseurl.html path=project.path %}
+				{% include perfolio/components/list/page-preview.html
+					heading=project.title
+					description=project.description
+					url=__return %}
+			{% endfor %}
+		</section>
+	</section>
+	
+	{% capture _pl1 %}
+		PL1 <sup><a href="#fn:pl1" class="footnote">1</a></sup>
+	{% endcapture %}
+	{% capture _pl2 %}
+		PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+	{% endcapture %}
+	{% capture _pl3 %}
+		PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+	{% endcapture %}
+	{% capture _pl4 %}
+		PL4 <sup><a href="#fn:pl4" class="footnote">4</a></sup>
+	{% endcapture %}
+	
+	<section>
+		<h3>Technical Skills</h3>
+		
+		<h6>Languages & Frameworks</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/angular-responsive.html %}
+				<br/>
+				<b>AngularJS</b>
+				<br/>
+				1 Year - {{ _pl2 }}
+				<br/>
+				
+				I learned Angular 1.x in my spare time to develop the user interface for this 
+				<a href="{{ project-cheapthycable-path | relative_url }}">project</a>. Here are a few 
+				<a href="{{ 'tag/angularjs' | relative_url }}">notes</a> I've put together on this topic.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/bootstrap-responsive.html %}
+				<br/>
+				<b>Bootstrap</b>
+				<br/>
+				3 Years - {{ _pl2 }}
+				<br/>
+				I have used this well know CSS framework on a few projects. While the grid system makes creating page 
+				layouts that are suitable for all screen sizes very simple, I have found that CSS grid layout (or CSS 
+				grid) keeps the HTML markup free of duplication and much cleaner as the responsive site grows in 
+				complexity.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/gwt-responsive.html %}
+				<br/>
+				<b>GWT</b>
+				<br/>
+				8 Years - {{ _pl3 }}
+				<br/>
+				I love writing Java code and its fitting that the <i>write once, run anywhere</i> language 
+				is the language of choice for <a href="http://www.gwtproject.org/learnmore-sdk.html" target="_blank">GWT</a> 
+				where developers can create complex AJAX front-ends that get compiled into Javascript code 
+				that is compatible across all major browsers. 
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/sencha-gxt-responsive.html %}
+				<br/>
+				<b>GXT</b>
+				<br/>
+				5 Years - {{ _pl3 }}
+				<br/>
+				<a href="https://www.sencha.com/products/gxt" target="_blank">GXT</a> is a product that Sencha put 
+				together which provides some really cool <a href="https://examples.sencha.com/gxt/examples" target="_blank">
+				UI components</a> for building GWT web applications. I thorough enjoyed 
+				working with this Java framework at a <a href="{{ employment-atlatl-path | relative_url }}">previous employer</a>.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/java-jdk-responsive.html %}
+				<br/>
+				<b>Java</b>
+				<br/>
+				17 Years - {{ _pl4 }}
+				<br/>
+				I learned this language in college and have been using it ever since. I love Java and feel 
+				very comfortable programming in this language. Extensive experience using up through JDK 7 
+				and some in JDK 8.
+			</div>
+		</section>
+		
+		<h6>Databases</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/oracle-responsive.html %}
+				<br/>
+				<b>Oracle</b>
+				<br/>
+				10 Years - {{ _pl3 }}
+				<br/>
+				I have extensive professional experience using 10g.  Though I was not a DBA I feel comfortable 
+				using PL/SQL constructing queries, stored procedures, functions and indexing.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/mysql-responsive.html %}
+				<br/>
+				<b>MySQL</b>
+				<br/>
+				10 Years - {{ _pl3 }}
+				<br/>
+				I have used this DBMS on various projects over the years. <a href="{% link assets/images/gallery/projects-cheapthycable/database_eer_diagram.png %}" target="_blank">Here</a> 
+				is a link to the database schema design that I put together for a <a href="{{ project-cheapthycable-path | relative_url }}">personal project</a>.
+			</div>
+		</section>
+		
+		<h6>Enterprise & Servers</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/apache-responsive.html %}
+				<br/>
+				<b>Apache</b>
+				<br/>
+				5 Years - {{ _pl2 }}
+				<br/>
+				I've used this open source web server on various projects 
+				throughout the years in both Windows and Linux environments, often times configuring it to be used 
+				with Wildfly and Tomcat application servers but also using it to serve static files.
+				I have used several of the key features in the software such as loading modules, .htaccess, SSL, virtual servers 
+				logging and more. Check out a couple of the <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/apache">articles</a> 
+				I put together on configuring a Apache web server.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/wildfly-responsive.html %}
+				<br/>
+				<b>Wildfly</b>
+				<br/>
+				7 Years - PL2
+				<br/>
+				I have significant experience using JBoss and Wildfly in a windows environment. 
+				I have also installed, configured and deployed WAR files in a Linux environment for side projects.
+			</div>
+		</section>
+		
+		<h6>Cloud</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/amazon-aws-responsive.html %}
+				<br/>
+				<b>Amazon AWS</b>
+				<br/>
+				1 Year - PL1
+				<br/>
+				I have recently delved in to AWS.  This <a href="{{ project-cheapthycable-path | relative_url }}">project</a> 
+				is being powered by AWS using Amazon RDS and Amazon EC2.  I've also dipped my toes in the water on 
+				serverless computing with AWS Lambda functions.  I'm eager to learn more about AWS, one of my 
+				goals being to acquire the AWS Certified Solutions Architect certification.
+			</div>
+		</section>
+		
+		<h6>Mobile</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/android-responsive.html %}
+				<br/>
+				<b>Android</b>
+				<br/>
+				4 Year - {{ _pl3 }}
+				<br/>
+				Good understanding of the Android app fundamentals with experience using the Android SDk to develop, package and 
+				publish apps to the Google store.
+				I have experience managing app resources (layouts, 
+				menu, styles, drawable, etc), configuring app manifest and permissions, developing 
+				layouts, activities, fragments and intents, good understanding of the activity lifecyles 
+				and passing information between activities, understanding and experience with navigation 
+				principles between screens and app.  My past experience also includes using the java.net 
+				package to make HTTP POST and GET calls to application server for posting or retrieving 
+				data in JSON or XML format.
+			</div>
+		</section>
+		
+		<h6>Source Control</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/github-responsive.html %}
+				<br/>
+				<b>Git</b>
+				<br/>
+				2 Years - {{ _pl2 }}
+				<br/>
+					
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/svn-responsive.html %}
+				<br/>
+				<b>Subversion</b>
+				<br/>
+				5 Years - {{ _pl3 }}
+				<br/>
+				Used this source control
+				branching, tagging for managing features in development and production releases
+				Static web site generator that I've used to build a couple of web sites, including this one.
+			</div>
+		</section>
+		
+		<h6>Tools</h6>
+		<section class="rg-career-tech-skills-grid">
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/eclipse-responsive.html %}
+				<br/>
+				<b>Eclipse</b>
+				<br/>
+				12 Years - {{ _pl3 }}
+				<br/>
+				Well over 10 years of experience using this IDE and many of the available market plugins.
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/jekyll-responsive.html %}
+				<br/>
+				<b>Jekyll</b>
+				<br/>
+				1 Year - {{ _pl2 }}
+				<br/>
+				Static web site generator that I've used to build a couple of web sites, including this one.
+				Here are some <a href="{{ 'tag/jekyll' | relative_url }}">notes</a> I've put together tagged Jekyll. 
+			</div>
+			
+			<div class="rg-career-tech-skills-grid-item">
+				{% include rg/icons/pelican-responsive.html %}
+				<br/>
+				<b>Pelican</b>
+				<br/>
+				1 Year - {{ _pl2 }}
+				<br/>
+				The blog portion of this <a href="{{ project-cheapthycable-path | relative_url }}">website</a> is a 
+				static site generated by Pelican. Check out some of the <a href="{{ 'tag/pelican' | relative_url }}">articles</a> 
+				tagged Pelican that I've put together.
+			</div>
+		</section>
+	</section>
+	
+	<div class="pf-footnotes">
+		<ol>
+			<li id="fn:pl1">
+				<p>
+					PL1 - Have basic awareness and comprehension of the skill and is in the process of acquiring 
+					this skill through various channels.
+				</p>
+			</li>
+			<li id="fn:pl2">
+				<p>
+					PL2 - Possess working knowledge of the skill, and can actively and independently apply this 
+					skill in engagements and projects.
+				</p>
+			</li>
+			<li id="fn:pl3">
+				<p>
+					PL3 - Comprehensive, in-depth and specialized knowledge of the skill. Have extensively 
+					demonstrated successful application of the skill in engagements or projects.
+				</p>
+			</li>
+			<li id="fn:pl4">
+				<p>
+					PL4 - Can function as a subject matter expert for this skill and capable of analyzing, 
+					evaluating and synthesizing solutions using the skill.
+				</p>
+			</li>
+		</ol>
+	</div>
+</article>

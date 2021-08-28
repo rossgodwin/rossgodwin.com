@@ -1,49 +1,9 @@
 ---
-layout: page
 ---
 
-{% capture _header_content %}
-	<p>
-		My name is Ross and this is my personal website containing content pertaining to my career 
-		activities. For the past 18 months, I have been working in the construction industry as a project coordinator 
-		and civil designer for an engineering firm in Raleigh, North Carolina. Because of my background in 
-		computers and networking technology, I have also served as the company's office systems administrator. Prior 
-		to this change in occupation, I spent most of my career in the information technology industry as a software 
-		developer and business intelligence consultant. I have put this website together for the following purposes:
-	</p>
-	
-	<div class="rg-home-intro-quotes">
-		{% capture _quote %}
-			To provide a more personalized and detailed presentation of my work experience, skill set, and project 
-			results to prospective employers or freelance seekers.
-		{% endcapture %}
-		{% include snippets/components/quote.html quote=_quote %}
-		
-		{% capture _quote %}
-			To comprise a repository of notes that provide: instructions; demonstrations; and articles; on 
-			IT related topics that may be beneficial to other IT professionals or references I may need in the future.
-		{% endcapture %}
-		{% include snippets/components/quote.html quote=_quote %}
-	</div>
-{% endcapture %}
-{% include snippets/layout/page/page-content-header.html title='Introduction' content=_header_content %}
-
-<section class="rg-page-content-main">
-	{% include helpers/prepend-baseurl.html path='about/' %}
-	{% include snippets/components/page-preview.html 
-		heading='About Me'
-		description='Get to know more about me professionally. Use this section to examine work history, GitHub repositories, skill sets and curriculum vitae.'
-		url=__return %}
-	
-	{% include helpers/prepend-baseurl.html path='projects/' %}
-	{% include snippets/components/page-preview.html 
-		heading='Projects'
-		description=site.data.projects.description
-		url=__return %}
-	
-	{% include helpers/prepend-baseurl.html path='articles/' %}
-	{% include snippets/components/page-preview.html 
-		heading='Articles'
-		description=site.data.articles.description
-		url=__return %}
-</section>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; URL={% link information-technology/cv/index.html %}">
+</head>
+</html>

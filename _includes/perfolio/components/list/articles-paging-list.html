@@ -1,0 +1,21 @@
+<section class="pf-page-preview-list">
+	{% for _article in paginator.posts %}
+		{% capture _title %}
+			Published {{ _article.date | date: "%b %-d, %Y" }}
+		{% endcapture %}
+		{% if _article.description %}
+			{% assign _description = _article.description %}
+		{% else if _article.excerpt %}
+			{% assign _description = _article.excerpt %}
+		{% endif %}
+		
+		{% include perfolio/helpers/prepend-baseurl.html path=_article.url %}
+		{% include perfolio/components/list/page-preview.html
+			heading=_article.title
+			title=_title
+			description=_description
+			url=__return %}
+	{% endfor %}
+</section>
+
+{% include perfolio/components/list/paging-buttons.html %}

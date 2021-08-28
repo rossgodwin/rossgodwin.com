@@ -1,0 +1,28 @@
+.rg-project-cheapthycable-overview-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 1rem;
+	margin-bottom: 1rem;
+	background: $pf-theme-background-color-secondary;
+	border: 1px solid rgba(0, 0, 0, 0.025);
+	padding: 2rem;
+}
+
+.rg-project-cheapthycable-overview-image {
+	@extend .pf-image-responsive;
+	max-width: 500px;
+	max-height: 500px;
+	margin-bottom: 1rem;
+	@extend .pf-align-horizontal-center;
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.rg-project-cheapthycable-overview-grid {
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 1em;
+	}
+	
+	.rg-project-cheapthycable-overview-image {
+		margin-bottom: 0;
+	}
+}

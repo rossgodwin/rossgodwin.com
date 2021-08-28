@@ -1,0 +1,29 @@
+---
+layout: rg/page
+title: &title "Construction"
+---
+
+{% include perfolio/page/body/page-content-header.html title='Construction' %}
+
+<article class="rg-page-content-main">
+	<section>
+		<h3>Introduction</h3>
+		<div class="pf-align-horizontal-center">
+			<a class="pf-button-primary" href="{% link information-technology/cv/index.html %}" role="button">Resume</a>
+			<a class="pf-button-primary" href="{{ site.data.me.social.linkedin.url }}" role="button" target="_blank">LinkedIn</a>
+			<a class="pf-button-primary" href="{{ site.data.me.social.github.url }}" role="button" target="_blank">Github</a>
+		</div>
+	</section>
+	
+	<section>
+		<h3>Work History</h3>
+		
+		<div class="rg-career-employment">
+			{% for job in site.data.career.employment.jobs %}
+				{% if job.industry == 'construction' %}
+					{% include rg/components/career/employment-list-item.html job=_job %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</section>
+</article>

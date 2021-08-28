@@ -1,11 +1,9 @@
-title: Ross Godwin
+title: 
 
 menu:
-  - title: Get Started
-    url: /
-  - title: Resume
-    url: /cv
-  - title: Projects
-    url: /projects
+  - title: Construction
+    url: /construction
+  - title: Information Technology
+    url: /information-technology
   - title: Articles
     url: /articles

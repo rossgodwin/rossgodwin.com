@@ -1,5 +1,4 @@
 # Site wide configuration
-theme: jekyll-theme-perfolio
 destination: docs
 url: 'https://career.rossgodwin.com'
 baseurl: ''
@@ -9,7 +8,6 @@ lang: en
 google_analytics_measurement_id: G-X190CB39TW
 
 # Jekyll configuration
-permalink: /:categories/:title/
 show_drafts: false
 kramdown:
   input: GFM
@@ -24,6 +22,7 @@ exclude:
   - .gitignore
   - .project
   - _drafts
+  - docs/
   - Gemfile
   - Gemfile.lock
   - README.md
@@ -47,12 +46,9 @@ compress_html:
 # Collections
 collections_dir: articles
 collections:
-  howtos:
+  information-technology:
     output: true
-    permalink: /:collection/:path/
-  notes:
-    output: true
-    permalink: /:collection/:path/
+    permalink: /articles/:collection/:path/
 
 # Plugins
 gems:
@@ -94,7 +90,7 @@ autopages:
     enabled: true
     layouts:
       - autopage_tags.html
-    permalink: /tag/:tag
+    permalink: /articles/tag/:tag
   categories:
     enabled: false
     layouts:

@@ -1,0 +1,17 @@
+side-project_index_cheapthycable: 0
+side-project_index_tsd_office: 1
+
+it-side-projects:
+  - title: Cheapthycable.com
+    path: information-technology/projects/cheapthycable
+    duration: 08-2016 to 10-2017
+    description: Developed crowdsourcing web application that allowed participants to see what others were paying for cable and internet in their area with the goal of providing leveraging power to negotiate a cheaper bill. Developed by using J2EE web container, Hibernate, AngularJS, Bootstrap, and other popular APIs such as Thymeleaf, Mailgun and Disqus.
+    website:
+      display-url: CheapThyCable.com
+      url: https://cheapthycable.rossgodwin.com
+  - title: Office IT Infrastructure Overhaul
+    path: information-technology/projects/tsd-office-it-infrastructure-overhaul
+    duration: 08-2016 to 10-2017
+    description: Examine a office network upgrade that I performed for my employer at <a href="/construction/employment/triangle-site-design">Triangle Site 
+      Design</a>. Learn about the original office setup, resulting configuration changes, and view the before and 
+      after pictures.

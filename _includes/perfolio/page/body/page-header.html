@@ -1,0 +1,46 @@
+<header class="pf-page-header">
+	<div class="pf-page-header-wrapper">
+		<div class="pf-page-header-title">
+			<h1 class="pf-heading-leading-vertical-bar">{{ site.data.page-header.title }}</h1>
+			
+			<button class="pf-page-header-menu-toggler" type="button" aria-label="Toggle navigation">
+				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+			</button>
+		</div>
+		
+		<nav class="pf-page-header-navigation">
+			<ul class="rg-unordered-list-no-bullets">
+				{% for item in site.data.page-header.menu %}
+					{% assign __active = false %}
+					{% if item.url == '/' and page.url == '/index.html' or page.url == '/' %}
+						{% assign __active = true %}
+					{% elsif item.url != '/' and page.url contains item.url %}
+						{% assign __active = true %}
+					{% endif %}
+					<li class="{% if __active == true %}active{% endif %}">
+						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+					</li>
+				{% endfor %}
+				{% if site.data.me.social.linkedin or site.data.me.github %}
+					<li class="pf-page-header-navigation-item-separator">
+						|
+					</li>
+					{% if site.data.me.social.linkedin %}
+						<li>
+							<a href="{{ site.data.me.social.linkedin.url }}" class="pf-page-header-navigation-item-icon" target="_blank">
+								<i class="fab fa-linkedin fa-2x"></i>
+							</a>
+						</li>
+					{% endif %}
+					{% if site.data.me.social.github %}
+						<li>
+							<a href="{{ site.data.me.social.github.url }}" class="pf-page-header-navigation-item-icon" target="_blank">
+								<i class="fab fa-github-square fa-2x"></i>
+							</a>
+						</li>
+					{% endif %}
+				{% endif %}
+			</ul>
+		</nav>
+	</div>
+</header>

@@ -1,0 +1,14 @@
+---
+layout: perfolio/page
+---
+
+{% capture _header_content %}
+	<p>
+		{{ page.description }}
+	</p>
+{% endcapture %}
+{% include perfolio/page/body/page-content-header.html title=page.title content=_header_content %}
+
+<section class="pf-page-content-main">
+	{% include perfolio/components/list/articles-paging-list.html %}
+</section>

@@ -1,0 +1,77 @@
+.pf-article {
+	margin-top: 1rem;
+}
+
+.pf-article-header {
+}
+
+.pf-article-header-meta {
+	margin-bottom: 1rem;
+	color: $pf-theme-text-color-light;
+	font-size: 0.8125rem;
+}
+
+.pf-article-body {
+	.image-caption {
+		color: $pf-theme-text-color-light;
+		font-size: 0.875rem;
+		a {
+			color: $pf-theme-text-color-light;
+			text-decoration: underline;
+			&:hover {
+				color: $pf-theme-text-color-secondary;
+			}
+		}
+	}
+	
+	.pf-quote {
+		margin-bottom: .5rem;
+	}
+	
+	.blockquote {
+		font-family: $pf-font-TimesNewRomand;
+		border-left: 2px solid $pf-theme-text-color-primary;
+		font-size: 1.5rem;
+		p {
+			font-size: 1.5rem;
+		}
+	}
+	
+	%section {
+		margin: 0;
+		padding: 0;
+		line-height: 1.2;
+		margin-top: 1.8rem;
+		margin-bottom: 1.2rem;
+		font-weight: 400;
+	}
+	
+	h1, h2, h3, h4, h5, h6 {
+		color: $pf-theme-color-primary;
+		font-weight: 400;
+	}
+	
+	h1 {
+		font-size: 1.8rem;
+	}
+	
+	h2 {
+		@extend %section;
+		font-size: 1.4rem;
+	}
+	
+	h3 {
+		@extend %section;
+		font-size: 1.25rem;
+	}
+	
+	h4 {
+		@extend %section;
+		font-size: 1.15rem;
+	}
+	
+	h5 {
+		@extend %section;
+		font-size: 1.1rem;
+	}
+}

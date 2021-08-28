@@ -1,0 +1,47 @@
+---
+layout: rg/page
+---
+
+{% assign job = site.data.career.employment.jobs[page.job-index] %}
+
+{% capture _header_content %}
+	{% for position in job.positions %}
+		<div><strong>{{ position.title }}</strong>, {{ position.duration }}</div>
+	{% endfor %}
+{% endcapture %}
+{% include perfolio/page/body/page-content-header.html title=job.company.name content=_header_content %}
+
+<article class="rg-page-content-main">
+	<section>
+		<h4>Description</h4>
+		<div>
+			{{ job.description }}
+		</div>
+	</section>
+	
+	{% if job.responsibilities %}
+		<section>
+			<h4>Responsibilies</h4>
+			<div>
+				<ul class="rg-ul-marker-fa-chevron">
+					{% for responsibility in job.responsibilities %}
+						<li>{{ responsibility }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+	{% endif %}
+	
+	{% if job.achievements %}
+		<section>
+			<h4>Achievements</h4>
+			<div>
+				<ul class="rg-ul-marker-fa-chevron">
+					{% for achievement in job.achievements %}
+						<li>{{ achievement }}</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</section>
+	{% endif %}
+</article>

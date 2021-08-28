@@ -1,0 +1,11 @@
+<header class="pf-page-content-header">
+	<section class="pf-page-content-header-inner">
+		{% include perfolio/components/breadcrumbs.html %}
+		
+		{% if include.title %}
+			<h2 class="pf-heading-leading-vertical-bar">{{ include.title }}</h2>
+		{% endif %}
+		
+		{{ include.content }}
+	</section>
+</header>

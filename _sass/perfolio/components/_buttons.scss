@@ -1,0 +1,63 @@
+.pf-button {
+	display: inline-block;
+	font-weight: bold;
+	padding: 0.375rem 1rem;
+	height: 2.75rem;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid transparent;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	text-decoration: none;
+	user-select: none;
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.pf-button-left-icon {
+	margin-right: 0.5rem;
+}
+
+.pf-button-right-icon {
+	margin-left: 0.5rem;
+}
+
+.pf-button-primary {
+	@extend .pf-button;
+	background: $pf-theme-color-primary;
+	color: $color-white;
+	border-color: transparent;
+	font-size: 1rem;
+	padding-top: 0.5rem;
+	&:hover {
+		background: $color-white;
+		border-color: $pf-theme-color-primary;
+		color: $pf-theme-color-primary;
+	}
+}
+
+.pf-button-paging-primary {
+	@extend .pf-button-primary;
+	margin-right: .5rem;
+	&:hover {
+		.fas {
+			color: $pf-theme-color-primary;
+		}
+	}
+}
+
+.pf-button-paging-selected {
+	text-decoration: underline !important;
+}
+
+.pf-button-paging-previous {
+	@extend .pf-button-paging-primary;
+	padding-right: 1rem;
+}
+
+.pf-button-paging-next {
+	@extend .pf-button-paging-primary;
+	padding-left: 1rem;
+}

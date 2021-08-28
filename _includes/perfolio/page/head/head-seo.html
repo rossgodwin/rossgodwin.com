@@ -1,0 +1,39 @@
+{% include perfolio/helpers/get-page-url.html %}
+<link rel="canonical" href="{{ __return }}">
+
+{% include perfolio/helpers/get-page-title.html %}
+{% if __return %}
+	<title>{{ __return }}</title>
+{% endif %}
+
+{% assign _keywords = site.data.seo.keywords %}
+{% if page.tags %}
+	{% assign _keywords = page.tags %}
+{% elsif layout.tags %}
+	{% assign _keywords = layout.tags %}
+{% endif %}
+{% if _keywords %}
+	<meta name="keywords" content="{{ _keywords | join: ', ' }}" />
+{% endif %}
+
+{% assign _description = site.data.seo.description %}
+{% if page.description %}
+	{% assign _description = page.description %}
+{% elsif page.excerpt %}
+	{% assign _description = page.excerpt | strip_html %}
+{% elsif layout.description %}
+	{% assign _description = layout.description %}
+{% endif %}
+{% if _description %}
+	<meta name="description" content="{{ _description }}" />
+{% endif %}
+
+{% assign _author = site.data.seo.author %}
+{% if page.author %}
+	{% assign _author = page.author %}
+{% elsif layout.author %}
+	{% assign _author = layout.author %}
+{% endif %}
+{% if _author %}
+	<meta name="author" content="{{ _author }}" />
+{% endif %}

@@ -1,0 +1,206 @@
+$pf-page-device-small-padding-left-right: 1rem;
+$pf-page-device-medium-header-height: 7em;
+$pf-page-device-large-header-height: 5em;
+
+.pf-page-wrapper {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
+	grid-template-areas:
+		// h = header
+		// c = content
+		// f = footer
+		"h"
+		"c"
+		"f";
+	height: 100vh;
+}
+
+// ------------- Header -----------------
+.pf-page-header {
+	grid-area: h;
+}
+
+.pf-page-header-wrapper {
+	display: flex;
+	flex-direction: column;
+	
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: $pf-page-device-small-padding-left-right;
+	padding-right: $pf-page-device-small-padding-left-right;
+	
+	background-color: $color-white;
+	border-bottom: 1px solid #ccc;
+}
+
+.pf-page-header-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.pf-page-header-menu-toggler {
+	@include opacity(0.8);
+	padding: 0rem .6rem;
+	background-color: transparent;
+	border: 0px;
+	color: $pf-theme-color-primary;
+	&:hover {
+		@include opacity(1);
+	}
+}
+.pf-page-header-menu-toggler:focus {
+    outline: 0 !important;
+}
+
+.pf-page-header-navigation {
+	display: none;
+	text-align: center;
+	
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			height: 2.35em;
+			
+			&.active {
+				font-weight: bold;
+			}
+			
+			.pf-page-header-navigation-item-icon:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	
+	&.active {
+		display: grid;
+		-webkit-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+}
+
+.pf-page-header-navigation-item-separator {
+	display: none;
+	color: $pf-theme-color-primary;
+}
+
+// ------------- Content -----------------
+.pf-page-content {
+	grid-area: c;
+	display: grid;
+	grid-template-rows: auto 10px 1fr 10px;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
+	grid-template-areas:
+		// ch = content header
+		// cm = content main
+		"ch"
+		"."
+		"cm";
+}
+
+.pf-page-content-header {
+	grid-area: ch;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	background: $pf-theme-background-color-secondary;
+}
+
+.pf-page-content-header-inner {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $pf-page-device-small-padding-left-right;
+	padding-right: $pf-page-device-small-padding-left-right;
+	
+	.pf-breadcrumbs {
+		margin-bottom: 1rem;
+	}
+}
+
+.pf-page-content-main {
+	grid-area: cm;
+	padding-left: $pf-page-device-small-padding-left-right;
+	padding-right: $pf-page-device-small-padding-left-right;
+}
+
+// ------------- Footer -----------------
+.pf-page-footer {
+	grid-area: f;
+	display: flex;
+	padding: .5em 0;
+	border-top: 5px solid $pf-theme-color-primary;
+}
+
+.pf-page-footer-wrapper {
+	@extend .pf-align-horizontal-center;
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.pf-page-wrapper {
+		grid-template-rows: $pf-page-device-medium-header-height 1fr auto;
+	}
+	
+	// ------------- Header -----------------
+	.pf-page-header-wrapper {
+		height: $pf-page-device-medium-header-height;
+		
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		
+		text-align: left;
+	}
+	
+	.pf-page-header-navigation {
+		display: block;
+		text-align: left;
+		
+		ul {
+			li {
+				display: inline;
+				padding-right: 1.4em;
+			}
+			
+			li:last-child {
+				padding-right: 0em;
+			}
+		}
+	}
+
+	.pf-page-header-menu-toggler {
+		display: none;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-large) {
+	.pf-page-wrapper {
+		grid-template-rows: $pf-page-device-large-header-height 1fr auto;
+	}
+	
+	// ------------- Header -----------------
+	.pf-page-header-wrapper {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: $pf-page-device-large-header-height;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-xlarge) {
+	// ------------- Content -----------------
+	.pf-page-content-header-inner {
+		max-width: 1140px;
+	}
+	
+	.pf-page-content-main {
+		min-width: 1140px;
+		max-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

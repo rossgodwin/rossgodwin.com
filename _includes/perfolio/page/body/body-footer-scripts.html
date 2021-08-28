@@ -1,0 +1,30 @@
+<script src="{{ 'assets/perfolio/lib/jquery-3.1.1/js/jquery.min.js' | relative_url }}"></script>
+{% if page.include-highlightjs %}
+	<script src="{{ 'assets/perfolio/lib/highlightjs/js/highlight-10.0.3.min.js' | relative_url }}"></script>
+{% endif %}
+
+<script>
+	$(document).ready(function() {
+		$(".pf-page-header-menu-toggler").click(function(e) {
+			$(".pf-page-header-navigation").toggleClass("active");
+		});
+
+		$("#year").html(new Date().getFullYear());
+		
+		{% if page.include-highlightjs %}
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightBlock(block);
+			});
+		{% endif %}
+	});
+</script>
+
+{% for script in layout.body-footer-scripts %}
+	<script src="{{ script | relative_url }}"></script>
+{% endfor %}
+
+{% for script in page.body-footer-scripts %}
+	<script src="{{ script | relative_url }}"></script>
+{% endfor %}
+
+{% include perfolio/components/gallery/init.html %}

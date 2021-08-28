@@ -1,0 +1,10 @@
+<section class="pf-page-preview">
+	<h4><a href="{{ include.url }}">{{ include.heading }}</a></h4>
+	{% if include.title %}
+		<div class="pf-page-preview-title">{{ include.title }}</div>
+	{% endif %}
+	<div class="pf-page-preview-description">
+		{{ include.description | strip_html }}
+	</div>
+	<a class="pf-link-arrow" href="{{ include.url }}">Read more</a>
+</section>

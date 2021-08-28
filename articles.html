@@ -1,22 +1,9 @@
 ---
-layout: page
-permalink: /articles/
-title: &title "Articles"
 ---
 
-{% capture _header_content %}
-	{{ site.data.articles.description }}
-{% endcapture %}
-{% include snippets/layout/page/page-content-header.html title='Articles' content=_header_content %}
-
-<section class="pf-page-content-main">
-	<section>
-		{% for collection in site.data.articles.collections %}
-			{% include helpers/prepend-baseurl.html path=collection.path %}
-			{% include snippets/components/page-preview.html 
-				heading=collection.title 
-				description=collection.description
-				url=__return %}
-		{% endfor %}
-	</section>
-</section>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; URL={{ 'articles/information-technology' | relative_url }}">
+</head>
+</html>

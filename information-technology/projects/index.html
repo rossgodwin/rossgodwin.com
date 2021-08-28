@@ -1,0 +1,21 @@
+---
+layout: rg/page
+title: &title "Projects"
+---
+
+{% capture _header_content %}
+	{{ site.data.career.it-projects.description }}
+{% endcapture %}
+{% include perfolio/page/body/page-content-header.html title='Projects' content=_header_content %}
+
+<article class="rg-page-content-main">
+	<section class="pf-page-preview-list">
+		{% for project in site.data.career.projects.it-side-projects %}
+			{% include perfolio/helpers/prepend-baseurl.html path=project.path %}
+			{% include perfolio/components/list/page-preview.html 
+				heading=project.title 
+				description=project.description
+				url=__return %}
+		{% endfor %}
+	</section>
+</article>

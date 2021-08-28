@@ -1,0 +1,144 @@
+---
+layout: rg/page
+title: &title "Resume"
+head-print-csss:
+  - assets/perfolio/css/cv-print.css
+---
+
+{% assign projects = '' | split: '' %}
+{% assign projects = projects | push: site.data.career.projects.it-side-projects[site.data.career.projects.side-project_index_cheapthycable] %}
+
+{% include perfolio/page/body/page-content-header.html title='Resume' %}
+
+<section class="pf-page-content-main">
+	<article class="pf-cv-wrapper">
+		<section class="pf-cv-header">
+			<h4 class="pf-cv-header-title">{{ site.data.me.name }}</h4>
+			<div class="pf-cv-header-tagline">
+				{{ site.data.career.it-cv.title }}
+				<br/>
+				{{ site.data.me.location }}
+				{% if site.data.me.website %}
+					<span>&#183;</span>
+					<a href="{{ site.data.me.website.url }}">{{ site.data.me.website.display-url }}</a>
+				{% endif %}
+				<br/>
+				{% if site.data.me.social.linkedin or site.data.me.social.github %}
+					<div class="pf-cv-text">
+						{% if site.data.me.social.linkedin %}
+							<i class="fab fa-linkedin fa-fw fa-lg"></i><a class="pf-cv-link" href="{{ site.data.me.social.linkedin.url }}" target="_blank">{{ site.data.me.social.linkedin.display-url }}</a>
+							{% if site.data.me.social.github %}
+								<span>&#183;</span>
+							{% endif %}
+						{% endif %}
+						{% if site.data.me.social.github %}
+							<i class="fab fa-github-square fa-fw fa-lg"></i><a class="pf-cv-link" href="{{ site.data.me.social.github.url }}" target="_blank">{{ site.data.me.social.github.display-url }}</a>
+						{% endif %}
+					</div>
+				{% endif %}
+			</div>
+		</section>
+		
+		<hr>
+		
+		<section>
+			<div class="pf-cv-section-heading">
+				<h4>{{ site.data.career.it-cv.intro-heading-text }}</h4>
+			</div>
+			<div class="pf-cv-section-content">
+				<span class="pf-cv-text">
+					{{ site.data.career.it-cv.intro }}
+				</span>
+			</div>
+		</section>
+		
+		<section>
+			<div class="pf-cv-section-heading">
+				<h4>{{ site.data.career.it-cv.recommendations-heading-text }}</h4>
+			</div>
+			<div class="pf-cv-section-content">
+				{% for recommendation in site.data.career.recommendations.recommendations %}
+					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					{% if forloop.last == false %}
+						<div class="cv-recommendation-row-gap"></div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</section>
+		
+		<section>
+			<div class="pf-cv-section-heading">
+				<h4>{{ site.data.career.it-cv.jobs-heading-text }}</h4>
+			</div>
+			<div class="pf-cv-section-content">
+				{% for job in site.data.career.employment.jobs %}
+					<div class="pf-cv-work-history-item">
+						<div>
+							<div class="pf-cv-work-history-item-employer">
+								{% if job.internal-url %}
+									<a class="pf-link-arrow" href="{{ job.internal-url | relative_url }}">{{ job.company.name }}</a>
+								{% else %}
+									{{ job.company.name }}
+								{% endif %}
+							</div>
+							{% for position in job.positions %}
+								<div class="pf-cv-work-history-item-position">{{ position.title }}</div>
+								<div class="pf-cv-work-history-item-years-worked">{{ position.duration }}</div>
+							{% endfor %}
+						</div>
+						<div class="pf-cv-text">
+							{{ job.description }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+		
+		<section>
+			<div class="pf-cv-section-heading">
+				<h4>{{ site.data.career.it-cv.projects-heading-text }}</h4>
+			</div>
+			<div class="pf-cv-section-content">
+				{% for project in projects %}
+					<div class="pf-cv-work-history-item">
+						<div>
+							<div class="pf-cv-work-history-item-employer">
+								{% if project.path %}
+									<a class="pf-link-arrow" href="{{ project.path | relative_url }}">{{ project.title }}</a>
+								{% else %}
+									{{ project.title }}
+								{% endif %}
+							</div>
+							<div class="pf-cv-work-history-item-years-worked">{{ project.duration }}</div>
+						</div>
+						<div class="pf-cv-text">
+							{{ project.description }}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</section>
+		
+		<section>
+			<div class="pf-cv-section-heading">
+				<h4>{{ site.data.career.it-cv.education-heading-text }}</h4>
+			</div>
+			<div class="pf-cv-section-content">
+				<div class="pf-cv-work-history-item-employer">{{ site.data.career.education.college.school }}</div>
+				<div class="pf-cv-work-history-item-position">{{ site.data.career.education.college.degree }}</div>
+				<div class="pf-cv-work-history-item-years-worked">{{ site.data.career.education.college.graduated }}</div>
+			</div>
+		</section>
+	</article>
+	
+	{% if site.data.career.it-cv.format.pdf or site.data.career.it-cv.format.txt %}
+		<section class="pf-cv-download-options">
+			{% if site.data.career.it-cv.format.pdf %}
+				<a class="pf-button-primary" href="{{ site.data.career.it-cv.format.pdf.internal-url | relative_url }}" role="button" target="_blank"><i class="pf-button-left-icon fa fa-file-pdf fa-w-12"></i>{{ site.data.career.it-cv.format.pdf.text }}</a>
+			{% endif %}
+			{% if site.data.career.it-cv.format.txt %}
+				<a class="pf-button-primary" href="{{ site.data.career.it-cv.format.txt.internal-url | relative_url }}" role="button" target="_blank"><i class="pf-button-left-icon fa fa-file-alt fa-w-12"></i>{{ site.data.career.it-cv.format.txt.text }}</a>
+			{% endif %}
+		</section>
+	{% endif %}
+</section>

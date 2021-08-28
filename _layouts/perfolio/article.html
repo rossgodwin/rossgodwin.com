@@ -1,0 +1,27 @@
+---
+layout: perfolio/page
+---
+
+<section class="pf-page-content-main">
+	<section class="pf-article">
+		<header class="pf-article-header">
+			<h2 class="pf-heading-leading-vertical-bar">{{ page.title | escape }}</h2>
+			<div class="pf-article-header-meta">
+				Published:&nbsp;{{ page.date | date: "%b %-d, %Y" }}
+				{% if page.tags %}
+					<br>
+					<span>Tags:&nbsp;
+					{% for tag in page.tags %}
+						<a href="{{ tag | prepend: 'tags/#' | relative_url }}">{{ tag }}</a>&nbsp;
+					{% endfor %}
+					</span>
+				{% endif %}
+				
+				<hr>
+			</div>
+		</header>
+		<div class="pf-article-body">
+			{{ content }}
+		</div>
+	</section>
+</section>
