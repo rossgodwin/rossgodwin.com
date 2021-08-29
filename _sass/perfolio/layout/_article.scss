@@ -37,18 +37,12 @@
 		}
 	}
 	
-	%section {
-		margin: 0;
-		padding: 0;
-		line-height: 1.2;
-		margin-top: 1.8rem;
-		margin-bottom: 1.2rem;
-		font-weight: 400;
+	> h1 {
+		@extend .pf-heading-line-separator;
 	}
-	
-	h1, h2, h3, h4, h5, h6 {
-		color: $pf-theme-color-primary;
-		font-weight: 400;
+	> h2, > h3, > h4, > h5, > h6 {
+		@extend .pf-heading-leading-vertical-bar;
+		margin-top: 1rem;
 	}
 	
 	h1 {
@@ -56,22 +50,18 @@
 	}
 	
 	h2 {
-		@extend %section;
 		font-size: 1.4rem;
 	}
 	
 	h3 {
-		@extend %section;
 		font-size: 1.25rem;
 	}
 	
 	h4 {
-		@extend %section;
 		font-size: 1.15rem;
 	}
 	
 	h5 {
-		@extend %section;
 		font-size: 1.1rem;
 	}
 }

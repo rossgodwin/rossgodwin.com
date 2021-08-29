@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 	border-bottom: 3px solid $pf-theme-color-primary;
 	
 	h4 {
-		@extend %pf-heading;
+		@extend .pf-heading;
 	}
 }
 

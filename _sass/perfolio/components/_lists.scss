@@ -5,7 +5,7 @@
 	
 	.pf-page-preview {
 		> h4 {
-			@extend %pf-heading-leading-vertical-bar;
+			@extend .pf-heading-leading-vertical-bar;
 		}
 		
 		.pf-page-preview-title {

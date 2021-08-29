@@ -1,11 +1,11 @@
-%pf-heading {
+.pf-heading {
 	letter-spacing: 0.15rem;
 	color: $pf-theme-color-primary;
 	text-transform: uppercase;
 }
 
-%pf-heading-leading-vertical-bar {
-	@extend %pf-heading;
+.pf-heading-leading-vertical-bar {
+	@extend .pf-heading;
 	position: relative;
 	padding-left: 1rem;
 	&:before {
@@ -17,11 +17,11 @@
 		background: $pf-theme-color-primary;
 		left: 0;
 		top: 0;
-  }
+   }
 }
 
-%pf-heading-line-separator {
-	@extend %pf-heading;
+.pf-heading-line-separator {
+	@extend .pf-heading;
 	display: grid;
 	width: 100%;
 	align-items: center;
