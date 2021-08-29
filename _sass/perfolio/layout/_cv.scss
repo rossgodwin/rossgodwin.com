@@ -17,20 +17,16 @@ $pf-cv-font-size: 0.875rem;
 	padding: 1.5rem;
 	border: 1px solid rgba(0, 0, 0, 0.025);
 	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-}
-
-.pf-cv-wrapper .pf-quote {
-	font-size: $pf-cv-font-size;
-}
-
-.pf-cv-wrapper {
-
-h1, h2, h3, h4, h5, h6 {
-	color: $pf-theme-text-color-primary;
-	font-weight: bold;
-	padding: 0.5rem;
-}
-
+	
+	> h1, > h2, > h3, > h4, > h5, > h6 {
+		color: $pf-theme-text-color-primary;
+		font-weight: bold;
+		padding: 0.5rem;
+	}
+	
+	.pf-quote {
+		font-size: $pf-cv-font-size;
+	}
 }
 
 .pf-cv-header {
@@ -67,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding: .5rem;
 }
 
-.cv-recommendation-row-gap {
+.pf-cv-recommendation-row-gap {
 	margin-bottom: 1rem;
 }
 

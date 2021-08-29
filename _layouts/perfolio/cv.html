@@ -56,7 +56,7 @@ head-print-csss:
 				{% for recommendation in site.data.cv.recommendations %}
 					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 					{% if forloop.last == false %}
-						<div class="cv-recommendation-row-gap"></div>
+						<div class="pf-cv-recommendation-row-gap"></div>
 					{% endif %}
 				{% endfor %}
 			</div>

@@ -1,5 +1,5 @@
 ---
-layout: rg/page
+layout: perfolio/page
 title: &title "Resume"
 head-print-csss:
   - assets/perfolio/css/cv-print.css
@@ -60,7 +60,7 @@ head-print-csss:
 				{% for recommendation in site.data.career.recommendations.recommendations %}
 					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 					{% if forloop.last == false %}
-						<div class="cv-recommendation-row-gap"></div>
+						<div class="pf-cv-recommendation-row-gap"></div>
 					{% endif %}
 				{% endfor %}
 			</div>
