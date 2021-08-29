@@ -6,7 +6,10 @@ title: &title "Information Technology"
 {% assign project-cheapthycable-path = site.data.career.projects.it-side-projects[site.data.career.projects.side-project_index_cheapthycable].path %}
 {% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.jobs_index_atlatl].internal-url %}
 
-{% include perfolio/page/body/page-content-header.html title='Information Technology' %}
+{% capture _header_content %}
+	{% include rg/components/career/social-icons.html %}
+{% endcapture %}
+{% include perfolio/page/body/page-content-header.html title='Information Technology' content=_header_content %}
 
 <article class="rg-page-content-main">
 	<section>
@@ -50,11 +53,6 @@ title: &title "Information Technology"
 				</li>
 			</ul>
 		</p>
-		<div class="pf-align-horizontal-center">
-			<a class="pf-button-primary" href="{% link information-technology/cv/index.html %}" role="button">Resume</a>
-			<a class="pf-button-primary" href="{{ site.data.me.social.linkedin.url }}" role="button" target="_blank">LinkedIn</a>
-			<a class="pf-button-primary" href="{{ site.data.me.social.github.url }}" role="button" target="_blank">Github</a>
-		</div>
 	</section>
 	
 	<section>

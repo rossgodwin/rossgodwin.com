@@ -21,22 +21,24 @@
 						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
-				{% if site.data.me.social.linkedin or site.data.me.github %}
+				{% if site.data.me.social.linkedin or site.data.me.social.github %}
 					<li class="pf-page-header-navigation-item-separator">
 						|
 					</li>
 					{% if site.data.me.social.linkedin %}
 						<li>
-							<a href="{{ site.data.me.social.linkedin.url }}" class="pf-page-header-navigation-item-icon" target="_blank">
-								<i class="fab fa-linkedin fa-2x"></i>
-							</a>
+							{% include perfolio/components/icons/fa/linkedin-circle-icon.html
+								url=site.data.me.social.linkedin.url
+								target-blank=true
+								fa-x=1 %}
 						</li>
 					{% endif %}
 					{% if site.data.me.social.github %}
 						<li>
-							<a href="{{ site.data.me.social.github.url }}" class="pf-page-header-navigation-item-icon" target="_blank">
-								<i class="fab fa-github-square fa-2x"></i>
-							</a>
+							{% include perfolio/components/icons/fa/github-circle-icon.html
+								url=site.data.me.social.github.url
+								target-blank=true
+								fa-x=1 %}
 						</li>
 					{% endif %}
 				{% endif %}

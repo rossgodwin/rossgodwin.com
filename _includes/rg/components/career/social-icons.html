@@ -1,0 +1,17 @@
+{% assign cv-url = "information-technology/cv" | relative_url %}
+
+<div{% if include.class %} class="{{ include.class }}"{% endif %}>
+	{% include perfolio/components/icons/fa/resume-circle-icon.html
+		url=cv-url
+		fa-x=1 %}
+	
+	{% include perfolio/components/icons/fa/linkedin-circle-icon.html
+		url=site.data.me.social.linkedin.url
+		target-blank=true
+		fa-x=1 %}
+	
+	{% include perfolio/components/icons/fa/github-circle-icon.html
+		url=site.data.me.social.github.url
+		target-blank=true
+		fa-x=1 %}
+</div>

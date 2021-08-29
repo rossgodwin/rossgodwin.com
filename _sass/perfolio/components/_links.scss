@@ -3,3 +3,9 @@
 		content: "\2192";
 	}
 }
+
+.pf-icon-link {
+	&:hover {
+		text-decoration: none;
+	}
+}
