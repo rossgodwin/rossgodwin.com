@@ -9,15 +9,10 @@
 		</div>
 		
 		<nav class="pf-page-header-navigation">
-			<ul class="rg-unordered-list-no-bullets">
+			<ul>
 				{% for item in site.data.page-header.menu %}
-					{% assign __active = false %}
-					{% if item.url == '/' and page.url == '/index.html' or page.url == '/' %}
-						{% assign __active = true %}
-					{% elsif item.url != '/' and page.url contains item.url %}
-						{% assign __active = true %}
-					{% endif %}
-					<li class="{% if __active == true %}active{% endif %}">
+					{% include perfolio/helpers/starts-with.html string=page.url starts-with=item.url %}
+					<li class="{% if __return == true %}active{% endif %}">
 						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
