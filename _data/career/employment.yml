@@ -14,9 +14,9 @@ jobs:
     description:
       Land development project manager and civil designer focused on commercial site permitting and design in North Carolina and South Carolina. Involved 
       in project coordination, re-zoning, land development design, permit acquisition, construction document preparation, field surveying, and 
-      on-site inspection and certification of construction work. Design experience uncludes site layout, stormwater management, erosion & sediment 
+      on-site inspection and certification of construction work. Design experience uncludes site layout, stormwater management design, erosion & sediment 
       control design, drainage/grading design, utility design and landscaping design. Projects I have lead and assisted in include Autozone, 
-      Dollar General, Multiple car washes, Multifamily residential, Sherwin-Williams, Starbucks, Walgreens and more.
+      Dollar General, Sherwin-Williams, Starbucks, Walgreens, car washes, multifamily residential and more.
     responsibilities:
       - Involved in all pre-construction work of projects which involves preliminary site approval, design and 
         permitting of project
@@ -31,18 +31,18 @@ jobs:
       - Prepared construction drawing plan sets for submittal to local and state reviewers and engineers for permit issuance 
         and final product delivery to the client
       - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
-    achievements:
-      - Successfully lead and assisted in getting many projects like Starbucks, Autozone and PL$ Financial fully permitted 
-        and ready for brick and mortar construction
-      - Introduced the company to color renderings using AutoCAD and Photoshop which provide tangible evidence of the 
-        scope and quality of the project to assist the client in selling their vision to government agencies and residents 
-        being affected by their project. This also provided an additional revenue stream for the company
-      - Initiated, designed and implemented <a href="/information-technology/projects/tsd-office-it-infrastructure-overhaul">office technology infrastructure overhaul</a> 
-        resulting in increased office productivity and improved cyber-security
-      - Built new high performance computers replacing slow and outdated desktops
-      - Oversaw phone system transition to a cloud-based communications and collaboration solution which involved 
-        installation and configuration of new system
-      - Designed and implemented customized backup and redundancy automation plan for critical company digital content
+#    achievements:
+#      - Successfully lead and assisted in getting many projects like Starbucks, Autozone and PL$ Financial fully permitted 
+#        and ready for brick and mortar construction
+#      - Introduced the company to color renderings using AutoCAD and Photoshop which provide tangible evidence of the 
+#        scope and quality of the project to assist the client in selling their vision to government agencies and residents 
+#        being affected by their project. This also provided an additional revenue stream for the company
+#      - Initiated, designed and implemented <a href="/information-technology/projects/tsd-office-it-infrastructure-overhaul">office technology infrastructure overhaul</a> 
+#        resulting in increased office productivity and improved cyber-security
+#      - Built new high performance computers replacing slow and outdated desktops
+#      - Oversaw phone system transition to a cloud-based communications and collaboration solution which involved 
+#        installation and configuration of new system
+#      - Designed and implemented customized backup and redundancy automation plan for critical company digital content
   - company:
       name: Atlatl
     industry: it
