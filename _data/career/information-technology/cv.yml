@@ -16,10 +16,10 @@ projects-heading-text: A Side Project
 
 education-heading-text: Education
 
-format:
+version:
   pdf:
-    text: PDF Version
-    internal-url: assets/cv/cv.pdf
-  txt:
-    text: Text Version
-    internal-url: assets/cv/cv.txt
+    display-text: PDF Version
+    internal-url: assets/cv/information-technology/cv.pdf
+  text:
+    display-text: Text Version
+    internal-url: assets/cv/information-technology/cv.txt

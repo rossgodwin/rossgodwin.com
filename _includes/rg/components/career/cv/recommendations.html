@@ -1,0 +1,17 @@
+<!--
+	heading
+	recommendations (list)
+		quote
+		by
+-->
+<div class="pf-cv-section-heading">
+	<h4>{{ include.heading }}</h4>
+</div>
+<div class="pf-cv-section-content">
+	{% for recommendation in include.recommendations %}
+		{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+		{% if forloop.last == false %}
+			<div class="pf-cv-recommendation-row-gap"></div>
+		{% endif %}
+	{% endfor %}
+</div>

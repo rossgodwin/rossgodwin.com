@@ -3,7 +3,7 @@ layout: rg/page
 title: &title "Information Technology"
 ---
 
-{% assign project-cheapthycable-path = site.data.career.projects.it-side-projects[site.data.career.projects.side-project_index_cheapthycable].path %}
+{% assign project-cheapthycable-path = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
 {% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.jobs_index_atlatl].internal-url %}
 
 {% capture _header_content %}
@@ -69,7 +69,7 @@ title: &title "Information Technology"
 		<h3>Side Projects</h3>
 		
 		<section class="pf-page-preview-list">
-			{% for project in site.data.career.projects.it-side-projects %}
+			{% for project in site.data.career.information-technology.projects.on-the-side %}
 				{% include perfolio/helpers/prepend-baseurl.html path=project.path %}
 				{% include perfolio/components/list/page-preview.html
 					heading=project.title

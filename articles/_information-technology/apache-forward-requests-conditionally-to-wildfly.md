@@ -7,7 +7,7 @@ date: 2018-01-03
 image: /assets/images/article/apache-forward-requests-conditionally-to-wildfly/arrows-1738067_1280_350.jpg
 ---
 
-{% assign cheapthycable-display-url = site.data.career.projects.it-side-projects[site.data.career.projects.side-project_index_cheapthycable].website.display-url %}
+{% assign cheapthycable-display-url = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].website.display-url %}
 
 I created a website <i>{{ cheapthycable-display-url }}</i> that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
 <!--more-->

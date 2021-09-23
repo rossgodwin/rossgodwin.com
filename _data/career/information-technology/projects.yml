@@ -1,7 +1,8 @@
-side-project_index_cheapthycable: 0
-side-project_index_tsd_office: 1
+on-the-side-index:
+  cheapthycable: 0
+  tsd-office: 1
 
-it-side-projects:
+on-the-side:
   - title: Cheapthycable.com
     path: information-technology/projects/cheapthycable
     duration: 08-2016 to 10-2017

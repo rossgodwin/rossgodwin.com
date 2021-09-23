@@ -1,0 +1,35 @@
+<!--
+	heading
+	jobs (list)
+		internal-url (optional)
+		company
+			name
+		positions
+			title
+			duration
+-->
+<div class="pf-cv-section-heading">
+	<h4>{{ include.heading }}</h4>
+</div>
+<div class="pf-cv-section-content">
+	{% for job in include.jobs %}
+		<div class="pf-cv-work-history-item">
+			<div>
+				<div class="pf-cv-work-history-item-employer">
+					{% if job.internal-url %}
+						<a class="pf-link-arrow" href="{{ job.internal-url | relative_url }}">{{ job.company.name }}</a>
+					{% else %}
+						{{ job.company.name }}
+					{% endif %}
+				</div>
+				{% for position in job.positions %}
+					<div class="pf-cv-work-history-item-position">{{ position.title }}</div>
+					<div class="pf-cv-work-history-item-years-worked">{{ position.duration }}</div>
+				{% endfor %}
+			</div>
+			<div class="pf-cv-text">
+				{{ job.description }}
+			</div>
+		</div>
+	{% endfor %}
+</div>

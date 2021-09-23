@@ -15,52 +15,47 @@ head-print-csss:
 		<section class="pf-cv-header">
 			{% include rg/components/career/cv/header.html
 				name=site.data.me.name
-				title=site.data.career.information-technology.cv.title
+				title=site.data.career.construction.cv.title
 				location=site.data.me.location
 				website=site.data.me.website
-				linkedin=site.data.me.social.linkedin
-				github=site.data.me.social.github %}
+				linkedin=site.data.me.social.linkedin %}
 		</section>
 		
 		<hr>
 		
 		<section>
 			{% include rg/components/career/cv/introduction.html
-				heading=site.data.career.information-technology.cv.intro-heading-text
-				description=site.data.career.information-technology.cv.intro %}
+				heading=site.data.career.construction.cv.intro-heading-text
+				description=site.data.career.construction.cv.intro %}
 		</section>
 		
 		<section>
 			{% include rg/components/career/cv/recommendations.html
-				heading=site.data.career.information-technology.cv.recommendations-heading-text
+				heading=site.data.career.construction.cv.recommendations-heading-text
 				recommendations=site.data.career.recommendations.recommendations %}
 		</section>
 		
 		<section>
 			{% include rg/components/career/cv/work-history.html
-				heading=site.data.career.information-technology.cv.jobs-heading-text
+				heading=site.data.career.construction.cv.jobs-heading-text
 				jobs=site.data.career.employment.jobs %}
 		</section>
 		
+		<!-- https://themes.3rdwavemedia.com/devcard/bs4/resume.html -->
 		<section>
 			<div class="pf-cv-section-heading">
-				<h4>{{ site.data.career.information-technology.cv.projects-heading-text }}</h4>
+				<h4>{{ site.data.career.construction.cv.skills-heading-text }}</h4>
 			</div>
 			<div class="pf-cv-section-content">
-				{% for project in projects %}
+				{% for skill in site.data.career.construction.cv.skills %}
 					<div class="pf-cv-work-history-item">
 						<div>
 							<div class="pf-cv-work-history-item-employer">
-								{% if project.path %}
-									<a class="pf-link-arrow" href="{{ project.path | relative_url }}">{{ project.title }}</a>
-								{% else %}
-									{{ project.title }}
-								{% endif %}
+								{{ skill.display-text }}
 							</div>
-							<div class="pf-cv-work-history-item-years-worked">{{ project.duration }}</div>
 						</div>
 						<div class="pf-cv-text">
-							{{ project.description }}
+							{{ skill.list | join: ", " }}
 						</div>
 					</div>
 				{% endfor %}
@@ -69,14 +64,14 @@ head-print-csss:
 		
 		<section>
 			{% include rg/components/career/cv/education.html
-				heading=site.data.career.information-technology.cv.education-heading-text
+				heading=site.data.career.construction.cv.education-heading-text
 				degree=site.data.career.education.bachelors_degree %}
 		</section>
 	</article>
 	
 	<section class="pf-cv-download-options">
 		{% include rg/components/career/cv/versions.html
-			pdf=site.data.career.information-technology.cv.version.pdf
-			text=site.data.career.information-technology.cv.version.text %}
+			pdf=site.data.career.construction.cv.version.pdf
+			text=site.data.career.construction.cv.version.text %}
 	</section>
 </section>
