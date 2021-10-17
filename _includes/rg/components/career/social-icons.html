@@ -1,4 +1,4 @@
-{% assign cv-url = "information-technology/cv" | relative_url %}
+{% assign cv-url = include.cv-url | relative_url %}
 
 <div{% if include.class %} class="{{ include.class }}"{% endif %}>
 	{% include perfolio/components/icons/fa/resume-circle-icon.html
@@ -10,8 +10,10 @@
 		target-blank=true
 		fa-x=1 %}
 	
-	{% include perfolio/components/icons/fa/github-circle-icon.html
-		url=site.data.me.social.github.url
-		target-blank=true
-		fa-x=1 %}
+	{% if include.show-github == true %}
+		{% include perfolio/components/icons/fa/github-circle-icon.html
+			url=site.data.me.social.github.url
+			target-blank=true
+			fa-x=1 %}
+	{% endif %}
 </div>

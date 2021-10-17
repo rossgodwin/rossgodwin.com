@@ -4,7 +4,9 @@ title: &title "Construction"
 ---
 
 {% capture _header_content %}
-	{% include rg/components/career/social-icons.html %}
+	{% include rg/components/career/social-icons.html
+			cv-url='construction/cv'
+			show-github=false %}
 {% endcapture %}
 {% include perfolio/page/body/page-content-header.html title='Construction' content=_header_content %}
 
