@@ -63,6 +63,15 @@ plugins:
 
 defaults:
   - scope:
+      path: ""
+    values:
+      include-seo: true
+      include-seo-og: false
+  - scope:
+      path: information-technology/*
+    values:
+      include-seo: false
+  - scope:
       path: docs/*
     values:
       sitemap: false

@@ -1,0 +1,9 @@
+{% assign _og-image = site.data.seo.og-image %}
+{% if page.og-image %}
+	{% assign _og-image = page.og-image %}
+{% elsif layout.og-image %}
+	{% assign _og-image = layout.og-image %}
+{% endif %}
+{% if _og-image %}
+	<meta property="og:image" content="{{ _og-image }}" />
+{% endif %}

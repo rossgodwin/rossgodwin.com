@@ -1,6 +1,7 @@
 ---
 layout: rg/page
 title: Information Technology
+include-seo: false
 permalink: /articles/information-technology
 pagination:
   enabled: true

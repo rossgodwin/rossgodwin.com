@@ -3,8 +3,20 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-{% include perfolio/page/head/head-seo.html %}
-{% include perfolio/page/head/head-seo-open-graph.html %}
+{% include perfolio/helpers/get-page-url.html %}
+<link rel="canonical" href="{{ __return }}">
+
+{% include perfolio/helpers/get-page-title.html %}
+{% if __return %}
+	<title>{{ __return }}</title>
+{% endif %}
+
+{% if page.include-seo == true %}
+	{% include perfolio/page/head/head-seo.html %}
+{% endif %}
+{% if page.include-seo-og == true %}
+	{% include perfolio/page/head/head-seo-og.html %}
+{% endif %}
 {% include perfolio/page/head/head-favicon.html %}
 {% include perfolio/page/head/head-css.html %}
 {% include perfolio/page/head/head-scripts.html %}

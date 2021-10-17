@@ -1,0 +1,15 @@
+{% if site.data.seo.og-locale %}
+	<meta property="og:locale" content="{{ site.data.seo.og-locale }}" />
+{% endif %}
+
+{% if site.data.seo.og-site-name %}
+	<meta name="og:site_name" content="{{ site.data.seo.og-site-name }}" />
+{% endif %}
+
+{% include perfolio/helpers/get-page-url.html %}
+<meta property="og:url" content="{{ __return }}" />
+
+{% include perfolio/page/head/seo/og-title.html %}
+{% include perfolio/page/head/seo/og-description.html %}
+{% include perfolio/page/head/seo/og-type.html %}
+{% include perfolio/page/head/seo/og-image.html %}
