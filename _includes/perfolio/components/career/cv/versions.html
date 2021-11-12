@@ -1,0 +1,14 @@
+<!--
+	pdf
+		display-text
+		internal-url
+	text
+		display-text
+		internal-url
+-->
+{% if include.pdf %}
+	<a class="pf-button-primary" href="{{ include.pdf.internal-url | relative_url }}" role="button" target="_blank"><i class="pf-button-left-icon fa fa-file-pdf fa-w-12"></i>{{ include.pdf.display-text }}</a>
+{% endif %}
+{% if include.text %}
+	<a class="pf-button-primary" href="{{ include.text.internal-url | relative_url }}" role="button" target="_blank"><i class="pf-button-left-icon fa fa-file-alt fa-w-12"></i>{{ include.text.display-text }}</a>
+{% endif %}

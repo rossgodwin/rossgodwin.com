@@ -1,0 +1,14 @@
+<!--
+	heading
+	accomplishments (list)
+-->
+<div class="pf-cv-section-heading">
+	<h4>{{ include.heading }}</h4>
+</div>
+<div class="pf-cv-section-content">
+	<ul class="pf-cv-list-items">
+		{% for accomplishment in include.accomplishments %}
+			<li>{{ accomplishment }}</li>
+		{% endfor %}
+	</ul>
+</div>

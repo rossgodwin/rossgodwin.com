@@ -1,0 +1,15 @@
+<!--
+	heading
+	degree
+		school
+		degree
+		graduated
+-->
+<div class="pf-cv-section-heading">
+	<h4>{{ include.heading }}</h4>
+</div>
+<div class="pf-cv-section-content">
+	<div class="pf-cv-work-history-item-employer">{{ include.degree.school }}</div>
+	<div class="pf-cv-work-history-item-position">{{ include.degree.degree }}</div>
+	<div class="pf-cv-work-history-item-years-worked">{{ include.degree.graduated }}</div>
+</div>

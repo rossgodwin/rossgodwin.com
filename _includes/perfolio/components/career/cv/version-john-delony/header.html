@@ -1,0 +1,39 @@
+<!--
+	name
+	title
+	website (optional)
+	location
+	website (optional)
+		url
+		display-url
+	linkedin (optional)
+		url
+		display-url
+	github (optional)
+		url
+		display-url
+ -->
+<h4 class="pf-cv-header-title">{{ include.name }}</h4>
+<div class="pf-cv-header-tagline">
+	{{ include.title }}
+	<br/>
+	{{ include.location }}
+	{% if include.website %}
+		<span>&#183;</span>
+		<a href="{{ include.website.url }}">{{ include.website.display-url }}</a>
+	{% endif %}
+	<br/>
+	{% if include.linkedin or include.github %}
+		<div class="pf-cv-text">
+			{% if include.linkedin %}
+				<i class="fab fa-linkedin fa-fw fa-lg"></i><a class="pf-cv-link" href="{{ include.linkedin.url }}" target="_blank">{{ include.linkedin.display-url }}</a>
+				{% if include.github %}
+					<span>&#183;</span>
+				{% endif %}
+			{% endif %}
+			{% if include.github %}
+				<i class="fab fa-github-square fa-fw fa-lg"></i><a class="pf-cv-link" href="{{ include.github.url }}" target="_blank">{{ include.github.display-url }}</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</div>
