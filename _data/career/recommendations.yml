@@ -1,3 +1,7 @@
+recommendation-index:
+  duke: 0
+  ivan: 1
+
 recommendations:
   - quote:
       Ross was employed by my company - Atlatl - for ten years. During that time he constantly improved his skills 

@@ -1,52 +1,62 @@
-employment_index_tsd: 0
-jobs_index_atlatl: 1
-jobs_index_dunn: 2
+employment-index:
+  tsd-pm: 0
+  tsd-cd: 1
+  atlatl: 2
+  dunn: 3
 
 jobs:
   - company:
       name: Triangle Site Design
     industry: construction
-    # Optional
-    internal-url: construction/employment/triangle-site-design
+    internal-url: construction/employment/triangle-site-design-project-manager
     positions:
-      - title: Project Manager & Civil Designer
-        duration: 02-2019 to Present
+      - title: Project Manager
+        duration: 05-2020 to Present
     description:
-      Land development project manager and civil designer focused on commercial site permitting and design in North Carolina and South Carolina. Involved 
-      in project coordination, re-zoning, land development design, permit acquisition, construction document preparation, field surveying, and 
-      on-site inspection and certification of construction work. Design experience uncludes site layout, stormwater management design, erosion & sediment 
-      control design, drainage/grading design, utility design and landscaping design. Projects I have lead and assisted in include Autozone, 
-      Dollar General, Sherwin-Williams, Starbucks, Walgreens, car washes, multifamily residential and more.
+      Work with developers, municipalities, engineers and contractors to get land development projects successfully and in-a-timely-manner 
+      designed and permitted. Involved in project coordination, re-zoning, land development design, permit acquisition, construction document 
+      preparation, and on-site inspection and certification of construction work. Utilize AutoCAD and other tools to perform 
+      land development design which includes site layout, stormwater management design, erosion & sediment control design, drainage & grading 
+      design, utility design and landscape design. Projects I have lead and assisted in include Autozone, Dollar General, Sherwin-Williams, 
+      Starbucks, Walgreens, car washes, multifamily residential and more.
     responsibilities:
-      - Involved in all pre-construction work of projects which involves preliminary site approval, design and 
-        permitting of project
-      - Worked closely with investors, municipalities, engineers, land developers, and contractors coordinating to get 
-        projects successfully and in-a-timely-manner through the design phase of development
-      - Collaborated with government agencies to acquire construction project permits
-      - Researched and documented local, county and state ordinances to ensure project designs were in compliance with 
-        government requirements
-      - Utilize AutoCAD to draft, scale and fine-tune drawings and maps for land development projects
-      - Played integral role in creating concept, site, grading, stormwater, erosion control, utility and landscape plans for new and upfit 
-        commercial site projects
-      - Prepared construction drawing plan sets for submittal to local and state reviewers and engineers for permit issuance 
-        and final product delivery to the client
+      - Ensure projects are expediently moving through the permitting and design process
+      - Collaborate with principal branch manager on project needs and provide project status updates
+      - Permit application and construction document preparation
+      - Compile construction drawing sheets into plan set to clearly convey design information to contractors but also satisfy target submittal checklists
+      - Research and document local, county and state ordinances to ensure project designs are compliant with jurisdictional requirements
+      - Collaborate with developers and government agencies to ensure project design requirements are satisfied
+      - Utility plan & profile design
+      - Stormwater management design
+      - Grading & drainage design
+      - Erosion & sediment control design
+      - Existing conditions and demolition design
+      - Utility and stormwater as-builts
+      - Address redline comments from reviewing agencies
+      - Water and wastewater certifications
+      - Assist in on-site inspection and certification of construction work
+      - Stormwater device inspections for annual reports
+      - Pay application reviews
       - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
-#    achievements:
-#      - Successfully lead and assisted in getting many projects like Starbucks, Autozone and PL$ Financial fully permitted 
-#        and ready for brick and mortar construction
-#      - Introduced the company to color renderings using AutoCAD and Photoshop which provide tangible evidence of the 
-#        scope and quality of the project to assist the client in selling their vision to government agencies and residents 
-#        being affected by their project. This also provided an additional revenue stream for the company
-#      - Initiated, designed and implemented <a href="/information-technology/projects/tsd-office-it-infrastructure-overhaul">office technology infrastructure overhaul</a> 
-#        resulting in increased office productivity and improved cyber-security
-#      - Built new high performance computers replacing slow and outdated desktops
-#      - Oversaw phone system transition to a cloud-based communications and collaboration solution which involved 
-#        installation and configuration of new system
-#      - Designed and implemented customized backup and redundancy automation plan for critical company digital content
+  - company:
+      name: Triangle Site Design
+    industry: construction
+    internal-url: construction/employment/triangle-site-design-civil-designer
+    positions:
+      - title: Civil Designer
+        duration: 02-2019 to 05-2020
+    description:
+      Successfully bridged skills acquired in the technology industry to assist in the permitting and design phase of commercial 
+      and mixed-use land development projects. In addition to gathering jurisdictional code regulations, I was involved in land development 
+      design by working alongside engineers, using AutoCAD to draft and produce construction drawings as well as performing site plan 
+      layout, erosion & sediment control design and creating landscape plans. Through the process of learning and adapting to a new industry
+      and managing the time-sensitive demands of construction, I was able to play a integral role in getting several 
+      projects successfully designed, permitted and ready for construction.
+    responsibilities:
+      - Ensure projects are expediently moving through the permitting and design process
   - company:
       name: Atlatl
     industry: it
-    # Optional
     internal-url: information-technology/employment/atlatl
     positions:
       - title: Software Developer
@@ -84,7 +94,6 @@ jobs:
   - company:
       name: Dunn Solutions Group
     industry: it
-    # Optional
     internal-url: information-technology/employment/dunn-solutions-group
     positions:
       - title: Business Intelligence Developer

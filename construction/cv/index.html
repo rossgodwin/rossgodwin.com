@@ -5,8 +5,13 @@ head-print-csss:
   - assets/perfolio/css/cv-print.css
 ---
 
-{% assign projects = '' | split: '' %}
-{% assign projects = projects | push: site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable] %}
+{% assign jobs = '' | split: '' %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.employment-index.tsd-pm] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.employment-index.tsd-cd] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.employment-index.atlatl] %}
+
+{% assign recommendations = '' | split: '' %}
+{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.ivan] %}
 
 {% include perfolio/page/body/page-content-header.html title='Resume' %}
 
@@ -32,13 +37,13 @@ head-print-csss:
 		<section>
 			{% include rg/components/career/cv/recommendations.html
 				heading=site.data.career.construction.cv.recommendations-heading-text
-				recommendations=site.data.career.recommendations.recommendations %}
+				recommendations=recommendations %}
 		</section>
 		
 		<section>
 			{% include rg/components/career/cv/work-history.html
 				heading=site.data.career.construction.cv.jobs-heading-text
-				jobs=site.data.career.employment.jobs %}
+				jobs=jobs %}
 		</section>
 		
 		<!-- https://themes.3rdwavemedia.com/devcard/bs4/resume.html -->
