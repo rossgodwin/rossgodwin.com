@@ -5,6 +5,7 @@ description: These are the steps I took to install and run the Jekyll static sit
 categories: [information-technology]
 tags: [jekyll, windows, bash, wsl, linux, debian]
 date: 2020-07-26
+include-highlightjs: yes
 ---
 
 {% assign _image_folder = 'assets/images/article/install-jekyll-on-windows-using-wsl/' %}
