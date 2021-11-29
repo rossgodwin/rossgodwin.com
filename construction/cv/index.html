@@ -6,9 +6,9 @@ head-print-csss:
 ---
 
 {% assign jobs = '' | split: '' %}
-{% assign jobs = jobs | push: site.data.career.employment.jobs2[site.data.career.employment.job-index.bowman] %}
-{% assign jobs = jobs | push: site.data.career.employment.jobs2[site.data.career.employment.job-index.atlatl] %}
-{% assign jobs = jobs | push: site.data.career.employment.jobs2[site.data.career.employment.job-index.dunn] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.job-index.bowman] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.job-index.atlatl] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs[site.data.career.employment.job-index.dunn] %}
 
 {% include perfolio/page/body/page-content-header.html title='Resume' %}
 

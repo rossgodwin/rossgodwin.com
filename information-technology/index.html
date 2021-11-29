@@ -4,7 +4,7 @@ title: &title "Information Technology"
 ---
 
 {% assign project-cheapthycable-path = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
-{% assign employment-atlatl-path = site.data.career.employment.jobs2[site.data.career.employment.job-index.atlatl].positions[0].internal-url %}
+{% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.job-index.atlatl].positions[0].internal-url %}
 
 {% assign recommendations = '' | split: '' %}
 {% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.ivan] %}
@@ -77,7 +77,7 @@ title: &title "Information Technology"
 		<h3>Work History</h3>
 		
 		<section class="pf-page-preview-list">
-			{% for job in site.data.career.employment.jobs2 %}
+			{% for job in site.data.career.employment.jobs %}
 				{% if job.industry == 'it' %}
 					{% include rg/components/career/employment-job-page-preview.html
 						job=job %}

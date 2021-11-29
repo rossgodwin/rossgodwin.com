@@ -32,7 +32,7 @@ title: &title "Construction"
 		<h3>Work History</h3>
 		
 		<section class="pf-page-preview-list">
-			{% for job in site.data.career.employment.jobs2 %}
+			{% for job in site.data.career.employment.jobs %}
 				{% if job.industry == 'construction' %}
 					{% include rg/components/career/employment-job-page-preview.html
 						job=job %}

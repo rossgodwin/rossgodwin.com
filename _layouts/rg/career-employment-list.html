@@ -6,7 +6,7 @@ layout: rg/page
 
 <article class="rg-page-content-main">
 	<section class="pf-page-preview-list">
-		{% for job in site.data.career.employment.jobs2 %}
+		{% for job in site.data.career.employment.jobs %}
 			{% if job.industry == page.industry %}
 				{% include rg/components/career/employment-job-page-preview.html
 					job=job %}
