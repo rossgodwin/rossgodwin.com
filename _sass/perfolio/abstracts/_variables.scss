@@ -5,6 +5,9 @@ $pf-theme-text-color-primary: #292929;
 $pf-theme-text-color-secondary: lighten($pf-theme-text-color-primary, 15%);
 $pf-theme-text-color-light: lighten($pf-theme-text-color-primary, 40%);
 
+$pf-variable-list-spacing-small: 0.438em;
+$pf-variable-list-spacing-medium: 1em;
+
 $device-width-breakpoint-small: 576px;		// Small devices (landscape phones, 576px and up)
 $device-width-breakpoint-medium: 768px;		// Medium devices (tablets, 768px and up)
 $device-width-breakpoint-large: 992px;		// Large devices (desktops, 992px and up)

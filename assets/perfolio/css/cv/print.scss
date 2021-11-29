@@ -1,0 +1,93 @@
+---
+# Format resume page so for printing.
+---
+
+@import "perfolio/abstracts/colors";
+
+@page {
+	size: a3;
+}
+
+body {
+	min-width: 992px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.pf-page-wrapper {
+	grid-template-rows: auto;
+}
+
+.pf-page-header {
+	display: none;
+}
+
+.pf-page-content {
+	grid-template-areas:
+		"cm";
+}
+
+.pf-page-content-header {
+	display: none;
+}
+
+.pf-page-content-main {
+	padding: 0;
+}
+
+.pf-link-arrow {
+	&:after {
+		content: "";
+	}
+}
+
+.pf-cv {
+	font-size: 1.188rem;
+	
+	padding-top: 0;
+	padding-bottom: 0;
+	border: 0;
+	box-shadow: none;
+	
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		color: $color-black;
+	}
+	
+	i {
+		color: $color-black;
+	}
+}
+
+.pf-cv-section-heading {
+	border-color: $color-black;
+}
+
+.pf-cv-header-section {
+	.pf-cv-header-social-media {
+		i {
+			color: $color-black;
+		}
+	}
+}
+
+.pf-cv-work-history-section {
+	.pf-cv-work-history-job-employer {
+		color: $color-black;
+	}
+}
+
+.pf-cv-education-section {
+	.pf-cv-education-school {
+		color: $color-black;
+	}
+}
+
+.pf-cv-download-options {
+	display: none;
+}
+
+.pf-page-footer {
+	display: none;
+}

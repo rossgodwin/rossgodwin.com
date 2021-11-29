@@ -3,6 +3,9 @@ layout: rg/page
 title: &title "Construction"
 ---
 
+{% assign recommendations = '' | split: '' %}
+{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.duke] %}
+
 {% capture _header_content %}
 	{% include rg/components/career/social-icons.html
 			cv-url='construction/cv'
@@ -12,14 +15,29 @@ title: &title "Construction"
 
 <article class="rg-page-content-main">
 	<section>
+		<h3>Recommendations</h3>
+		
+		<div>
+			<ul class="pf-list-ul-no-markers">
+				{% for recommendation in recommendations %}
+					<li>
+					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+	
+	<section>
 		<h3>Work History</h3>
 		
-		<div class="rg-career-employment">
-			{% for job in site.data.career.employment.jobs %}
+		<section class="pf-page-preview-list">
+			{% for job in site.data.career.employment.jobs2 %}
 				{% if job.industry == 'construction' %}
-					{% include rg/components/career/employment-list-item.html job=_job %}
+					{% include rg/components/career/employment-job-page-preview.html
+						job=job %}
 				{% endif %}
 			{% endfor %}
-		</div>
+		</section>
 	</section>
 </article>

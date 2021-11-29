@@ -1,54 +1,42 @@
 ---
 layout: perfolio/page
 head-print-csss:
-  - assets/perfolio/css/cv-print.css
+  - assets/perfolio/css/cv/print.css
 ---
 
 {% include perfolio/page/body/page-content-header.html title='Resume' %}
 
 <section class="pf-page-content-main">
-	<article class="pf-cv-wrapper">
-		<section class="pf-cv-header">
-			{% include perfolio/components/career/cv/version-john-delony/header.html
-				name=site.data.me.name
-				title=site.data.career.cv.title
-				location=site.data.me.location
-				website=site.data.me.website
-				linkedin=site.data.me.social.linkedin
-				github=site.data.me.social.github %}
-		</section>
+	<article class="pf-cv">
+		{% include perfolio/components/career/cv/version-john-delony/header.html
+			name=site.data.me.name
+			title=site.data.career.cv.title
+			location=site.data.me.location
+			website=site.data.me.website
+			linkedin=site.data.me.social.linkedin
+			github=site.data.me.social.github %}
 		
 		<hr>
 		
-		<section>
-			{% include perfolio/components/career/cv/version-john-delony/introduction.html
-				heading=site.data.career.cv.intro-heading-text
-				description=site.data.career.cv.intro %}
-		</section>
+		{% include perfolio/components/career/cv/version-john-delony/introduction.html
+			heading=site.data.career.cv.intro-heading-text
+			description=site.data.career.cv.intro %}
 		
-		<section>
-			{% include perfolio/components/career/cv/version-john-delony/recommendations.html
-				heading=site.data.career.cv.recommendations-heading-text
-				recommendations=site.data.career.recommendations.recommendations %}
-		</section>
+		{% include perfolio/components/career/cv/version-john-delony/recommendations.html
+			heading=site.data.career.cv.recommendations-heading-text
+			recommendations=site.data.career.recommendations.recommendations %}
 		
-		<section>
-			{% include perfolio/components/career/cv/version-john-delony/work-history.html
-				heading=site.data.career.cv.jobs-heading-text
-				jobs=site.data.career.employment.jobs %}
-		</section>
+		{% include perfolio/components/career/cv/version-john-delony/work-history.html
+			heading=site.data.career.cv.jobs-heading-text
+			jobs=site.data.career.employment.jobs %}
 		
-		<section>
-			{% include perfolio/components/career/cv/version-john-delony/accomplishments.html
-				heading=site.data.career.cv.accomplishments-heading-text
-				accomplishments=site.data.career.cv.accomplishments %}
-		</section>
+		{% include perfolio/components/career/cv/version-john-delony/accomplishments.html
+			heading=site.data.career.cv.accomplishments-heading-text
+			accomplishments=site.data.career.accomplishments.accomplishments %}
 		
-		<section>
-			{% include perfolio/components/career/cv/version-john-delony/education.html
-				heading=site.data.career.cv.education-heading-text
-				degree=site.data.career.education.bachelors_degree %}
-		</section>
+		{% include perfolio/components/career/cv/version-john-delony/education.html
+			heading=site.data.career.cv.education-heading-text
+			degree=site.data.career.education.bachelors_degree %}
 	</article>
 	
 	<section class="pf-cv-download-options">

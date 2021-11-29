@@ -1,35 +1,49 @@
 <!--
 	heading
 	jobs (list)
-		internal-url (optional)
 		company
-			name
-		positions
+		positions (list)
+			internal-url (optional)
 			title
 			duration
+			description (optional)
+			list (optional)
 -->
-<div class="pf-cv-section-heading">
-	<h4>{{ include.heading }}</h4>
-</div>
-<div class="pf-cv-section-content">
-	{% for job in include.jobs %}
-		<div class="pf-cv-work-history-item">
-			<div>
-				<div class="pf-cv-work-history-item-employer">
-					{% if job.internal-url %}
-						<a class="pf-link-arrow" href="{{ job.internal-url | relative_url }}">{{ job.company.name }}</a>
-					{% else %}
-						{{ job.company.name }}
-					{% endif %}
-				</div>
+<section class="pf-cv-work-history-section">
+	<div class="pf-cv-section-heading">
+		<h2>{{ include.heading }}</h2>
+	</div>
+	<div class="pf-cv-section-content">
+		{% for job in include.jobs %}
+			<div class="pf-cv-work-history-job-employer">
+				{{ job.company }}
+			</div>
+			<div class="pf-cv-work-history-job-position">
 				{% for position in job.positions %}
-					<div class="pf-cv-work-history-item-position">{{ position.title }}</div>
-					<div class="pf-cv-work-history-item-years-worked">{{ position.duration }}</div>
+					<div>
+						<div class="pf-cv-work-history-job-position-title">
+							{% if position.internal-url %}
+								<a class="pf-link-arrow" href="{{ position.internal-url | relative_url }}">{{ position.title }}</a>
+							{% else %}
+								{{ position.title }}
+							{% endif %}
+						</div>
+						<div class="pf-cv-work-history-job-position-duration">{{ position.duration }}</div>
+					</div>
+					<div>
+						{% if position.description %}
+							{{ position.description }}
+						{% endif %}
+						{% if position.list %}
+							<ul>
+								{% for item in position.list %}
+									<li>{{ item }}</li>
+								{% endfor %}
+							</ul>
+						{% endif %}
+					</div>
 				{% endfor %}
 			</div>
-			<div class="pf-cv-text">
-				{{ job.description }}
-			</div>
-		</div>
-	{% endfor %}
-</div>
+		{% endfor %}
+	</div>
+</section>

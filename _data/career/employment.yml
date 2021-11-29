@@ -4,6 +4,127 @@ employment-index:
   atlatl: 2
   dunn: 3
 
+job-index:
+  bowman: 0
+  atlatl: 1
+  dunn: 2
+
+jobs2:
+  - company: Bowman (formerly Triangle Site Design)
+    industry: construction
+    positions:
+      - title: Project Manager
+        duration: 05-2020 to Present
+        internal-url: construction/employment/bowman-project-manager
+        description:
+          Work with developers, municipalities, engineers and contractors to get land development projects successfully and in-a-timely-manner 
+          designed and permitted. Involved in project coordination, re-zoning, land development design, permit acquisition, construction document 
+          preparation, and on-site inspection and certification of construction work. Utilize AutoCAD and other tools to perform 
+          land development design which includes site layout, stormwater management design, erosion & sediment control design, drainage & grading 
+          design, utility design and landscape design. Projects I have lead and assisted in include Autozone, Dollar General, Sherwin-Williams, 
+          Starbucks, Walgreens, car washes, multifamily residential and more.
+        responsibilities:
+          - Ensure projects are expediently moving through the permitting and design process
+          - Collaborate with principal branch manager on project needs and provide project status updates
+          - Permit application and construction document preparation
+          - Compile construction drawing sheets into plan set to clearly convey design information to contractors but also satisfy target submittal checklists
+          - Research and document local, county and state ordinances to ensure project designs are compliant with jurisdictional requirements
+          - Collaborate with developers and government agencies to ensure project design requirements are satisfied
+          - Utility plan & profile design
+          - Stormwater management design
+          - Grading & drainage design
+          - Erosion & sediment control design
+          - Existing conditions and demolition design
+          - Utility and stormwater as-builts
+          - Address redline comments from reviewing agencies
+          - Water and wastewater certifications
+          - Assist in on-site inspection and certification of construction work
+          - Stormwater device inspections for annual reports
+          - Pay application reviews
+          - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
+        cv:
+          list:
+            - Team oriented project manager and design engineer
+            - Collaborate with developers, engineers, jurisdictions and contractors to complete design requirements, acquire permits and close out projects
+            - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
+      - title: Civil Designer
+        duration: 02-2019 to 05-2020
+        internal-url: construction/employment/bowman-civil-designer
+        description:
+          Successfully bridged skills acquired in the technology industry to assist in the permitting and design phase of commercial 
+          and mixed-use land development projects. In addition to gathering jurisdictional code regulations, I was involved in land development 
+          design by working alongside engineers, using AutoCAD to draft and produce construction drawings as well as performing site plan 
+          layout, erosion & sediment control design and creating landscape plans. Through the process of learning and adapting to a new industry
+          and managing the time-sensitive demands of construction, I was able to play a integral role in getting several 
+          projects successfully designed, permitted and ready for construction.
+        responsibilities:
+          - Ensure projects are expediently moving through the permitting and design process
+        cv:
+          list:
+            - Involved in the civil design and permitting phases of land development projects
+            - Utilize design capabilities to assist in producing construction drawings
+            - Worked closely with civil engineers and developers to complete time-sensitive projects
+  - company: Atlatl
+    industry: it
+    positions:
+      - title: Software Developer
+        duration: 08-2008 to 02-2019
+        internal-url: information-technology/employment/atlatl
+        description:
+          Worked with a small team of software developers and customer support staff to build, enhance, and maintain in-house 
+          web and mobile applications used by small businesses. Being a team member of a small development shop afforded me 
+          the opportunity to work on all stages of the development life cycle which motivated me to stay current on the 
+          latest technologies and best practices. As a full stack developer, I was a key contributor on one of the company's 
+          top revenue producing web applications. Additionally, I developed and maintained iOS and Android apps providing 
+          mobile access for the subscription base of our hosted software.
+        responsibilities:
+          - Worked closely with a small team of developers and customer support to build, enhance, and maintain in-house web 
+            and mobile applications used by small businesses
+          - Executed data modeling, business logic, and user-interface projects
+          - Managed all aspects of data layer needs, including database schema design, data migrations, ORM infrastructure needs 
+            implementation, and data retrieval and modification queries
+          - Modified existing software by engaging with customer support to identify and correct problems and improve product 
+            performance
+          - Developed and maintained iOS and Android apps that provided mobile access for the subscription base of hosted software
+          - Built and utilized REST and RPC SOA solutions in web and mobile application development
+        achievements:
+          - Created Amazon Alexa skill and Google Assistant app to provide a subset of features from Atlatl's second largest 
+            revenue generating software product
+          - Served as core developer on user-interface redesign project, which converted multi-page web application comprised of 
+            JSF, Ajax, and ExtJS frameworks into a GWT/GXT single-page app
+          - Architected and developed Atlatl's first native iOS universal app published in the Apple app store to provide mobile 
+            access to company's fillable forms subscriber base
+          - Developed dynamic reporting solution for web based software product by working on web development stack to provide a 
+            customizable report framework and eliminate overhead of persistent development and custom ad-hoc report maintenance
+          - Built and integrated client-facing data import and export functionality into fillable forms hosted software service, 
+            allowing data portability for core system objects and providing users fast start-up time
+          - Developed automated Android app build process for mobile app CMS using Android SDK Tools and Java to create signed 
+            APK file for distribution to app marketplace
+        cv:
+          list:
+            - Full-stack developer working in a agile-like environment
+            - Utilized numerous technology frameworks and best practices
+            - Key contributor on web and mobile application projects
+  - company: Dunn Solutions Group
+    industry: it
+    positions:
+      - title: Business Intelligence Developer
+        duration: 03-2004 to 08-2008
+        internal-url: information-technology/employment/dunn-solutions-group
+        description:
+          Worked with clients from mid-sized to large corporations to create business intelligence solutions to meet 
+          business analytics needs. My role involved bridging the gap between business users and data, thus securely and 
+          responsibly optimizing the flow of data within organizations. In addition to designing and implementing database 
+          schemas tuned for high-volume report querying, I also implemented ETL processes, developed and maintained semantic 
+          layer data representations, and created and tested complex data reports.
+        cv:
+          list:
+            - Consultant and developer on business intelligence projects
+            - Worked on solutions to bridge the gap between business users and critical company data
+            - Interacted with department teams from mid-size companies to large corporations
+
+
+
 jobs:
   - company:
       name: Triangle Site Design

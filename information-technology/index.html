@@ -4,7 +4,10 @@ title: &title "Information Technology"
 ---
 
 {% assign project-cheapthycable-path = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
-{% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.employment-index.atlatl].internal-url %}
+{% assign employment-atlatl-path = site.data.career.employment.jobs2[site.data.career.employment.job-index.atlatl].positions[0].internal-url %}
+
+{% assign recommendations = '' | split: '' %}
+{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.ivan] %}
 
 {% capture _header_content %}
 	{% include rg/components/career/social-icons.html
@@ -16,6 +19,7 @@ title: &title "Information Technology"
 <article class="rg-page-content-main">
 	<section>
 		<h3>Introduction</h3>
+		
 		<p>
 			Graduated from North Carolina State University with a bachelor's degree in computer science in 2003
 			and worked in the information technology industry in various roles until 2019 where I ventured into the
@@ -56,15 +60,30 @@ title: &title "Information Technology"
 	</section>
 	
 	<section>
+		<h3>Recommendations</h3>
+		
+		<div>
+			<ul class="pf-list-ul-no-markers">
+				{% for recommendation in recommendations %}
+					<li>
+					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+	
+	<section>
 		<h3>Work History</h3>
 		
-		<div class="rg-career-employment">
-			{% for job in site.data.career.employment.jobs %}
+		<section class="pf-page-preview-list">
+			{% for job in site.data.career.employment.jobs2 %}
 				{% if job.industry == 'it' %}
-					{% include rg/components/career/employment-list-item.html job=_job %}
+					{% include rg/components/career/employment-job-page-preview.html
+						job=job %}
 				{% endif %}
 			{% endfor %}
-		</div>
+		</section>
 	</section>
 	
 	<section>
@@ -147,7 +166,7 @@ title: &title "Information Technology"
 				<br/>
 				<a href="https://www.sencha.com/products/gxt" target="_blank">GXT</a> is a product that Sencha put 
 				together which provides some really cool <a href="https://examples.sencha.com/gxt/examples" target="_blank">
-				UI components</a> for building GWT web applications. I thorough enjoyed 
+				UI components</a> for building GWT web applications. I thoroughly enjoyed 
 				working with this Java framework at a <a href="{{ employment-atlatl-path | relative_url }}">previous employer</a>.
 			</div>
 			

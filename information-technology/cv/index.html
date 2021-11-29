@@ -2,8 +2,15 @@
 layout: rg/page
 title: &title "Resume"
 head-print-csss:
-  - assets/perfolio/css/cv-print.css
+  - assets/perfolio/css/cv/print.css
 ---
+
+{% assign jobs = '' | split: '' %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs2[site.data.career.employment.job-index.atlatl] %}
+{% assign jobs = jobs | push: site.data.career.employment.jobs2[site.data.career.employment.job-index.dunn] %}
+
+{% assign recommendations = '' | split: '' %}
+{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.ivan] %}
 
 {% assign projects = '' | split: '' %}
 {% assign projects = projects | push: site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable] %}
@@ -11,71 +18,40 @@ head-print-csss:
 {% include perfolio/page/body/page-content-header.html title='Resume' %}
 
 <section class="pf-page-content-main">
-	<article class="pf-cv-wrapper">
-		<section class="pf-cv-header">
-			{% include rg/components/career/cv/header.html
-				name=site.data.me.name
-				title=site.data.career.information-technology.cv.title
-				location=site.data.me.location
-				website=site.data.me.website
-				linkedin=site.data.me.social.linkedin
-				github=site.data.me.social.github %}
-		</section>
+	<article class="pf-cv">
+		{% include rg/components/career/cv/header.html
+			name=site.data.me.name
+			title=site.data.career.information-technology.cv.title
+			location=site.data.me.location
+			website=site.data.me.website
+			linkedin=site.data.me.social.linkedin
+			github=site.data.me.social.github %}
 		
 		<hr>
 		
-		<section>
-			{% include rg/components/career/cv/introduction.html
-				heading=site.data.career.information-technology.cv.intro-heading-text
-				description=site.data.career.information-technology.cv.intro %}
-		</section>
+		{% include rg/components/career/cv/introduction.html
+			heading=site.data.career.information-technology.cv.intro-heading-text
+			description=site.data.career.information-technology.cv.intro %}
 		
-		<section>
-			{% include rg/components/career/cv/recommendations.html
-				heading=site.data.career.information-technology.cv.recommendations-heading-text
-				recommendations=site.data.career.recommendations.recommendations %}
-		</section>
+		{% include rg/components/career/cv/recommendations.html
+			heading=site.data.career.information-technology.cv.recommendations-heading-text
+			recommendations=recommendations %}
 		
-		<section>
-			{% include rg/components/career/cv/work-history.html
-				heading=site.data.career.information-technology.cv.jobs-heading-text
-				jobs=site.data.career.employment.jobs %}
-		</section>
+		{% include rg/components/career/cv/work-history.html
+			heading=site.data.career.information-technology.cv.jobs-heading-text
+			jobs=jobs %}
 		
-		<section>
-			<div class="pf-cv-section-heading">
-				<h4>{{ site.data.career.information-technology.cv.projects-heading-text }}</h4>
-			</div>
-			<div class="pf-cv-section-content">
-				{% for project in projects %}
-					<div class="pf-cv-work-history-item">
-						<div>
-							<div class="pf-cv-work-history-item-employer">
-								{% if project.path %}
-									<a class="pf-link-arrow" href="{{ project.path | relative_url }}">{{ project.title }}</a>
-								{% else %}
-									{{ project.title }}
-								{% endif %}
-							</div>
-							<div class="pf-cv-work-history-item-years-worked">{{ project.duration }}</div>
-						</div>
-						<div class="pf-cv-text">
-							{{ project.description }}
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</section>
+		{% include rg/components/career/cv/projects.html
+			heading=site.data.career.information-technology.cv.projects-heading-text
+			projects=projects %}
 		
-		<section>
-			{% include rg/components/career/cv/education.html
-				heading=site.data.career.information-technology.cv.education-heading-text
-				degree=site.data.career.education.bachelors_degree %}
-		</section>
+		{% include rg/components/career/cv/education.html
+			heading=site.data.career.information-technology.cv.education-heading-text
+			degree=site.data.career.education.bachelors_degree %}
 	</article>
 	
 	<section class="pf-cv-download-options">
-		{% include rg/components/career/cv/versions.html
+		{% include perfolio/components/career/cv/versions.html
 			pdf=site.data.career.information-technology.cv.version.pdf
 			text=site.data.career.information-technology.cv.version.text %}
 	</section>

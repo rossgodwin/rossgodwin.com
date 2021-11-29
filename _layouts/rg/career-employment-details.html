@@ -2,29 +2,28 @@
 layout: rg/page
 ---
 
-{% assign job = site.data.career.employment.jobs[page.job-index] %}
+{% assign job = site.data.career.employment.jobs2[page.job-index] %}
+{% assign position = job.positions[page.job-position-index] %}
 
 {% capture _header_content %}
-	{% for position in job.positions %}
-		<div><strong>{{ position.title }}</strong>, {{ position.duration }}</div>
-	{% endfor %}
+	<div>{{ position.title }}, {{ position.duration }}</div>
 {% endcapture %}
-{% include perfolio/page/body/page-content-header.html title=job.company.name content=_header_content %}
+{% include perfolio/page/body/page-content-header.html title=job.company content=_header_content %}
 
 <article class="rg-page-content-main">
 	<section>
 		<h4>Description</h4>
 		<div>
-			{{ job.description }}
+			{{ position.description }}
 		</div>
 	</section>
 	
-	{% if job.responsibilities %}
+	{% if position.responsibilities %}
 		<section>
 			<h4>Responsibilies</h4>
 			<div>
 				<ul class="rg-ul-marker-fa-chevron">
-					{% for responsibility in job.responsibilities %}
+					{% for responsibility in position.responsibilities %}
 						<li>{{ responsibility }}</li>
 					{% endfor %}
 				</ul>
@@ -32,12 +31,12 @@ layout: rg/page
 		</section>
 	{% endif %}
 	
-	{% if job.achievements %}
+	{% if position.achievements %}
 		<section>
 			<h4>Achievements</h4>
 			<div>
 				<ul class="rg-ul-marker-fa-chevron">
-					{% for achievement in job.achievements %}
+					{% for achievement in position.achievements %}
 						<li>{{ achievement }}</li>
 					{% endfor %}
 				</ul>
