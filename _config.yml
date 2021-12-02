@@ -27,7 +27,6 @@ exclude:
   - Gemfile.lock
   - README.md
   - other
-  - Photoshop/
   - vendor/bundle/
 
 excerpt_separator: <!--more-->
