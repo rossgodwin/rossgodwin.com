@@ -1,4 +1,3 @@
-
 Sitemap: https://career.rossgodwin.com/sitemap.xml
 
 User-agent: *

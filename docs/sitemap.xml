@@ -1,24 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>https://career.rossgodwin.com/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/about/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/cv/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/projects/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/articles/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/howtos/</loc>
-	</url>
-	<url>
-		<loc>https://career.rossgodwin.com/notes/</loc>
-	</url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/agile-software-development/</loc>
+<lastmod>2017-02-17T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/pelican-table-css-style/</loc>
+<lastmod>2017-11-17T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/apache-forward-requests-conditionally-to-wildfly/</loc>
+<lastmod>2018-01-03T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/angularjs-application-launch-splash-screen/</loc>
+<lastmod>2018-01-17T00:00:00-05:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/install-jekyll-on-windows-using-wsl/</loc>
+<lastmod>2020-07-26T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/github-gist-causing-horizontal-page-scrollbar-in-css-grid/</loc>
+<lastmod>2020-09-12T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles/information-technology/migrate-a-divi-wordpress-site-between-environments/</loc>
+<lastmod>2020-10-04T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/articles.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/employment/atlatl.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/construction/employment/bowman-civil-designer.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/construction/employment/bowman-project-manager.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/projects/cheapthycable.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/employment/dunn-solutions-group.html</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/construction/cv/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/construction/employment/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/construction/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/cv/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/cv/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/employment/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/projects/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/</loc>
+</url>
+<url>
+<loc>https://career.rossgodwin.com/information-technology/projects/tsd-office-it-infrastructure-overhaul.html</loc>
+</url>
 </urlset>
