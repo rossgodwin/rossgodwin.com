@@ -65,7 +65,7 @@ defaults:
   - scope:
       path: ""
     values:
-      include-seo: true
+      include-seo: false
       include-seo-og: false
   - scope:
       path: information-technology/*
