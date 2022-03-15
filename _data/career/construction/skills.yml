@@ -4,3 +4,120 @@ computer-skills:
     - Hydraflow Hydrographs Extension for AutoCAD
     - Microsoft Office
     - Photoshop
+
+land-development-scale:
+  title: Skill Level
+  units:
+    - id: 1
+      label: Beginner
+      value: 33
+    - id: 2
+      label: Proficient
+      value: 66
+    - id: 3
+      label: Advanced
+      value: 99
+
+land-development:
+  - title: Site Investigation Report (SIR) / Due Diligence Report
+    label: Beginner
+    percent-value: 33
+  - title: Overall Plan Production - Sheet Setup (Civil 3D)
+    label: Advanced
+    percent-value: 99
+  - title: Utilizing Agency Ordinances and Checklists
+    label: Advanced
+    percent-value: 99
+  - title: SWPPP / Erosion & Sediment Control - Design & Details
+    label: Advanced
+    percent-value: 99
+  - title: SWPPP / Erosion & Sediment Control - Design Calculations
+    label: Proficient
+    percent-value: 66
+  - title: SWPPP / Erosion & Sediment Control - C-SWPPP Report
+    label: Proficient
+    percent-value: 66
+  - title: Tree Removal / Mitigation / Demo Plan
+    label: Proficient
+    percent-value: 66
+  - title: Site Plan - Conceptual Design
+    label: Proficient
+    percent-value: 66
+  - title:  Site Plan - Full Design Production
+    label: Proficient
+    percent-value: 66
+  - title: Civil 3D - Surfaces and Grading (feature lines and/or grading tools)
+    label: Proficient
+    percent-value: 66
+  - title: Civil 3D - Earthwork Report
+    label: Beginner
+    percent-value: 33
+  - title: Civil 3D - Alignment and Profiles
+    label: Beginner
+    percent-value: 33
+  - title: Civil 3D - Corridors and Sections
+    label: Beginner
+    percent-value: 33
+  - title: Civil 3D - Pipe Networks and Profiles
+    label: Beginner
+    percent-value: 33
+  - title: Landscape Design
+    label: Proficient
+    percent-value: 66
+  - title: Grading Design
+    label: Advanced
+    percent-value: 99
+  - title: Hydraflow Storm Sewers Extension with AutoCAD Civil 3D
+    label: Proficient
+    percent-value: 66
+  - title: Hydraflow Hydrographs with AutoCAD Civil 3D
+    label: Proficient
+    percent-value: 66
+  - title: Hydrology - SCS Method
+    label: Proficient
+    percent-value: 66
+  - title: Pond Routing Design (Dry/Wet Ponds)
+    label: Advanced
+    percent-value: 99
+  - title: Underground Detention Basin Design, Calculations, Coordination, and Details
+    label: Proficient
+    percent-value: 66
+  - title: Underground Detention Basin Design, Calculations, Coordination, and Details
+    label: Proficient
+    percent-value: 66
+  - title: Inlet Spread Calculations
+    label: Beginner
+    percent-value: 33
+  - title: Underground Detention Basin Design, Calculations, Coordination, and Details
+    label: Proficient
+    percent-value: 66
+  - title: Stormwater Details (catch basins/inlets, pond sections, outfall control structures)
+    label: Advanced
+    percent-value: 99
+  - title:  Drainage / Stormwater Report
+    label: Proficient
+    percent-value: 66
+  - title: Completing Notice of Intent (NOI) Application
+    label: Advanced
+    percent-value: 99
+  - title: Utilities - Water Main Design & Profiles
+    label: Proficient
+    percent-value: 66
+  - title: Utilities - Sewer Main Design & Profiles
+    label: Proficient
+    percent-value: 66
+  - title: Sewer Demand Calcs
+    label: Beginner
+    percent-value: 33
+  - title: Water Demand Calcs
+    label: Beginner
+    percent-value: 33
+  - title: Force Main Design
+    label: Beginner
+    percent-value: 33
+  - title: Utility Encroachments
+    label: Proficient
+    percent-value: 66
+  - title: Commercial Land Development
+    label: Proficient
+    percent-value: 66

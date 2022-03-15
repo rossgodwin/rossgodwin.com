@@ -1,0 +1,13 @@
+<!--
+	title
+	label (Optional)
+	percent-value
+-->
+<div class="chart--dev">
+	<span class="hbc-title">{{ include.title }}</span>
+	<ul>
+		<li class="hbc-bar" style="width: {{ include.percent-value }}%;">
+			<span>{{ include.label }}</span>
+		</li>
+	</ul>
+</div>

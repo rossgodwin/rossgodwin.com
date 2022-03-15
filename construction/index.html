@@ -40,4 +40,37 @@ title: &title "Construction"
 			{% endfor %}
 		</section>
 	</section>
+	
+	<section style="padding-bottom: 25px;">
+		<h3>Skills</h3>
+		
+		<div class="hbc-chart">
+			{% include rg/components/horizontal-bar-chart/grid.html
+				title=site.data.career.construction.skills.land-development-scale.title
+				units=site.data.career.construction.skills.land-development-scale.units %}
+			
+			<div class="hbc-stacked-bars">
+				{% for skill in site.data.career.construction.skills.land-development %}
+					{% include rg/components/horizontal-bar-chart/titled-bar.html
+			  			title=skill.title
+						label=skill.label
+						percent-value=skill.percent-value %}
+				{% endfor %}
+		  	</div>
+		</div>
+		
+		<!--<div class="hbc-chart">
+			{% comment %}
+			{% include rg/components/horizontal-bar-chart/grid.html
+				title=site.data.career.construction.skills.technology-skill-scale.title
+				units=site.data.career.construction.skills.technology-skill-scale.units %}
+			
+			{% for skill in site.data.career.construction.skills.chart2 %}
+				{% include rg/components/horizontal-bar-chart/stacked-bars.html
+		  			title=skill.group
+					categories=skill.technologies %}
+			{% endfor %}
+			{% endcomment %}
+		</div>-->
+	</section>
 </article>
