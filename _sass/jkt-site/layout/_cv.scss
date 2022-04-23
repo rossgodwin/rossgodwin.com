@@ -1,0 +1,172 @@
+.jkt-cv {
+	padding: 1.5em;
+	border: 1px solid rgba(0, 0, 0, 0.025);
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.175);
+	
+	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+		text-transform: uppercase;
+		@include themify() {
+			color: v(cv-heading-color);
+		}
+	}
+	
+	h1, .h1 {
+		font-size: 2.75em;
+	}
+	
+	h2, .h2 {
+		font-size: 1.5em;
+	}
+	
+	a {
+		text-decoration: none;
+		background-color: transparent;
+	}
+}
+
+.jkt-cv-section-heading {
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	@include themify() {
+		border-bottom-color: v(cv-heading-section-border-bottom-color);
+	}
+	h2 {
+		letter-spacing: 0.125em;
+	}
+}
+
+.jkt-cv-section-content {
+	padding: 0.5em;
+	margin-bottom: 0.625em;
+}
+
+.jkt-cv-header-section {
+	text-align: center;
+	
+	h1 {
+		font-weight: 900;
+		letter-spacing: 0.125em;
+		margin-bottom: 0;
+	}
+	
+	.jkt-cv-header-job-title {
+		font-size: 1.25em;
+		font-weight: 300;
+	}
+	
+	.jkt-cv-header-social-media {
+		@include themify() {
+			color: v(cv-social-icons-color);
+		}
+		i {
+			font-size: 1.75em;
+			margin-right: 0.250em;
+		}
+		a {
+			font-size: 0.938em;
+		}
+	}
+}
+
+.jkt-cv-work-history-section {
+	.jkt-cv-work-history-job-employer {
+		@include themify() {
+			color: v(cv-employer-name-text-color);
+		}
+	}
+	
+	.jkt-cv-work-history-job-position {
+		margin-bottom: 0.625em;
+		
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 0.438em;
+		
+		ul {
+			margin-bottom: 0;
+			padding-left: 0;
+			list-style-position: inside;
+			text-indent: -23px;
+    		margin-left: 23px;
+		}
+	}
+	
+	.jkt-cv-work-history-job-position-title {
+	}
+	
+	.jkt-cv-work-history-job-position-duration {
+	}
+}
+
+.jkt-cv-accomplishments-section {
+	ul {
+		padding-left: inherit;
+	}
+}
+
+.jkt-cv-projects-section {
+	.jkt-cv-projects-project {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 0.438em;
+	}
+	
+	.jkt-cv-projects-project-title {
+		@include themify() {
+			color: v(cv-project-name-text-color);
+		}
+	}
+}
+
+.jkt-cv-education-school {
+	@include themify() {
+		color: v(cv-education-school-text-color);
+	}
+}
+
+.jkt-cv-download-options {
+	margin-top: 15px;
+	text-align: center;
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.jkt-cv-section-content {
+		padding: 0.8em;
+	}
+	
+	.jkt-cv-work-history-section {
+		.jkt-cv-work-history-job-position {
+			grid-template-columns: 250px 1fr;
+			grid-row-gap: 1em;
+		}
+	}
+	
+	.jkt-cv-projects-section {
+		.jkt-cv-projects-project {
+			grid-template-columns: 250px 1fr;
+			grid-row-gap: 1em;
+		}
+	}
+}
+
+@media (min-width: $device-width-breakpoint-large) {
+	.jkt-cv {
+		padding: 3em;
+	}
+	
+	.jkt-cv-section-content {
+		padding: 1em;
+	}
+	
+	.jkt-cv-work-history-section {
+		.jkt-cv-work-history-job-position {
+			grid-template-columns: 300px 1fr;
+		}
+	}
+	
+	.jkt-cv-projects-section {
+		.jkt-cv-projects-project {
+			grid-template-columns: 300px 1fr;
+		}
+	}
+}

@@ -3,6 +3,5 @@
 
 $site-baseurl: '{{ site.baseurl }}';
 
-@import "perfolio/perfolio";
-
-@import "rg/rg";
+@import "jkt-module-commons/jkt-module-commons";
+@import "jkt-site/jkt-site";

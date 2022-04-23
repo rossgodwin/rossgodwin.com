@@ -1,15 +1,9 @@
 ---
-layout: rg/page
+layout: jkt-site/page
 title: &title "Office IT Infrastructure Overhaul"
 
-head-csss:
-  - assets/perfolio/lib/justifiedgallery/css/justifiedGallery.min.css
-  - assets/perfolio/lib/lightgallery/css/lightgallery.min.css
-body-footer-scripts:
-  - assets/perfolio/lib/justifiedgallery/js/jquery.justifiedGallery.min.js
-  - assets/perfolio/lib/lightgallery/js/lightgallery-all.min.js
 galleries:
-  - id: thumbnail-demo
+  - id: tsd-office-it-update-photos
     type: thumbnails
     images:
       - thumbnail_url: assets/images/gallery/tsd-office-it-infrastructure-overhaul/001-th.jpg
@@ -39,13 +33,13 @@ galleries:
         class: custom-mfp-horizontal
 ---
 
-{% assign project = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.tsd-office] %}
-{% assign job = site.data.career.employment.jobs[site.data.career.employment.job-index.bowman] %}
+{% assign project = site.data.jkt-site.career.information-technology.projects.on-the-side[site.data.jkt-site.career.information-technology.projects.on-the-side-index.tsd-office] %}
+{% assign job = site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.bowman] %}
 {% assign job-path = job.positions[1].internal-url %}
 
-{% include perfolio/page/body/page-content-header.html title=project.title %}
+{% include jkt-site/page/body/page-content-header.html title=project.title %}
 
-<article class="rg-page-content-main">
+<article class="jkt-page-content-main">
 	<section>
 		<h4>About the Project</h4>
 		<p>
@@ -74,7 +68,7 @@ galleries:
 		</p>
 		<p>
 			Here were some of the current conditions that I found:
-			<ul class="rg-ul-marker-fa-chevron">
+			<ul class="jkt-ul-marker-fa-chevron">
 				<li>
 					The closet containing the computer and networking equipment was a mess with components laying on the floor. 
 					You can see a picture below. 
@@ -287,6 +281,6 @@ galleries:
 		<h4>Pictures</h4>
 		
 		{% assign _gallery = page.galleries[0] %}
-		{% include perfolio/components/gallery/thumbnails.html gallery=_gallery %}
+		{% include jkt-site/components/gallery/thumbnails.html gallery=_gallery %}
 	</section>
 </article>

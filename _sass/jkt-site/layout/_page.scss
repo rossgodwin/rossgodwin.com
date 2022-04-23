@@ -1,0 +1,226 @@
+$jkt-s-page-lr-padding: 1rem;
+$jkt-m-page-header-height: 7em;
+$jkt-l-page-header-height: 5em;
+
+.jkt-page-wrapper {
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
+	grid-template-areas:
+		// h = header
+		// c = content
+		// f = footer
+		"h"
+		"c"
+		"f";
+	height: 100vh;
+}
+
+// ------------- Header -----------------
+.jkt-page-header {
+	grid-area: h;
+}
+
+.jkt-page-header-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding-top: .5em;
+	padding-bottom: .5em;
+	padding-left: $jkt-s-page-lr-padding;
+	padding-right: $jkt-s-page-lr-padding;
+	@include themify() {
+		background-color: v(page-header-background-color);
+	}
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	@include themify() {
+		border-bottom-color: v(page-header-bottom-border-color);
+	}
+}
+
+.jkt-page-header-title {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.jkt-page-header-menu-toggler {
+	@include opacity(0.8);
+	padding: 0rem .6rem;
+	background-color: transparent;
+	border: 0px;
+	@include themify() {
+		color: v(page-header-menu-icon-color);
+	}
+	&:hover {
+		@include opacity(1);
+	}
+}
+.jkt-page-header-menu-toggler:focus {
+    outline: 0 !important;
+}
+
+.jkt-page-header-navigation {
+	display: none;
+	text-align: center;
+	
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			height: 2.35em;
+			
+			&.active {
+				font-weight: bold;
+			}
+		}
+	}
+	
+	&.active {
+		display: grid;
+		-webkit-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+}
+
+.jkt-page-header-navigation-item-separator {
+	display: none;
+	@include themify() {
+		color: v(page-header-navigation-item-separator-color);
+	}
+}
+
+// ------------- Content -----------------
+.jkt-page-content {
+	grid-area: c;
+	display: grid;
+	grid-template-rows: auto 10px 1fr 10px;
+	grid-template-columns: minmax(0, 1fr); // prevent grid blowout i.e. when embedding a gist in the grid
+	grid-template-areas:
+		// ch = content header
+		// cm = content main
+		"ch"
+		"."
+		"cm";
+}
+
+.jkt-page-content-header {
+	grid-area: ch;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	@include themify() {
+		background: v(page-body-header-background-color);
+	}
+}
+
+.jkt-page-content-header-inner {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $jkt-s-page-lr-padding;
+	padding-right: $jkt-s-page-lr-padding;
+	
+	.jkt-breadcrumbs {
+		margin-bottom: 1rem;
+	}
+}
+
+.jkt-page-content-main {
+	grid-area: cm;
+	padding-left: $jkt-s-page-lr-padding;
+	padding-right: $jkt-s-page-lr-padding;
+	
+	> section {
+		> h3, > h4, > h6 {
+			@extend .jkt-heading-line-separator;
+		}
+	}
+	
+	section:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+// ------------- Footer -----------------
+.jkt-page-footer {
+	grid-area: f;
+	display: flex;
+	padding: .5em 0;
+	border-top-style: solid;
+	border-top-width: 5px;
+	@include themify() {
+		border-top-color: v(page-footer-border-top-color);
+	}
+}
+
+.jkt-page-footer-wrapper {
+	@extend .jkt-align-horizontal-center;
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.jkt-page-wrapper {
+		grid-template-rows: $jkt-m-page-header-height 1fr auto;
+	}
+	
+	// ------------- Header -----------------
+	.jkt-page-header-wrapper {
+		height: $jkt-m-page-header-height;
+		
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		
+		text-align: left;
+	}
+	
+	.jkt-page-header-navigation {
+		display: block;
+		text-align: left;
+		
+		ul {
+			li {
+				display: inline;
+				padding-right: 1.4em;
+			}
+			
+			li:last-child {
+				padding-right: 0em;
+			}
+		}
+	}
+
+	.jkt-page-header-menu-toggler {
+		display: none;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-large) {
+	.jkt-page-wrapper {
+		grid-template-rows: $jkt-l-page-header-height 1fr auto;
+	}
+	
+	// ------------- Header -----------------
+	.jkt-page-header-wrapper {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		height: $jkt-l-page-header-height;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-xlarge) {
+	// ------------- Content -----------------
+	.jkt-page-content-header-inner {
+		max-width: 1140px;
+	}
+	
+	.jkt-page-content-main {
+		min-width: 1140px;
+		max-width: 1140px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

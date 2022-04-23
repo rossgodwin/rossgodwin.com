@@ -1,0 +1,11 @@
+.jkt-link-arrow {
+	&:after {
+		content: "\2192";
+	}
+}
+
+.jkt-icon-link {
+	&:hover {
+		text-decoration: none;
+	}
+}

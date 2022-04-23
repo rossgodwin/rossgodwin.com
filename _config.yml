@@ -43,13 +43,6 @@ compress_html:
   ignore:
     envs: [development]
 
-# Collections
-collections_dir: articles
-collections:
-  information-technology:
-    output: true
-    permalink: /articles/:collection/:path/
-
 # Plugins
 gems:
   - jekyll-feed
@@ -57,7 +50,6 @@ gems:
 
 plugins:
   - jekyll-gist
-  - jekyll-paginate-v2
   - jekyll-sitemap
 
 defaults:
@@ -78,34 +70,3 @@ defaults:
       path: assets/*
     values:
       sitemap: false
-
-# Plugin: Pagination (jekyll-paginate-v2)
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: '/:num/'
-  title: ':title | :num of :max'
-  limit: 0
-  sort_field: 'date'
-  sort_reverse: true
-  trail: 
-    before: 2
-    after: 2
-
-# Plugin: Auto Pages (jekyll-paginate-v2)
-autopages:
-  enabled: true
-  tags:
-    enabled: true
-    layouts:
-      - autopage_tags.html
-    permalink: /articles/tag/:tag
-  categories:
-    enabled: false
-    layouts:
-      - autopage_category.html
-  collections:
-    enabled: false
-    slugify:
-      mode: 'ascii'
-      cased: true

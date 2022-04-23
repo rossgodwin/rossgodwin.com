@@ -1,0 +1,31 @@
+<!--
+	heading
+	projects (list)
+		title
+		duration
+		description
+-->
+<section class="jkt-cv-projects-section">
+	<div class="jkt-cv-section-heading">
+		<h2>{{ include.heading }}</h2>
+	</div>
+	<div class="jkt-cv-section-content">
+		{% for project in include.projects %}
+			<div class="jkt-cv-projects-project">
+				<div>
+					<div class="jkt-cv-projects-project-title">
+						{% if project.path %}
+							<a class="jkt-link-arrow" href="{{ project.path | relative_url }}">{{ project.title }}</a>
+						{% else %}
+							{{ project.title }}
+						{% endif %}
+					</div>
+					<div>{{ project.duration }}</div>
+				</div>
+				<div>
+					{{ project.description }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>

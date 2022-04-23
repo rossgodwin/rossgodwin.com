@@ -1,0 +1,10 @@
+<section class="jkt-page-preview">
+	<h4><a href="{{ include.url }}">{{ include.heading }}</a></h4>
+	{% if include.title %}
+		<div class="jkt-page-preview-title">{{ include.title }}</div>
+	{% endif %}
+	<div class="jkt-page-preview-description">
+		{{ include.description | strip_html }}
+	</div>
+	<a class="jkt-link-arrow" href="{{ include.url }}">Read more</a>
+</section>

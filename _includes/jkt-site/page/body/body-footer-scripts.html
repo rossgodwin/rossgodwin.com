@@ -1,0 +1,19 @@
+<script src="{{ 'assets/jkt-module-commons/lib/jquery-3.1.1/js/jquery.min.js' | relative_url }}"></script>
+
+<script>
+	$(document).ready(function() {
+		$(".jkt-page-header-menu-toggler").click(function(e) {
+			$(".jkt-page-header-navigation").toggleClass("active");
+		});
+
+		$("#year").html(new Date().getFullYear());
+		
+		{% if page.include-highlightjs %}
+			document.querySelectorAll('pre code').forEach((block) => {
+				hljs.highlightBlock(block);
+			});
+		{% endif %}
+	});
+</script>
+
+{% include jkt-module-commons/page/body/body-footer-scripts.html %}

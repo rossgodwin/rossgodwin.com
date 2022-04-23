@@ -1,0 +1,16 @@
+<div class="jkt-masonry-grid-item">
+	{% if include.image-path %}
+		<img src="{{ include.image-path | relative_url }}" alt="{{ include.heading }}">
+	{% endif %}
+	<div class="jkt-masonry-grid-item-body">
+		<div class="date">{{ include.date | date: "%b %-d, %Y" }}</div>
+		<h5><a href="{{ include.url }}">{{ include.heading }}</a></h5>
+		<p>
+			{{ include.description | strip_html }}
+		</p>
+	</div>
+	<div class="jkt-masonry-grid-item-footer jkt-masonry-grid-item-top-delimiter">
+		{% assign authors = site.data.blog-authors.authors | where: id, include.author-id %}
+		<span>By: {{ authors[0].name }}</span>
+	</div>
+</div>

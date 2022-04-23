@@ -1,27 +1,27 @@
 ---
-layout: rg/page
+layout: jkt-site/page
 title: &title "Construction"
 ---
 
 {% assign recommendations = '' | split: '' %}
-{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.duke] %}
+{% assign recommendations = recommendations | push: site.data.jkt-site.career.recommendations.recommendations[site.data.jkt-site.career.recommendations.recommendation-index.duke] %}
 
 {% capture _header_content %}
-	{% include rg/components/career/social-icons.html
+	{% include jkt-site/components/career/social-icons.html
 			cv-url='construction/cv'
 			show-github=false %}
 {% endcapture %}
-{% include perfolio/page/body/page-content-header.html title='Construction' content=_header_content %}
+{% include jkt-site/page/body/page-content-header.html title='Construction' content=_header_content %}
 
-<article class="rg-page-content-main">
+<article class="jkt-page-content-main">
 	<section>
 		<h3>Recommendations</h3>
 		
 		<div>
-			<ul class="pf-list-ul-no-markers">
+			<ul class="jkt-list-ul-no-markers">
 				{% for recommendation in recommendations %}
 					<li>
-					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					{% include jkt-module-commons/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 					</li>
 				{% endfor %}
 			</ul>
@@ -31,10 +31,10 @@ title: &title "Construction"
 	<section>
 		<h3>Work History</h3>
 		
-		<section class="pf-page-preview-list">
-			{% for job in site.data.career.employment.jobs %}
+		<section class="jkt-page-preview-list">
+			{% for job in site.data.jkt-site.career.employment.jobs %}
 				{% if job.industry == 'construction' %}
-					{% include rg/components/career/employment-job-page-preview.html
+					{% include jkt-site/components/career/employment-job-page-preview.html
 						job=job %}
 				{% endif %}
 			{% endfor %}
@@ -45,13 +45,13 @@ title: &title "Construction"
 		<h3>Skills</h3>
 		
 		<div class="hbc-chart">
-			{% include rg/components/horizontal-bar-chart/grid.html
-				title=site.data.career.construction.skills.land-development-scale.title
-				units=site.data.career.construction.skills.land-development-scale.units %}
+			{% include jkt-site/components/horizontal-bar-chart/grid.html
+				title=site.data.jkt-site.career.construction.skills.land-development-scale.title
+				units=site.data.jkt-site.career.construction.skills.land-development-scale.units %}
 			
 			<div class="hbc-stacked-bars">
-				{% for skill in site.data.career.construction.skills.land-development %}
-					{% include rg/components/horizontal-bar-chart/titled-bar.html
+				{% for skill in site.data.jkt-site.career.construction.skills.land-development %}
+					{% include jkt-site/components/horizontal-bar-chart/titled-bar.html
 			  			title=skill.title
 						label=skill.label
 						percent-value=skill.percent-value %}
@@ -61,12 +61,12 @@ title: &title "Construction"
 		
 		<!--<div class="hbc-chart">
 			{% comment %}
-			{% include rg/components/horizontal-bar-chart/grid.html
-				title=site.data.career.construction.skills.technology-skill-scale.title
-				units=site.data.career.construction.skills.technology-skill-scale.units %}
+			{% include jkt-site/components/horizontal-bar-chart/grid.html
+				title=site.data.jkt-site.career.construction.skills.technology-skill-scale.title
+				units=site.data.jkt-site.career.construction.skills.technology-skill-scale.units %}
 			
-			{% for skill in site.data.career.construction.skills.chart2 %}
-				{% include rg/components/horizontal-bar-chart/stacked-bars.html
+			{% for skill in site.data.jkt-site.career.construction.skills.chart2 %}
+				{% include jkt-site/components/horizontal-bar-chart/stacked-bars.html
 		  			title=skill.group
 					categories=skill.technologies %}
 			{% endfor %}

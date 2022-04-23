@@ -1,0 +1,23 @@
+<!--
+	job
+		company
+		positions (list)
+			internal-url (Optional)
+			title
+			duration
+			description
+-->
+<section class="jkt-page-preview">
+	<h4>{{ include.job.company }}</h4>
+	<ul class="jkt-list-ul-no-markers">
+		{% for position in include.job.positions %}
+			{% include jkt-module-commons/helpers/prepend-baseurl.html path=position.internal-url %}
+			<li>
+				<div>{{ position.title }}</div>
+				<div style="margin-bottom: 0.438em">{{ position.duration }}</div>
+				<div>{{ position.description | strip_html }}</div>
+				<a class="jkt-link-arrow" href="{{ __return }}">Read more</a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

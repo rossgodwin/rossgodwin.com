@@ -1,18 +1,18 @@
 ---
-layout: rg/page
+layout: jkt-site/page
 title: &title "Projects"
 ---
 
 {% capture _header_content %}
-	{{ site.data.career.it-projects.description }}
+	{{ site.data.jkt-site.career.it-projects.description }}
 {% endcapture %}
-{% include perfolio/page/body/page-content-header.html title='Projects' content=_header_content %}
+{% include jkt-site/page/body/page-content-header.html title='Projects' content=_header_content %}
 
-<article class="rg-page-content-main">
-	<section class="pf-page-preview-list">
-		{% for project in site.data.career.information-technology.projects.on-the-side %}
-			{% include perfolio/helpers/prepend-baseurl.html path=project.path %}
-			{% include perfolio/components/list/page-preview.html 
+<article class="jkt-page-content-main">
+	<section class="jkt-page-preview-list">
+		{% for project in site.data.jkt-site.career.information-technology.projects.on-the-side %}
+			{% include jkt-module-commons/helpers/prepend-baseurl.html path=project.path %}
+			{% include jkt-site/components/page-preview.html 
 				heading=project.title 
 				description=project.description
 				url=__return %}

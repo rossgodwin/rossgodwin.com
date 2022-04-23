@@ -1,22 +1,22 @@
 ---
-layout: rg/page
+layout: jkt-site/page
 title: &title "Information Technology"
 ---
 
-{% assign project-cheapthycable-path = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
-{% assign employment-atlatl-path = site.data.career.employment.jobs[site.data.career.employment.job-index.atlatl].positions[0].internal-url %}
+{% assign project-cheapthycable-path = site.data.jkt-site.career.information-technology.projects.on-the-side[site.data.jkt-site.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
+{% assign employment-atlatl-path = site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.atlatl].positions[0].internal-url %}
 
 {% assign recommendations = '' | split: '' %}
-{% assign recommendations = recommendations | push: site.data.career.recommendations.recommendations[site.data.career.recommendations.recommendation-index.ivan] %}
+{% assign recommendations = recommendations | push: site.data.jkt-site.career.recommendations.recommendations[site.data.jkt-site.career.recommendations.recommendation-index.ivan] %}
 
 {% capture _header_content %}
-	{% include rg/components/career/social-icons.html
+	{% include jkt-site/components/career/social-icons.html
 			cv-url='information-technology/cv'
 			show-github=true %}
 {% endcapture %}
-{% include perfolio/page/body/page-content-header.html title='Information Technology' content=_header_content %}
+{% include jkt-site/page/body/page-content-header.html title='Information Technology' content=_header_content %}
 
-<article class="rg-page-content-main">
+<article class="jkt-page-content-main">
 	<section>
 		<h3>Introduction</h3>
 		
@@ -28,7 +28,7 @@ title: &title "Information Technology"
 		</p>
 		<p>
 			Some of my professional IT experience by role:
-			<ul class="rg-ul-marker-fa-chevron">
+			<ul class="jkt-ul-marker-fa-chevron">
 				<li>
 					As a <b>business intelligence developer</b> I worked with databases and transactional information systems 
 					while combining and developing a hosts of skills and knowledge to optimize the flow of data within 
@@ -63,10 +63,10 @@ title: &title "Information Technology"
 		<h3>Recommendations</h3>
 		
 		<div>
-			<ul class="pf-list-ul-no-markers">
+			<ul class="jkt-list-ul-no-markers">
 				{% for recommendation in recommendations %}
 					<li>
-					{% include perfolio/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					{% include jkt-module-commons/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 					</li>
 				{% endfor %}
 			</ul>
@@ -76,10 +76,10 @@ title: &title "Information Technology"
 	<section>
 		<h3>Work History</h3>
 		
-		<section class="pf-page-preview-list">
-			{% for job in site.data.career.employment.jobs %}
+		<section class="jkt-page-preview-list">
+			{% for job in site.data.jkt-site.career.employment.jobs %}
 				{% if job.industry == 'it' %}
-					{% include rg/components/career/employment-job-page-preview.html
+					{% include jkt-site/components/career/employment-job-page-preview.html
 						job=job %}
 				{% endif %}
 			{% endfor %}
@@ -89,10 +89,10 @@ title: &title "Information Technology"
 	<section>
 		<h3>Side Projects</h3>
 		
-		<section class="pf-page-preview-list">
-			{% for project in site.data.career.information-technology.projects.on-the-side %}
-				{% include perfolio/helpers/prepend-baseurl.html path=project.path %}
-				{% include perfolio/components/list/page-preview.html
+		<section class="jkt-page-preview-list">
+			{% for project in site.data.jkt-site.career.information-technology.projects.on-the-side %}
+				{% include jkt-module-commons/helpers/prepend-baseurl.html path=project.path %}
+				{% include jkt-site/components/page-preview.html
 					heading=project.title
 					description=project.description
 					url=__return %}
@@ -117,9 +117,9 @@ title: &title "Information Technology"
 		<h3>Technical Skills</h3>
 		
 		<h6>Languages & Frameworks</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/angular-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/angular-responsive.html %}
 				<br/>
 				<b>AngularJS</b>
 				<br/>
@@ -131,8 +131,8 @@ title: &title "Information Technology"
 				<a href="{{ 'tag/angularjs' | relative_url }}">notes</a> I've put together on this topic.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/bootstrap-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/bootstrap-responsive.html %}
 				<br/>
 				<b>Bootstrap</b>
 				<br/>
@@ -144,8 +144,8 @@ title: &title "Information Technology"
 				complexity.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/gwt-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/gwt-responsive.html %}
 				<br/>
 				<b>GWT</b>
 				<br/>
@@ -157,8 +157,8 @@ title: &title "Information Technology"
 				that is compatible across all major browsers. 
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/sencha-gxt-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/sencha-gxt-responsive.html %}
 				<br/>
 				<b>GXT</b>
 				<br/>
@@ -170,8 +170,8 @@ title: &title "Information Technology"
 				working with this Java framework at a <a href="{{ employment-atlatl-path | relative_url }}">previous employer</a>.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/java-jdk-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/java-jdk-responsive.html %}
 				<br/>
 				<b>Java</b>
 				<br/>
@@ -184,9 +184,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Databases</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/oracle-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/oracle-responsive.html %}
 				<br/>
 				<b>Oracle</b>
 				<br/>
@@ -196,8 +196,8 @@ title: &title "Information Technology"
 				using PL/SQL constructing queries, stored procedures, functions and indexing.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/mysql-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/mysql-responsive.html %}
 				<br/>
 				<b>MySQL</b>
 				<br/>
@@ -209,9 +209,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Enterprise & Servers</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/apache-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/apache-responsive.html %}
 				<br/>
 				<b>Apache</b>
 				<br/>
@@ -225,8 +225,8 @@ title: &title "Information Technology"
 				I put together on configuring a Apache web server.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/wildfly-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/wildfly-responsive.html %}
 				<br/>
 				<b>Wildfly</b>
 				<br/>
@@ -238,9 +238,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Cloud</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/amazon-aws-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/amazon-aws-responsive.html %}
 				<br/>
 				<b>Amazon AWS</b>
 				<br/>
@@ -254,9 +254,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Mobile</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/android-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/android-responsive.html %}
 				<br/>
 				<b>Android</b>
 				<br/>
@@ -275,9 +275,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Source Control</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/github-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/github-responsive.html %}
 				<br/>
 				<b>Git</b>
 				<br/>
@@ -286,8 +286,8 @@ title: &title "Information Technology"
 					
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/svn-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/svn-responsive.html %}
 				<br/>
 				<b>Subversion</b>
 				<br/>
@@ -300,9 +300,9 @@ title: &title "Information Technology"
 		</section>
 		
 		<h6>Tools</h6>
-		<section class="rg-career-tech-skills-grid">
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/eclipse-responsive.html %}
+		<section class="jkt-career-tech-skills-grid">
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/eclipse-responsive.html %}
 				<br/>
 				<b>Eclipse</b>
 				<br/>
@@ -311,8 +311,8 @@ title: &title "Information Technology"
 				Well over 10 years of experience using this IDE and many of the available market plugins.
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/jekyll-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/jekyll-responsive.html %}
 				<br/>
 				<b>Jekyll</b>
 				<br/>
@@ -322,8 +322,8 @@ title: &title "Information Technology"
 				Here are some <a href="{{ 'tag/jekyll' | relative_url }}">notes</a> I've put together tagged Jekyll. 
 			</div>
 			
-			<div class="rg-career-tech-skills-grid-item">
-				{% include rg/icons/pelican-responsive.html %}
+			<div class="jkt-career-tech-skills-grid-item">
+				{% include jkt-site/icons/pelican-responsive.html %}
 				<br/>
 				<b>Pelican</b>
 				<br/>
@@ -336,7 +336,7 @@ title: &title "Information Technology"
 		</section>
 	</section>
 	
-	<div class="pf-footnotes">
+	<div class="jkt-footnotes">
 		<ol>
 			<li id="fn:pl1">
 				<p>

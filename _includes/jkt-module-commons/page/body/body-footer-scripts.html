@@ -1,0 +1,30 @@
+{% assign body-footer-scripts = '' | split: '' %}
+
+{% if page.include-highlightjs %}
+	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/highlightjs/js/highlight-10.0.3.min.js' %}
+{% endif %}
+
+{% if page.galleries %}
+	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/justifiedgallery/js/jquery.justifiedGallery.min.js' %}
+	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/lightgallery/js/lightgallery-all.min.js' %}
+{% endif %}
+
+{% if page.masonry-grids %}
+	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/masonry-layout4/js/masonry.pkgd.min.js' %}
+{% endif %}
+
+{% if layout.body-footer-scripts %}
+	{% assign body-footer-scripts = body-footer-scripts | push: layout.body-footer-scripts %}
+{% endif %}
+{% if page.body-footer-scripts %}
+	{% assign body-footer-scripts = body-footer-scripts | push: page.body-footer-scripts %}
+{% endif %}
+
+{% assign body-footer-scripts = body-footer-scripts | uniq %}
+{% for script in body-footer-scripts %}
+	<script src="{{ script | relative_url }}"></script>
+{% endfor %}
+
+{% if page.galleries %}
+	{% include jkt-module-commons/lib/lightgallery/init.html %}
+{% endif %}

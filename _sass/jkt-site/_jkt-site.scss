@@ -1,0 +1,21 @@
+// Uses 7-1 pattern - https://sass-guidelin.es/#architecture
+
+@import "abstracts/fonts";
+
+@import "themes/themes";
+
+@import "base/reset";
+
+@import "components/blockquote";
+@import "components/buttons";
+@import "components/career";
+@import "components/footnotes";
+@import "components/headings";
+@import "components/links";
+@import "components/lists";
+@import "components/horizontal-bar-chart/all";
+
+@import "layout/cv";
+@import "layout/page";
+
+@import "pages/cheapthycable";

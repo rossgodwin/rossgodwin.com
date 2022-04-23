@@ -1,0 +1,18 @@
+<!--
+	heading
+	degree
+		school
+		degree
+		latin-honor (optional)
+		graduated
+-->
+<section class="jkt-cv-education-section">
+	<div class="jkt-cv-section-heading">
+		<h2>{{ include.heading }}</h2>
+	</div>
+	<div class="jkt-cv-section-content">
+		<div class="jkt-cv-education-school">{{ include.degree.school }}</div>
+		<div>{{ include.degree.degree }}{% if include.degree.latin-honor %}, <i>{{ include.degree.latin-honor }}</i>{% endif %}</i></div>
+		<div>{{ include.degree.graduated }}</div>
+	</div>
+</section>
