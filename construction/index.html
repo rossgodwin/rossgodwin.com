@@ -1,6 +1,9 @@
 ---
 layout: jkt-site/page
 title: &title "Construction"
+easy-pie-charts:
+  - id: pie-chart
+    data-text-id: pie-chart-percent
 ---
 
 {% assign recommendations = '' | split: '' %}
@@ -43,6 +46,18 @@ title: &title "Construction"
 	
 	<section style="padding-bottom: 25px;">
 		<h3>Skills</h3>
+		
+		<section class="jkt-career-skills-grid">
+			{% include jkt-site/components/career/civil-skill-item.html
+				skill-level-percentage='25'
+				skill-level-stage='Beginner'
+				skill='Site Investigation Report (SIR) / Due Diligence Report' %}
+			
+			{% include jkt-site/components/career/civil-skill-item.html
+				skill-level-percentage='90'
+				skill-level-stage='Advanced'
+				skill='Utilizing Agency Ordinances and Checklists' %}
+		</section>
 		
 		<div class="hbc-chart">
 			{% include jkt-site/components/horizontal-bar-chart/grid.html

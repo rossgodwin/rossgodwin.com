@@ -1,0 +1,19 @@
+<div class="jkt-career-skills-grid-item">
+	<div class="pie-chart"
+		data-percent="{{ include.skill-level-percentage }}"
+		data-barSize="160"
+		data-lineCap="circle"
+		data-lineWidth="8"
+		data-trackColor="#d9d9d9"
+		data-barColor="#fdb020"
+		data-scaleColor="transparent">
+		<span class="pie-chart-percent">{{ include.skill-level-stage }}</span>
+	</div>
+	<div>
+		<b>{{ include.skill }}</b>
+		{% if include.skill-description %}
+			<br/>
+			{{ include.skill-description }}
+		{% endif %}
+	</div>
+</div>
