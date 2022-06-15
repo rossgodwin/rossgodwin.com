@@ -48,15 +48,13 @@ easy-pie-charts:
 		<h3>Skills</h3>
 		
 		<section class="jkt-career-skills-grid">
-			{% include jkt-site/components/career/civil-skill-item.html
-				skill-level-percentage='25'
-				skill-level-stage='Beginner'
-				skill='Site Investigation Report (SIR) / Due Diligence Report' %}
-			
-			{% include jkt-site/components/career/civil-skill-item.html
-				skill-level-percentage='90'
-				skill-level-stage='Advanced'
-				skill='Utilizing Agency Ordinances and Checklists' %}
+			{% for skill in site.data.jkt-site.career.construction.skills.land-development %}
+					{% include jkt-site/components/career/civil-skill-item.html
+						skill-level-percentage=skill.knowledge-percent
+						skill-level-stage=skill.knowledge-stage
+						skill=skill.topic
+						skill-description=skill.description %}
+				{% endfor %}
 		</section>
 		
 		<div class="hbc-chart">
@@ -67,9 +65,9 @@ easy-pie-charts:
 			<div class="hbc-stacked-bars">
 				{% for skill in site.data.jkt-site.career.construction.skills.land-development %}
 					{% include jkt-site/components/horizontal-bar-chart/titled-bar.html
-			  			title=skill.title
-						label=skill.label
-						percent-value=skill.percent-value %}
+			  			title=skill.topic
+						label=skill.knowledge-stage
+						percent-value=skill.knowledge-percent %}
 				{% endfor %}
 		  	</div>
 		</div>

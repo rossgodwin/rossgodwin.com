@@ -15,3 +15,42 @@ function isInViewport(el) {
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
 	);
 };
+
+/**
+ * 
+ * @param galleries
+ */
+function initPhotoGalleries(galleries, baseUrl) {
+	if (baseUrl == null || baseUrl === 'undefined') {
+		baseUrl = '';
+	}
+	
+	$.each(galleries, function(i, gallery) {
+		if (gallery.type == 'dynamic') {
+			$("#" + gallery.id).on('click', function() {
+				var d = [];
+				
+				$.each(gallery.images, function(i, image) {
+	            	var o = new Object();
+					o.src = baseUrl + image.url;
+					o.thumb = baseUrl + image.thumbnail_url;
+					if (image.html_content) {
+						o.subHtml = image.html_content
+					}
+					
+					d.push(o);
+	            });
+				
+				$(this).lightGallery({
+					dynamic: true,
+					dynamicEl: d
+				})
+			});
+		} else if (gallery.type == 'thumbnails') {
+			$("#" + gallery.id).lightGallery({
+				thumbnail: true
+			});
+			$("#" + gallery.id).justifiedGallery();
+		}
+	});
+};

@@ -1,4 +1,5 @@
 {% assign body-footer-scripts = '' | split: '' %}
+{% assign doc-ready = false %}
 
 {% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/js/scripts.js' %}
 
@@ -7,6 +8,8 @@
 {% endif %}
 
 {% if page.galleries %}
+	{% assign doc-ready = true %}
+	
 	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/justifiedgallery/js/jquery.justifiedGallery.min.js' %}
 	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/lightgallery/js/lightgallery-all.min.js' %}
 {% endif %}
@@ -28,9 +31,15 @@
 
 {% assign body-footer-scripts = body-footer-scripts | uniq %}
 {% for script in body-footer-scripts %}
-	<script src="{{ script | relative_url }}"></script>
+	<script src="{{ script | relative_url }}" type="text/javascript"></script>
 {% endfor %}
 
-{% if page.galleries %}
-	{% include jkt-module-commons/lib/lightgallery/init.html %}
+{% if doc-ready == true %}
+	<script>
+		$(document).ready(function() {
+			{% if page.galleries %}
+				initPhotoGalleries(JSON.parse('{{ page.galleries | flatten | jsonify }}'), {{ site.baseurl }});
+			{% endif %}
+		});
+	</script>
 {% endif %}

@@ -2,66 +2,16 @@
 
 {% include jkt-module-commons/page/body/body-footer-scripts.html %}
 
+{% assign body-footer-scripts = '' | split: '' %}
+
+{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-site/js/scripts.js' %}
+
+{% assign body-footer-scripts = body-footer-scripts | uniq %}
+{% for script in body-footer-scripts %}
+	<script src="{{ script | relative_url }}" type="text/javascript"></script>
+{% endfor %}
+
 <script>
-	function animatePieCharts() {
-		if (typeof $.fn.easyPieChart != 'undefined') {
-			{% for chart in page.easy-pie-charts %}
-				$(".{{ chart.id }}").each(function() {
-					var $t = $(this);
-					if (isInViewport($t)) {
-						var n = $t.parent().width();
-						var size = $t.attr("data-barSize");
-						
-						if (n < size) {
-							size = n;
-						}
-
-						$t.css("height", size);
-						$t.css("width", size);
-						$t.css("line-height", size + "px");
-
-						$t.find("i").css({
-							"line-height": size + "px",
-							"font-size": size / 3
-						});
-	
-						var animate = 1300;
-						var lineCap = $t.attr("data-lineCap");
-						var lineWidth = $t.attr("data-lineWidth");
-						var barColor = $t.attr("data-barColor");
-						var trackColor = $t.attr("data-trackColor");
-						var scaleColor = $t.attr("data-scaleColor");
-	
-						if ($t.attr("data-enableOnStep") === "true") {
-							$t.easyPieChart({
-								animate: animate,
-								lineCap: lineCap,
-								lineWidth: lineWidth,
-								size: size,
-								barColor: barColor,
-								trackColor: trackColor,
-								scaleColor: scaleColor,
-								onStep: function(from, to, percent) {
-									$(this.el).find('.{{ chart.data-text-id }}').text(Math.round(percent));
-								}
-							});
-						} else {
-							$t.easyPieChart({
-								animate: animate,
-								lineCap: lineCap,
-								lineWidth: lineWidth,
-								size: size,
-								barColor: barColor,
-								trackColor: trackColor,
-								scaleColor: scaleColor,
-							});
-						}
-					}
-				});
-			{% endfor %}
-		}
-	};
-
 	$(document).ready(function() {
 		$(".jkt-page-header-menu-toggler").click(function(e) {
 			$(".jkt-page-header-navigation").toggleClass("active");
@@ -74,11 +24,15 @@
 				hljs.highlightBlock(block);
 			});
 		{% endif %}
-		
-		animatePieCharts();
+
+		{% if page.easy-pie-charts %}
+			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
+		{% endif %}
 	});
 
-	$(window).scroll(function() {
-		animatePieCharts();
-	});
+	{% if page.easy-pie-charts %}
+		$(window).scroll(function() {
+			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
+		});
+	{% endif %}
 </script>
