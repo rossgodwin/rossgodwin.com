@@ -14,6 +14,7 @@ body {
 
 a {
 	text-decoration: none;
+	color: $color-black !important;
 }
 
 .jkt-page-wrapper {
@@ -52,29 +53,21 @@ a {
 	box-shadow: none;
 	
 	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-		color: $color-black;
+		color: $color-black !important;
 	}
 	
 	i {
-		color: $color-black;
+		color: $color-black !important;
 	}
 }
 
 .jkt-cv-section-heading {
-	border-color: $color-black;
-}
-
-.jkt-cv-header-section {
-	.jkt-cv-header-social-media {
-		i {
-			color: $color-black;
-		}
-	}
+	border-color: $color-black !important;
 }
 
 .jkt-cv-work-history-section {
 	.jkt-cv-work-history-job-employer {
-		color: $color-black;
+		color: $color-black !important;
 	}
 }
 

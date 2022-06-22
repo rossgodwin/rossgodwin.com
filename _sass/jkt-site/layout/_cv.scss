@@ -49,21 +49,33 @@
 		margin-bottom: 0;
 	}
 	
-	.jkt-cv-header-job-title {
-		font-size: 1.25em;
-		font-weight: 300;
+	h2 {
+		text-transform: capitalize;
 	}
 	
-	.jkt-cv-header-social-media {
-		@include themify() {
-			color: v(cv-social-icons-color);
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		
+		li {
+			display: inline;
+			
+			i {
+				font-size: 1.75em;
+				margin-right: 0.250em;
+				
+				@include themify() {
+					color: v(cv-social-icons-color);
+				}
+			}
 		}
-		i {
-			font-size: 1.75em;
-			margin-right: 0.250em;
-		}
-		a {
-			font-size: 0.938em;
+		li:not(:last-child) {
+			&:after {
+				content: "|";
+				margin-right: 15px;
+				margin-left: 15px;
+			}
 		}
 	}
 }
@@ -76,6 +88,7 @@
 	}
 	
 	.jkt-cv-work-history-job-position {
+		margin-left: 0.7em;
 		margin-bottom: 0.625em;
 		
 		display: grid;
@@ -92,6 +105,7 @@
 	}
 	
 	.jkt-cv-work-history-job-position-title {
+		font-weight: bold;
 	}
 	
 	.jkt-cv-work-history-job-position-duration {

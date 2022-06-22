@@ -8,7 +8,7 @@ jobs:
     industry: construction
     positions:
       - title: Project Manager
-        duration: 05-2020 to Present
+        duration: 2020 to Present
         internal-url: construction/employment/bowman-project-manager
         description:
           Work with developers, municipalities, engineers and contractors to get land development projects successfully and in-a-timely-manner 
@@ -42,7 +42,7 @@ jobs:
             - Collaborate with developers, engineers, jurisdictions and contractors to complete design requirements, acquire permits and close out projects
             - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
       - title: Civil Designer
-        duration: 02-2019 to 05-2020
+        duration: 2019 to 2020
         internal-url: construction/employment/bowman-civil-designer
         description:
           Successfully bridged skills acquired in the technology industry to assist in the permitting and design phase of commercial 
@@ -71,7 +71,7 @@ jobs:
     industry: it
     positions:
       - title: Software Developer
-        duration: 08-2008 to 02-2019
+        duration: 2008 to 2019
         internal-url: information-technology/employment/atlatl
         description:
           Worked with a small team of software developers and customer support staff to build, enhance, and maintain in-house 
@@ -112,7 +112,7 @@ jobs:
     industry: it
     positions:
       - title: Business Intelligence Developer
-        duration: 03-2004 to 08-2008
+        duration: 2004 to 2008
         internal-url: information-technology/employment/dunn-solutions-group
         description:
           Worked with clients from mid-sized to large corporations to create business intelligence solutions to meet 

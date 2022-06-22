@@ -11,8 +11,7 @@
 		<h2>{{ include.heading }}</h2>
 	</div>
 	<div class="jkt-cv-section-content">
-		<div class="jkt-cv-education-school">{{ include.degree.school }}</div>
-		<div>{{ include.degree.degree }}{% if include.degree.latin-honor %}, <i>{{ include.degree.latin-honor }}</i>{% endif %}</i></div>
-		<div>{{ include.degree.graduated }}</div>
+		<div class="jkt-cv-education-school">{{ include.degree.school }}{% if include.degree.years %}, {{ include.degree.years }}</i>{% endif %}</div>
+		<div>{{ include.degree.degree }}</div>
 	</div>
 </section>
