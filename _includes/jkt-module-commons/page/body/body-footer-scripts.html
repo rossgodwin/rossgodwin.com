@@ -56,10 +56,28 @@
 						})
 					});
 				{% elsif gallery.type == 'thumbnails' %}
+					{% assign thumbnail-properties = '' | split: '' %}
+					{% if gallery.thumbnail-properties %}
+						{% if gallery.thumbnail-properties.rowheight %}
+							{% assign property = gallery.thumbnail-properties.rowheight | prepend: 'rowHeight:' %}
+							{% assign thumbnail-properties = thumbnail-properties | push: property %}
+						{% endif %}
+						{% if gallery.thumbnail-properties.margins %}
+							{% assign property = gallery.thumbnail-properties.margins | prepend: 'margins:' %}
+							{% assign thumbnail-properties = thumbnail-properties | push: property %}
+						{% endif %}
+					{% endif %}
+					
 					$('#{{ gallery.id }}').lightGallery({
 						thumbnail: true
 					});
-					$('#{{ gallery.id }}').justifiedGallery();
+					$('#{{ gallery.id }}').justifiedGallery(
+						{% if thumbnail-properties.size > 0 %}
+							{
+								{{ thumbnail-properties | join: ", " }}
+							}
+						{% endif %}
+					);
 				{% endif %}
 			{% endfor %}
 		});
