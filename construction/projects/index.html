@@ -1,0 +1,18 @@
+---
+layout: jkt-site/page
+title: Projects
+include-seo: false
+pagination:
+  enabled: true
+  collection: construction-projects
+  sort_field: 'completion-date'
+  sort_reverse: true
+sitemap: false
+masonry-grids: true
+---
+
+{% include jkt-site/page/body/page-content-header.html title='Projects' %}
+
+<article class="jkt-page-content-main">
+	{% include jkt-module-commons/components/list/grid/masonry/grid.html %}
+</article>
