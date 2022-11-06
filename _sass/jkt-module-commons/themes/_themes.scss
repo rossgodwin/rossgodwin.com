@@ -5,7 +5,10 @@
 
 $themes: (
 	default: (
-		button-icon-text-spacing: 0.5rem
+		button-icon-text-spacing: 0.5rem,
+		hr-gradient-divider-height: 1px,
+		hr-gradient-divider-start-color: #dee4ef,
+		hr-gradient-divider-finish-color: #ffffff00
 	)
 );
 

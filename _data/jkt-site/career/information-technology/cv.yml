@@ -19,7 +19,7 @@ education-heading-text: Education
 version:
   pdf:
     display-text: PDF Version
-    internal-url: assets/cv/information-technology/cv.pdf
+    internal-url: assets/career/information-technology/cv.pdf
   text:
     display-text: Text Version
-    internal-url: assets/cv/information-technology/cv.txt
+    internal-url: assets/career/information-technology/cv.txt

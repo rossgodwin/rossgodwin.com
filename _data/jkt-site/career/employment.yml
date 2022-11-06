@@ -15,7 +15,7 @@ jobs:
       - title: Project Manager
         duration-date-to-date: 2020 to Present
         duration-number-of-years: 1 Year
-        internal-page-relative-url: construction/employment/bowman-project-manager
+        internal-page-relative-url: career/construction/employment/bowman-project-manager
         description:
           Work with developers, municipalities, engineers and contractors to get land development projects successfully and in-a-timely-manner 
           designed and permitted. Involved in project coordination, re-zoning, land development design, permit acquisition, construction document 
@@ -49,11 +49,12 @@ jobs:
             - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
   - company-name: Triangle Site Design
     industry: construction
+    company-logo-relative-path: assets/images/career/companies/triangle-site-design.png
     positions:
       - title: Civil Designer
         duration-date-to-date: 2019 to 2020
         duration-number-of-years: 1 Year
-        internal-page-relative-url: construction/employment/triangle-site-design-civil-designer
+        internal-page-relative-url: career/construction/employment/triangle-site-design-civil-designer
         description:
           Successfully bridged skills acquired in the technology industry to assist in the permitting and design phase of commercial 
           and mixed-use land development projects. In addition to gathering jurisdictional code regulations, I was involved in land development 
@@ -83,7 +84,7 @@ jobs:
       - title: Software Developer
         duration-date-to-date: 2008 to 2019
         duration-number-of-years: 11 Years
-        internal-page-relative-url: information-technology/employment/atlatl
+        internal-page-relative-url: career/information-technology/employment/atlatl
         description:
           Worked with a small team of software developers and customer support staff to build, enhance, and maintain in-house 
           web and mobile applications used by small businesses. Being a team member of a small development shop afforded me 
@@ -126,7 +127,7 @@ jobs:
       - title: Business Intelligence Developer
         duration-date-to-date: 2004 to 2008
         duration-number-of-years: 4 Years
-        internal-page-relative-url: information-technology/employment/dunn-solutions-group
+        internal-page-relative-url: career/information-technology/employment/dunn-solutions-group
         description:
           Worked with clients from mid-sized to large corporations to create business intelligence solutions to meet 
           business analytics needs. My role involved bridging the gap between business users and data, thus securely and 

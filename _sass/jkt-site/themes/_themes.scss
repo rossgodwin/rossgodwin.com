@@ -22,6 +22,10 @@ $themes: (
 		blockquote-quote-border-color: #205ec9 transparent transparent transparent,
 		blockquote-quote-color: $color-white,
 		blockquote-footer-text-color: #6c757d,
+		grid-1column-column-width: 100%,
+		grid-1column-gutter-width: 0,
+		grid-2column-column-width: 49%,
+		grid-2column-gutter-width: 2%,
 		grid-item-border-width: 1px,
 		grid-item-border-style: solid,
 		grid-item-border-color: #d6d9dc,
@@ -35,6 +39,7 @@ $themes: (
 		grid-item-image-border-style: none,
 		grid-item-image-border-top-left-radius: 7px,
 		grid-item-image-border-top-right-radius: 7px,
+		grid-item-padding: 1.5rem,
 		barchart-bar-color: #205ec9,
 		post-header-meta-text-color: lighten(#292929, 40%),
 		career-tech-skills-grid-item-background-color: #fafafa,
@@ -102,6 +107,44 @@ $themes: (
 	}
 }
 
+@mixin make1ColumnGrid() {
+	.grid-sizer {
+		@include themify() {
+			width: v(grid-1column-column-width);
+		}
+	}
+	.gutter-sizer {
+		@include themify() {
+			width: v(grid-1column-gutter-width);
+		}
+	}
+}
+
+@mixin make1ColumnGridColumn() {
+	@include themify() {
+		width: v(grid-1column-column-width);
+	}
+}
+
+@mixin make2ColumnGrid() {
+	.grid-sizer {
+		@include themify() {
+			width: v(grid-2column-column-width);
+		}
+	}
+	.gutter-sizer {
+		@include themify() {
+			width: v(grid-2column-gutter-width);
+		}
+	}
+}
+
+@mixin make2ColumnGridColumn() {
+	@include themify() {
+		width: v(grid-2column-column-width);
+	}
+}
+
 @mixin applyGridItemStyle() {
 	width: 100%;
 	margin-bottom: 20px;
@@ -113,8 +156,10 @@ $themes: (
 		border-radius: v(grid-item-border-radius);
 		box-shadow: v(grid-item-box-shadow-offset-x) v(grid-item-box-shadow-offset-y) v(grid-item-box-shadow-blur-radius) v(grid-item-box-shadow-spread-radius) v(grid-item-box-shadow-color);
 	}
-	
-	>img {
+}
+
+@mixin applyGridItemImageHeaderStyle() {
+	> img {
 		@include themify() {
 			width: v(grid-item-image-width);
 			border-style: v(grid-item-image-border-style);
@@ -122,5 +167,13 @@ $themes: (
 			border-top-right-radius: v(grid-item-image-border-top-right-radius);
 		}
 		margin-bottom: 0px;
+	}
+}
+
+@mixin applyGridItemTextHeaderStyle() {
+	@include themify() {
+		padding-left: v(grid-item-padding);
+		padding-right: v(grid-item-padding);
+		padding-top: v(grid-item-padding);
 	}
 }

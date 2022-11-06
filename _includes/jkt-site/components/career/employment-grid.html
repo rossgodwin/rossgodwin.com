@@ -1,7 +1,9 @@
 <!--
 	{@link _data-structures/job.json}
 -->
-<div class="jkt-career-employment-grid" data-masonry='{ "itemSelector": ".jkt-career-employment-grid-item", "gutter": 20 }'>
+<div class="jkt-career-employment-grid" data-masonry='{ "itemSelector": ".jkt-career-employment-grid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
 	{% for job in site.data.jkt-site.career.employment.jobs %}
 		{% if job.industry == include.industry %}
 			{% for position in job.positions %}

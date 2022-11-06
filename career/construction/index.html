@@ -11,9 +11,11 @@ easy-pie-charts:
 {% assign recommendations = recommendations | push: site.data.jkt-site.career.recommendations.recommendations[site.data.jkt-site.career.recommendations.recommendation-index.duke] %}
 
 {% capture _header_content %}
-	{% include jkt-site/components/career/social-icons.html
-			cv-url='construction/cv'
-			show-github=false %}
+	<div>
+		{% assign cv-url = 'career/construction/cv' | relative_url %}
+		{% include jkt-site/components/icons/fa/resume-circle-icon.html url=cv-url fa-x=1 %}
+		{% include jkt-site/components/icons/fa/linkedin-circle-icon.html url=site.data.jkt-site.me.social.linkedin.url target-blank=true fa-x=1 %}
+	</div>
 {% endcapture %}
 {% include jkt-site/page/body/page-content-header.html title='Construction' content=_header_content %}
 
@@ -35,9 +37,7 @@ easy-pie-charts:
 	<section>
 		<h3>Work History</h3>
 		
-		<section class="jkt-page-preview-list">
-			{% include jkt-site/components/career/employment-grid.html industry='construction' %}
-		</section>
+		{% include jkt-site/components/career/employment-grid.html industry='construction' %}
 	</section>
 	
 	<section style="padding-bottom: 25px;">

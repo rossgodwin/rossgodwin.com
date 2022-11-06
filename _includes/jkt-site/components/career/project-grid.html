@@ -1,0 +1,7 @@
+<div class="jkt-career-project-grid" data-masonry='{ "itemSelector": ".jkt-career-project-grid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
+	{% for project in site.data.jkt-site.career.information-technology.projects.on-the-side %}
+		{% include jkt-site/components/career/project-grid-item.html project=project %}
+	{% endfor %}
+</div>
