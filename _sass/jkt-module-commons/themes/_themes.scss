@@ -1,0 +1,40 @@
+// https://medium.com/@sanuthadathil/theme-and-color-scheme-sass-way-a62d68614ef3
+// https://stackoverflow.com/questions/64390664/how-to-implement-switchable-themes-in-scss
+// https://medium.com/@katiemctigue/how-to-create-a-dark-mode-in-sass-609f131a3995
+// https://github.com/kaitlinmctigue/kaitlinmctigue.github.io/blob/source/src/styles/_color-themes.scss
+
+$themes: (
+	default: (
+		grid-item-border-width: 1px,
+		grid-item-border-style: solid,
+		grid-item-border-color: #d6d9dc,
+		grid-item-border-radius: 15px,
+		grid-item-box-shadow-offset-x: 0px,
+		grid-item-box-shadow-offset-y: 12px,
+		grid-item-box-shadow-blur-radius: 24px,
+		grid-item-box-shadow-spread-radius: 2px,
+		grid-item-box-shadow-color: #d6d9dc,
+		grid-item-image-width: 100%,
+		grid-item-image-border-style: none,
+		grid-item-image-border-top-left-radius: 7px,
+		grid-item-image-border-top-right-radius: 7px
+	)
+);
+
+@mixin themify() {
+	@each $theme, $map in $themes {
+		.jkt-theme-#{$theme} & {
+			$theme-map: () !global;
+			@each $key, $submap in $map {
+				$value: map-get(map-get($themes, $theme), '#{$key}');
+				$theme-map: map-merge($theme-map, ($key: $value)) !global;
+			}
+			@content;
+			$theme-map: null !global;
+		}
+	}
+}
+
+@function v($key) {
+	@return map-get($theme-map, $key);
+}

@@ -1,15 +1,21 @@
 job-index:
   bowman: 0
-  atlatl: 1
-  dunn: 2
+  tsd: 1
+  atlatl: 2
+  dunn: 3
 
+##
+# {@link _data-structures/job.json}
+##
 jobs:
-  - company: Bowman (formerly Triangle Site Design)
+  - company-name: Bowman
     industry: construction
+    company-logo-relative-path: assets/images/career/companies/bowman.png
     positions:
       - title: Project Manager
-        duration: 2020 to Present
-        internal-url: construction/employment/bowman-project-manager
+        duration-date-to-date: 2020 to Present
+        duration-number-of-years: 1 Year
+        internal-page-relative-url: construction/employment/bowman-project-manager
         description:
           Work with developers, municipalities, engineers and contractors to get land development projects successfully and in-a-timely-manner 
           designed and permitted. Involved in project coordination, re-zoning, land development design, permit acquisition, construction document 
@@ -37,13 +43,17 @@ jobs:
           - Pay application reviews
           - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
         cv:
-          list:
+          responsibilities:
             - Team oriented project manager and design engineer
             - Collaborate with developers, engineers, jurisdictions and contractors to complete design requirements, acquire permits and close out projects
             - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
+  - company-name: Triangle Site Design
+    industry: construction
+    positions:
       - title: Civil Designer
-        duration: 2019 to 2020
-        internal-url: construction/employment/bowman-civil-designer
+        duration-date-to-date: 2019 to 2020
+        duration-number-of-years: 1 Year
+        internal-page-relative-url: construction/employment/triangle-site-design-civil-designer
         description:
           Successfully bridged skills acquired in the technology industry to assist in the permitting and design phase of commercial 
           and mixed-use land development projects. In addition to gathering jurisdictional code regulations, I was involved in land development 
@@ -63,16 +73,17 @@ jobs:
           - Stormwater device inspections for annual reports
           - Responsible for overseeing and upkeep of all the company's critical in-house information technology systems
         cv:
-          list:
+          responsibilities:
             - Involved in the civil design and permitting phases of land development projects
             - Utilize design capabilities to assist in producing construction drawings
             - Worked closely with civil engineers and developers to complete time-sensitive projects
-  - company: Atlatl
+  - company-name: Atlatl
     industry: it
     positions:
       - title: Software Developer
-        duration: 2008 to 2019
-        internal-url: information-technology/employment/atlatl
+        duration-date-to-date: 2008 to 2019
+        duration-number-of-years: 11 Years
+        internal-page-relative-url: information-technology/employment/atlatl
         description:
           Worked with a small team of software developers and customer support staff to build, enhance, and maintain in-house 
           web and mobile applications used by small businesses. Being a team member of a small development shop afforded me 
@@ -104,16 +115,18 @@ jobs:
           - Developed automated Android app build process for mobile app CMS using Android SDK Tools and Java to create signed 
             APK file for distribution to app marketplace
         cv:
-          list:
+          responsibilities:
             - Full-stack developer working in a agile-like environment
             - Utilized numerous technology frameworks and best practices
             - Key contributor on web and mobile application projects
-  - company: Dunn Solutions Group
+  - company-name: Dunn Solutions Group
     industry: it
+    company-logo-relative-path: assets/images/career/companies/dunn-solutions.png
     positions:
       - title: Business Intelligence Developer
-        duration: 2004 to 2008
-        internal-url: information-technology/employment/dunn-solutions-group
+        duration-date-to-date: 2004 to 2008
+        duration-number-of-years: 4 Years
+        internal-page-relative-url: information-technology/employment/dunn-solutions-group
         description:
           Worked with clients from mid-sized to large corporations to create business intelligence solutions to meet 
           business analytics needs. My role involved bridging the gap between business users and data, thus securely and 
@@ -121,7 +134,7 @@ jobs:
           schemas tuned for high-volume report querying, I also implemented ETL processes, developed and maintained semantic 
           layer data representations, and created and tested complex data reports.
         cv:
-          list:
+          responsibilities:
             - Consultant and developer on business intelligence projects
             - Worked on solutions to bridge the gap between business users and critical company data
             - Interacted with department teams from mid-size companies to large corporations

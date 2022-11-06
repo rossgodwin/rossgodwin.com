@@ -22,6 +22,19 @@ $themes: (
 		blockquote-quote-border-color: #205ec9 transparent transparent transparent,
 		blockquote-quote-color: $color-white,
 		blockquote-footer-text-color: #6c757d,
+		grid-item-border-width: 1px,
+		grid-item-border-style: solid,
+		grid-item-border-color: #d6d9dc,
+		grid-item-border-radius: 15px,
+		grid-item-box-shadow-offset-x: 0px,
+		grid-item-box-shadow-offset-y: 12px,
+		grid-item-box-shadow-blur-radius: 24px,
+		grid-item-box-shadow-spread-radius: 2px,
+		grid-item-box-shadow-color: #d6d9dc,
+		grid-item-image-width: 100%,
+		grid-item-image-border-style: none,
+		grid-item-image-border-top-left-radius: 7px,
+		grid-item-image-border-top-right-radius: 7px,
 		barchart-bar-color: #205ec9,
 		post-header-meta-text-color: lighten(#292929, 40%),
 		career-tech-skills-grid-item-background-color: #fafafa,
@@ -33,7 +46,9 @@ $themes: (
 		cv-project-name-text-color: #205ec9,
 		cv-education-school-text-color: #205ec9,
 		cheapthycable-overview-background-color: #fafafa,
-		cheapthycable-overview-border-color: #00000006
+		cheapthycable-overview-border-color: #00000006,
+		construction-project-thumbnail-gallery-background-color: #fafafa,
+		construction-project-thumbnail-gallery-border-color: #00000006
 	)
 );
 
@@ -84,5 +99,28 @@ $themes: (
 			border-color: v(button-background-color);
 			color: v(button-background-color);
 		}
+	}
+}
+
+@mixin applyGridItemStyle() {
+	width: 100%;
+	margin-bottom: 20px;
+	
+	@include themify() {
+		border-width: v(grid-item-border-width);
+		border-style: v(grid-item-border-style);
+		border-color: v(grid-item-border-color);
+		border-radius: v(grid-item-border-radius);
+		box-shadow: v(grid-item-box-shadow-offset-x) v(grid-item-box-shadow-offset-y) v(grid-item-box-shadow-blur-radius) v(grid-item-box-shadow-spread-radius) v(grid-item-box-shadow-color);
+	}
+	
+	>img {
+		@include themify() {
+			width: v(grid-item-image-width);
+			border-style: v(grid-item-image-border-style);
+			border-top-left-radius: v(grid-item-image-border-top-left-radius);
+			border-top-right-radius: v(grid-item-image-border-top-right-radius);
+		}
+		margin-bottom: 0px;
 	}
 }

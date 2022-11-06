@@ -2,10 +2,7 @@
 layout: jkt-site/construction/project
 title: &title "SolarShine Express"
 image-path: assets/images/gallery/tsd-office-it-infrastructure-overhaul/001.jpg
-location: 3007 Zeus Street, Charlotte, NC
-type: Car Wash
-role: Civil Project Manager
-completion-date: January 2022
+thumbnail-gallery-width: 450px
 galleries:
   - id: solarshine-mora-photos
     type: thumbnails
@@ -39,6 +36,15 @@ galleries:
         html_content: "Close up of the new rack."
         class: custom-mfp-horizontal
 ---
+
+# Sherwin Williams
+---
+
+| Location:			| 3007 Zeus Street, Charlotte, NC |
+| Type:				| Car Wash |
+| Role:				| Civil Project Manager  |
+| Completion Date:	| January 2022  |
+
 
 Working as the representative from the civil engineering firm on this project, I worked closely with the developer to obtain the commercial site
 plan approval from the city of Charlotte. This car wash was developed on a outparcel of the larger MoRA Point shopping mall complex. As the civil

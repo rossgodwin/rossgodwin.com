@@ -5,24 +5,15 @@ layout: jkt-site/page
 {% include jkt-site/page/body/page-content-header.html title=project.title %}
 
 <article class="jkt-page-content-main">
-	<section class="jkt-site-construction-project">
-		<section class="jkt-site-construction-project-thumbnails">
-			{% assign _gallery = page.galleries[0] %}
-			{% include jkt-site/components/gallery/thumbnails.html gallery=_gallery %}
-		</section>
-		
-		<section class="jkt-site-construction-project-summary">
-			<h1>{{ page.title }}</h1>
-			<div class="jkt-site-construction-project-summary-sub">
-				<div><strong>Location:</strong>&nbsp;{{ page.location }}</div>
-				<div><strong>Type:</strong>&nbsp;{{ page.type }}</div>
-				<div><strong>Role:</strong>&nbsp;{{ page.role }}</div>
-				<div><strong>Completion Date:</strong>&nbsp;{{ page.completion-date }}</div>
-			</div>
-		</section>
-		
-		<section class="jkt-site-construction-project-description">
-			<span>{{ content }}</span>
-		</section>
+	<section class="jkt-construction-project">
+		<div class="jkt-construction-project-body">
+			{% assign gallery = page.galleries[0] %}
+			{% if gallery %}
+				<section class="jkt-construction-project-thumbnails" style="{% if page.thumbnail-gallery-width %}width: {{ page.thumbnail-gallery-width }};{% endif %}">
+					{% include jkt-module-commons/components/gallery/thumbnails.html gallery=gallery %}
+				</section>
+			{% endif %}
+			{{ content }}
+		</div>
 	</section>
 </article>

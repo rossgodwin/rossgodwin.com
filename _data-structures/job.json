@@ -1,0 +1,26 @@
+{
+	company-name: Redhat
+    industry: it
+    positions: [
+    	{
+	    	title: Software Developer
+	        duration-date-to-date: (i.e. 2008 to 2019, Oct 2008 to May 2019
+	        duration-number-of-years: 11 Years
+	        internal-page-relative-url: information-technology/employment/redhat-project-manager
+	        description:
+	        	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+	        	magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+	        	consequat.
+	        cv: {
+	        	description (optional):
+	        		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+	        		magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+	        		consequat.
+	        	responsibilities (optional): [
+	        		Lorem ipsum dolor sit amet,
+	        		...
+	        	]
+	        }
+		}
+    ]
+}

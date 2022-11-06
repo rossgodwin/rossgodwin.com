@@ -1,5 +1,11 @@
 ---
-layout: jkt-site/career-employment-list
+layout: jkt-site/page
 title: &title "Employment"
-industry: it
+masonry-grids: true
 ---
+
+{% include jkt-site/page/body/page-content-header.html title='Employment' %}
+
+<article class="jkt-page-content-main">
+	{% include jkt-site/components/career/employment-grid.html industry='it' %}
+</article>

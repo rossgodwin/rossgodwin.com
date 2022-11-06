@@ -1,3 +1,46 @@
+.jkt-career-employment-grid {
+}
+
+.jkt-career-employment-grid-item {
+	@include applyGridItemStyle();
+	
+	h4 {
+		text-transform: uppercase;
+	}
+}
+
+.jkt-career-employment-grid-item-header {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-top: 1.5rem;
+	
+	img {
+		width: 125px;
+	}
+	
+	.jkt-career-employment-grid-item-badge {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 10px;
+		background-color: rgba(0, 30, 69, 0.8);
+		color: $color-white;
+		border-radius: 50px;
+		padding: 5px;
+		font-size: 11px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
+
+.jkt-career-employment-grid-item-body {
+	padding: 1.5rem;
+	
+	p {
+		margin-bottom: 0;
+	}
+}
+
 .jkt-career-skills-grid {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -25,5 +68,18 @@
 	.jkt-career-skills-grid {
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-column-gap: 1em;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-medium) {
+	.jkt-career-employment-grid-item {
+		min-width: 350px;
+		width: 45%;
+	}
+}
+
+@media (min-width: $device-width-breakpoint-large) {
+	.jkt-career-employment-grid-item {
+		width: 49%;
 	}
 }

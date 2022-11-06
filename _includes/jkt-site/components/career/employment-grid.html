@@ -1,0 +1,19 @@
+<!--
+	{@link _data-structures/job.json}
+-->
+<div class="jkt-career-employment-grid" data-masonry='{ "itemSelector": ".jkt-career-employment-grid-item", "gutter": 20 }'>
+	{% for job in site.data.jkt-site.career.employment.jobs %}
+		{% if job.industry == include.industry %}
+			{% for position in job.positions %}
+				{% include jkt-site/components/career/employment-grid-item.html
+					company-name=job.company-name
+					company-logo-relative-path=job.company-logo-relative-path
+					position-title=position.title
+					position-duration-date-to-date=position.duration-date-to-date
+					position-duration-number-of-years=position.duration-number-of-years
+					position-description=position.description
+					position-internal-page-relative-url=position.internal-page-relative-url %}
+				{% endfor %}
+		{% endif %}
+	{% endfor %}
+</div>

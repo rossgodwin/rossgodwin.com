@@ -1,6 +1,7 @@
 ---
 layout: jkt-site/page
 title: &title "Construction"
+masonry-grids: true
 easy-pie-charts:
   - id: pie-chart
     data-text-id: pie-chart-percent
@@ -35,12 +36,7 @@ easy-pie-charts:
 		<h3>Work History</h3>
 		
 		<section class="jkt-page-preview-list">
-			{% for job in site.data.jkt-site.career.employment.jobs %}
-				{% if job.industry == 'construction' %}
-					{% include jkt-site/components/career/employment-job-page-preview.html
-						job=job %}
-				{% endif %}
-			{% endfor %}
+			{% include jkt-site/components/career/employment-grid.html industry='construction' %}
 		</section>
 	</section>
 	

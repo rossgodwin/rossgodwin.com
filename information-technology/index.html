@@ -1,6 +1,7 @@
 ---
 layout: jkt-site/page
 title: &title "Information Technology"
+masonry-grids: true
 ---
 
 {% assign project-cheapthycable-path = site.data.jkt-site.career.information-technology.projects.on-the-side[site.data.jkt-site.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
@@ -76,14 +77,7 @@ title: &title "Information Technology"
 	<section>
 		<h3>Work History</h3>
 		
-		<section class="jkt-page-preview-list">
-			{% for job in site.data.jkt-site.career.employment.jobs %}
-				{% if job.industry == 'it' %}
-					{% include jkt-site/components/career/employment-job-page-preview.html
-						job=job %}
-				{% endif %}
-			{% endfor %}
-		</section>
+		{% include jkt-site/components/career/employment-grid.html industry='it' %}
 	</section>
 	
 	<section>
