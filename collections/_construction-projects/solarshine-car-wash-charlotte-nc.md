@@ -1,5 +1,5 @@
 ---
-layout: jkt-site/construction/project
+layout: jkt-site/career/construction/project
 title: &title "SolarShine Express"
 location: 3007 Zeus Street, Charlotte, NC
 type: Car Wash

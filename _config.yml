@@ -26,7 +26,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - other
   - vendor/bundle/
 
 excerpt_separator: <!--more-->

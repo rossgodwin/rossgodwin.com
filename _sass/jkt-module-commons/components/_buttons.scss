@@ -1,7 +1,11 @@
 .jkt-button-left-icon {
-	margin-right: 0.5rem;
+	@include themify() {
+		margin-right: v(button-icon-text-spacing);
+	}
 }
 
 .jkt-button-right-icon {
-	margin-left: 0.5rem;
+	@include themify() {
+		margin-left: v(button-icon-text-spacing);
+	}
 }

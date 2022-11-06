@@ -1,5 +1,5 @@
 ---
-layout: jkt-site/construction/project
+layout: jkt-site/career/construction/project
 title: &title "SolarShine Express"
 image-path: assets/images/gallery/tsd-office-it-infrastructure-overhaul/001.jpg
 thumbnail-gallery-width: 450px

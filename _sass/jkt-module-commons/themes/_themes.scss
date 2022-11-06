@@ -5,19 +5,7 @@
 
 $themes: (
 	default: (
-		grid-item-border-width: 1px,
-		grid-item-border-style: solid,
-		grid-item-border-color: #d6d9dc,
-		grid-item-border-radius: 15px,
-		grid-item-box-shadow-offset-x: 0px,
-		grid-item-box-shadow-offset-y: 12px,
-		grid-item-box-shadow-blur-radius: 24px,
-		grid-item-box-shadow-spread-radius: 2px,
-		grid-item-box-shadow-color: #d6d9dc,
-		grid-item-image-width: 100%,
-		grid-item-image-border-style: none,
-		grid-item-image-border-top-left-radius: 7px,
-		grid-item-image-border-top-right-radius: 7px
+		button-icon-text-spacing: 0.5rem
 	)
 );
 

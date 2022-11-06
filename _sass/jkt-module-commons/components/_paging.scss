@@ -4,7 +4,9 @@
 }
 
 .jkt-paging-button-primary {
-	margin-right: .5rem;
+	@include themify() {
+		margin-right: v(button-icon-text-spacing);
+	}
 }
 
 .jkt-paging-button-selected {
