@@ -44,9 +44,12 @@ compress_html:
 
 collections_dir: collections
 collections:
-  construction-projects:
+  blog-information-technology:
     output: true
-    permalink: /construction/projects/:path/
+    permalink: /blog/information-technology/:path/
+  career-construction-projects:
+    output: true
+    permalink: /career/construction/projects/:path/
 
 # Plugins
 gems:

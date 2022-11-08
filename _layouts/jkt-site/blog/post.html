@@ -1,0 +1,36 @@
+---
+layout: jkt-site/page
+---
+
+<section class="jkt-page-content-main">
+	<section class="jkt-post">
+		{% if page.image-path %}
+			<img src="{{ page.image-path | relative_url }}" alt="{{ page.title }}" class="jkt-image-responsive">
+		{% endif %}
+		<header>
+			<h2 class="jkt-heading-vertical-bar">{{ page.title | escape }}</h2>
+			<div class="jkt-post-header-meta">
+				Published:&nbsp;{{ page.date | date: "%b %-d, %Y" }}
+				{% if page.tags %}
+					<br>
+					<span>Tags:&nbsp;
+					{% for tag in page.tags %}
+						<a href="{{ tag | prepend: 'tags/#' | relative_url }}">{{ tag }}</a>&nbsp;
+					{% endfor %}
+					</span>
+				{% endif %}
+				
+				<hr>
+			</div>
+		</header>
+		<div class="jkt-post-body">
+			{% assign gallery = page.galleries[0] %}
+			{% if gallery %}
+				<section class="jkt-post-thumbnails" style="{% if page.thumbnail-gallery-width %}width: {{ page.thumbnail-gallery-width }};{% endif %}">
+					{% include jkt-module-commons/components/gallery/thumbnails.html gallery=gallery %}
+				</section>
+			{% endif %}
+			{{ content }}
+		</div>
+	</section>
+</section>

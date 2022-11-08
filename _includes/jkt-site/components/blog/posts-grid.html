@@ -1,0 +1,9 @@
+<div class="jkt-blog-posts-grid" data-masonry='{ "itemSelector": ".jkt-posts-grid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
+	{% for post in paginator.posts %}
+		{% include jkt-site/components/blog/post-grid-item.html post=post %}
+	{% endfor %}
+</div>
+
+{% include jkt-module-commons/components/list/paging-buttons.html %}
