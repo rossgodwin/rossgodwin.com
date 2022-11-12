@@ -2,6 +2,21 @@
 layout: jkt-site/page
 title: &title "Construction"
 masonry-grids: true
+simple-searches:
+  - search-id: construction_skills
+    search-textfield-id: construction-skills-search-textfield
+    search-results-container-id: construction-skills-results
+    search-json-datasource-file-relative-url: /assets/career/construction/datasources/skills.json
+    search-results-template-html:
+        <div class="jkt-career-construction-skill">
+            {topic}&nbsp;&nbsp;|&nbsp;&nbsp;{knowledge-stage}
+        </div>
+    search-sort-function:
+        function(a, b) {
+            var astr = String(a.topic);
+            var bstr = String(b.topic);
+            return astr.localeCompare(bstr);
+        }
 easy-pie-charts:
   - id: pie-chart
     data-text-id: pie-chart-percent
@@ -43,43 +58,15 @@ easy-pie-charts:
 	<section style="padding-bottom: 25px;">
 		<h3>Skills</h3>
 		
-		<section class="jkt-career-skills-grid">
-			{% for skill in site.data.jkt-site.career.construction.skills.land-development %}
-					{% include jkt-site/components/career/civil-skill-item.html
-						skill-level-percentage=skill.knowledge-percent
-						skill-level-stage=skill.knowledge-stage
-						skill=skill.topic
-						skill-description=skill.description %}
-				{% endfor %}
-		</section>
-		
-		<div class="hbc-chart">
-			{% include jkt-site/components/horizontal-bar-chart/grid.html
-				title=site.data.jkt-site.career.construction.skills.land-development-scale.title
-				units=site.data.jkt-site.career.construction.skills.land-development-scale.units %}
-			
-			<div class="hbc-stacked-bars">
-				{% for skill in site.data.jkt-site.career.construction.skills.land-development %}
-					{% include jkt-site/components/horizontal-bar-chart/titled-bar.html
-			  			title=skill.topic
-						label=skill.knowledge-stage
-						percent-value=skill.knowledge-percent %}
-				{% endfor %}
-		  	</div>
+		<div>
+			<div class="jkt-career-construction-skills-searchbar">
+				<input type="text" id="construction-skills-search-textfield" placeholder="Site, Grade, Utilities, ...">
+				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Beginner'; window.construction_skills.search('Beginner');">Beginner</a>
+				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Proficient'; window.construction_skills.search('Proficient');">Proficient</a>
+				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Advanced'; window.construction_skills.search('Advanced');">Advanced</a>
+				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value=''; window.construction_skills.noSearch();">Clear</a>
+			</div>
+			<div id="construction-skills-results" class="jkt-career-construction-skills"></div>
 		</div>
-		
-		<!--<div class="hbc-chart">
-			{% comment %}
-			{% include jkt-site/components/horizontal-bar-chart/grid.html
-				title=site.data.jkt-site.career.construction.skills.technology-skill-scale.title
-				units=site.data.jkt-site.career.construction.skills.technology-skill-scale.units %}
-			
-			{% for skill in site.data.jkt-site.career.construction.skills.chart2 %}
-				{% include jkt-site/components/horizontal-bar-chart/stacked-bars.html
-		  			title=skill.group
-					categories=skill.technologies %}
-			{% endfor %}
-			{% endcomment %}
-		</div>-->
 	</section>
 </article>

@@ -4,6 +4,10 @@
 
 {% assign body-footer-scripts = '' | split: '' %}
 
+{% if page.simple-searches %}
+	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-site/lib/simple-jekyll-search/simple-jekyll-search.custom.js' %}
+{% endif %}
+
 {% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-site/js/scripts.js' %}
 
 {% assign body-footer-scripts = body-footer-scripts | uniq %}
@@ -25,6 +29,8 @@
 			});
 		{% endif %}
 
+		{% include jkt-site/page/body/footer/simple-search-script.html %}
+		
 		{% if page.easy-pie-charts %}
 			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
 		{% endif %}

@@ -75,6 +75,52 @@
 	}
 }
 
+.jkt-career-construction-skills-searchbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 10px;
+	margin-bottom: 10px;
+	
+	input[type=text] {
+		font-family: $font-Segeo;
+		background-color: $color-white;
+		border-width: 2px;
+		border-style: solid;
+		@include themify() {
+			border-color: v(cheapthycable-overview-background-color);
+		}
+		background-image: url($site-baseurl + '/assets/images/icons/search.png');
+		background-position: 10px 10px;
+		background-repeat: no-repeat;
+		padding-left: 40px;
+	}
+	input[type=text]:focus {
+		@include themify() {
+			border: 2px solid v(cheapthycable-overview-background-color);
+		}
+	}
+}
+
+.jkt-career-construction-skills {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 20px;
+}
+
+.jkt-career-construction-skill {
+	@include themify() {
+		background: v(cheapthycable-overview-background-color);
+		border-color: v(cheapthycable-overview-border-color);
+	}
+	border-style: solid;
+	border-width: 1px;
+	padding: 1rem;
+}
+
 @media (min-width: $device-width-breakpoint-medium) {
 	.jkt-career-employment-grid {
 		@include make2ColumnGrid();
