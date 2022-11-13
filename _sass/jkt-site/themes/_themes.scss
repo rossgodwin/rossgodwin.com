@@ -22,6 +22,13 @@ $themes: (
 		blockquote-quote-border-color: #205ec9 transparent transparent transparent,
 		blockquote-quote-color: $color-white,
 		blockquote-footer-text-color: #6c757d,
+		panel-background-color: #fafafa,
+		panel-border-color: #00000006,
+		panel-border-style: solid,
+		panel-border-width: 2px,
+		form-searchfield-border-color: #fafafa,
+		form-searchfield-border-style: solid,
+		form-searchfield-border-width: 2px,
 		grid-1column-column-width: 100%,
 		grid-1column-gutter-width: 0,
 		grid-2column-column-width: 49%,
@@ -44,21 +51,13 @@ $themes: (
 		grid-item-padding: 1.5rem,
 		posts-article-author-avatar-size: 78px,
 		post-header-meta-text-color: lighten(#292929, 40%),
-		post-thumbnail-gallery-background-color: #fafafa,
-		post-thumbnail-gallery-border-color: #00000006,
 		barchart-bar-color: #205ec9,
-		career-tech-skills-grid-item-background-color: #fafafa,
-		career-tech-skills-grid-item-border-color: #00000006,
 		cv-heading-color: #205ec9,
 		cv-heading-section-border-bottom-color: #205ec9,
 		cv-social-icons-color: #205ec9,
 		cv-employer-name-text-color: #205ec9,
 		cv-project-name-text-color: #205ec9,
-		cv-education-school-text-color: #205ec9,
-		cheapthycable-overview-background-color: #fafafa,
-		cheapthycable-overview-border-color: #00000006,
-		construction-project-thumbnail-gallery-background-color: #fafafa,
-		construction-project-thumbnail-gallery-border-color: #00000006
+		cv-education-school-text-color: #205ec9
 	)
 );
 

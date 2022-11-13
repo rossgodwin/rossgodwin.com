@@ -8,7 +8,7 @@ simple-searches:
     search-results-container-id: construction-skills-results
     search-json-datasource-file-relative-url: /assets/career/construction/datasources/skills.json
     search-results-template-html:
-        <div class="jkt-career-construction-skill">
+        <div class="jkt-panel jkt-career-construction-skill">
             {topic}&nbsp;&nbsp;|&nbsp;&nbsp;{knowledge-stage}
         </div>
     search-sort-function:
@@ -60,7 +60,7 @@ easy-pie-charts:
 		
 		<div>
 			<div class="jkt-career-construction-skills-searchbar">
-				<input type="text" id="construction-skills-search-textfield" placeholder="Site, Grade, Utilities, ...">
+				<input type="text" id="construction-skills-search-textfield" class="jkt-form-searchfield" placeholder="Site, Grade, Utilities, ...">
 				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Beginner'; window.construction_skills.search('Beginner');">Beginner</a>
 				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Proficient'; window.construction_skills.search('Proficient');">Proficient</a>
 				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Advanced'; window.construction_skills.search('Advanced');">Advanced</a>
