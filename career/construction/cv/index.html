@@ -5,12 +5,6 @@ head-print-csss:
   - assets/jkt-site/css/cv/print.css
 ---
 
-{% assign jobs = '' | split: '' %}
-{% assign jobs = jobs | push: site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.bowman] %}
-{% assign jobs = jobs | push: site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.tsd] %}
-{% assign jobs = jobs | push: site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.atlatl] %}
-{% assign jobs = jobs | push: site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.dunn] %}
-
 {% include jkt-site/page/body/page-content-header.html title='Resume' %}
 
 <section class="jkt-page-content-main">
@@ -29,9 +23,9 @@ head-print-csss:
 			heading=site.data.jkt-site.career.construction.cv.intro-heading-text
 			description=site.data.jkt-site.career.construction.cv.intro %}
 		
-		{% include jkt-site/components/career/cv/work-history.html
+		{% include jkt-site/components/career/cv/experience.html
 			heading=site.data.jkt-site.career.construction.cv.jobs-heading-text
-			jobs=jobs %}
+			jobs=site.data.jkt-site.career.construction.cv.experience %}
 		
 		{% include jkt-site/components/career/cv/skills.html
 			heading=site.data.jkt-site.career.construction.cv.skills-heading-text

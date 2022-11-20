@@ -1,10 +1,4 @@
-.jkt-career-employment-grid {
-	@include make1ColumnGrid();
-}
-
 .jkt-career-employment-grid-item {
-	@include make1ColumnGridColumn();
-	
 	@include applyGridItemStyle();
 	
 	h4 {
@@ -34,13 +28,7 @@
 	}
 }
 
-.jkt-career-project-grid {
-	@include make1ColumnGrid();
-}
-
 .jkt-career-project-grid-item {
-	@include make1ColumnGridColumn();
-	
 	@include applyGridItemStyle();
 	
 	h4 {
@@ -61,25 +49,10 @@
 .jkt-career-skills-grid-item {
 	padding: 1rem;
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 @media (min-width: $device-width-breakpoint-medium) {
-	.jkt-career-employment-grid {
-		@include make2ColumnGrid();
-	}
-	
-	.jkt-career-employment-grid-item {
-		@include make2ColumnGridColumn();
-	}
-	
-	.jkt-career-project-grid {
-		@include make2ColumnGrid();
-	}
-	
-	.jkt-career-project-grid-item {
-		@include make2ColumnGridColumn();
-	}
-	
 	.jkt-career-skills-grid {
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		grid-column-gap: 1em;

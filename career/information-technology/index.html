@@ -4,12 +4,6 @@ title: &title "Information Technology"
 masonry-grids: true
 ---
 
-{% assign project-cheapthycable-path = site.data.jkt-site.career.information-technology.projects.on-the-side[site.data.jkt-site.career.information-technology.projects.on-the-side-index.cheapthycable].path %}
-{% assign employment-atlatl-path = site.data.jkt-site.career.employment.jobs[site.data.jkt-site.career.employment.job-index.atlatl].positions[0].internal-url %}
-
-{% assign recommendations = '' | split: '' %}
-{% assign recommendations = recommendations | push: site.data.jkt-site.career.recommendations.recommendations[site.data.jkt-site.career.recommendations.recommendation-index.ivan] %}
-
 {% capture _header_content %}
 	<div>
 		{% assign cv-url = 'career/information-technology/cv' | relative_url %}
@@ -68,6 +62,8 @@ masonry-grids: true
 		
 		<div>
 			<ul class="jkt-list-ul-no-markers">
+				{% assign recommendations = '' | split: '' %}
+				{% assign recommendations = recommendations | push: site.data.jkt-site.career.recommendations.recommendations[site.data.jkt-site.career.recommendations.recommendation-index.ivan] %}
 				{% for recommendation in recommendations %}
 					<li>
 					{% include jkt-module-commons/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
@@ -80,7 +76,8 @@ masonry-grids: true
 	<section>
 		<h3>Work History</h3>
 		
-		{% include jkt-site/components/career/employment-grid.html industry='it' %}
+		{% assign jobs = site.data.jkt-site.career.employment.jobs | where: 'industry', "Information Technology" %}
+		{% include jkt-site/components/career/employment-grid.html jobs=jobs %}
 	</section>
 	
 	<section>
@@ -103,226 +100,19 @@ masonry-grids: true
 	{% endcapture %}
 	
 	<section>
-		<h3>Technical Skills</h3>
+		<h3>Skills</h3>
 		
-		<h6>Languages & Frameworks</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/angular-responsive.html %}
-				<br/>
-				<b>AngularJS</b>
-				<br/>
-				1 Year - {{ _pl2 }}
-				<br/>
-				
-				I learned Angular 1.x in my spare time to develop the user interface for this 
-				<a href="{{ project-cheapthycable-path | relative_url }}">project</a>. Here are a few 
-				<a href="{{ 'tag/angularjs' | relative_url }}">notes</a> I've put together on this topic.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/bootstrap-responsive.html %}
-				<br/>
-				<b>Bootstrap</b>
-				<br/>
-				3 Years - {{ _pl2 }}
-				<br/>
-				I have used this well know CSS framework on a few projects. While the grid system makes creating page 
-				layouts that are suitable for all screen sizes very simple, I have found that CSS grid layout (or CSS 
-				grid) keeps the HTML markup free of duplication and much cleaner as the responsive site grows in 
-				complexity.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/gwt-responsive.html %}
-				<br/>
-				<b>GWT</b>
-				<br/>
-				8 Years - {{ _pl3 }}
-				<br/>
-				I love writing Java code and its fitting that the <i>write once, run anywhere</i> language 
-				is the language of choice for <a href="http://www.gwtproject.org/learnmore-sdk.html" target="_blank">GWT</a> 
-				where developers can create complex AJAX front-ends that get compiled into Javascript code 
-				that is compatible across all major browsers. 
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/sencha-gxt-responsive.html %}
-				<br/>
-				<b>GXT</b>
-				<br/>
-				5 Years - {{ _pl3 }}
-				<br/>
-				<a href="https://www.sencha.com/products/gxt" target="_blank">GXT</a> is a product that Sencha put 
-				together which provides some really cool <a href="https://examples.sencha.com/gxt/examples" target="_blank">
-				UI components</a> for building GWT web applications. I thoroughly enjoyed 
-				working with this Java framework at a <a href="{{ employment-atlatl-path | relative_url }}">previous employer</a>.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/java-jdk-responsive.html %}
-				<br/>
-				<b>Java</b>
-				<br/>
-				17 Years - {{ _pl4 }}
-				<br/>
-				I learned this language in college and have been using it ever since. I love Java and feel 
-				very comfortable programming in this language. Extensive experience using up through JDK 7 
-				and some in JDK 8.
-			</div>
-		</section>
+		{% assign skills = site.data.jkt-site.career.information-technology.skills.tech | where_exp: "item", "item.category != 'Other'" %}
+		{% include jkt-site/components/career/information-technology-skill-grid.html skills=skills %}
 		
-		<h6>Databases</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/oracle-responsive.html %}
-				<br/>
-				<b>Oracle</b>
-				<br/>
-				10 Years - {{ _pl3 }}
-				<br/>
-				I have extensive professional experience using 10g.  Though I was not a DBA I feel comfortable 
-				using PL/SQL constructing queries, stored procedures, functions and indexing.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/mysql-responsive.html %}
-				<br/>
-				<b>MySQL</b>
-				<br/>
-				10 Years - {{ _pl3 }}
-				<br/>
-				I have used this DBMS on various projects over the years. <a href="{% link assets/images/career/information-technology/projects/cheapthycable/database_eer_diagram.png %}" target="_blank">Here</a> 
-				is a link to the database schema design that I put together for a <a href="{{ project-cheapthycable-path | relative_url }}">personal project</a>.
-			</div>
-		</section>
-		
-		<h6>Enterprise & Servers</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/apache-responsive.html %}
-				<br/>
-				<b>Apache</b>
-				<br/>
-				5 Years - {{ _pl2 }}
-				<br/>
-				I've used this open source web server on various projects 
-				throughout the years in both Windows and Linux environments, often times configuring it to be used 
-				with Wildfly and Tomcat application servers but also using it to serve static files.
-				I have used several of the key features in the software such as loading modules, .htaccess, SSL, virtual servers 
-				logging and more. Check out a couple of the <a href="https://rossgodwin.github.io/v1.rossgodwin.com/tag/apache">articles</a> 
-				I put together on configuring a Apache web server.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/wildfly-responsive.html %}
-				<br/>
-				<b>Wildfly</b>
-				<br/>
-				7 Years - PL2
-				<br/>
-				I have significant experience using JBoss and Wildfly in a windows environment. 
-				I have also installed, configured and deployed WAR files in a Linux environment for side projects.
-			</div>
-		</section>
-		
-		<h6>Cloud</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/amazon-aws-responsive.html %}
-				<br/>
-				<b>Amazon AWS</b>
-				<br/>
-				1 Year - PL1
-				<br/>
-				I have recently delved in to AWS.  This <a href="{{ project-cheapthycable-path | relative_url }}">project</a> 
-				is being powered by AWS using Amazon RDS and Amazon EC2.  I've also dipped my toes in the water on 
-				serverless computing with AWS Lambda functions.  I'm eager to learn more about AWS, one of my 
-				goals being to acquire the AWS Certified Solutions Architect certification.
-			</div>
-		</section>
-		
-		<h6>Mobile</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/android-responsive.html %}
-				<br/>
-				<b>Android</b>
-				<br/>
-				4 Year - {{ _pl3 }}
-				<br/>
-				Good understanding of the Android app fundamentals with experience using the Android SDk to develop, package and 
-				publish apps to the Google store.
-				I have experience managing app resources (layouts, 
-				menu, styles, drawable, etc), configuring app manifest and permissions, developing 
-				layouts, activities, fragments and intents, good understanding of the activity lifecyles 
-				and passing information between activities, understanding and experience with navigation 
-				principles between screens and app.  My past experience also includes using the java.net 
-				package to make HTTP POST and GET calls to application server for posting or retrieving 
-				data in JSON or XML format.
-			</div>
-		</section>
-		
-		<h6>Source Control</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/github-responsive.html %}
-				<br/>
-				<b>Git</b>
-				<br/>
-				2 Years - {{ _pl2 }}
-				<br/>
-					
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/svn-responsive.html %}
-				<br/>
-				<b>Subversion</b>
-				<br/>
-				5 Years - {{ _pl3 }}
-				<br/>
-				Used this source control
-				branching, tagging for managing features in development and production releases
-				Static web site generator that I've used to build a couple of web sites, including this one.
-			</div>
-		</section>
-		
-		<h6>Tools</h6>
-		<section class="jkt-career-skills-grid">
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/eclipse-responsive.html %}
-				<br/>
-				<b>Eclipse</b>
-				<br/>
-				12 Years - {{ _pl3 }}
-				<br/>
-				Well over 10 years of experience using this IDE and many of the available market plugins.
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/jekyll-responsive.html %}
-				<br/>
-				<b>Jekyll</b>
-				<br/>
-				1 Year - {{ _pl2 }}
-				<br/>
-				Static web site generator that I've used to build a couple of web sites, including this one.
-				Here are some <a href="{{ 'tag/jekyll' | relative_url }}">notes</a> I've put together tagged Jekyll. 
-			</div>
-			
-			<div class="jkt-panel jkt-career-skills-grid-item">
-				{% include jkt-site/icons/pelican-responsive.html %}
-				<br/>
-				<b>Pelican</b>
-				<br/>
-				1 Year - {{ _pl2 }}
-				<br/>
-				The blog portion of this <a href="{{ project-cheapthycable-path | relative_url }}">website</a> is a 
-				static site generated by Pelican. Check out some of the <a href="{{ 'tag/pelican' | relative_url }}">articles</a> 
-				tagged Pelican that I've put together.
-			</div>
-		</section>
+		{% assign skills = site.data.jkt-site.career.information-technology.skills.tech | where: 'category', "Other" %}
+		<div class="jkt-career-construction-skills">
+			{% for skill in skills %}
+				<div class="jkt-panel jkt-career-construction-skill">
+	            	{{ skill.skill }}
+	        	</div>
+        	{% endfor %}
+		</div>
 	</section>
 	
 	<div class="jkt-footnotes">

@@ -9,11 +9,11 @@ job-index:
 ##
 jobs:
   - company-name: Bowman
-    industry: construction
+    industry: Construction
     company-logo-relative-path: assets/images/career/companies/bowman.png
     positions:
-      - title: Project Manager
-        duration-date-to-date: 2020 to Present
+      - title: Civil Project Engineer
+        duration-date-to-date: 2021 to Present
         duration-number-of-years: 1 Year
         internal-page-relative-url: career/construction/employment/bowman-project-manager
         description:
@@ -48,11 +48,11 @@ jobs:
             - Collaborate with developers, engineers, jurisdictions and contractors to complete design requirements, acquire permits and close out projects
             - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
   - company-name: Triangle Site Design
-    industry: construction
+    industry: Construction
     company-logo-relative-path: assets/images/career/companies/triangle-site-design.png
     positions:
       - title: Civil Designer
-        duration-date-to-date: 2019 to 2020
+        duration-date-to-date: 2019 to 2021
         duration-number-of-years: 1 Year
         internal-page-relative-url: career/construction/employment/triangle-site-design-civil-designer
         description:
@@ -79,7 +79,7 @@ jobs:
             - Utilize design capabilities to assist in producing construction drawings
             - Worked closely with civil engineers and developers to complete time-sensitive projects
   - company-name: Atlatl
-    industry: it
+    industry: Information Technology
     positions:
       - title: Software Developer
         duration-date-to-date: 2008 to 2019
@@ -121,7 +121,7 @@ jobs:
             - Utilized numerous technology frameworks and best practices
             - Key contributor on web and mobile application projects
   - company-name: Dunn Solutions Group
-    industry: it
+    industry: Information Technology
     company-logo-relative-path: assets/images/career/companies/dunn-solutions.png
     positions:
       - title: Business Intelligence Developer

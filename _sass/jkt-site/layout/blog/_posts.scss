@@ -1,10 +1,4 @@
-.jkt-blog-posts-grid {
-	@include make1ColumnGrid();
-}
-
 .jkt-posts-grid-item {
-	@include make1ColumnGridColumn();
-	
 	display: flex;
 	flex-direction: column;
 	
@@ -97,25 +91,5 @@
 	
 	span {
 		font-size: 0.9rem;
-	}
-}
-
-@media (min-width: $device-width-breakpoint-medium) {
-	.jkt-blog-posts-grid {
-		@include make2ColumnGrid();
-	}
-	
-	.jkt-posts-grid-item {
-		@include make2ColumnGridColumn();
-	}
-}
-
-@media (min-width: $device-width-breakpoint-large) {
-	.jkt-blog-posts-grid {
-		@include make3ColumnGrid();
-	}
-	
-	.jkt-posts-grid-item {
-		@include make3ColumnGridColumn();
 	}
 }

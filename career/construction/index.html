@@ -6,7 +6,7 @@ simple-searches:
   - search-id: construction_skills
     search-textfield-id: construction-skills-search-textfield
     search-results-container-id: construction-skills-results
-    search-json-datasource-file-relative-url: /assets/career/construction/datasources/skills.json
+    search-json-datasource-file-relative-url: /assets/career/construction/search-datasources/skills.json
     search-results-template-html:
         <div class="jkt-panel jkt-career-construction-skill">
             {topic}&nbsp;&nbsp;|&nbsp;&nbsp;{knowledge-stage}
@@ -52,7 +52,8 @@ easy-pie-charts:
 	<section>
 		<h3>Work History</h3>
 		
-		{% include jkt-site/components/career/employment-grid.html industry='construction' %}
+		{% assign jobs = site.data.jkt-site.career.employment.jobs | where: 'industry', "Construction" %}
+		{% include jkt-site/components/career/employment-grid.html jobs=jobs %}
 	</section>
 	
 	<section style="padding-bottom: 25px;">

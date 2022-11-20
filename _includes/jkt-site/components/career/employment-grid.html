@@ -1,21 +1,31 @@
 <!--
 	{@link _data-structures/job.json}
 -->
-<div class="jkt-career-employment-grid" data-masonry='{ "itemSelector": ".jkt-career-employment-grid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+<div class="jkt-2cgrid" data-masonry='{ "itemSelector": ".jkt-2cgrid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
 	<div class="grid-sizer"></div>
 	<div class="gutter-sizer"></div>
-	{% for job in site.data.jkt-site.career.employment.jobs %}
-		{% if job.industry == include.industry %}
-			{% for position in job.positions %}
-				{% include jkt-site/components/career/employment-grid-item.html
-					company-name=job.company-name
-					company-logo-relative-path=job.company-logo-relative-path
-					position-title=position.title
-					position-duration-date-to-date=position.duration-date-to-date
-					position-duration-number-of-years=position.duration-number-of-years
-					position-description=position.description
-					position-internal-page-relative-url=position.internal-page-relative-url %}
-				{% endfor %}
-		{% endif %}
+	{% for job in include.jobs %}
+		{% for position in job.positions %}
+			<div class="jkt-2cgrid-item jkt-career-employment-grid-item">
+				<div class="jkt-career-employment-grid-item-header">
+					<div class="jkt-career-employment-grid-item-badge">{{ position.duration-number-of-years | capitalize }}</div>
+					{% if job.company-logo-relative-path %}
+						<img src="{{ job.company-logo-relative-path | relative_url }}" alt="{{ job.company-name }}">
+					{% else %}
+						<h4><a href="{{ position.internal-page-relative-url | relative_url }}">{{ job.company-name }}</a></h4>
+					{% endif %}
+					<h5>{{ position.title }}</h5>
+					<h6>{{ position.duration-date-to-date }}</h6>
+				</div>
+				<div class="jkt-hr-gradient-divider"></div>
+				<div class="jkt-grid-item-body">
+					<p>
+						{{ position.description | strip_html }}
+					</p>
+					<br/>
+					<a class="jkt-link-arrow" href="{{ position.internal-page-relative-url | relative_url }}">Read more</a>
+				</div>
+			</div>
+		{% endfor %}
 	{% endfor %}
 </div>
