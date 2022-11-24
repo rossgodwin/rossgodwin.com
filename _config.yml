@@ -1,11 +1,11 @@
 # Site wide configuration
 destination: docs
-url: 'https://career.rossgodwin.com'
+url: 'https://rossgodwin.com'
 baseurl: ''
 lang: en
 
 # Analytics
-google_analytics_measurement_id: G-X190CB39TW
+google_analytics_measurement_id: G-CNWKCECNVN
 
 # Jekyll configuration
 show_drafts: false

@@ -1,4 +1,4 @@
-Sitemap: https://career.rossgodwin.com/sitemap.xml
+Sitemap: https://rossgodwin.com/sitemap.xml
 
 User-agent: *
 Disallow: /
