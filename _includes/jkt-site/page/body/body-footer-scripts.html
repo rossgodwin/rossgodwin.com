@@ -35,7 +35,6 @@
 			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
 		{% endif %}
 
-		// https://stackoverflow.com/questions/38588346/anchor-a-tags-not-working-in-chrome-when-using
 		var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 		if (window.location.hash && isChrome) {
 			setTimeout(function () {
