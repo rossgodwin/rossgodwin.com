@@ -100,6 +100,7 @@ masonry-grids: true
 	{% endcapture %}
 	
 	<section>
+		<a class="jkt-anchor" id="skills"></a>
 		<h3>Skills</h3>
 		
 		{% assign skills = site.data.jkt-site.career.information-technology.skills.tech | where_exp: "item", "item.category != 'Other'" %}

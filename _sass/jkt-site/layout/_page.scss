@@ -1,6 +1,4 @@
 $jkt-s-page-lr-padding: 1rem;
-$jkt-m-page-header-height: 7em;
-$jkt-l-page-header-height: 5em;
 
 .jkt-page-wrapper {
 	display: grid;
@@ -160,19 +158,21 @@ $jkt-l-page-header-height: 5em;
 
 @media (min-width: $device-width-breakpoint-medium) {
 	.jkt-page-wrapper {
-		grid-template-rows: $jkt-m-page-header-height 1fr auto;
+		@include themify() {
+			grid-template-rows: v(medium-device-page-header-height) 1fr auto;
+		}
 	}
 	
 	// ------------- Header -----------------
 	.jkt-page-header-wrapper {
-		height: $jkt-m-page-header-height;
-		
+		@include themify() {
+			height: v(medium-device-page-header-height);
+		}
 		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		z-index: 1;
-		
 		text-align: left;
 	}
 	
@@ -199,7 +199,9 @@ $jkt-l-page-header-height: 5em;
 
 @media (min-width: $device-width-breakpoint-large) {
 	.jkt-page-wrapper {
-		grid-template-rows: $jkt-l-page-header-height 1fr auto;
+		@include themify() {
+			grid-template-rows: v(large-device-page-header-height) 1fr auto;
+		}
 	}
 	
 	// ------------- Header -----------------
@@ -207,7 +209,9 @@ $jkt-l-page-header-height: 5em;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
-		height: $jkt-l-page-header-height;
+		@include themify() {
+			height: v(large-device-page-header-height);
+		}
 	}
 }
 
