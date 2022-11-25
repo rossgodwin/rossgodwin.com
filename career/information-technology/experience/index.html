@@ -1,0 +1,12 @@
+---
+layout: jkt-site/page
+title: &title "Experience"
+masonry-grids: true
+---
+
+{% include jkt-site/page/body/page-content-header.html title=site.data.jkt-site.career.experience.label %}
+
+<article class="jkt-page-content-main">
+	{% assign companies = site.data.jkt-site.career.experience.companies | where: 'industry', "Information Technology" %}
+	{% include jkt-site/components/career/experience-grid.html companies=companies %}
+</article>

@@ -1,0 +1,6 @@
+{% include jkt-module-commons/helpers/prepend-baseurl.html path=include.url %}
+{% assign post-url = __return %}
+{% include jkt-module-commons/helpers/prepend-path.html
+	path=post-url
+	prepend_path=site.url
+%}

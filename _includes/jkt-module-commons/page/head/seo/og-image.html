@@ -1,9 +1,10 @@
-{% assign _og-image = site.data.jkt-module-commons.seo.og-image %}
-{% if page.og-image %}
-	{% assign _og-image = page.og-image %}
-{% elsif layout.og-image %}
-	{% assign _og-image = layout.og-image %}
+{% assign asset-url = site.data.jkt-module-commons.seo.og-image-asset-url %}
+{% if page.og-image-asset-url %}
+	{% assign asset-url = page.og-image-asset-url %}
+{% elsif layout.og-image-asset-url %}
+	{% assign asset-url = layout.og-image-asset-url %}
 {% endif %}
-{% if _og-image %}
-	<meta property="og:image" content="{{ _og-image }}" />
+{% if asset-url %}
+	{% include jkt-module-commons/helpers/prepend-siteurl.html url=asset-url %}
+	<meta property="og:image" content="{{ __return }}" />
 {% endif %}

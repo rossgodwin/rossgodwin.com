@@ -50,10 +50,10 @@ easy-pie-charts:
 	</section>
 	
 	<section>
-		<h3>Work History</h3>
+		<h3>{{ site.data.jkt-site.career.experience.label }}</h3>
 		
-		{% assign jobs = site.data.jkt-site.career.employment.jobs | where: 'industry', "Construction" %}
-		{% include jkt-site/components/career/employment-grid.html jobs=jobs %}
+		{% assign companies = site.data.jkt-site.career.experience.companies | where: 'industry', "Construction" %}
+		{% include jkt-site/components/career/experience-grid.html companies=companies %}
 	</section>
 	
 	<section style="padding-bottom: 25px;">

@@ -1,0 +1,47 @@
+---
+layout: jkt-site/page
+---
+
+{% assign company = site.data.jkt-site.career.experience.companies[page.job-index] %}
+
+{% include jkt-site/page/body/page-content-header.html title=company.company-name %}
+
+<article class="jkt-page-content-main">
+	{% for position in company.positions %}
+		{% if company.positions.size > 1 %}
+			<a class="jkt-anchor" id="{{ position.title | remove: ' ' }}"></a>
+		{% endif %}
+		<section>
+			<h4>Description</h4>
+			<div>
+				{{ position.description }}
+			</div>
+		</section>
+		
+		{% if position.responsibilities %}
+			<section>
+				<h4>Responsibilies</h4>
+				<div>
+					<ul class="jkt-ul-marker-fa-chevron">
+						{% for responsibility in position.responsibilities %}
+							<li>{{ responsibility }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		{% endif %}
+		
+		{% if position.achievements %}
+			<section>
+				<h4>Achievements</h4>
+				<div>
+					<ul class="jkt-ul-marker-fa-chevron">
+						{% for achievement in position.achievements %}
+							<li>{{ achievement }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</section>
+		{% endif %}
+	{% endfor %}
+</article>

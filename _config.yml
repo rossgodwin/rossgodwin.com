@@ -68,6 +68,10 @@ defaults:
       include-seo: false
       include-seo-og: false
   - scope:
+      path: blog/*
+    values:
+      include-seo: true
+  - scope:
       path: information-technology/*
     values:
       include-seo: false

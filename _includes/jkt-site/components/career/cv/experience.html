@@ -1,27 +1,31 @@
+<!--
+	heading
+	jobs: [
+		{@link _data-structures/company.json},
+		...
+	]
+-->
 <section class="jkt-cv-work-history-section">
 	<div class="jkt-cv-section-heading">
 		<h2>{{ include.heading }}</h2>
 	</div>
 	<div class="jkt-cv-section-content">
-		{% for job in include.jobs %}
+		{% for company in include.companies %}
 			<div class="jkt-cv-work-history-job-employer">
-				{{ job.company-name }}
+				{{ company.company-name }}
 			</div>
 			<div class="jkt-cv-work-history-job-position">
-				{% for position in job.positions %}
+				{% for position in company.positions %}
+					{% include jkt-site/components/career/helpers/get-position-url.html company=company position=position %}
 					<div>
 						<div class="jkt-cv-work-history-job-position-title">
-							{% if position.internal-page-relative-url %}
-								<a class="jkt-link-arrow" href="{{ position.internal-page-relative-url | relative_url }}">{{ position.title }}</a>
-							{% else %}
-								{{ position.title }}
-							{% endif %}
+							<a class="jkt-link-arrow" href="{{ position-url }}">{{ position.title }}</a>
 						</div>
 						<div class="jkt-cv-work-history-job-position-duration">{{ position.duration-date-to-date }}</div>
 					</div>
 					<div>
 						<ul>
-							{% for responsibility in position.responsibilities %}
+							{% for responsibility in position.cv.responsibilities %}
 								<li>{{ responsibility }}</li>
 							{% endfor %}
 						</ul>
