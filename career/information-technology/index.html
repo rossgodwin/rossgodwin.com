@@ -86,62 +86,15 @@ masonry-grids: true
 		{% include jkt-site/components/career/project-grid.html %}
 	</section>
 	
-	{% capture _pl1 %}
-		PL1 <sup><a href="#fn:pl1" class="footnote">1</a></sup>
-	{% endcapture %}
-	{% capture _pl2 %}
-		PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
-	{% endcapture %}
-	{% capture _pl3 %}
-		PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
-	{% endcapture %}
-	{% capture _pl4 %}
-		PL4 <sup><a href="#fn:pl4" class="footnote">4</a></sup>
-	{% endcapture %}
-	
 	<section>
 		<a class="jkt-anchor" id="skills"></a>
 		<h3>Skills</h3>
 		
-		{% assign skills = site.data.jkt-site.career.information-technology.skills.tech | where_exp: "item", "item.category != 'Other'" %}
-		{% include jkt-site/components/career/information-technology-skill-grid.html skills=skills %}
-		
-		{% assign skills = site.data.jkt-site.career.information-technology.skills.tech | where: 'category', "Other" %}
-		<div class="jkt-career-construction-skills">
-			{% for skill in skills %}
-				<div class="jkt-panel jkt-career-construction-skill">
-	            	{{ skill.skill }}
-	        	</div>
-        	{% endfor %}
-		</div>
+		{% assign skills = site.data.jkt-site.career.skills.skills | where_exp: "item", "item.category != 'Land Development'" | sort: "skill" %}
+		{% include jkt-site/components/career/skill-list.html skills=skills %}
 	</section>
 	
 	<div class="jkt-footnotes">
-		<ol>
-			<li id="fn:pl1">
-				<p>
-					PL1 - Have basic awareness and comprehension of the skill and is in the process of acquiring 
-					this skill through various channels.
-				</p>
-			</li>
-			<li id="fn:pl2">
-				<p>
-					PL2 - Possess working knowledge of the skill, and can actively and independently apply this 
-					skill in engagements and projects.
-				</p>
-			</li>
-			<li id="fn:pl3">
-				<p>
-					PL3 - Comprehensive, in-depth and specialized knowledge of the skill. Have extensively 
-					demonstrated successful application of the skill in engagements or projects.
-				</p>
-			</li>
-			<li id="fn:pl4">
-				<p>
-					PL4 - Can function as a subject matter expert for this skill and capable of analyzing, 
-					evaluating and synthesizing solutions using the skill.
-				</p>
-			</li>
-		</ol>
+		{% include jkt-site/components/career/skill-proficiency-level-anchors.html %}
 	</div>
 </article>

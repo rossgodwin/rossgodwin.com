@@ -2,21 +2,6 @@
 layout: jkt-site/page
 title: &title "Construction"
 masonry-grids: true
-simple-searches:
-  - search-id: construction_skills
-    search-textfield-id: construction-skills-search-textfield
-    search-results-container-id: construction-skills-results
-    search-json-datasource-file-relative-url: /assets/career/construction/search-datasources/skills.json
-    search-results-template-html:
-        <div class="jkt-panel jkt-career-construction-skill">
-            {topic}&nbsp;&nbsp;|&nbsp;&nbsp;{knowledge-stage}
-        </div>
-    search-sort-function:
-        function(a, b) {
-            var astr = String(a.topic);
-            var bstr = String(b.topic);
-            return astr.localeCompare(bstr);
-        }
 easy-pie-charts:
   - id: pie-chart
     data-text-id: pie-chart-percent
@@ -56,18 +41,14 @@ easy-pie-charts:
 		{% include jkt-site/components/career/experience-grid.html companies=companies %}
 	</section>
 	
-	<section style="padding-bottom: 25px;">
+	<section>
 		<h3>Skills</h3>
 		
-		<div>
-			<div class="jkt-career-construction-skills-searchbar">
-				<input type="text" id="construction-skills-search-textfield" class="jkt-form-searchfield" placeholder="Site, Grade, Utilities, ...">
-				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Beginner'; window.construction_skills.search('Beginner');">Beginner</a>
-				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Proficient'; window.construction_skills.search('Proficient');">Proficient</a>
-				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value='Advanced'; window.construction_skills.search('Advanced');">Advanced</a>
-				<a class="jkt-button" role="button" onclick="document.getElementById('construction-skills-search-textfield').value=''; window.construction_skills.noSearch();">Clear</a>
-			</div>
-			<div id="construction-skills-results" class="jkt-career-construction-skills"></div>
-		</div>
+		{% assign skills = site.data.jkt-site.career.skills.skills | where_exp: "item", "item.companies contains 'bowman'" | sort: "skill" %}
+		{% include jkt-site/components/career/skill-list.html skills=skills %}
 	</section>
+	
+	<div class="jkt-footnotes">
+		{% include jkt-site/components/career/skill-proficiency-level-anchors.html %}
+	</div>
 </article>

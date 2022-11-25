@@ -28,6 +28,18 @@
 	}
 }
 
+.jkt-career-skill-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 20px;
+}
+
+.jkt-career-skill-list-item {
+	padding: 1rem;
+}
+
 .jkt-career-project-grid-item {
 	@include applyGridItemStyle();
 	
