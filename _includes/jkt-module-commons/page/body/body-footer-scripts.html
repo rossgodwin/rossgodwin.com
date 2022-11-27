@@ -18,10 +18,6 @@
 	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/masonry-layout4/js/masonry.pkgd.min.js' %}
 {% endif %}
 
-{% if page.easy-pie-charts %}
-	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-module-commons/lib/rendro-easy-pie-chart/js/jquery.easypiechart.min.js' %}
-{% endif %}
-
 {% if layout.body-footer-scripts %}
 	{% assign body-footer-scripts = body-footer-scripts | push: layout.body-footer-scripts %}
 {% endif %}

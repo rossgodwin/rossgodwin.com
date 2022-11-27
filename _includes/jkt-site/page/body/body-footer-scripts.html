@@ -8,8 +8,6 @@
 	{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-site/lib/simple-jekyll-search/simple-jekyll-search.custom.js' %}
 {% endif %}
 
-{% assign body-footer-scripts = body-footer-scripts | push: 'assets/jkt-site/js/scripts.js' %}
-
 {% assign body-footer-scripts = body-footer-scripts | uniq %}
 {% for script in body-footer-scripts %}
 	<script src="{{ script | relative_url }}" type="text/javascript"></script>
@@ -30,10 +28,6 @@
 		{% endif %}
 
 		{% include jkt-site/page/body/footer/simple-search-script.html %}
-		
-		{% if page.easy-pie-charts %}
-			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
-		{% endif %}
 
 		var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 		if (window.location.hash && isChrome) {
@@ -44,10 +38,4 @@
 			}, 300);
 		}
 	});
-
-	{% if page.easy-pie-charts %}
-		$(window).scroll(function() {
-			animatePieCharts(JSON.parse('{{ page.easy-pie-charts | flatten | jsonify }}'));
-		});
-	{% endif %}
 </script>
