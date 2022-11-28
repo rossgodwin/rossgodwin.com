@@ -16,27 +16,19 @@
 						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
 					</li>
 				{% endfor %}
-				{% if site.data.jkt-site.me.social.linkedin or site.data.jkt-site.me.social.github %}
-					<li class="jkt-page-header-navigation-item-separator">
-						|
-					</li>
-					{% if site.data.jkt-site.me.social.linkedin %}
-						<li>
-							{% include jkt-site/components/icons/fa/linkedin-circle-icon.html
-								url=site.data.jkt-site.me.social.linkedin.url
-								target-blank=true
-								fa-x=1 %}
-						</li>
-					{% endif %}
-					{% if site.data.jkt-site.me.social.github %}
-						<li>
-							{% include jkt-site/components/icons/fa/github-circle-icon.html
-								url=site.data.jkt-site.me.social.github.url
-								target-blank=true
-								fa-x=1 %}
-						</li>
-					{% endif %}
-				{% endif %}
+				<li class="jkt-page-header-navigation-item-separator">
+					|
+				</li>
+				<li>
+					{% include jkt-site/components/icons/fa/my-linkedin-circle-icon-link.html
+						target-blank=true
+						fa-x=1 %}
+				</li>
+				<li>
+					{% include jkt-site/components/icons/fa/my-github-circle-icon-link.html
+						target-blank=true
+						fa-x=1 %}
+				</li>
 			</ul>
 		</nav>
 	</div>

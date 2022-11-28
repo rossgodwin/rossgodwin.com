@@ -1,7 +1,41 @@
 <footer class="jkt-page-footer">
 	<div class="jkt-page-footer-wrapper">
-		Contact me: <a href="{{ site.data.jkt-site.me.social.linkedin.url }}">{{ site.data.jkt-site.me.social.linkedin.display-url }}</a>
-		<br>
-		&copy; <span id="year"></span>
+		<div class="jkt-page-footer-icon-links">
+			<ul>
+				<li>
+					{% include jkt-site/components/icons/fa/my-linkedin-circle-icon-link.html
+						target-blank=true
+						fa-x=2 %}
+				</li>
+				<li>
+					{% include jkt-site/components/icons/fa/my-github-circle-icon-link.html
+						target-blank=true
+						fa-x=2 %}
+				</li>
+			</ul>
+		</div>
+		
+		<div class="jkt-page-footer-text-links">
+			<ul>
+				<li>
+					{% assign about-url = 'career' | relative_url %}
+					{% include jkt-site/components/links/text-link.html
+						url=about-url
+						text='Career' %}
+				</li>
+				<li>
+					{% assign blog-url = 'blog' | relative_url %}
+					{% include jkt-site/components/links/text-link.html
+						url=blog-url
+						text='Blog' %}
+				</li>
+			</ul>
+		</div>
+		
+		<hr>
+		
+		<div>
+			&copy; <span id="year"></span> Ross Godwin. All Rights Reserved.
+		</div>
 	</div>
 </footer>

@@ -1,0 +1,6 @@
+<a href="{{ include.url }}"
+	class="jkt-icon-link{% if include.link-class %} {{ include.link-class }}{% endif %}"
+	{% if include.target-blank == true %} target="_blank"{% endif %}>
+	{% include jkt-site/components/icons/fa/resume-circle-icon.html
+		fa-x=include.fa-x %}
+</a>

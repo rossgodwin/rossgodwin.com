@@ -7,9 +7,9 @@ masonry-grids: true
 {% capture _header_content %}
 	<div>
 		{% assign cv-url = 'career/information-technology/cv' | relative_url %}
-		{% include jkt-site/components/icons/fa/resume-circle-icon.html url=cv-url fa-x=1 %}
-		{% include jkt-site/components/icons/fa/linkedin-circle-icon.html url=site.data.jkt-site.me.social.linkedin.url target-blank=true fa-x=1 %}
-		{% include jkt-site/components/icons/fa/github-circle-icon.html url=site.data.jkt-site.me.social.github.url target-blank=true fa-x=1 %}
+		{% include jkt-site/components/icons/fa/resume-circle-icon-link.html url=cv-url fa-x=1 %}
+		{% include jkt-site/components/icons/fa/my-linkedin-circle-icon-link.html target-blank=true fa-x=1 %}
+		{% include jkt-site/components/icons/fa/my-github-circle-icon-link.html target-blank=true fa-x=1 %}
 	</div>
 {% endcapture %}
 {% include jkt-site/page/body/page-content-header.html title='Information Technology' content=_header_content %}
