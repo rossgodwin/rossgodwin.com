@@ -13,7 +13,7 @@ skills:
     companies: bowman, atlatl, dunn
     category: Soft
   - skill: AngularJS
-    companies: other
+    companies: cheapthycable
     base-png-icon-relative-path: assets/images/icons/angular
     category: Languages & Frameworks
     duration-number-of-years: 1 Year
@@ -22,7 +22,7 @@ skills:
         <a href="/career/information-technology/projects/cheapthycable">project</a>. Here are a few 
         <a href="{{ 'tag/angularjs' | relative_url }}">notes</a> I've put together on this topic.
   - skill: Bootstrap
-    companies: other
+    companies: cheapthycable
     base-png-icon-relative-path: assets/images/icons/bootstrap
     category: Languages & Frameworks
     duration-number-of-years: 3 Years
@@ -61,17 +61,20 @@ skills:
         very comfortable programming in this language. Extensive experience using up through JDK 7 
         and some in JDK 8.
   - skill: Mailgun
-    companies: other
+    companies: cheapthycable
     base-png-icon-relative-path: assets/images/icons/mailgun
     category: Languages & Frameworks
     duration-number-of-years: 1 Year
     skill-level-anchor-reference: 2
   - skill: Thymeleaf
-    companies: other
+    companies: cheapthycable
     base-png-icon-relative-path: assets/images/icons/thymeleaf
     category: Languages & Frameworks
     duration-number-of-years: 1 Year
     skill-level-anchor-reference: 2
+  - skill: Hibernate
+    companies: atlatl, cheapthycable
+    category: Languages & Frameworks
   - skill: Database Design
     companies: atlatl, dunn, cheapthycable
     category: Databases
@@ -130,7 +133,7 @@ skills:
         is being powered by AWS using Amazon RDS and Amazon EC2.  I've also dipped my toes in the water on 
         serverless computing with AWS Lambda functions.  I'm eager to learn more about AWS, one of my 
         goals being to acquire the AWS Certified Solutions Architect certification.
-  - skill: Android
+  - skill: Android Development
     companies: atlatl
     base-png-icon-relative-path: assets/images/icons/android
     category: Mobile
@@ -198,16 +201,13 @@ skills:
     companies: atlatl, cheapthycable
     category: Other
   - skill: Cascading Style Sheets (CSS)
-    companies: atlatl, cheapthycable, other
+    companies: atlatl, cheapthycable
     category: Other
   - skill: Javascript
-    companies: atlatl, cheapthycable, other
+    companies: atlatl, cheapthycable
     category: Other
   - skill: REST
     companies: atlatl, cheapthycable
-    category: Other
-  - skill: Oracle SQL Developer
-    companies: atlatl, dunn
     category: Other
   - skill: JSON
     companies: atlatl, cheapthycable

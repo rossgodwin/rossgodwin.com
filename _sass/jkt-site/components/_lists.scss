@@ -22,26 +22,6 @@
 	}
 }
 
-.jkt-page-preview-list {
-	.jkt-page-preview:not(:last-of-type) {
-		margin-bottom: 1rem;
-	}
-	
-	.jkt-page-preview {
-		> h4 {
-			@extend .jkt-heading-vertical-bar;
-		}
-		
-		.jkt-page-preview-title {
-			@include themify() {
-				color: v(page-preview-title-text-color);
-			}
-			margin-bottom: .5rem;
-			font-size: 0.8125rem;
-		}
-	}
-}
-
 .jkt-list-ul-no-markers {
 	list-style: none;
 	margin: 0;
