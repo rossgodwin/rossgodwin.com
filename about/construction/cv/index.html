@@ -1,0 +1,44 @@
+---
+layout: jkt-site/page
+title: &title "Resume"
+head-print-csss:
+  - assets/jkt-site/css/cv/print.css
+---
+
+{% include jkt-site/page/body/page-content-header.html title='Resume' %}
+
+<section class="jkt-page-content-main">
+	<article class="jkt-cv">
+		{% include jkt-site/components/about/cv/header.html
+			name=site.data.jkt-site.about.me.name
+			title=site.data.jkt-site.about.construction.cv.title
+			location=site.data.jkt-site.about.me.location
+			phone-number=site.data.jkt-site.about.me.phone-number
+			website=site.data.jkt-site.about.me.website
+			linkedin=site.data.jkt-site.about.me.social.linkedin %}
+		
+		<hr>
+		
+		{% include jkt-site/components/about/cv/introduction.html
+			heading=site.data.jkt-site.about.construction.cv.intro-heading-text
+			description=site.data.jkt-site.about.construction.cv.intro %}
+		
+		{% include jkt-site/components/about/cv/experience.html
+			heading=site.data.jkt-site.about.construction.cv.jobs-heading-text
+			companies=site.data.jkt-site.about.experience.companies %}
+		
+		{% include jkt-site/components/about/cv/skills.html
+			heading=site.data.jkt-site.about.construction.cv.skills-heading-text
+			skills=site.data.jkt-site.about.construction.skills.computer-skills %}
+		
+		{% include jkt-site/components/about/cv/education.html
+			heading=site.data.jkt-site.about.construction.cv.education-heading-text
+			degree=site.data.jkt-site.about.education.bachelors_degree %}
+	</article>
+	
+	<section class="jkt-cv-download-options">
+		{% include jkt-site/components/about/cv/versions.html
+			pdf=site.data.jkt-site.about.construction.cv.version.pdf
+			text=site.data.jkt-site.about.construction.cv.version.text %}
+	</section>
+</section>

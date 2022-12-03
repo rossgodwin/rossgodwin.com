@@ -47,9 +47,9 @@ collections:
   blog-information-technology:
     output: true
     permalink: /blog/information-technology/:path/
-  career-construction-projects:
+  about-construction-projects:
     output: true
-    permalink: /career/construction/projects/:path/
+    permalink: /about/construction/projects/:path/
 
 # Plugins
 gems:

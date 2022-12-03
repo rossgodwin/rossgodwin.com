@@ -1,0 +1,64 @@
+---
+layout: jkt-site/page
+title: &title "CheapThyCable.com"
+masonry-grids: true
+---
+
+{% assign project = site.data.jkt-site.about.information-technology.projects.on-the-side[site.data.jkt-site.about.information-technology.projects.on-the-side-index.cheapthycable] %}
+{% assign github-cheapthycable-repo-url = site.data.jkt-site.about.me.social.github.repository.cheapthycable | prepend: '/' | prepend: site.data.jkt-site.about.me.social.github.url %}
+{% assign cheapthycable-website = site.data.jkt-site.about.information-technology.projects.on-the-side[site.data.jkt-site.about.information-technology.projects.on-the-side-index.cheapthycable].website %}
+
+{% include jkt-site/page/body/page-content-header.html title=project.title %}
+
+<article class="jkt-page-content-main">
+	<section class="jkt-panel jkt-project-cheapthycable-overview-grid">
+		<img class="jkt-project-cheapthycable-overview-image" src="{% link assets/images/about/information-technology/projects/cheapthycable/computer-screen.png %}" alt="image">
+		
+		<div>
+			<strong>Source Code:</strong>&nbsp;<a href="{{ github-cheapthycable-repo-url }}">GitHub repository</a>
+			<br/><br/>
+			A crowdsourcing web application that allowed participants to see and analyze what others were paying for cable and internet services in their area with the goal of providing them leveraging power in negotiating lower monthly payments with their service provider. This product was under development and publicly accessible from August 2016 to October 2017. Though defunct, the application is running on Amazon AWS and hosted under my personal domain as part of my portfolio.
+		</div>
+	</section>
+	
+	<section>
+		<h4>Overview</h4>
+		<p>
+			As sole developer on this project, I worked on it in my spare time in late 2016. The product 
+			was originally hosted on Google Cloud Platform utilizing Bitnami to quickly provide my hosted 
+			web application stack.
+		</p>
+		<p>
+			The idea behind the product was to gather some basic (non-personal) information about someone's 
+			cable bill such as: what is their bill total, what is their billing zip code and what services they 
+			are subscribed for.  The flow was very simple: the user would signup, provide information about 
+			their bill and then have access to look at similar information provided by their neighbors.
+		</p>
+		<p>
+			One of the key problems that I had to solve was providing user's the ability to filter out 
+			only bills within a vicinity i.e. within a 25 mile radius.  To do this I had to translate the 
+			haversine formula in to database queries. Here are links to class files and methods where this 
+			was done: <a href="{{ github-cheapthycable-repo-url }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/bl/bill/report/BillReportDAO.java#L35">1</a>, 
+			<a href="{{ github-cheapthycable-repo-url }}/blob/acd84fee881f6257ce7b622f4f929c6c39adb6cb/src/com/gwn/xcbl/data/query/s/bill/BillSqueryUtils.java#L41">2</a>, <a href="{{ github-cheapthycable-repo-url }}/blob/master/src/com/gwn/xcbl/data/query/s/GeoZipCodeSqueryUtils.java">3</a>.
+		</p>
+	</section>
+	
+	<section>
+		<h4>Accomplishment</h4>
+		<p>
+			Though this did not go viral, I had people register from over 20 different states in the US. 
+			I learned a tremendous amount, gaining a wealth of knowledge and confidence as a developer.
+		</p>
+		<p>
+			Fun fact - at the time of development there were ~45,000 zip codes in the United States and 
+			there are ~150 cable service providers that I could identify.
+		</p>
+	</section>
+	
+	<section>
+		<h4>Technologies Used</h4>
+		
+		{% assign skills = site.data.jkt-site.about.skills.cheapthycable | sort: "skill" %}
+		{% include jkt-site/components/about/skills-grid.html skills=skills %}
+	</section>
+</article>

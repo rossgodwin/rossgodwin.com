@@ -1,0 +1,39 @@
+<div class="jkt-3cgrid" data-masonry='{ "itemSelector": ".jkt-3cgrid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
+	{% for skill in include.skills %}
+		<div class="jkt-3cgrid-item jkt-panel jkt-about-skill-grid-item">
+			{% if skill.base-png-icon-relative-path %}
+				<picture>
+					<source srcset="{{ '-150.png' | prepend: skill.base-png-icon-relative-path | relative_url }}" media="(min-width: 992px)"/>
+					<img src="{{ '-100.png' | prepend: skill.base-png-icon-relative-path | relative_url }}" alt="{{ skill.skill }}"/>
+				</picture>
+				<br/>
+			{% endif %}
+			<b>{{ skill.skill }}</b>
+			{% if skill.duration-number-of-years or skill.skill-level-anchor-reference %}
+				<br/>
+				{{ skill.duration-number-of-years }}
+				{% if skill.duration-number-of-years and skill.skill-level-anchor-reference %}
+					- 
+				{% endif %}
+				{% if skill.skill-level-anchor-reference == 1 %}
+					PL1 <sup><a href="#fn:pl1" class="footnote">1</a></sup>
+				{% elsif skill.skill-level-anchor-reference == 2 %}
+					PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+				{% elsif skill.skill-level-anchor-reference == 3 %}
+					PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+				{% elsif skill.skill-level-anchor-reference == 4 %}
+					PL4 <sup><a href="#fn:pl4" class="footnote">4</a></sup>
+				{% endif %}
+			{% endif %}
+			{% if skill.description %}
+				<br/>
+				{{ skill.description }}
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>
+
+
+

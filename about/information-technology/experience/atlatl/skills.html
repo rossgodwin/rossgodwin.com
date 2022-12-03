@@ -1,0 +1,14 @@
+---
+layout: jkt-site/page
+title: &title "Skills"
+include-seo-og: true
+og-title: Skills
+og-image-asset-url: assets/images/about/og-image-skills.png
+---
+
+{% include jkt-site/page/body/page-content-header.html title=site.data.jkt-site.about.skills.label %}
+
+<article class="jkt-page-content-main">
+	{% assign skills = site.data.jkt-site.about.skills.all | where_exp: "item", "item.companies contains 'atlatl'" | sort: "skill" %}
+	{% include jkt-site/components/about/skills-list.html skills=skills %}
+</article>

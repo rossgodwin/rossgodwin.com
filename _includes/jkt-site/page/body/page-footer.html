@@ -18,16 +18,10 @@
 		<div class="jkt-page-footer-text-links">
 			<ul>
 				<li>
-					{% assign about-url = 'career' | relative_url %}
-					{% include jkt-site/components/links/text-link.html
-						url=about-url
-						text='Career' %}
+					{% include jkt-site/components/links/about-text-link.html %}
 				</li>
 				<li>
-					{% assign blog-url = 'blog' | relative_url %}
-					{% include jkt-site/components/links/text-link.html
-						url=blog-url
-						text='Blog' %}
+					{% include jkt-site/components/links/blog-text-link.html %}
 				</li>
 			</ul>
 		</div>

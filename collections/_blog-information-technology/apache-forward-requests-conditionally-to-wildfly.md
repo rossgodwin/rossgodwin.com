@@ -9,9 +9,7 @@ tags: [information technology, apache, httpd, mod_proxy, wildfly]
 date: 2018-01-03
 ---
 
-{% assign cheapthycable-display-url = site.data.career.information-technology.projects.on-the-side[site.data.career.information-technology.projects.on-the-side-index.cheapthycable].website.display-url %}
-
-I created a website <i>{{ cheapthycable-display-url }}</i> that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
+I created a website <a href="{{ 'about/information-technology/projects/cheapthycable' | relative_url }}">Cheapthycable.com</a> that is composed of a static blog and a JavaEE application. Originally I developed it so that all content was served out by the application server whose content was comprised from a war file.
 <!--more-->
 
 {% assign _image_folder = 'assets/images/blog/posts/apache-forward-requests-conditionally-to-wildfly/' %}

@@ -1,7 +1,7 @@
 <header class="jkt-page-header">
 	<div class="jkt-page-header-wrapper">
 		<div class="jkt-page-header-title">
-			<h1 class="jkt-heading-vertical-bar">{{ site.data.jkt-site.page-header.title }}</h1>
+			<h1 class="jkt-heading-vertical-bar"></h1>
 			
 			<button class="jkt-page-header-menu-toggler" type="button" aria-label="Toggle navigation">
 				<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
@@ -10,12 +10,12 @@
 		
 		<nav class="jkt-page-header-navigation">
 			<ul>
-				{% for item in site.data.jkt-site.page-header.menu %}
-					{% include jkt-module-commons/helpers/starts-with.html string=page.url starts-with=item.url %}
-					<li class="{% if __return == true %}active{% endif %}">
-						<a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-					</li>
-				{% endfor %}
+				<li>
+					{% include jkt-site/components/links/about-text-link.html %}
+				</li>
+				<li>
+					{% include jkt-site/components/links/blog-text-link.html %}
+				</li>
 				<li class="jkt-page-header-navigation-item-separator">
 					|
 				</li>

@@ -1,0 +1,19 @@
+<div class="jkt-2cgrid" data-masonry='{ "itemSelector": ".jkt-2cgrid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+	<div class="grid-sizer"></div>
+	<div class="gutter-sizer"></div>
+	{% for project in site.data.jkt-site.about.information-technology.projects.on-the-side %}
+		<div class="jkt-2cgrid-item jkt-about-project-grid-item">
+			<div class="jkt-about-project-grid-item-header">
+				<h4><a href="{{ project.internal-page-relative-url | relative_url }}">{{ project.name }}</a></h4>
+			</div>
+			<div class="jkt-hr-gradient-divider"></div>
+			<div class="jkt-grid-item-body">
+				<p>
+					{{ project.description | strip_html }}
+				</p>
+				<br/>
+				<a class="jkt-link-arrow" href="{{ project.internal-page-relative-url | relative_url }}">Read more</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

@@ -1,0 +1,59 @@
+.jkt-about-experience-grid-item {
+	@include applyGridItemStyle();
+	
+	h4 {
+		text-transform: uppercase;
+	}
+}
+
+.jkt-about-experience-grid-item-header {
+	@include applyGridItemTextHeaderStyle();
+	
+	img {
+		width: 125px;
+	}
+	
+	.jkt-about-experience-grid-item-badge {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 10px;
+		background-color: rgba(0, 30, 69, 0.8);
+		color: $color-white;
+		border-radius: 50px;
+		padding: 5px;
+		font-size: 11px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
+
+.jkt-about-project-grid-item {
+	@include applyGridItemStyle();
+	
+	h4 {
+		text-transform: uppercase;
+	}
+}
+
+.jkt-about-project-grid-item-header {
+	@include applyGridItemTextHeaderStyle();
+}
+
+.jkt-about-skill-grid-item {
+	padding: 1rem;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.jkt-about-skills-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 20px;
+}
+
+.jkt-about-skills-list-item {
+	padding: 1rem;
+}
