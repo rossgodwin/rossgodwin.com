@@ -15,10 +15,19 @@
 
 <script>
 	$(document).ready(function() {
-		$(".jkt-page-header-menu-toggler").click(function(e) {
-			$(".jkt-page-header-navigation").toggleClass("active");
+		$( window ).resize(function() {
+			$(".jkt-page-header-navigation").removeClass("show");
+			$(".jkt-page-header-navigation-item-dropdown").removeClass("show");
 		});
-
+		
+		$(".jkt-page-header-menu-toggler").click(function(e) {
+			$(".jkt-page-header-navigation").toggleClass("show");
+		});
+		
+		$(".jkt-page-header-navigation-item-dropdown").click(function(e) {
+			$(".jkt-page-header-navigation-item-dropdown").toggleClass("show");
+		});
+		
 		$("#year").html(new Date().getFullYear());
 		
 		{% if page.include-highlightjs %}
