@@ -1,9 +1,10 @@
 .jkt-post {
 	margin-top: 1rem;
-	
-	> img {
-		margin-bottom: 25px;
-	}
+}
+
+.jkt-post-image {
+	position: relative;
+	margin-bottom: 25px;
 }
 
 .jkt-post-header-meta {

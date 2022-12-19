@@ -4,8 +4,10 @@ author-id: 1
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
 include-seo: true
 image-path: assets/images/blog/posts/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png
+image-by-name: Rubaitul Azad
+image-credit-url: https://unsplash.com/@rubaitulazad
 categories: [information-technology]
-tags: [information technology, web design, css, css-grid, github, gist]
+tags: [information technology, web design, css, css grid, github, gist]
 date: 2020-09-12
 include-highlightjs: yes
 ---

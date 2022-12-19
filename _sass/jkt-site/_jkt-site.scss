@@ -1,5 +1,3 @@
-// Uses 7-1 pattern - https://sass-guidelin.es/#architecture
-
 @import "abstracts/fonts";
 
 @import "themes/themes";
@@ -8,6 +6,7 @@
 
 @import "components/about";
 @import "components/anchor";
+@import "components/badge";
 @import "components/blockquote";
 @import "components/buttons";
 @import "components/footnotes";
@@ -17,6 +16,7 @@
 @import "components/links";
 @import "components/lists";
 @import "components/panel";
+@import "components/position";
 @import "components/text";
 
 @import "layout/blog/post";

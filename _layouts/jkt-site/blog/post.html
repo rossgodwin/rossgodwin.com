@@ -4,9 +4,12 @@ layout: jkt-site/page
 
 <section class="jkt-page-content-main">
 	<section class="jkt-post">
-		{% if page.image-path %}
+		<div class="jkt-post-image">
 			<img src="{{ page.image-path | relative_url }}" alt="{{ page.title }}" class="jkt-image-responsive">
-		{% endif %}
+			{% if page.image-by-name %}
+				<div class="jkt-badge jkt-position-bottom-right">Image Credit: <a href="{{ page.image-credit-url }}" target="_blank" class="jkt-link">{{ page.image-by-name }}</a></div>
+			{% endif %}
+		</div>
 		<header>
 			<h2 class="jkt-heading-vertical-bar">{{ page.title | escape }}</h2>
 			<div class="jkt-post-header-meta">

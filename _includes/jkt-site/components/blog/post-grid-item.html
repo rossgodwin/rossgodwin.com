@@ -15,7 +15,7 @@
 <div class="jkt-3cgrid-item jkt-posts-grid-item">
 	<div class="jkt-posts-article-thumbnail">
 		<img src="{{ include.post.image-path | relative_url }}" alt="{{ include.post.title }}">
-		<div class="jkt-posts-article-badge">{{ post-url-array[post-url-array-index] | capitalize | replace: "-", " " }}</div>
+		<div class="jkt-badge jkt-position-top-right jkt-text-uppercase">{{ post-url-array[post-url-array-index] | capitalize | replace: "-", " " }}</div>
 	</div>
 	<!--<div class="jkt-posts-article-author-avatar">
 		<img src="{{ author.avatar-relative-url | relative_url }}" alt="{{ include.post.title }}">

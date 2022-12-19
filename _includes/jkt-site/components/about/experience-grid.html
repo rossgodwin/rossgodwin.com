@@ -9,7 +9,7 @@
 			{% include jkt-site/components/about/helpers/get-position-url.html company=company position=position %}
 			<div class="jkt-2cgrid-item jkt-about-experience-grid-item">
 				<div class="jkt-about-experience-grid-item-header">
-					<div class="jkt-about-experience-grid-item-badge">{{ position.duration-number-of-years | capitalize }}</div>
+					<div class="jkt-badge jkt-position-top-right jkt-text-uppercase">{{ position.duration-number-of-years | capitalize }}</div>
 					{% if company.company-logo-asset-url %}
 						<a href="{{ position-url }}"><img src="{{ company.company-logo-asset-url | relative_url }}" alt="{{ company.company-name }}"></a>
 					{% else %}
