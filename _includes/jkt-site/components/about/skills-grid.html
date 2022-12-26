@@ -1,8 +1,8 @@
-<div class="jkt-3cgrid" data-masonry='{ "itemSelector": ".jkt-3cgrid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+<div class="jkt-grid-3c" data-masonry='{ "itemSelector": ".jkt-grid-3c-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
 	<div class="grid-sizer"></div>
 	<div class="gutter-sizer"></div>
 	{% for skill in include.skills %}
-		<div class="jkt-3cgrid-item jkt-panel jkt-about-skill-grid-item">
+		<div class="jkt-grid-3c-item jkt-panel jkt-about-skill-grid-item">
 			{% if skill.base-png-icon-relative-path %}
 				<picture>
 					<source srcset="{{ '-150.png' | prepend: skill.base-png-icon-relative-path | relative_url }}" media="(min-width: 992px)"/>

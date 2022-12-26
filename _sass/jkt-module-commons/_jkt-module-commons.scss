@@ -1,5 +1,5 @@
+@import "abstracts/breakpoints";
 @import "abstracts/colors";
-@import "abstracts/variables";
 @import "abstracts/mixins/hover";
 @import "abstracts/mixins/opacity";
 
@@ -10,10 +10,12 @@
 
 @import "themes/themes";
 
-@import "components/align";
 @import "components/blockquote";
 @import "components/buttons";
 @import "components/headings";
 @import "components/horizontal-line";
 @import "components/images";
 @import "components/paging";
+
+@import "layout/align";
+@import "layout/grid";

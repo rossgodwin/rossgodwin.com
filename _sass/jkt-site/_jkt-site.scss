@@ -11,18 +11,19 @@
 @import "components/buttons";
 @import "components/footnotes";
 @import "components/form";
-@import "components/grid";
 @import "components/headings";
 @import "components/links";
 @import "components/lists";
 @import "components/panel";
-@import "components/position";
 @import "components/text";
 
-@import "layout/blog/post";
-@import "layout/blog/posts";
-@import "layout/construction/project";
-@import "layout/cv";
+@import "layout/grid";
 @import "layout/page";
+@import "layout/position";
 
-@import "pages/cheapthycable";
+@import "pages/about/construction/project";
+@import "pages/about/information-technology/cheapthycable";
+@import "pages/about/cv";
+@import "pages/blog/post";
+@import "pages/blog/posts";
+@import "pages/linktree";

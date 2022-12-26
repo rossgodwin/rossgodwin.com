@@ -9,6 +9,7 @@ $themes: (
 		heading-color: #205ec9,
 		link-color: #205ec9,
 		text-small-color: #9a9c9a,
+		text-secondary-color: #6c757d,
 		badge-background-color: #001e45cc,
 		badge-color: $color-white,
 		small-device-page-header-height: 60px,
@@ -39,12 +40,6 @@ $themes: (
 		form-searchfield-border-color: #fafafa,
 		form-searchfield-border-style: solid,
 		form-searchfield-border-width: 2px,
-		grid-1column-column-width: 100%,
-		grid-1column-gutter-width: 0,
-		grid-2column-column-width: 49%,
-		grid-2column-gutter-width: 2%,
-		grid-3column-column-width: 32%,
-		grid-3column-gutter-width: 2%,
 		grid-item-border-width: 1px,
 		grid-item-border-style: solid,
 		grid-item-border-color: #d6d9dc,
@@ -117,63 +112,6 @@ $themes: (
 			border-color: v(button-background-color);
 			color: v(button-background-color);
 		}
-	}
-}
-
-@mixin make1ColumnGrid() {
-	.grid-sizer {
-		@include themify() {
-			width: v(grid-1column-column-width);
-		}
-	}
-	.gutter-sizer {
-		@include themify() {
-			width: v(grid-1column-gutter-width);
-		}
-	}
-}
-
-@mixin make1ColumnGridColumn() {
-	@include themify() {
-		width: v(grid-1column-column-width);
-	}
-}
-
-@mixin make2ColumnGrid() {
-	.grid-sizer {
-		@include themify() {
-			width: v(grid-2column-column-width);
-		}
-	}
-	.gutter-sizer {
-		@include themify() {
-			width: v(grid-2column-gutter-width);
-		}
-	}
-}
-
-@mixin make2ColumnGridColumn() {
-	@include themify() {
-		width: v(grid-2column-column-width);
-	}
-}
-
-@mixin make3ColumnGrid() {
-	.grid-sizer {
-		@include themify() {
-			width: v(grid-3column-column-width);
-		}
-	}
-	.gutter-sizer {
-		@include themify() {
-			width: v(grid-3column-gutter-width);
-		}
-	}
-}
-
-@mixin make3ColumnGridColumn() {
-	@include themify() {
-		width: v(grid-3column-column-width);
 	}
 }
 

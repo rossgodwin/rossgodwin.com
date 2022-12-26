@@ -1,13 +1,13 @@
 <!--
 	{@link _data-structures/company.json}
 -->
-<div class="jkt-2cgrid" data-masonry='{ "itemSelector": ".jkt-2cgrid-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
+<div class="jkt-grid-2c" data-masonry='{ "itemSelector": ".jkt-grid-2c-item", "columnWidth": ".grid-sizer", "gutter": ".gutter-sizer", "percentPosition": true }'>
 	<div class="grid-sizer"></div>
 	<div class="gutter-sizer"></div>
 	{% for company in include.companies %}
 		{% for position in company.positions %}
 			{% include jkt-site/components/about/helpers/get-position-url.html company=company position=position %}
-			<div class="jkt-2cgrid-item jkt-about-experience-grid-item">
+			<div class="jkt-grid-2c-item jkt-about-experience-grid-item">
 				<div class="jkt-about-experience-grid-item-header">
 					<div class="jkt-badge jkt-position-top-right jkt-text-uppercase">{{ position.duration-number-of-years | capitalize }}</div>
 					{% if company.company-logo-asset-url %}
