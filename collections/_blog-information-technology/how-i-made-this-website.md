@@ -1,9 +1,9 @@
 ---
-layout: jkt-site/blog/post
+layout: theme-site/blog/post
 author-id: 1
 title: How I Made This Website
 include-seo: true
-image-path: assets/images/blog/posts/how-i-made-this-website/banner.png
+image-path: assets/this-site/images/blog/posts/how-i-made-this-website/banner.png
 image-by-name: Coffee Bean
 image-credit-url: https://pixabay.com/users/coffeebeanworks-558718/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2017978
 categories: [information-technology]

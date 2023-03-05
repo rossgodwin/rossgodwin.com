@@ -1,0 +1,32 @@
+<!--
+	{@link _data-structures/company.json}
+-->
+{% capture _items-content %}
+	{% for company in include.companies %}
+		{% for position in company.positions %}
+			{% include this-site/components/about/helpers/get-position-url.html company=company position=position %}
+			<div class="jkt-grid-2c-item jkt-about-experience-grid-item">
+				<div class="jkt-about-experience-grid-item-header">
+					<div class="jkt-badge jkt-position-top-right jkt-text-uppercase">{{ position.duration-number-of-years | capitalize }}</div>
+					{% if company.company-logo-asset-url %}
+						<a href="{{ position-url }}"><img src="{{ company.company-logo-asset-url | relative_url }}" alt="{{ company.company-name }}"></a>
+					{% else %}
+						<h4><a href="{{ position-url }}">{{ company.company-name }}</a></h4>
+					{% endif %}
+					<h5>{{ position.title }}</h5>
+					<h6>{{ position.duration-date-to-date }}</h6>
+				</div>
+				<div class="jkt-hr-gradient-divider"></div>
+				<div class="jkt-grid-item-body">
+					<p>
+						{{ position.description | strip_html }}
+					</p>
+					<br/>
+					<a class="jkt-link-arrow" href="{{ position-url }}">Read more</a>
+				</div>
+			</div>
+		{% endfor %}
+	{% endfor %}
+{% endcapture %}
+
+{% include theme-core/layout/2c-grid.html items-content=_items-content %}

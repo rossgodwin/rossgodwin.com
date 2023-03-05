@@ -1,58 +1,58 @@
 ---
-layout: jkt-site/page
+layout: theme-site/page
 title: &title "Resume"
 head-print-csss:
-  - assets/css/cv/print.css
+  - assets/this-site/css/cv/print.css
 ---
 
 {% assign jobs = '' | split: '' %}
-{% assign jobs = jobs | push: site.data.jkt-site.about.employment.jobs[site.data.jkt-site.about.employment.job-index.atlatl] %}
-{% assign jobs = jobs | push: site.data.jkt-site.about.employment.jobs[site.data.jkt-site.about.employment.job-index.dunn] %}
+{% assign jobs = jobs | push: site.data.this-site.about.employment.jobs[site.data.this-site.about.employment.job-index.atlatl] %}
+{% assign jobs = jobs | push: site.data.this-site.about.employment.jobs[site.data.this-site.about.employment.job-index.dunn] %}
 
 {% assign recommendations = '' | split: '' %}
-{% assign recommendations = recommendations | push: site.data.jkt-site.about.recommendations.recommendations[site.data.jkt-site.about.recommendations.recommendation-index.ivan] %}
+{% assign recommendations = recommendations | push: site.data.this-site.about.recommendations.recommendations[site.data.this-site.about.recommendations.recommendation-index.ivan] %}
 
 {% assign projects = '' | split: '' %}
-{% assign projects = projects | push: site.data.jkt-site.about.information-technology.projects.on-the-side[site.data.jkt-site.about.information-technology.projects.on-the-side-index.cheapthycable] %}
+{% assign projects = projects | push: site.data.this-site.about.information-technology.projects.on-the-side[site.data.this-site.about.information-technology.projects.on-the-side-index.cheapthycable] %}
 
-{% include jkt-site/page/body/page-content-header.html title='Resume' %}
+{% include this-site/layout/page-body-header.html title='Resume' %}
 
-<section class="jkt-page-content-main">
+<section class="jkt-page-body-main">
 	<article class="jkt-cv">
-		{% include jkt-site/components/about/cv/header.html
-			name=site.data.jkt-site.about.me.name
-			title=site.data.jkt-site.about.information-technology.cv.title
-			location=site.data.jkt-site.about.me.location
-			website=site.data.jkt-site.about.me.website
-			linkedin=site.data.jkt-site.about.me.social.linkedin
-			github=site.data.jkt-site.about.me.social.github %}
+		{% include this-site/components/about/cv/header.html
+			name=site.data.theme-site.me.name
+			title=site.data.this-site.about.information-technology.cv.title
+			location=site.data.theme-site.me.location
+			website=site.data.theme-site.me.website
+			linkedin=site.data.theme-site.me.social.linkedin
+			github=site.data.theme-site.me.social.github %}
 		
 		<hr>
 		
-		{% include jkt-site/components/about/cv/introduction.html
-			heading=site.data.jkt-site.about.information-technology.cv.intro-heading-text
-			description=site.data.jkt-site.about.information-technology.cv.intro %}
+		{% include this-site/components/about/cv/introduction.html
+			heading=site.data.this-site.about.information-technology.cv.intro-heading-text
+			description=site.data.this-site.about.information-technology.cv.intro %}
 		
-		{% include jkt-site/components/about/cv/recommendations.html
-			heading=site.data.jkt-site.about.information-technology.cv.recommendations-heading-text
+		{% include this-site/components/about/cv/recommendations.html
+			heading=site.data.this-site.about.information-technology.cv.recommendations-heading-text
 			recommendations=recommendations %}
 		
-		{% include jkt-site/components/about/cv/experience.html
-			heading=site.data.jkt-site.about.information-technology.cv.jobs-heading-text
-			companies=site.data.jkt-site.about.experience.companies %}
+		{% include this-site/components/about/cv/experience.html
+			heading=site.data.this-site.about.information-technology.cv.jobs-heading-text
+			companies=site.data.this-site.about.experience.companies %}
 		
-		{% include jkt-site/components/about/cv/projects.html
-			heading=site.data.jkt-site.about.information-technology.cv.projects-heading-text
+		{% include this-site/components/about/cv/projects.html
+			heading=site.data.this-site.about.information-technology.cv.projects-heading-text
 			projects=projects %}
 		
-		{% include jkt-site/components/about/cv/education.html
-			heading=site.data.jkt-site.about.information-technology.cv.education-heading-text
-			degree=site.data.jkt-site.about.education.bachelors_degree %}
+		{% include this-site/components/about/cv/education.html
+			heading=site.data.this-site.about.information-technology.cv.education-heading-text
+			degree=site.data.this-site.about.education.bachelors_degree %}
 	</article>
 	
 	<section class="jkt-cv-download-options">
-		{% include jkt-site/components/about/cv/versions.html
-			pdf=site.data.jkt-site.about.information-technology.cv.version.pdf
-			text=site.data.jkt-site.about.information-technology.cv.version.text %}
+		{% include this-site/components/about/cv/versions.html
+			pdf=site.data.this-site.about.information-technology.cv.version.pdf
+			text=site.data.this-site.about.information-technology.cv.version.text %}
 	</section>
 </section>

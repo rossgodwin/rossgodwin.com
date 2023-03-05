@@ -1,0 +1,22 @@
+title: Ross Godwin
+
+height: 40px
+
+logo:
+  image-relative-url: assets/theme-site/images/site-navbar/logo.png
+  relative-url: /
+
+menu:
+  - title: About
+    relative-url: #
+    menu:
+      - title: Construction
+        relative-url: about/construction
+        icon-relative-url: assets/theme-site/images/site-navbar/construction.png
+        description: See information about my career in the construction industry as a engineer.
+      - title: Information Technology
+        relative-url: about/information-technology
+        icon-relative-url: assets/theme-site/images/site-navbar/information-technology.png
+        description: All information relating to my career as a IT professional.
+  - title: Blog
+    relative-url: blog

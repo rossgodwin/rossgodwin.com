@@ -1,0 +1,18 @@
+{% include this-site/components/about/skill-proficiency-level-links.html %}
+
+<div class="jkt-about-skills-list">
+	{% for skill in include.skills %}
+		<div class="jkt-panel jkt-about-skills-list-item">
+			{{ skill.skill }}
+			{% if skill.proficiency-level == 1 %}
+				{{ _pl1 }}
+			{% elsif skill.proficiency-level == 2 %}
+				{{ _pl2 }}
+			{% elsif skill.proficiency-level == 3 %}
+				{{ _pl3 }}
+			{% elsif skill.proficiency-level == 4 %}
+				{{ _pl4 }}
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>

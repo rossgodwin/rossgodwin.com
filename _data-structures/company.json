@@ -1,7 +1,7 @@
 {
 	company-name: Redhat
     industry: Information Technology
-    company-logo-asset-url (optional): assets/images/about/companies/bowman.png
+    company-logo-asset-url (optional): assets/this-site/images/about/companies/bowman.png
     internal-page-url: about/construction/experience/bowman
     positions: [
     	{

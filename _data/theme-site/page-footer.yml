@@ -1,0 +1,7 @@
+text-links:
+  - text: About
+    relative-url: about
+  - text: Blog
+    relative-url: blog
+
+line1-html: <span>&copy;<span> <span id="year"></span> Ross Godwin. All Rights Reserved.

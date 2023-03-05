@@ -1,3 +1,5 @@
+theme: jekyll-theme-bojekylls
+
 # Site wide configuration
 destination: docs
 url: 'https://rossgodwin.com'

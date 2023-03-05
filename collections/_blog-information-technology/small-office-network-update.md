@@ -1,10 +1,10 @@
 ---
-layout: jkt-site/blog/post
+layout: theme-site/blog/post
 author-id: 1
 title: Small Office Network Update
 description: Some simple things that can be done to upgrade a small office or home network.
 include-seo: true
-image-path: assets/images/blog/posts/small-office-network-update/banner.png
+image-path: assets/this-site/images/blog/posts/small-office-network-update/banner.png
 image-by-name: 200 Degrees
 image-credit-url: https://pixabay.com/users/200degrees-2051452/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1989339
 categories: [information-technology]
@@ -15,28 +15,28 @@ galleries:
   - id: office-it-update-photos
     type: thumbnails
     images:
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/001-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/001.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/001-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/001.jpg
         alt: "network room 1"
         html_content: "This is a before photo of the network room. What a mess!"
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/002-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/002.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/002-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/002.jpg
         alt: "network room 2"
         html_content: "New server rack is up and 4 offices hard wired."
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/003-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/003.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/003-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/003.jpg
         alt: "network room 3"
         html_content: "Close up of the rack in progress. Still a ways to go."
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/004-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/004.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/004-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/004.jpg
         alt: "network room 4"
         html_content: "Finished!"
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/005-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/005.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/005-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/005.jpg
         alt: "network room 5"
         html_content: "Finished! For now."
-      - thumbnail_url: assets/images/blog/posts/small-office-network-update/006-th.jpg
-        url: assets/images/blog/posts/small-office-network-update/006.jpg
+      - thumbnail_url: assets/this-site/images/blog/posts/small-office-network-update/006-th.jpg
+        url: assets/this-site/images/blog/posts/small-office-network-update/006.jpg
         alt: "network room 6"
         html_content: "Close up of the new rack."
         class: custom-mfp-horizontal

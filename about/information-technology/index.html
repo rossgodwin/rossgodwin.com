@@ -1,20 +1,25 @@
 ---
-layout: jkt-site/page
+layout: theme-site/page
 title: &title "Information Technology"
 masonry-grids: true
 ---
 
 {% capture _header_content %}
 	<div>
-		{% assign cv-url = 'about/information-technology/cv' | relative_url %}
-		{% include jkt-site/components/icons/fa/resume-circle-icon-link.html url=cv-url fa-x=1 %}
-		{% include jkt-site/components/icons/fa/my-linkedin-circle-icon-link.html target-blank=true fa-x=1 %}
-		{% include jkt-site/components/icons/fa/my-github-circle-icon-link.html target-blank=true fa-x=1 %}
+		<a href="{{ 'about/information-technology/cv' | relative_url }}" class="jkt-icon-link">
+			{% include theme-core/components/icons/fa/file-circle-icon.html fa-x=1 %}
+		</a>
+		<a href="{{ site.data.me.social.linkedin.url }}" class="jkt-icon-link" target="_blank">
+			{% include theme-core/components/icons/fa/linkedin-circle-icon.html fa-x=1 %}
+		</a>
+		<a href="{{ site.data.me.social.github.url }}" class="jkt-icon-link" target="_blank">
+			{% include theme-core/components/icons/fa/github-circle-icon.html fa-x=1 %}
+		</a>
 	</div>
 {% endcapture %}
-{% include jkt-site/page/body/page-content-header.html title='Information Technology' content=_header_content %}
+{% include this-site/layout/page-body-header.html title='Information Technology' content=_header_content %}
 
-<article class="jkt-page-content-main">
+<article class="jkt-page-body-main">
 	<section>
 		<h3>Introduction</h3>
 		
@@ -63,10 +68,10 @@ masonry-grids: true
 		<div>
 			<ul class="jkt-list-ul-no-markers">
 				{% assign recommendations = '' | split: '' %}
-				{% assign recommendations = recommendations | push: site.data.jkt-site.about.recommendations.recommendations[site.data.jkt-site.about.recommendations.recommendation-index.ivan] %}
+				{% assign recommendations = recommendations | push: site.data.this-site.about.recommendations.recommendations[site.data.this-site.about.recommendations.recommendation-index.ivan] %}
 				{% for recommendation in recommendations %}
 					<li>
-					{% include jkt-module-commons/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+					{% include theme-core/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 					</li>
 				{% endfor %}
 			</ul>
@@ -74,27 +79,27 @@ masonry-grids: true
 	</section>
 	
 	<section>
-		<h3>{{ site.data.jkt-site.about.experience.label }}</h3>
+		<h3>{{ site.data.this-site.about.experience.label }}</h3>
 		
-		{% assign companies = site.data.jkt-site.about.experience.companies | where: 'industry', "Information Technology" %}
-		{% include jkt-site/components/about/experience-grid.html companies=companies %}
+		{% assign companies = site.data.this-site.about.experience.companies | where: 'industry', "Information Technology" %}
+		{% include this-site/components/about/experience-grid.html companies=companies %}
 	</section>
 	
 	<section>
 		<h3>Side Projects</h3>
 		
-		{% include jkt-site/components/about/project-grid.html %}
+		{% include this-site/components/about/project-grid.html %}
 	</section>
 	
 	<section>
 		<a class="jkt-anchor" id="skills"></a>
 		<h3>Skills</h3>
 		
-		{% assign skills = site.data.jkt-site.about.skills.all | where_exp: "item", "item.category != 'Land Development'" | sort: "skill" %}
-		{% include jkt-site/components/about/skills-list.html skills=skills %}
+		{% assign skills = site.data.this-site.about.skills.all | where_exp: "item", "item.category != 'Land Development'" | sort: "skill" %}
+		{% include this-site/components/about/skills-list.html skills=skills %}
 	</section>
 	
 	<div class="jkt-footnotes">
-		{% include jkt-site/components/about/skill-proficiency-level-anchors.html %}
+		{% include this-site/components/about/skill-proficiency-level-anchors.html %}
 	</div>
 </article>

@@ -1,18 +1,18 @@
 ---
-layout: jkt-site/page
+layout: theme-site/page
 title: &title "CheapThyCable.com"
 masonry-grids: true
 ---
 
-{% assign project = site.data.jkt-site.about.information-technology.projects.on-the-side[site.data.jkt-site.about.information-technology.projects.on-the-side-index.cheapthycable] %}
-{% assign github-cheapthycable-repo-url = site.data.jkt-site.about.me.social.github.repository.cheapthycable | prepend: '/' | prepend: site.data.jkt-site.about.me.social.github.url %}
-{% assign cheapthycable-website = site.data.jkt-site.about.information-technology.projects.on-the-side[site.data.jkt-site.about.information-technology.projects.on-the-side-index.cheapthycable].website %}
+{% assign project = site.data.this-site.about.information-technology.projects.on-the-side[site.data.this-site.about.information-technology.projects.on-the-side-index.cheapthycable] %}
+{% assign github-cheapthycable-repo-url = site.data.theme-site.me.social.github.repository.cheapthycable | prepend: '/' | prepend: site.data.theme-site.me.social.github.url %}
+{% assign cheapthycable-website = site.data.this-site.about.information-technology.projects.on-the-side[site.data.this-site.about.information-technology.projects.on-the-side-index.cheapthycable].website %}
 
-{% include jkt-site/page/body/page-content-header.html title=project.title %}
+{% include this-site/layout/page-body-header.html title=project.title %}
 
-<article class="jkt-page-content-main">
+<article class="jkt-page-body-main">
 	<section class="jkt-panel jkt-project-cheapthycable-overview-grid">
-		<img class="jkt-project-cheapthycable-overview-image" src="{% link assets/images/about/information-technology/projects/cheapthycable/computer-screen.png %}" alt="image">
+		<img class="jkt-project-cheapthycable-overview-image" src="{% link assets/this-site/images/about/information-technology/projects/cheapthycable/computer-screen.png %}" alt="image">
 		
 		<div>
 			<strong>Source Code:</strong>&nbsp;<a href="{{ github-cheapthycable-repo-url }}">GitHub repository</a>
@@ -58,7 +58,43 @@ masonry-grids: true
 	<section>
 		<h4>Technologies Used</h4>
 		
-		{% assign skills = site.data.jkt-site.about.skills.cheapthycable | sort: "skill" %}
-		{% include jkt-site/components/about/skills-grid.html skills=skills %}
+		{% capture _items-content %}
+			{% assign skills = site.data.this-site.about.skills.cheapthycable | sort: "skill" %}
+			
+			{% for skill in skills %}
+				<div class="jkt-grid-3c-item jkt-panel jkt-about-skill-grid-item">
+					{% if skill.base-png-icon-relative-path %}
+						<picture>
+							<source srcset="{{ '-150.png' | prepend: skill.base-png-icon-relative-path | relative_url }}" media="(min-width: 992px)"/>
+							<img src="{{ '-100.png' | prepend: skill.base-png-icon-relative-path | relative_url }}" alt="{{ skill.skill }}"/>
+						</picture>
+						<br/>
+					{% endif %}
+					<b>{{ skill.skill }}</b>
+					{% if skill.duration-number-of-years or skill.skill-level-anchor-reference %}
+						<br/>
+						{{ skill.duration-number-of-years }}
+						{% if skill.duration-number-of-years and skill.skill-level-anchor-reference %}
+							- 
+						{% endif %}
+						{% if skill.skill-level-anchor-reference == 1 %}
+							PL1 <sup><a href="#fn:pl1" class="footnote">1</a></sup>
+						{% elsif skill.skill-level-anchor-reference == 2 %}
+							PL2 <sup><a href="#fn:pl2" class="footnote">2</a></sup>
+						{% elsif skill.skill-level-anchor-reference == 3 %}
+							PL3 <sup><a href="#fn:pl3" class="footnote">3</a></sup>
+						{% elsif skill.skill-level-anchor-reference == 4 %}
+							PL4 <sup><a href="#fn:pl4" class="footnote">4</a></sup>
+						{% endif %}
+					{% endif %}
+					{% if skill.description %}
+						<br/>
+						{{ skill.description }}
+					{% endif %}
+				</div>
+			{% endfor %}
+		{% endcapture %}
+
+		{% include theme-core/layout/3c-grid.html items-content=_items-content %}
 	</section>
 </article>

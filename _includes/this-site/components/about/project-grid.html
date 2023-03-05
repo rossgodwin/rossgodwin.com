@@ -1,0 +1,19 @@
+{% capture _items-content %}
+	{% for project in site.data.this-site.about.information-technology.projects.on-the-side %}
+		<div class="jkt-grid-2c-item jkt-about-project-grid-item">
+			<div class="jkt-about-project-grid-item-header">
+				<h4><a href="{{ project.internal-page-relative-url | relative_url }}">{{ project.name }}</a></h4>
+			</div>
+			<div class="jkt-hr-gradient-divider"></div>
+			<div class="jkt-grid-item-body">
+				<p>
+					{{ project.description | strip_html }}
+				</p>
+				<br/>
+				<a class="jkt-link-arrow" href="{{ project.internal-page-relative-url | relative_url }}">Read more</a>
+			</div>
+		</div>
+	{% endfor %}
+{% endcapture %}
+
+{% include theme-core/layout/2c-grid.html items-content=_items-content %}
