@@ -1,0 +1,15 @@
+.jkt-hr-gradient-divider {
+	position: relative;
+	
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		margin-left: -40%;
+		width: 80%;
+		content: '';
+		height: 1px;
+		background: radial-gradient(ellipse at center, #dee4ef 0, #ffffff00 75%);
+	}
+}

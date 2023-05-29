@@ -1,0 +1,146 @@
+proficiency-level1-id: skill-proficiency-level1
+proficiency-level2-id: skill-proficiency-level2
+proficiency-level3-id: skill-proficiency-level3
+proficiency-level4-id: skill-proficiency-level4
+
+land-development:
+  - skill: Site Investigation Report (SIR) / Due Diligence Report
+    proficiency-level: 1
+  - skill: Overall Plan Production - Sheet Setup (Civil 3D)
+    proficiency-level: 3
+  - skill: Utilizing Agency Ordinances and Checklists
+    proficiency-level: 3
+  - skill: SWPPP / Erosion & Sediment Control - Design & Details
+    proficiency-level: 3
+  - skill: SWPPP / Erosion & Sediment Control - Design Calculations
+    proficiency-level: 3
+  - skill: SWPPP / Erosion & Sediment Control - C-SWPPP Report
+    proficiency-level: 3
+  - skill: Tree Removal / Mitigation / Demo Plan
+    proficiency-level: 3
+  - skill: Site Plan - Conceptual Design
+    proficiency-level: 2
+  - skill:  Site Plan - Full Design Production
+    proficiency-level: 3
+  - skill: Civil 3D - Surfaces and Grading (feature lines and/or grading tools)
+    proficiency-level: 3
+  - skill: Civil 3D - Earthwork Report
+    proficiency-level: 1
+  - skill: Civil 3D - Alignment and Profiles
+    proficiency-level: 2
+  - skill: Civil 3D - Corridors and Sections
+    proficiency-level: 1
+  - skill: Civil 3D - Pipe Networks and Profiles
+    proficiency-level: 2
+  - skill: Landscape Design
+    proficiency-level: 3
+  - skill: Grading Design
+    proficiency-level: 3
+  - skill: Hydraflow Storm Sewers Extension with AutoCAD Civil 3D
+    proficiency-level: 3
+  - skill: Hydraflow Hydrographs with AutoCAD Civil 3D
+    proficiency-level: 3
+  - skill: Hydrology - SCS Method
+    proficiency-level: 1
+  - skill: Pond Routing Design (Dry/Wet Ponds)
+    proficiency-level: 3
+  - skill: Underground Detention Basin Design, Calculations, Coordination, and Details
+    proficiency-level: 3
+  - skill: Inlet Spread Calculations
+    proficiency-level: 1
+  - skill: Stormwater Details (catch basins/inlets, pond sections, outfall control structures)
+    proficiency-level: 3
+  - skill:  Drainage / Stormwater Report
+    proficiency-level: 3
+  - skill: Completing Notice of Intent (NOI) Application
+    proficiency-level: 4
+  - skill: Utilities - Water Main Design & Profiles
+    proficiency-level: 2
+  - skill: Utilities - Sewer Main Design & Profiles
+    proficiency-level: 2
+  - skill: Sewer Demand Calcs
+    proficiency-level: 2
+  - skill: Water Demand Calcs
+    proficiency-level: 2
+  - skill: Force Main Design
+    proficiency-level: 1
+  - skill: Utility Encroachments
+    proficiency-level: 3
+  - skill: Commercial Land Development
+    proficiency-level: 3
+
+software-development:
+  - skill: AngularJS
+    proficiency-level: 2
+  - skill: Bootstrap
+    proficiency-level: 2
+  - skill: GWT
+    proficiency-level: 3
+  - skill: GXT
+    proficiency-level: 3
+  - skill: Java
+    proficiency-level: 4
+  - skill: Mailgun
+    proficiency-level: 2
+  - skill: Thymeleaf
+    proficiency-level: 2
+  - skill: Hibernate
+    proficiency-level: 3
+  - skill: Database Design
+    proficiency-level: 3
+  - skill: Oracle
+    proficiency-level: 3
+  - skill: Oracle SQL Developer
+    proficiency-level: 3
+  - skill: MySQL
+    proficiency-level: 3
+  - skill: Microsoft SQL Server
+    proficiency-level: 2
+  - skill: Transact-SQL (T-SQL)
+    proficiency-level: 2
+  - skill: Apache
+    proficiency-level: 2
+  - skill: Wildfly
+    proficiency-level: 2
+  - skill: Amazon AWS
+    proficiency-level: 1
+  - skill: Android Development
+    proficiency-level: 3
+  - skill: Git
+    proficiency-level: 2
+  - skill: Subversion
+    proficiency-level: 3
+  - skill: Eclipse
+    proficiency-level: 3
+  - skill: Jekyll
+    proficiency-level: 2
+  - skill: Pelican
+    proficiency-level: 2
+  - skill: HTML
+    proficiency-level: 4
+  - skill: Domain Name System (DNS)
+    proficiency-level: 3
+  - skill: Object-Oriented Programming
+    proficiency-level: 4
+  - skill: Full-Stack Development
+    proficiency-level: 3
+  - skill: Web Applications
+    proficiency-level: 3
+  - skill: Cascading Style Sheets (CSS)
+    proficiency-level: 3
+  - skill: Javascript
+    proficiency-level: 3
+  - skill: REST
+    proficiency-level: 3
+  - skill: JSON
+    proficiency-level: 3
+  - skill: Objective-C
+    proficiency-level: 3
+  - skill: iText
+    proficiency-level: 3
+  - skill: Business Intelligence (BI)
+    proficiency-level: 2
+  - skill: SAP BusinessObjects
+    proficiency-level: 2
+  - skill: Extract, Transform, Load (ETL)
+    proficiency-level: 3

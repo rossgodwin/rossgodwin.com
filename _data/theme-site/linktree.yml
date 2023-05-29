@@ -1,0 +1,19 @@
+logo:
+  image-relative-url: assets/theme-site/images/site-navbar/logo.png
+  relative-url: /
+
+subtitle: Land Development Engineer at Bowman
+
+links:
+  - title: Resume
+    internal-relative-url: about/cv
+    fontawesome-icon-classnames: fa fa-file-pdf fa-2x
+  - title: Blog
+    internal-relative-url: blog
+    fontawesome-icon-classnames: fa fa-pen fa-2x
+  - title: LinkedIn
+    external-url: https://www.linkedin.com/in/ross-godwin
+    fontawesome-icon-classnames: fab fa-linkedin-in fa-2x
+  - title: Github
+    external-url: https://www.github.com/rossgodwin
+    fontawesome-icon-classnames: fab fa-github fa-2x

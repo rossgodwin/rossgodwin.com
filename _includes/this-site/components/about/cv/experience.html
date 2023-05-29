@@ -1,10 +1,3 @@
-<!--
-	heading
-	jobs: [
-		{@link _data-structures/company.json},
-		...
-	]
--->
 <section class="jkt-cv-work-history-section">
 	<div class="jkt-cv-section-heading">
 		<h2>{{ include.heading }}</h2>
@@ -18,9 +11,7 @@
 				{% for position in company.positions %}
 					{% include this-site/components/about/helpers/get-position-url.html company=company position=position %}
 					<div>
-						<div class="jkt-cv-work-history-job-position-title">
-							<a class="jkt-link-arrow" href="{{ position-url }}">{{ position.title }}</a>
-						</div>
+						<div class="jkt-cv-work-history-job-position-title">{{ position.title }}</div>
 						<div class="jkt-cv-work-history-job-position-duration">{{ position.duration-date-to-date }}</div>
 					</div>
 					<div>

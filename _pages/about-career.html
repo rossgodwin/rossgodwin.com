@@ -1,0 +1,85 @@
+---
+permalink: /about/
+layout: theme-site/hbf-page/page-single_column
+title: &title "About"
+---
+
+{% capture _pl1 %}
+	<sup><a href="#{{ site.data.about.skills.proficiency-level1-id }}" class="footnote">1</a></sup>
+{% endcapture %}
+{% capture _pl2 %}
+	<sup><a href="#{{ site.data.about.skills.proficiency-level2-id }}" class="footnote">2</a></sup>
+{% endcapture %}
+{% capture _pl3 %}
+	<sup><a href="#{{ site.data.about.skills.proficiency-level3-id }}" class="footnote">3</a></sup>
+{% endcapture %}
+{% capture _pl4 %}
+	<sup><a href="#{{ site.data.about.skills.proficiency-level4-id }}" class="footnote">4</a></sup>
+{% endcapture %}
+
+<section>
+	<h3 class="jkt-heading-line-separator">Summary</h3>
+	
+	{{ site.data.about.about.summary-html }}
+</section>
+
+<section class="gs-margin-top-20">
+	<h3 class="jkt-heading-line-separator">Recommendations</h3>
+	
+	<ul class="jkt-list-ul-no-markers">
+		{% for recommendation in site.data.about.recommendations.recommendations %}
+			<li>
+			{% include theme-core/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+			</li>
+		{% endfor %}
+	</ul>
+</section>
+
+<section class="gs-margin-top-20">
+	<h3 class="jkt-heading-line-separator">Land Development</h3>
+	
+	{{ site.data.about.about.land-development-summary-html }}
+	
+	<a class="jkt-anchor" id="land-development-skills"></a>
+	{% assign skills = site.data.about.skills.land-development | sort: "skill" %}
+	{% include this-site/components/about/skills-list.html skills=skills %}
+</section>
+
+<section class="gs-margin-top-20">
+	<h3 class="jkt-heading-line-separator">Software Development</h3>
+	
+	{{ site.data.about.about.software-development-summary-html }}
+	
+	<a class="jkt-anchor" id="software-development-skills"></a>
+	{% assign skills = site.data.about.skills.software-development | sort: "skill" %}
+	{% include this-site/components/about/skills-list.html skills=skills %}
+</section>
+
+<div class="jkt-footnotes">
+	<ol>
+		<li id="{{ site.data.about.skills.proficiency-level1-id }}">
+			<p>
+				Have basic awareness and comprehension of the skill and is in the process of acquiring 
+				this skill through various channels.
+			</p>
+		</li>
+		<li id="{{ site.data.about.skills.proficiency-level2-id }}">
+			<p>
+				Possess working knowledge of the skill, and can actively and independently apply this 
+				skill in engagements and projects.
+			</p>
+		</li>
+		<li id="{{ site.data.about.skills.proficiency-level3-id }}">
+			<p>
+				Comprehensive, in-depth and specialized knowledge of the skill. Have extensively 
+				demonstrated successful application of the skill in engagements or projects.
+			</p>
+		</li>
+		<li id="{{ site.data.about.skills.proficiency-level4-id }}">
+			<p>
+				Can function as a subject matter expert for this skill and capable of analyzing, 
+				evaluating and synthesizing solutions using the skill.
+			</p>
+		</li>
+	</ol>
+</div>

@@ -1,5 +1,5 @@
 ---
-layout: theme-site/blog/post
+layout: theme-site/hbf-page/post
 author-id: 1
 title: Configure Apache to Forward some Url Reqests to Wildfly
 include-seo: true

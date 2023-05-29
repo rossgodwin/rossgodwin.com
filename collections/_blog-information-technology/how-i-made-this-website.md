@@ -1,5 +1,5 @@
 ---
-layout: theme-site/blog/post
+layout: theme-site/hbf-page/post
 author-id: 1
 title: How I Made This Website
 include-seo: true

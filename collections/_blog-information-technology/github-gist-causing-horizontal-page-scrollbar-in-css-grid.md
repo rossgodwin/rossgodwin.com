@@ -1,5 +1,5 @@
 ---
-layout: theme-site/blog/post
+layout: theme-site/hbf-page/post
 author-id: 1
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
 include-seo: true

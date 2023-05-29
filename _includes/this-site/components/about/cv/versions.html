@@ -7,8 +7,8 @@
 		internal-url
 -->
 {% if include.pdf %}
-	<a class="jkt-button" href="{{ include.pdf.internal-url | relative_url }}" role="button" target="_blank"><i class="jkt-button-left-icon fa fa-file-pdf fa-w-12"></i>{{ include.pdf.display-text }}</a>
+	<a class="jkt-button jkt-button-solid-blue" href="{{ include.pdf.file-relative-url | relative_url }}" role="button" target="_blank"><i class="gs-button-left-icon fa fa-file-pdf fa-w-12"></i>{{ include.pdf.display-text }}</a>
 {% endif %}
 {% if include.text %}
-	<a class="jkt-button" href="{{ include.text.internal-url | relative_url }}" role="button" target="_blank"><i class="jkt-button-left-icon fa fa-file-alt fa-w-12"></i>{{ include.text.display-text }}</a>
+	<a class="jkt-button jkt-button-solid-blue" href="{{ include.text.file-relative-url | relative_url }}" role="button" target="_blank"><i class="gs-button-left-icon fa fa-file-alt fa-w-12"></i>{{ include.text.display-text }}</a>
 {% endif %}

@@ -8,15 +8,8 @@ logo:
 
 menu:
   - title: About
-    relative-url: #
-    menu:
-      - title: Construction
-        relative-url: about/construction
-        icon-relative-url: assets/theme-site/images/site-navbar/construction.png
-        description: See information about my career in the construction industry as a engineer.
-      - title: Information Technology
-        relative-url: about/information-technology
-        icon-relative-url: assets/theme-site/images/site-navbar/information-technology.png
-        description: All information relating to my career as a IT professional.
+    relative-url: about
+  - title: Resume
+    relative-url: about/cv
   - title: Blog
     relative-url: blog

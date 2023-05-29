@@ -1,5 +1,8 @@
 .jkt-about-experience-grid-item {
-	@include applyGridItemStyle();
+	@extend .jkt-border-solid-1;
+	@extend .jkt-border-color-gray84;
+	@extend .jkt-border-rounded-20;
+	@extend .jkt-border-box-shadow-gray84;
 	
 	h4 {
 		text-transform: uppercase;
@@ -8,7 +11,9 @@
 
 .jkt-about-experience-grid-item-header {
 	position: relative;
-	@include applyGridItemTextHeaderStyle();
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 24px;
 	
 	img {
 		width: 125px;
@@ -16,7 +21,10 @@
 }
 
 .jkt-about-project-grid-item {
-	@include applyGridItemStyle();
+	@extend .jkt-border-solid-1;
+	@extend .jkt-border-color-gray84;
+	@extend .jkt-border-rounded-20;
+	@extend .jkt-border-box-shadow-gray84;
 	
 	h4 {
 		text-transform: uppercase;
@@ -24,7 +32,10 @@
 }
 
 .jkt-about-project-grid-item-header {
-	@include applyGridItemTextHeaderStyle();
+	position: relative;
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 24px;
 }
 
 .jkt-about-skill-grid-item {

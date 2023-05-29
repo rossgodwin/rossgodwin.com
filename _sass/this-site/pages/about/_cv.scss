@@ -1,3 +1,5 @@
+$cv-primary-color: #205ec9;
+
 .jkt-cv {
 	padding: 1.5em;
 	border: 1px solid rgba(0, 0, 0, 0.025);
@@ -5,9 +7,7 @@
 	
 	h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 		text-transform: uppercase;
-		@include themify() {
-			color: v(cv-heading-color);
-		}
+		color: $cv-primary-color;
 	}
 	
 	h1, .h1 {
@@ -27,9 +27,7 @@
 .jkt-cv-section-heading {
 	border-bottom-style: solid;
 	border-bottom-width: 3px;
-	@include themify() {
-		border-bottom-color: v(cv-heading-section-border-bottom-color);
-	}
+	border-bottom-color: $cv-primary-color;
 	h2 {
 		letter-spacing: 0.125em;
 	}
@@ -64,10 +62,7 @@
 			i {
 				font-size: 1.75em;
 				margin-right: 0.250em;
-				
-				@include themify() {
-					color: v(cv-social-icons-color);
-				}
+				color: $cv-primary-color;
 			}
 		}
 		li:not(:last-child) {
@@ -82,9 +77,7 @@
 
 .jkt-cv-work-history-section {
 	.jkt-cv-work-history-job-employer {
-		@include themify() {
-			color: v(cv-employer-name-text-color);
-		}
+		color: $cv-primary-color;
 	}
 	
 	.jkt-cv-work-history-job-position {
@@ -106,6 +99,7 @@
 	
 	.jkt-cv-work-history-job-position-title {
 		font-weight: bold;
+		color: $cv-primary-color;
 	}
 	
 	.jkt-cv-work-history-job-position-duration {
@@ -126,16 +120,12 @@
 	}
 	
 	.jkt-cv-projects-project-title {
-		@include themify() {
-			color: v(cv-project-name-text-color);
-		}
+		color: $cv-primary-color;
 	}
 }
 
 .jkt-cv-education-school {
-	@include themify() {
-		color: v(cv-education-school-text-color);
-	}
+	color: $cv-primary-color;
 }
 
 .jkt-cv-download-options {

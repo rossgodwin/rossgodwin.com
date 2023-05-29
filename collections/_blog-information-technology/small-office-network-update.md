@@ -1,5 +1,5 @@
 ---
-layout: theme-site/blog/post
+layout: theme-site/hbf-page/post
 author-id: 1
 title: Small Office Network Update
 description: Some simple things that can be done to upgrade a small office or home network.
