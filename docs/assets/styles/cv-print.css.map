@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "cv-print.css",
+	"sources": [
+		"cv-print.scss",
+		"../../jekyll-themes/bojekylls/_sass/gs-css-core/abstracts/_colors.scss",
+		"../../jekyll-themes/bojekylls/_sass/bojekylls/utilities/_printable.scss"
+	],
+	"sourcesContent": [
+		"@import \"gs-css-core/abstracts/colors\";\r\n@import \"bojekylls/utilities/printable\";\r\n\r\na {\r\n\ttext-decoration: none;\r\n\tcolor: $color-black !important;\r\n}\r\n\r\n.gs-bjk-page-content {\r\n\tmargin: 0;\r\n}\r\n\r\n.gs-rg-cv {\r\n\tfont-size: 1.188rem;\r\n\t\r\n\tpadding-top: 0;\r\n\tpadding-bottom: 0;\r\n\tborder: 0;\r\n\tbox-shadow: none;\r\n\t\r\n\th1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {\r\n\t\tcolor: $color-black !important;\r\n\t}\r\n\t\r\n\ti {\r\n\t\tcolor: $color-black !important;\r\n\t}\r\n}\r\n\r\n.gs-rg-cv-section-heading {\r\n\tborder-color: $color-black !important;\r\n}\r\n\r\n.gs-rg-cv-work-history-section {\r\n\t.gs-rg-cv-work-history-job-employer {\r\n\t\tcolor: $color-black !important;\r\n\t}\r\n\t\r\n\t.gs-rg-cv-work-history-job-position-title {\r\n\t\tcolor: $color-black !important;\r\n\t}\r\n}\r\n\r\n.gs-rg-cv-education-section {\r\n\t.gs-rg-cv-education-school {\r\n\t\tcolor: $color-black;\r\n\t}\r\n}\r\n\r\n.gs-rg-cv-download-options {\r\n\tdisplay: none;\r\n}",
+		"// https://www.color-hex.com/color/90ee90\r\n\r\n$color-black: #000;\r\n$color-white: #fff;\r\n\r\n$color-palegreen2: #90ee90;\r\n\r\n$color-gray16: #292929;\r\n$color-gray60: #999999;\r\n$color-gray80: #cccccc;\r\n$color-gray84: #d6d6d6;\r\n$color-gray94: #f0f0f0;\r\n$color-gray98: #fafafa;\r\n\r\n.gs-color-black {\r\n\tcolor: $color-black;\r\n}\r\n\r\n.gs-color-white {\r\n\tcolor: $color-white;\r\n}",
+		"@page {\r\n\tsize: a3;\r\n}\r\n\r\nbody {\r\n\tmin-width: 992px;\r\n}\r\n\r\n.gs-bjk-page-header {\r\n\tdisplay: none;\r\n}\r\n\r\n.gs-bjk-page-footer {\r\n\tdisplay: none;\r\n}"
+	],
+	"names": [],
+	"mappings": "ACcA,AAAA,eAAe,AAAC,CACf,KAAK,CAbQ,IAAI,CAcjB,AAED,AAAA,eAAe,AAAC,CACf,KAAK,CAhBQ,IAAI,CAiBjB,ACpBD,KAAK,CACJ,IAAI,CAAE,EAAE,CAGT,AAAA,IAAI,AAAC,CACJ,SAAS,CAAE,KAAK,CAChB,AAED,AAAA,mBAAmB,AAAC,CACnB,OAAO,CAAE,IAAI,CACb,AAED,AAAA,mBAAmB,AAAC,CACnB,OAAO,CAAE,IAAI,CACb,AFXD,AAAA,CAAC,AAAC,CACD,eAAe,CAAE,IAAI,CACrB,KAAK,CCHQ,IAAI,CDGG,UAAU,CAC9B,AAED,AAAA,oBAAoB,AAAC,CACpB,MAAM,CAAE,CAAC,CACT,AAED,AAAA,SAAS,AAAC,CACT,SAAS,CAAE,QAAQ,CAEnB,WAAW,CAAE,CAAC,CACd,cAAc,CAAE,CAAC,CACjB,MAAM,CAAE,CAAC,CACT,UAAU,CAAE,IAAI,CAShB,AAfD,AAQC,SARQ,CAQR,EAAE,CARH,SAAS,CAQJ,EAAE,CARP,SAAS,CAQA,EAAE,CARX,SAAS,CAQI,EAAE,CARf,SAAS,CAQQ,EAAE,CARnB,SAAS,CAQY,EAAE,CARvB,SAAS,CAQgB,GAAG,CAR5B,SAAS,CAQqB,GAAG,CARjC,SAAS,CAQ0B,GAAG,CARtC,SAAS,CAQ+B,GAAG,CAR3C,SAAS,CAQoC,GAAG,CARhD,SAAS,CAQyC,GAAG,AAAC,CACpD,KAAK,CCnBO,IAAI,CDmBI,UAAU,CAC9B,AAVF,AAYC,SAZQ,CAYR,CAAC,AAAC,CACD,KAAK,CCvBO,IAAI,CDuBI,UAAU,CAC9B,AAGF,AAAA,yBAAyB,AAAC,CACzB,YAAY,CC5BC,IAAI,CD4BU,UAAU,CACrC,AAED,AACC,8BAD6B,CAC7B,mCAAmC,AAAC,CACnC,KAAK,CCjCO,IAAI,CDiCI,UAAU,CAC9B,AAHF,AAKC,8BAL6B,CAK7B,yCAAyC,AAAC,CACzC,KAAK,CCrCO,IAAI,CDqCI,UAAU,CAC9B,AAGF,AACC,2BAD0B,CAC1B,0BAA0B,AAAC,CAC1B,KAAK,CC3CO,IAAI,CD4ChB,AAGF,AAAA,0BAA0B,AAAC,CAC1B,OAAO,CAAE,IAAI,CACb"
+}
