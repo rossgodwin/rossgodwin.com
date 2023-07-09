@@ -1,6 +1,6 @@
 ---
 permalink: /blog/
-layout: theme-site/hbf-page/posts
+layout: bojekylls/header-body-footer/posts
 title: Blog
 include-seo: false
 pagination:

@@ -1,6 +1,6 @@
 ---
 permalink: /blog/information-technology/
-layout: theme-site/hbf-page/posts
+layout: bojekylls/header-body-footer/posts
 title: Blog - Information Technology
 include-seo: false
 pagination:

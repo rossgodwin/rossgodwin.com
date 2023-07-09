@@ -1,0 +1,11 @@
+.gs-rg-about-skills {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 20px;
+}
+
+.gs-rg-about-skills-item {
+	padding: 1rem;
+}

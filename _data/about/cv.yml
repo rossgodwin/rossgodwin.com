@@ -1,8 +1,8 @@
-title: Land Development Engineer
+title: Land Development Project Manager
 
 intro-heading-text: Summary
 intro:
-  Client-focused and results-driven land development civil engineer with 4+ years of experience in commercial, 
+  Client-focused and results-driven land development project manager with 4+ years of experience in commercial, 
   mixed-use and muli-family site development.
 
 experience-heading-text: Professional History
@@ -10,11 +10,11 @@ experience-companies:
   - company-name: Bowman (formerly Triangle Site Design)
     industry: Construction
     positions:
-      - title: Civil Project Engineer
+      - title: Project Manager
         duration-date-to-date: 2021 to Present
         cv:
           responsibilities:
-            - Team oriented land development project engineer
+            - Team oriented land development project manager
             - Collaborate with developers, engineers, jurisdictions and contractors to complete design requirements, acquire permits and close out projects
             - Work on mixed-use, multi-family, commercial, hospitality and retail land development projects
       - title: Civil Designer
@@ -64,7 +64,7 @@ education-bachelors_degree:
 version:
   pdf:
     display-text: PDF Version
-    file-relative-url: assets/this-site/docs/cv.pdf
+    file-relative-url: assets/docs/cv.pdf
 #  text:
 #    display-text: Text Version
 #    file-relative-url: assets/this-site/docs/information-technology/cv.txt

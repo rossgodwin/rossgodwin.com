@@ -1,6 +1,6 @@
 ---
 permalink: /about/
-layout: theme-site/hbf-page/page-single_column
+layout: bojekylls/header-body-footer/page
 title: &title "About"
 ---
 
@@ -18,44 +18,44 @@ title: &title "About"
 {% endcapture %}
 
 <section>
-	<h3 class="jkt-heading-line-separator">Summary</h3>
+	<h3 class="gs-bjk-heading-line-separator">Summary</h3>
 	
 	{{ site.data.about.about.summary-html }}
 </section>
 
 <section class="gs-margin-top-20">
-	<h3 class="jkt-heading-line-separator">Recommendations</h3>
+	<h3 class="gs-bjk-heading-line-separator">Recommendations</h3>
 	
-	<ul class="jkt-list-ul-no-markers">
+	<ul class="gs-list-no-style gs-list-item-margin-bottom-16">
 		{% for recommendation in site.data.about.recommendations.recommendations %}
 			<li>
-			{% include theme-core/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
+			{% include bojekylls/components/quote.html quote=recommendation.quote quote_by=recommendation.by %}
 			</li>
 		{% endfor %}
 	</ul>
 </section>
 
 <section class="gs-margin-top-20">
-	<h3 class="jkt-heading-line-separator">Land Development</h3>
+	<h3 class="gs-bjk-heading-line-separator">Land Development</h3>
 	
 	{{ site.data.about.about.land-development-summary-html }}
 	
-	<a class="jkt-anchor" id="land-development-skills"></a>
+	<a class="gs-bjk-anchor" id="land-development-skills"></a>
 	{% assign skills = site.data.about.skills.land-development | sort: "skill" %}
-	{% include this-site/components/about/skills-list.html skills=skills %}
+	{% include components/about/skills.html skills=skills %}
 </section>
 
 <section class="gs-margin-top-20">
-	<h3 class="jkt-heading-line-separator">Software Development</h3>
+	<h3 class="gs-bjk-heading-line-separator">Software Development</h3>
 	
 	{{ site.data.about.about.software-development-summary-html }}
 	
-	<a class="jkt-anchor" id="software-development-skills"></a>
+	<a class="gs-bjk-anchor" id="software-development-skills"></a>
 	{% assign skills = site.data.about.skills.software-development | sort: "skill" %}
-	{% include this-site/components/about/skills-list.html skills=skills %}
+	{% include components/about/skills.html skills=skills %}
 </section>
 
-<div class="jkt-footnotes">
+<div class="gs-margin-top-20 gs-border-top-dotted-1 gs-border-color-gray84">
 	<ol>
 		<li id="{{ site.data.about.skills.proficiency-level1-id }}">
 			<p>

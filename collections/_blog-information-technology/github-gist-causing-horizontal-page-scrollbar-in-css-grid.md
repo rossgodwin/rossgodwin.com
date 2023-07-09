@@ -1,9 +1,9 @@
 ---
-layout: theme-site/hbf-page/post
+layout: bojekylls/header-body-footer/post
 author-id: 1
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
 include-seo: true
-image-path: assets/this-site/images/blog/posts/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png
+image-path: assets/images/blog/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png
 image-by-name: Rubaitul Azad
 image-credit-url: https://unsplash.com/@rubaitulazad
 categories: [information-technology]
@@ -29,7 +29,7 @@ The below snippet of HTML code recreates the issue.
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include theme-core/components/html-source-code-block.html html=_html %}
+{% include bojekylls/components/html-source-code-block.html html=_html %}
 
 <div style="display: grid;">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
@@ -44,7 +44,7 @@ Again, resize your browser window down or view on a mobile device to see how the
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include theme-core/components/html-source-code-block.html html=_html %}
+{% include bojekylls/components/html-source-code-block.html html=_html %}
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr);">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}

@@ -1,41 +1,41 @@
 ---
 permalink: /about/cv/
-layout: theme-site/hbf-page/page-single_column
+layout: bojekylls/header-body-footer/page
 title: &title "Resume"
 head-print-css-relative-urls:
-  - assets/this-site/css/cv/print.css
+  - assets/styles/cv-print.css
 ---
 
-<article class="jkt-cv">
-	{% include this-site/components/about/cv/header.html
-		name=site.data.theme-site.me.name
+<article class="gs-rg-cv">
+	{% include components/about/cv/header.html
+		name=site.data.about.me.name
 		title=site.data.about.cv.title
-		location=site.data.theme-site.me.location
-		phone-number=site.data.theme-site.me.phone-number
-		website=site.data.theme-site.me.website
-		linkedin=site.data.theme-site.me.social.linkedin %}
+		location=site.data.about.me.location
+		phone-number=site.data.about.me.phone-number
+		website=site.data.about.me.website
+		linkedin=site.data.bojekylls.social.linkedin %}
 	
 	<hr>
 	
-	{% include this-site/components/about/cv/introduction.html
+	{% include components/about/cv/introduction.html
 		heading=site.data.about.cv.intro-heading-text
 		description=site.data.about.cv.intro %}
 	
-	{% include this-site/components/about/cv/experience.html
+	{% include components/about/cv/experience.html
 		heading=site.data.about.cv.experience-heading-text
 		companies=site.data.about.cv.experience-companies %}
 	
-	{% include this-site/components/about/cv/skills.html
+	{% include components/about/cv/skills.html
 		heading=site.data.about.cv.skills-heading-text
 		skills=site.data.about.cv.skills %}
 	
-	{% include this-site/components/about/cv/education.html
+	{% include components/about/cv/education.html
 		heading=site.data.about.cv.education-heading-text
 		degree=site.data.about.cv.education-bachelors_degree %}
 </article>
 
-<section class="jkt-cv-download-options">
-	{% include this-site/components/about/cv/versions.html
+<section class="gs-rg-cv-download-options">
+	{% include components/about/cv/versions.html
 		pdf=site.data.about.cv.version.pdf
 		text=site.data.about.cv.version.text %}
 </section>

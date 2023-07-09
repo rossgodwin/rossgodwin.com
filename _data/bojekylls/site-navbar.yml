@@ -1,0 +1,15 @@
+title: Ross Godwin
+
+height: 40px
+
+logo:
+  image-relative-url: assets/images/site/logo.png
+  relative-url: /
+
+menu:
+  - title: About
+    relative-url: about
+  - title: Resume
+    relative-url: about/cv
+  - title: Blog
+    relative-url: blog

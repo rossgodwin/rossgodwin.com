@@ -1,0 +1,16 @@
+<div class="gs-rg-about-skills">
+	{% for skill in include.skills %}
+		<div class="gs-bjk-panel-gray gs-rg-about-skills-item">
+			{{ skill.skill }}
+			{% if skill.proficiency-level == 1 %}
+				{{ _pl1 }}
+			{% elsif skill.proficiency-level == 2 %}
+				{{ _pl2 }}
+			{% elsif skill.proficiency-level == 3 %}
+				{{ _pl3 }}
+			{% elsif skill.proficiency-level == 4 %}
+				{{ _pl4 }}
+			{% endif %}
+		</div>
+	{% endfor %}
+</div>
