@@ -3,6 +3,7 @@ permalink: /blog/information-technology/
 layout: bojekylls/header-body-footer/posts
 title: Blog - Information Technology
 include-seo: false
+show-page-loading-overlay: true
 pagination:
   enabled: true
   collection: blog-information-technology
