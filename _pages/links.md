@@ -1,0 +1,28 @@
+---
+layout: bojekylls/default
+permalink: /links/
+title: "Ross Godwin"
+logo-relative-url: /
+logo-image-relative-url: assets/images/site/logo.png
+subtitle: Land Development Project Manager at Bowman.
+links:
+  - title: Resume
+    internal-relative-url: about/cv
+    fontawesome-icon-classnames: fa fa-file-pdf fa-2x
+  - title: Blog
+    internal-relative-url: blog
+    fontawesome-icon-classnames: fa fa-pen fa-2x
+  - title: LinkedIn
+    external-url: https://www.linkedin.com/in/ross-godwin
+    fontawesome-icon-classnames: fab fa-linkedin-in fa-2x
+  - title: Github
+    external-url: https://www.github.com/rossgodwin
+    fontawesome-icon-classnames: fab fa-github fa-2x
+---
+
+{% include bojekylls/pages/onlylinks.html
+	logo-relative-url=page.logo-relative-url
+	logo-image-relative-url=page.logo-image-relative-url
+	title=page.title
+	subtitle=page.subtitle
+	links=page.links %}

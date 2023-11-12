@@ -2,7 +2,9 @@
 # Format resume page so for printing.
 ---
 
+@import "gs-css-core/abstracts/variables";
 @import "gs-css-core/abstracts/colors";
+@import "bojekylls/abstracts/variables";
 @import "bojekylls/utilities/printable";
 
 a {
