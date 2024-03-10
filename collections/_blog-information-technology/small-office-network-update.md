@@ -1,12 +1,12 @@
 ---
-layout: bojekylls/header-body-footer/post
-author-id: 1
+layout: bojekylls/header-body-footer/post/default
+author-alias: rgodwin
 title: Small Office Network Update
 description: Some simple things that can be done to upgrade a small office or home network.
 include-seo: true
-image-path: assets/images/blog/small-office-network-update/banner.png
-image-by-name: 200 Degrees
-image-credit-url: https://pixabay.com/users/200degrees-2051452/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1989339
+primary-image-relative-url: assets/images/blog/small-office-network-update/banner.png
+primary-image-author-name: 200 Degrees
+primary-image-author-url: https://pixabay.com/users/200degrees-2051452/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1989339
 categories: [information-technology]
 tags: [information technology, networking, small office]
 date: 2019-10-1

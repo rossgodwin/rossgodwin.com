@@ -1,15 +1,15 @@
 ---
-layout: bojekylls/header-body-footer/post
-author-id: 1
+layout: bojekylls/header-body-footer/post/default
+author-alias: rgodwin
 title: Github Gist Causing Horizontal Page Scrollbar in CSS Grid
 include-seo: true
-image-path: assets/images/blog/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png
-image-by-name: Rubaitul Azad
-image-credit-url: https://unsplash.com/@rubaitulazad
+primary-image-relative-url: assets/images/blog/github-gist-causing-horizontal-page-scrollbar-in-css-grid/banner.png
+primary-image-author-name: Rubaitul Azad
+primary-image-author-url: https://unsplash.com/@rubaitulazad
 categories: [information-technology]
 tags: [information technology, web design, css, css grid, github, gist]
 date: 2020-09-12
-include-highlightjs: yes
+syntax-highlighter-on: yes
 ---
 
 I was running in to a issue on my website where Github gist embedded code shares were causing horizontal page/viewport scrollbars on small devices like a mobile phone.
@@ -29,7 +29,7 @@ The below snippet of HTML code recreates the issue.
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include bojekylls/components/html-source-code-block.html html=_html %}
+{% include bojekylls/components/syntax-highlighter.html code-class='language-markup' code=_html %}
 
 <div style="display: grid;">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}
@@ -44,7 +44,7 @@ Again, resize your browser window down or view on a mobile device to see how the
 	// gist code embed here
 </div>
 {% endcapture %}
-{% include bojekylls/components/html-source-code-block.html html=_html %}
+{% include bojekylls/components/syntax-highlighter.html code-class='language-markup' code=_html %}
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr);">
 	{% gist 2b51dd400db9a8bbf881324a80b91aca %}

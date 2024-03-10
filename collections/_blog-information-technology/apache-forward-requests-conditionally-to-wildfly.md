@@ -1,9 +1,9 @@
 ---
-layout: bojekylls/header-body-footer/post
-author-id: 1
+layout: bojekylls/header-body-footer/post/default
+author-alias: rgodwin
 title: Configure Apache to Forward some Url Reqests to Wildfly
 include-seo: true
-image-path: assets/images/blog/apache-forward-requests-conditionally-to-wildfly/banner.jpg
+primary-image-relative-url: assets/images/blog/apache-forward-requests-conditionally-to-wildfly/banner.jpg
 categories: [information-technology]
 tags: [information technology, apache, httpd, mod_proxy, wildfly]
 date: 2018-01-03
