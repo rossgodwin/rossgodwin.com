@@ -8,8 +8,12 @@ logo:
 
 menu:
   - title: About
-    relative-url: about
+    url:
+      internal-relative-url: about
   - title: Resume
-    relative-url: about/cv
+    url:
+      internal-relative-url: assets/docs/cv.pdf
+    open-new-tab: yes
   - title: Blog
-    relative-url: blog
+    url:
+      internal-relative-url: blog

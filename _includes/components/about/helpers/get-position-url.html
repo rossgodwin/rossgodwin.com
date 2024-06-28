@@ -1,6 +1,0 @@
-{% assign company-url = include.company.internal-page-url | relative_url %}
-{% if include.company.positions.size > 1 %}
-	{% assign position-url = include.position.title | remove: ' ' | prepend: '#' | prepend: company-url %}
-{% else %}
-	{% assign position-url = company-url %}
-{% endif %}
