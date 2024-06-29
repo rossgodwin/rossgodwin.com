@@ -62,6 +62,7 @@ plugins:
   - jekyll-gist
   - jekyll-paginate-v2
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 defaults:
   - scope:

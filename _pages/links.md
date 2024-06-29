@@ -11,10 +11,6 @@ links:
       internal-relative-url: assets/docs/cv.pdf
     open-new-tab: yes
     fontawesome-icon-classnames: fa fa-file-pdf fa-2x
-  - title: Blog
-    url:
-      internal-relative-url: blog
-    fontawesome-icon-classnames: fa fa-pen fa-2x
   - title: LinkedIn
     url:
       external-url: https://www.linkedin.com/in/ross-godwin
@@ -25,6 +21,10 @@ links:
       external-url: https://www.github.com/rossgodwin
     open-new-tab: yes
     fontawesome-icon-classnames: fab fa-github fa-2x
+redirect_from:
+  - /linktree/
+  - /about/
+  - /blog/
 ---
 
 {% include bojekylls/layout/onlylinks/page.html
