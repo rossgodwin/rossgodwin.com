@@ -22,3 +22,9 @@ xcopy . %_destination_folder% /i /s /e /y /exclude:%_exclude_filename%
 xcopy .\_sass %_destination_folder%\_sass /i /s /e /y
 
 del %_exclude_filename%
+
+REM > cd /mnt/d/Temp/smallbizmarkie/
+REM > gem install bundler
+REM > bundle install --path vendor/bundle
+REM > bundle exec jekyll build --config _config.yml,_config.dev.yml
+REM > bundle exec jekyll serve --config _config.yml,_config.dev.yml
